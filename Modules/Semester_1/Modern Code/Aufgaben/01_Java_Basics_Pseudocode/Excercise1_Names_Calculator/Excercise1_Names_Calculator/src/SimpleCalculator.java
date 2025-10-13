@@ -8,7 +8,7 @@ public class SimpleCalculator
         int sum = a + b;
         int difference = a - b;
         int product = a * b;
-        float quotient = (float) a / b;
+        float quotient = (float) a / b; // cast to float to avoid integer division
 
         // Print out the results
         IO.println("Simple Calculator Results:");
