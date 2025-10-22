@@ -1,4 +1,4 @@
-#photography #semester_1 #camera 
+#photography #camera 
 
 My Very Special neighbours??????
 

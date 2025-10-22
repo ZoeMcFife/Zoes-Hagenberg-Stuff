@@ -96,4 +96,4 @@ Ist der Stil vom echten Leben inspieriert (Architektur, Malstil, Filme etc.)?
 
 From <[https://hagenberg.games/wiki/Celeste_64](https://hagenberg.games/wiki/Celeste_64)>
 
-#introduction_to_games #semester_1 #celeste_64 
+#introduction_to_games #celeste_64 

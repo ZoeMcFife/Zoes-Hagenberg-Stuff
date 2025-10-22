@@ -6,4 +6,4 @@ Just simple stuff lol
 
 Contrast - midtones nach oben / unten geschoben -< bacheloer frage
 
-#2d_design #semester_1 #photoshop #space
+#2d_design #photoshop #space

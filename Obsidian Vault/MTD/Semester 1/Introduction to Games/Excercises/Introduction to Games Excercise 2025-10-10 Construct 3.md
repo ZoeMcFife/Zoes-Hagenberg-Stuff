@@ -1,1 +1,1 @@
-#introduction_to_games #semester_1 #construct_3
+#introduction_to_games #construct_3

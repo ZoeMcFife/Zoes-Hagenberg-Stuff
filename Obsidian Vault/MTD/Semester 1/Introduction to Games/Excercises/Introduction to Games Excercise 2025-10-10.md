@@ -1,3 +1,3 @@
 nothing here lol
 
-#introduction_to_games #semester_1 
+#introduction_to_games 

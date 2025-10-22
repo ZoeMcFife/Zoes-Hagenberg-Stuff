@@ -1,2 +1,2 @@
-#av_technology #semester_1 #video #color 
+#av_technology #video #color 
 Color Workflow sachen

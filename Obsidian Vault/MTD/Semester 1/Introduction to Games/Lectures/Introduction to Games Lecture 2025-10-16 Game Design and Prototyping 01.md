@@ -136,4 +136,4 @@ Discting behabiour
 
 Dynamics influence experience
 
-#introduction_to_games #semester_1 #game_design #mda_framework #game_mechanics #goat_simulator #jesse_shell 
+#introduction_to_games #game_design #mda_framework #game_mechanics #goat_simulator #jesse_shell 

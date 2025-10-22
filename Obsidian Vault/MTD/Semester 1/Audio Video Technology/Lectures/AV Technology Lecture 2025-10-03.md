@@ -1,4 +1,4 @@
-#av_technology #semester_1 #audio 
+#av_technology #audio 
 
 Manu per du
 
