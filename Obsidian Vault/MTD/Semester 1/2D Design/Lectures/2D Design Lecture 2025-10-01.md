@@ -46,6 +46,6 @@ LOGO DESIGNING STUFF
 
 We'll have to Design logos and shit
 
-![[Pasted image 20251022215229.png]]
+![[ralsei_fat_blunt.png]]
 
 #2d_design #ralsei_smokes_a_fat_blunt #logo

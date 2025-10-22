@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiDatabase",
       "LiCode2",
       "LiCamera",
       "🎨"
@@ -37,5 +38,6 @@
   "Semester 1/Photography/Lectures/Photography Lecture 2025-10-02.md": "LiCamera",
   "Semester 1/Modern Code/Lectures/Modern Code Lecture 2025-10-06.md": "LiCode2",
   "Semester 1/Modern Code/Lectures/Modern Code Lecture 2025-10-13.md": "LiCode2",
-  "Semester 1/Modern Code/Lectures/Modern Code Lecture 2025-10-20.md": "LiCode2"
+  "Semester 1/Modern Code/Lectures/Modern Code Lecture 2025-10-20.md": "LiCode2",
+  "Database.base": "LiDatabase"
 }
