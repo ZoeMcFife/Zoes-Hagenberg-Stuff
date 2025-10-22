@@ -5,7 +5,11 @@
     "fontSize": 16,
     "emojiStyle": "native",
     "iconColor": null,
-    "recentlyUsedIcons": [],
+    "recentlyUsedIcons": [
+      "LiCode2",
+      "LiCamera",
+      "🎨"
+    ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
     "extraMargin": {
@@ -27,5 +31,11 @@
     "lucideIconPackType": "native",
     "debugMode": false,
     "useInternalPlugins": false
-  }
+  },
+  "Semester 1/Visual Aesthetics/Art/Visual Aesthetics Art 2025-10-14.md": "🎨",
+  "Semester 1/Visual Aesthetics/Art/Visual Aesthetics Art 2025-10-21.md": "🎨",
+  "Semester 1/Photography/Lectures/Photography Lecture 2025-10-02.md": "LiCamera",
+  "Semester 1/Modern Code/Lectures/Modern Code Lecture 2025-10-06.md": "LiCode2",
+  "Semester 1/Modern Code/Lectures/Modern Code Lecture 2025-10-13.md": "LiCode2",
+  "Semester 1/Modern Code/Lectures/Modern Code Lecture 2025-10-20.md": "LiCode2"
 }

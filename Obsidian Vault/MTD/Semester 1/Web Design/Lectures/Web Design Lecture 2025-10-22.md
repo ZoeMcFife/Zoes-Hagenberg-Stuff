@@ -177,3 +177,5 @@ Primary, secondary, neutral
 Every combination should be tested
 
 Fontsinuse.com
+
+![[02 - Lecture - Typography Color.pdf]]

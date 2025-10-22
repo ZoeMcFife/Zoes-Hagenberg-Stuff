@@ -1,3 +1,5 @@
+#3d_design #blender #zoe_was_missing_here 
+
 Wurde auf teams übertragen
 
 Aber couldn’t be tehre
@@ -6,4 +8,3 @@ Sooooo, now I am finally in my room Firstly said, the most documents and what ha
 
 From <[https://discord.com/channels/@me/1423552642784821353](https://discord.com/channels/@me/1423552642784821353)>
 
-#3d_design #blender #zoe_was_missing_here 
