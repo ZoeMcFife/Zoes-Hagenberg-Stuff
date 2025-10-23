@@ -1,7 +1,6 @@
 [
   "table-editor-obsidian",
   "obsidian-excalidraw-plugin",
-  "obsidian-annotator",
   "github-embeds",
   "obsidian-icon-folder",
   "github-tasks",
@@ -10,5 +9,7 @@
   "drawio-obsidian",
   "obsidian-smart-typography",
   "ink",
-  "obsidian-map-view"
+  "obsidian-map-view",
+  "omnisearch",
+  "pdf-plus"
 ]
