@@ -99,7 +99,39 @@ I love kerning! :D :LiAccessibility:
 - geometrische formen 
 - strichstärke sehr gleichmäßig
 
+## Script und Display
 
+- Ausdrucksvoll und auffällig
+- Dekorative Schriften
+
+## Schriftsippen
+
+- einheitliche Formensprache mit vielen Varianten
+- zb version mit Serifen und ohne, usw
+
+## Schriftschnitte
+
+- *Italic*
+- Regular
+- **Bold**
+
+## Gewicht & Breite
+
+- **Schriftgewicht** = Strichstärke
+- **Schriftbreite** = Breite im Verhältnis zur Höhe
+
+## Lesbarkeit als oberstes Ziel
+
+Gute Typografie führt das Auge mühelos durch den Text
+
+## Satzarten
+
+- Linksbündig *am lesefreundlichsten*
+- Zentriert
+- Blocksatz
+
+
+---
 # Pirringer Skript 
 
 ![[TypoSatztechnik.pdf]]
