@@ -222,4 +222,12 @@ BENDER BENDING RODRIGUEZ
 ## Context 
 
 - the physicsal game world
+- collision behaviour, slide vs sticky
+- topology, density, ….
+- playfield dimensions
+### High level context
+
+- impresion of space 
+	- open vs claustrophoic
+	
 
