@@ -99,40 +99,40 @@ I love kerning! :D :LiAccessibility:
 - geometrische formen 
 - strichstärke sehr gleichmäßig
 
-## Script und Display
+# Script und Display
 
 - Ausdrucksvoll und auffällig
 - Dekorative Schriften
 
-## Schriftsippen
+# Schriftsippen
 
 - einheitliche Formensprache mit vielen Varianten
 - zb version mit Serifen und ohne, usw
 
-## Schriftschnitte
+# Schriftschnitte
 
 - *Italic*
-- Regular
+- RegularW
 - **Bold**
 
-## Gewicht & Breite
+# Gewicht & Breite
 
 - **Schriftgewicht** = Strichstärke
 - **Schriftbreite** = Breite im Verhältnis zur Höhe
 
-## Lesbarkeit als oberstes Ziel
+# Lesbarkeit als oberstes Ziel
 
 Gute Typografie führt das Auge mühelos durch den Text
-## Satzarten
+# Satzarten
 
 - Linksbündig *am lesefreundlichsten*
 - Zentriert
 - Blocksatz
-## Mikrotypografie
+# Mikrotypografie
 
 - feine Details wie Kerning und Wortabstände prägen das Gesamtbild
 - Lesbarkeit! 
-### Sonderzeichen
+# Sonderzeichen
 
 - Gedankenstrich
 	- *Em-Dash*
@@ -143,7 +143,15 @@ Gute Typografie führt das Auge mühelos durch den Text
 - Bindestrich
 	- *Hypen*
 	- - 
+# Barrierefreie Typografie
 
+- **Vereinfachte Gestaltung** für Menschen mit **kognitiven Einschränkungen**, **Sprachbarrieren** oder **Sehbehinderungen**
+
+# Typo-Fehler vermeiden
+
+- unleserliche Abstände
+- falsch verwendete Stricharten
+- etc
 
 
 ---
