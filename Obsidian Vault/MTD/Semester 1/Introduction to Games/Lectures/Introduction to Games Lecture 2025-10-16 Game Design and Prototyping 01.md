@@ -1,3 +1,5 @@
+#introduction_to_games #game_design #mda_framework #game_mechanics #goat_simulator #jesse_shell 
+
 Micheal lankes this time
 
 Game Design stuff!
@@ -135,5 +137,4 @@ Application of mechanics
 Discting behabiour
 
 Dynamics influence experience
-
-#introduction_to_games #game_design #mda_framework #game_mechanics #goat_simulator #jesse_shell 
+![[IGA_03_GameDesignPrototyping_VL.pdf]]
