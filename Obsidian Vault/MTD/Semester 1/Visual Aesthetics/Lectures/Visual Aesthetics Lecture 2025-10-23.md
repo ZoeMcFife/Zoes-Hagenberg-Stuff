@@ -123,12 +123,27 @@ I love kerning! :D :LiAccessibility:
 ## Lesbarkeit als oberstes Ziel
 
 Gute Typografie führt das Auge mühelos durch den Text
-
 ## Satzarten
 
 - Linksbündig *am lesefreundlichsten*
 - Zentriert
 - Blocksatz
+## Mikrotypografie
+
+- feine Details wie Kerning und Wortabstände prägen das Gesamtbild
+- Lesbarkeit! 
+### Sonderzeichen
+
+- Gedankenstrich
+	- Em-Dash
+	- — 
+- Halbgeviertstrich
+	- En-Dash 
+	- – 
+- Bindestrich
+	- Hypen
+	- - 
+
 
 
 ---
