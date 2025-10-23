@@ -135,13 +135,13 @@ Gute Typografie führt das Auge mühelos durch den Text
 ### Sonderzeichen
 
 - Gedankenstrich
-	- Em-Dash
+	- *Em-Dash*
 	- — 
 - Halbgeviertstrich
-	- En-Dash 
+	- *En-Dash* 
 	- – 
 - Bindestrich
-	- Hypen
+	- *Hypen*
 	- - 
 
 
