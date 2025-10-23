@@ -153,6 +153,18 @@ Gute Typografie führt das Auge mühelos durch den Text
 - falsch verwendete Stricharten
 - etc
 
+# Logotype & Markencharakter
+
+- Wenn Buchstaben selbst zum Symbol werden
+
+# Typografie & Markencharakter
+
+# Die Hausschrift
+
+- Eine Marke spricht mit einer einheitlichen typografischen Stimme 
+
+![[a74d8708eb705435fc8cd21c079274f4.jpg]]
+
 
 ---
 # Pirringer Skript 
