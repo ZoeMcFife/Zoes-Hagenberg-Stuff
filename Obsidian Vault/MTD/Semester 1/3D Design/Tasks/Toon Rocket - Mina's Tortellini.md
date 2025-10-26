@@ -41,3 +41,6 @@ AuthorUrl: https://www.youtube.com/@DefaultCube
 look at the firing angles! woah 
 
 liking how it’s tuzrning out so far :D
+
+![[mathias-villalobos-rocinante-gif-02.gif]]
+
