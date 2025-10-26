@@ -85,3 +85,36 @@ AuthorUrl: https://www.youtube.com/@arjunpatilvfx
 [Planet Textures](https://www.solarsystemscope.com/textures/)
 
 ![[Pasted image 20251026144815.png]]
+
+```vid
+https://www.youtube.com/watch?v=UYkKfWgji7Q
+Title: Space background in Blender in less than 1 minute
+Author: Morrigan
+Thumbnail: https://i.ytimg.com/vi/UYkKfWgji7Q/mqdefault.jpg
+AuthorUrl: https://www.youtube.com/@MorriganGameDev
+```
+
+shitty video but basically just use a voronoi texture and a color ramp
+
+
+![[Pasted image 20251026154810.png]]
+
+what?
+
+
+![[Pasted image 20251026170343.png]]
+
+![[Pasted image 20251026165822.png]]
+
+
+# Render
+
+![[cam_close_up-001_thruster_close_up.png]]
+
+![[cam_close_up-001_close_up.png]]
+
+![[cam_close_up-001_long_shot.png]]
+
+![[cam_close_up-001_main.png]]
+
+![[cam_close_up-001_side.png]]
