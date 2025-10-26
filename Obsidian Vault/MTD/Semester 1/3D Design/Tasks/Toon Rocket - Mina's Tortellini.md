@@ -79,3 +79,9 @@ AuthorUrl: https://www.youtube.com/@arjunpatilvfx
 ```
 
 ![[Pasted image 20251026143651.png]]
+
+### Planets and Environment
+
+[Planet Textures](https://www.solarsystemscope.com/textures/)
+
+![[Pasted image 20251026144815.png]]
