@@ -44,3 +44,8 @@ liking how it’s tuzrning out so far :D
 
 ![[mathias-villalobos-rocinante-gif-02.gif]]
 
+
+![[Pasted image 20251026122345.png]]
+
+Landing Gear!
+
