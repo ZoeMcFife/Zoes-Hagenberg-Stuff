@@ -64,3 +64,18 @@ materials and ligthing
 ![[Pasted image 20251026140357.png]]
 
 look how cool it loks now with the raditaors anmd light lighitng everything up waoaooog
+
+
+simple thruster plume, low g burn 
+
+followed this tutorial
+
+```vid
+https://www.youtube.com/watch?v=JUFVQNKlcs8
+Title: How to create thrusters in blender & Nuke
+Author: MISSING PIXEL VFX
+Thumbnail: https://i.ytimg.com/vi/JUFVQNKlcs8/mqdefault.jpg
+AuthorUrl: https://www.youtube.com/@arjunpatilvfx
+```
+
+![[Pasted image 20251026143651.png]]
