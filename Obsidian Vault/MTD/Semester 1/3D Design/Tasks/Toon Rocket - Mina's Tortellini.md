@@ -49,3 +49,18 @@ liking how it’s tuzrning out so far :D
 
 Landing Gear!
 
+![[Pasted image 20251026132118.png]]
+
+radiators and doors! 
+
+radiators are inspired by Children of a dead earth ships ! 
+
+![[Pasted image 20251026132711.png]]
+
+![[Pasted image 20251026135710.png]]
+
+materials and ligthing
+
+![[Pasted image 20251026140357.png]]
+
+look how cool it loks now with the raditaors anmd light lighitng everything up waoaooog
