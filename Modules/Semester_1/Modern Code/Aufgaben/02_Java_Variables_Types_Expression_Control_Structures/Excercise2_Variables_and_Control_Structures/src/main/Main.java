@@ -18,5 +18,10 @@ public class Main
 
         DayOfWeek dayOfWeek = new DayOfWeek();
         dayOfWeek.checkDay(3);
+
+        IO.println();
+
+        StarPattern starPattern = new StarPattern(5);
+        starPattern.generatePattern();
     }
 }
