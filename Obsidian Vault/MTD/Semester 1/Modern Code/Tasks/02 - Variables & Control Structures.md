@@ -152,4 +152,8 @@ To get integers `1..6`:
 
 ---
 
+> “**Important**: *For exercises 2 and 3, think about whether if/else or switch would be the better*
+*choice for the problem. For exercises 4-6, consider which loop type (for, while, or do-while)*
+*is most appropriate for the task*”
+
 ![[A02_Variables_Control.pdf]]
