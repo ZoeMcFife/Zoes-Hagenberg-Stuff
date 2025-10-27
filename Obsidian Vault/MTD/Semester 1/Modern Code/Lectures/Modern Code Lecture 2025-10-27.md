@@ -131,4 +131,7 @@ omg ralsei no way ralsei is here no fucking way
 > Unreachable code
 > ([[04_Methods.pdf#page=53&selection=31,0,32,1&color=note|04_Methods, p.46]])
 > Parameter misuse
+![[04_Methods.pdf#page=63&rect=25,88,316,170&color=note|04_Methods, p.56]]Clanker 
+> ([[04_Methods.pdf#page=63&selection=0,0,0,9&color=note|04_Methods, p.56]])
+> AI Review
 
