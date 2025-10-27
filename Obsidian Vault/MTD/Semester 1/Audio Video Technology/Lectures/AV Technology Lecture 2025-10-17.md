@@ -1,4 +1,4 @@
-#av_technology #audio #lecture
+#av_technology #audio 
 
 Lange kabel --> tiefpassfilter --> Condensator effekt --> je höer die kapazität
 

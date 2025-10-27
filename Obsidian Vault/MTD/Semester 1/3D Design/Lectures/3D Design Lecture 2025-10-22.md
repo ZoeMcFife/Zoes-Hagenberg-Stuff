@@ -1,4 +1,4 @@
-#3d_design #blender #donut_tutorial #catmull_clark #modifiers #lecture
+#3d_design #blender #donut_tutorial #catmull_clark #modifiers
 
 Blender History
 

@@ -138,6 +138,5 @@ Application of mechanics
 
 Discting behabiour
 
+Dynamics influence experience
 ![[IGA_03_GameDesignPrototyping_VL.pdf]]
-
-#introduction_to_games #game_design #mda_framework #game_mechanics #goat_simulator #jesse_shell #lecture

@@ -23,4 +23,3 @@ Game mods uhhhhh
 OneTale, Deltarune Repainted, Fox Chell mod for Portal,
 
 #game_engine_concepts #godot #gordon_freeman 
-#game_engine_concepts #godot #lecture

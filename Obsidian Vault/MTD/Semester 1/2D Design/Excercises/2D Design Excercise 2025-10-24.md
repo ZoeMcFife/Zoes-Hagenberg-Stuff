@@ -1,4 +1,4 @@
-#2d_design #photoshop #exercise
+#2d_design #photoshop 
 
 ![[2025_2DD_UE_04_Photoshop_Advanced.pdf]]
 

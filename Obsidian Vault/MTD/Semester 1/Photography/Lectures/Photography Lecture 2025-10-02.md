@@ -1,4 +1,4 @@
-#photography #camera #lecture
+#photography #camera 
 
 My Very Special neighbours??????
 

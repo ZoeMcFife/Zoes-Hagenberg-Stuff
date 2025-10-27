@@ -1,4 +1,4 @@
-#introduction_to_games #game_mechanics #the_stanley_parable #celeste #super_meat_boy #starcraft #civilisation #elden_ring #mirrors_edge #getting_over_it #gollum #game_feel #playability #steve_wink_game_feel #lecture
+#introduction_to_games #game_mechanics #the_stanley_parable #celeste #super_meat_boy #starcraft #civilisation #elden_ring #mirrors_edge #getting_over_it #gollum #game_feel #playability #steve_wink_game_feel
 
 # Aesthetics
 - not only related to the audio visual layer

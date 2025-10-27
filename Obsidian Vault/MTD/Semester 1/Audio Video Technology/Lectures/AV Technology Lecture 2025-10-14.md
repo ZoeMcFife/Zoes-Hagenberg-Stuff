@@ -1,4 +1,4 @@
-#av_technology #video #color_calibration #color_rendering_index #light #lecture
+#av_technology #video #color_calibration #color_rendering_index #light
 
 Farbkalibrierung
 

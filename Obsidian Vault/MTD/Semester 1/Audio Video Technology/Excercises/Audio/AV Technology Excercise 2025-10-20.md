@@ -1,4 +1,4 @@
-#av_technology #audio #exercise
+#av_technology #audio
 
 ![[MTD.ba_AVT1_UE02.pdf]]
 

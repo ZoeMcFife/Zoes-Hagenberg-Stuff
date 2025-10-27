@@ -1,4 +1,4 @@
-#visual_aesthetics #icon #index #symbol #formats #layouts #lecture
+#visual_aesthetics #icon #index #symbol #formats #layouts 
 Difference Ikon, Index, Symbol
 
 Zb.: Recycling symbom --> Symbol oder Index

@@ -1,4 +1,4 @@
-#visual_aesthetics #typography #die_messbaren_basis_größen #pirringer #kerning #fonts #typefaces #sans_undertale #lecture
+#visual_aesthetics #typography #die_messbaren_basis_größen #pirringer #kerning #fonts #typefaces #sans_undertale
 
 > *„Sprache wird durch Schrift erst schön“* 
 

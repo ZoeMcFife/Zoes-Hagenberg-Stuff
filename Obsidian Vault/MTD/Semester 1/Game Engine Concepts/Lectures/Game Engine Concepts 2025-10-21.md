@@ -219,4 +219,3 @@ Game - Specific Subsystems
 Mechanics, in game features, etc
 
 #game_engine_concepts  #game_engine #quake_engine #game_mechanics #unity_particle_system #godot #unity #unreal_engine 
-#game_engine_concepts #lecture

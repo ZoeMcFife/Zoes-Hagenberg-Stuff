@@ -1,4 +1,4 @@
-#game_engine_concepts #unity #terrain #exercise
+#game_engine_concepts #unity #terrain
 
 we are just doing terrain stuff
 

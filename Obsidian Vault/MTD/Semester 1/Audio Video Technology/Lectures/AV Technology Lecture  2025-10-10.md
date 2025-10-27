@@ -1,4 +1,4 @@
-#av_technology #lecture
+#av_technology 
 Folien + übungen  sind wichtig!
 
 Literatur ist optional für video nerds

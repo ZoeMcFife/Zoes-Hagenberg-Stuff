@@ -34,8 +34,7 @@ brhgdfgjdfgdfkgk
 
 ## OH YEHA BTW!!!! TRACK TIME WHEN DOING THIS GUYS HOMEWORK
 
+#modern_code  #hello_world #java 
 ![[00_Introduction.pdf]]
 
 ![[01_Java.pdf]]
-
-#modern_code #hello_world #java #lecture

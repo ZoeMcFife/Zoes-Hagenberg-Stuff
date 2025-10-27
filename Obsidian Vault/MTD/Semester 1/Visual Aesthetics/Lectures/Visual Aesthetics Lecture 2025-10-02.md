@@ -1,4 +1,4 @@
-#visual_aesthetics #portfolio #lecture
+#visual_aesthetics #portfolio 
 Portfolio is main aufgabe wow
 
 80% anwesenheitspflicht
