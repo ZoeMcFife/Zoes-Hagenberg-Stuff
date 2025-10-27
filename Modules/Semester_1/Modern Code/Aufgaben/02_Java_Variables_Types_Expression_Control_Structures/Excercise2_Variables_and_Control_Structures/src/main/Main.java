@@ -6,5 +6,10 @@ public class Main
     {
         RectangleCalculator rectangleCalculator = new RectangleCalculator();
         rectangleCalculator.calculateRectangleProperties(5, 3);
+
+        IO.println();
+
+        FizzBuzz fizzBuzz = new FizzBuzz(15);
+        fizzBuzz.runFizzBuzz();
     }
 }
