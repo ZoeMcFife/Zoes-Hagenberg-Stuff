@@ -1,4 +1,4 @@
-#web_design #figma #typography #die_messbaren_basis_größen #papyrus #fonts #color 
+#web_design #figma #typography #die_messbaren_basis_größen #papyrus #fonts #color #lecture
 Typography
 
 Size & Scale, color and contrast, position and alignement, typography, spacing and grouping

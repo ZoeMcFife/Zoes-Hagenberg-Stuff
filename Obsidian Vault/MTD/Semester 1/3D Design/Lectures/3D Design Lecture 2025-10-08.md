@@ -1,4 +1,4 @@
-#3d_design #blender #zoe_was_missing_here 
+#3d_design #blender #zoe_was_missing_here #lecture
 
 Wurde auf teams übertragen
 

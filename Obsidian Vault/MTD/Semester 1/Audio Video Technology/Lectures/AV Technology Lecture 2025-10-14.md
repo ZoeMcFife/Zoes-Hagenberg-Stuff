@@ -1,4 +1,4 @@
-#av_technology #video #color_calibration #color_rendering_index #light
+#av_technology #video #color_calibration #color_rendering_index #light #lecture
 
 Farbkalibrierung
 
@@ -13,3 +13,4 @@ R14 green tones!
 Nicht geättigete, und gesättige farben
 
 Bei candela Winkel und Lux radius angeben … makes sense
+![[AVT1_VL02_Video_Licht und Farbe_2023.pdf]]

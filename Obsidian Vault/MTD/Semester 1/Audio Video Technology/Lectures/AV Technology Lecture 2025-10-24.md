@@ -1,4 +1,4 @@
-#av_technology #audio #synthesizer #fourier_transform
+#av_technology #audio #synthesizer #fourier_transform #lecture
 
 We’re looking at  video of a vector chain of a fourier transform 
 

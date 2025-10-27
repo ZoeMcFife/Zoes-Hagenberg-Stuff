@@ -1,4 +1,4 @@
-#visual_aesthetics #icon #symbol #index #color 
+#visual_aesthetics #icon #symbol #index #color #lecture
 Wahrnehmung
 
 Gesetz der nähe

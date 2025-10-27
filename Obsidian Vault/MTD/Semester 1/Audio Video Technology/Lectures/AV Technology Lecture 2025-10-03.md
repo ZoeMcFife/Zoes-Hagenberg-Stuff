@@ -1,4 +1,6 @@
-#av_technology #audio 
+#av_technology #audio #lecture
+
+![[AVT1_Einfuehrung.pdf]]
 
 Manu per du
 

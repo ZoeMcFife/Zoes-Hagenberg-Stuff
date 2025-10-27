@@ -48,4 +48,6 @@ We'll have to Design logos and shit
 
 ![[ralsei_fat_blunt.png]]
 
-#2d_design #ralsei_smokes_a_fat_blunt #logo
+![[2025_2DD_VL_01_Ueberblick_Grafikdesign.pdf]]
+
+#2d_design #ralsei_smokes_a_fat_blunt #logo #lecture

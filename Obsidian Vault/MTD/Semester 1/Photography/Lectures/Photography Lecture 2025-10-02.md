@@ -1,4 +1,4 @@
-#photography #camera 
+#photography #camera #lecture
 
 My Very Special neighbours??????
 
@@ -11,3 +11,4 @@ Bild mit KI machen als  pluspunkt??
 Freiwillige hausübung  
   
 formen in der gengend wo man herkommt?? 3 bilder bis 22. novemver
+![[ÜbungBenotung_2025_Neighbours.pdf]]
