@@ -1,6 +1,6 @@
 package main;
 
-import test.DayOfWeekTest;
+/* Some Unit tests were generated using AI (But manually verified) for convenience. */
 
 public class Main
 {
@@ -28,5 +28,10 @@ public class Main
 
         CollatzConjecture collatzConjecture = new CollatzConjecture();
         collatzConjecture.runCollatzConjecture(5);
+
+        IO.println();
+
+        DiceRollingSimulator diceRollingSimulator = new DiceRollingSimulator();
+        diceRollingSimulator.simulateRollsUntilTarget(6);
     }
 }
