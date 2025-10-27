@@ -77,6 +77,8 @@
     Day: Wednesday
     Type: Weekday
 
+![[Pasted image 20251027144349.png]]
+
 ---
 
 ## Exercise 4 (4 points) — Star Pattern Generator

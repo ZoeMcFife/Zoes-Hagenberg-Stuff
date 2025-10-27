@@ -1,5 +1,7 @@
 package main;
 
+import test.DayOfWeekTest;
+
 public class Main
 {
     public static void main(String[] args)
@@ -11,5 +13,10 @@ public class Main
 
         FizzBuzz fizzBuzz = new FizzBuzz(15);
         fizzBuzz.runFizzBuzz();
+
+        IO.println();
+
+        DayOfWeek dayOfWeek = new DayOfWeek();
+        dayOfWeek.checkDay(3);
     }
 }
