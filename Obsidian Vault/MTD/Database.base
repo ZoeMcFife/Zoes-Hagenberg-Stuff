@@ -23,3 +23,4 @@ views:
     columnSize:
       file.ctime: 152
       file.mtime: 137
+      file.tags: 222
