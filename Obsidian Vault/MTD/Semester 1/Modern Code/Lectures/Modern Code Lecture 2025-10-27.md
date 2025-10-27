@@ -41,3 +41,47 @@ omg ralsei no way ralsei is here no fucking way
 > Block scope: variables declared in {curly braces}
 > ([[04_Methods.pdf#page=39&selection=26,4,26,42&color=red|04_Methods, p.32]])
 > ariables live only within those braces
+> ([[04_Methods.pdf#page=40&selection=5,1,6,30&color=red|04_Methods, p.33]])
+> Variables declared too broadly
+> ([[04_Methods.pdf#page=40&selection=11,3,11,37&color=red|04_Methods, p.33]])
+> Variables exist longer than needed
+> ([[04_Methods.pdf#page=40&selection=12,15,12,25&color=red|04_Methods, p.33]])
+> confusion 
+> ([[04_Methods.pdf#page=40&selection=13,15,13,27&color=red|04_Methods, p.33]])
+> memory usage
+> ([[04_Methods.pdf#page=42&selection=4,0,5,1&color=red|04_Methods, p.35]])
+> Shadowing
+> ([[04_Methods.pdf#page=42&selection=6,13,6,54&color=red|04_Methods, p.35]])
+> inner scope reuses names from outer scope
+> ([[04_Methods.pdf#page=42&selection=14,0,14,7&color=red|04_Methods, p.35]])
+> Problem
+> ([[04_Methods.pdf#page=42&selection=9,0,9,7&color=red|04_Methods, p.35]])
+> Common 
+> ([[04_Methods.pdf#page=42&selection=16,0,16,47&color=red|04_Methods, p.35]])
+> Same name, different variable - very confusing!
+> ([[04_Methods.pdf#page=42&selection=21,0,21,40&color=red|04_Methods, p.35]])
+> Local variable hides the static variable
+> ([[04_Methods.pdf#page=43&selection=6,0,6,45&color=red|04_Methods, p.36]])
+> Use the class name to access static variables
+> ([[04_Methods.pdf#page=43&selection=10,1,11,35&color=red|04_Methods, p.36]])
+> Use unique names to avoid shadowing
+> ([[04_Methods.pdf#page=43&selection=14,0,16,44&color=red|04_Methods, p.36]])
+> Best practice: Choose descriptive names that don’t conflict
+> ([[04_Methods.pdf#page=44&selection=4,0,4,45&color=red|04_Methods, p.37]])
+> Declare variables close to where they’re used
+> ([[04_Methods.pdf#page=44&selection=11,0,11,29&color=red|04_Methods, p.37]])
+> Keep variable lifetimes short
+> ([[04_Methods.pdf#page=44&selection=18,0,18,21&color=red|04_Methods, p.37]])
+> Use descriptive names
+> ([[04_Methods.pdf#page=44&selection=24,0,24,29&color=red|04_Methods, p.37]])
+> Be careful with nested scopes
+> ([[04_Methods.pdf#page=45&selection=4,0,5,30&color=red|04_Methods, p.38]])
+> Single Responsibility
+> ([[04_Methods.pdf#page=45&selection=12,0,13,1&color=red|04_Methods, p.38]])
+> Return values:
+> ([[04_Methods.pdf#page=45&selection=16,0,16,10&color=red|04_Methods, p.38]])
+> Parameters
+> ([[04_Methods.pdf#page=45&selection=20,0,20,9&color=red|04_Methods, p.38]])
+> Constants
+> ([[04_Methods.pdf#page=45&selection=8,0,9,47&color=red|04_Methods, p.38]])
+> Verb-based names
