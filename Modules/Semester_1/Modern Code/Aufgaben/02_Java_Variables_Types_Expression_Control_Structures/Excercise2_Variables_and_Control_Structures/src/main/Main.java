@@ -23,5 +23,10 @@ public class Main
 
         StarPattern starPattern = new StarPattern(5);
         starPattern.generatePattern();
+
+        IO.println();
+
+        CollatzConjecture collatzConjecture = new CollatzConjecture();
+        collatzConjecture.runCollatzConjecture(5);
     }
 }
