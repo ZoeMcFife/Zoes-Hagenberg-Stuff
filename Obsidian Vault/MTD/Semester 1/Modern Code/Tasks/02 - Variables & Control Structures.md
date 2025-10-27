@@ -159,3 +159,5 @@ To get integers `1..6`:
 *is most appropriate for the task*”
 
 ![[A02_Variables_Control.pdf]]
+
+![[MC_UE02_BUNEA 1.pdf]]
