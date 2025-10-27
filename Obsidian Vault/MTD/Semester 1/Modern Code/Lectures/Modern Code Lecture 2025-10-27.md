@@ -85,3 +85,50 @@ omg ralsei no way ralsei is here no fucking way
 > Constants
 > ([[04_Methods.pdf#page=45&selection=8,0,9,47&color=red|04_Methods, p.38]])
 > Verb-based names
+> ([[04_Methods.pdf#page=46&selection=4,0,5,25&color=note|04_Methods, p.39]])
+> Clear purpose
+> ([[04_Methods.pdf#page=46&selection=8,0,9,1&color=note|04_Methods, p.39]])
+> Descriptive names:
+> ([[04_Methods.pdf#page=46&selection=12,0,13,29&color=note|04_Methods, p.39]])
+> Small parameters
+> ([[04_Methods.pdf#page=48&selection=4,1,4,18&color=note|04_Methods, p.41]])
+> eep methods small
+> ([[04_Methods.pdf#page=48&selection=8,0,8,24&color=note|04_Methods, p.41]])
+> One level of abstraction
+> ([[04_Methods.pdf#page=48&selection=16,0,17,24&color=note|04_Methods, p.41]])
+> Minimal parameters
+> ([[04_Methods.pdf#page=48&selection=12,0,12,12&color=note|04_Methods, p.41]])
+> Descriptive 
+> ([[04_Methods.pdf#page=48&selection=12,12,12,17&color=note|04_Methods, p.41]])
+> names
+> ([[04_Methods.pdf#page=48&selection=20,0,21,47&color=note|04_Methods, p.41]])
+> Clear return values
+> ([[04_Methods.pdf#page=48&selection=24,0,25,41&color=note|04_Methods, p.41]])
+> No side effects
+> [!PDF|important] [[04_Methods.pdf#page=49&selection=4,0,4,7&color=important|04_Methods, p.42]]
+> > Problem
+> 
+> > [!PDF|important] [[04_Methods.pdf#page=49&selection=8,0,8,8&color=important|04_Methods, p.42]]
+> > Solution
+> 
+> > [!PDF|important] [[04_Methods.pdf#page=49&selection=12,0,12,8&color=important|04_Methods, p.42]]
+> > Benefits
+> 
+> > [!PDF|important] [[04_Methods.pdf#page=49&selection=16,0,16,7&color=important|04_Methods, p.42]]
+> > Process
+> > 
+> [!PDF|] [[04_Methods.pdf#page=50&selection=0,0,0,24|04_Methods, p.43]]
+> > Refactoring: The Problem
+> 
+> > ([[04_Methods.pdf#page=50&selection=4,2,4,64|04_Methods, p.43]])
+> atic void processPlayerTurn(int playerHealth, int enemyHealth,> ([[04_Methods.pdf#page=53&selection=4,0,10,1|04_Methods, p.46]])
+> Missing return statements i
+> ([[04_Methods.pdf#page=53&selection=16,0,17,1&color=note|04_Methods, p.46]])
+> Over-reliance on static fields
+> ([[04_Methods.pdf#page=53&selection=21,0,21,18&color=note|04_Methods, p.46]])
+> Variable shadowing
+> ([[04_Methods.pdf#page=53&selection=26,0,27,1&color=note|04_Methods, p.46]])
+> Unreachable code
+> ([[04_Methods.pdf#page=53&selection=31,0,32,1&color=note|04_Methods, p.46]])
+> Parameter misuse
+
