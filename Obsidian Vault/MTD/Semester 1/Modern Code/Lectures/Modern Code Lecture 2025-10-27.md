@@ -8,3 +8,4 @@ omg ralsei no way ralsei is here no fucking way
 
 
 ![[04_Methods.pdf]]
+
