@@ -46,6 +46,8 @@ LOGO DESIGNING STUFF
 
 We'll have to Design logos and shit
 
+![[2025_2DD_VL_01_Ueberblick_Grafikdesign.pdf]]
+
 ![[ralsei_fat_blunt.png]]
 
 #2d_design #ralsei_smokes_a_fat_blunt #logo
