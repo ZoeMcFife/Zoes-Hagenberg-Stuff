@@ -1,4 +1,4 @@
-#web_fundementals 
+#web_fundementals #html #css #javascript #browser 
 
 ```vid
 https://www.youtube.com/live/WwHNHSpqVPo
@@ -103,6 +103,46 @@ AuthorUrl: https://www.youtube.com/@WolfgangHochleitner
 > Mozilla Firefox
 > ([[wef1vo-1_skriptum.pdf#page=7&selection=66,0,66,5&color=important|wef1vo-1_skriptum, p.1-6]])
 > Opera
+> ([[wef1vo-1_skriptum.pdf#page=8&selection=33,1,34,1&color=important|wef1vo-1_skriptum, p.1-7]])
+> ypertext Markup Language
+> ([[wef1vo-1_skriptum.pdf#page=8&selection=54,0,54,22&color=important|wef1vo-1_skriptum, p.1-7]])
+> HTML-Tags und Elemente
+> ([[wef1vo-1_skriptum.pdf#page=9&selection=11,0,11,16&color=important|wef1vo-1_skriptum, p.1-8]])
+> Case Sensitivity
+> ([[wef1vo-1_skriptum.pdf#page=9&selection=13,4,13,81&color=important|wef1vo-1_skriptum, p.1-8]])
+> Groß- und Kleinschreibung von HTML-Elementen kann prinzipiell variiert werden
+> ([[wef1vo-1_skriptum.pdf#page=9&selection=23,21,23,81&color=important|wef1vo-1_skriptum, p.1-8]])
+> lein geschriebene Variante in modernen Webseiten durchgesetz
+> ([[wef1vo-1_skriptum.pdf#page=9&selection=25,0,25,15&color=important|wef1vo-1_skriptum, p.1-8]])
+> Standalone-Tags
+> ([[wef1vo-1_skriptum.pdf#page=9&selection=31,0,33,21&color=important|wef1vo-1_skriptum, p.1-8]])
+> Standalone-Tags (alleinstehende Tags)
+> ([[wef1vo-1_skriptum.pdf#page=9&selection=58,0,58,15&color=important|wef1vo-1_skriptum, p.1-8]])
+> Verschachtelung
+> ([[wef1vo-1_skriptum.pdf#page=9&selection=63,0,63,15&color=important|wef1vo-1_skriptum, p.1-8]])
+> Verschachtelung
+> ([[wef1vo-1_skriptum.pdf#page=10&selection=95,0,95,24&color=important|wef1vo-1_skriptum, p.1-9]])
+> Whitespaces im Quellcode
+> ([[wef1vo-1_skriptum.pdf#page=10&selection=97,0,99,53&color=important|wef1vo-1_skriptum, p.1-9]])
+> Gestaltlose Zeichen wie Leerzeichen, Tabulatoren oder auch Zeilenumbrüche
+> ([[wef1vo-1_skriptum.pdf#page=10&selection=104,31,104,40&color=important|wef1vo-1_skriptum, p.1-9]])
+> ignoriert
+> ([[wef1vo-1_skriptum.pdf#page=11&selection=18,0,18,14|wef1vo-1_skriptum, p.1-10]])
+> HTML-Attribute
+> ([[wef1vo-1_skriptum.pdf#page=11&selection=26,6,26,26&color=important|wef1vo-1_skriptum, p.1-10]])
+> Zusatzinformationen 
+> ([[wef1vo-1_skriptum.pdf#page=11&selection=65,0,65,10&color=important|wef1vo-1_skriptum, p.1-10]])
+> Kommentare
+> ([[wef1vo-1_skriptum.pdf#page=12&selection=4,4,4,18&color=important|wef1vo-1_skriptum, p.1-11]])
+> HTML-Kommentar
+> ([[wef1vo-1_skriptum.pdf#page=12&selection=11,0,19,1&color=important|wef1vo-1_skriptum, p.1-11]])
+> <!−− <p>Dieser Absatz wird vom Browser nicht angezeigt.</p> −−>
+> ([[wef1vo-1_skriptum.pdf#page=13&selection=119,0,119,7&color=important|wef1vo-1_skriptum, p.1-12]])
+> DOCTYPE
+> ([[wef1vo-1_skriptum.pdf#page=13&selection=121,27,121,40&color=important|wef1vo-1_skriptum, p.1-12]])
+>  HTML-Version
+![[WS 2025_26 - Web Fundamentals_ Teil 1.pdf#page=30&rect=3,4,717,405&color=important|WS 2025_26 - Web Fundamentals_ Teil 1, p.30]]
+History :O
 
 
 # Presentation
