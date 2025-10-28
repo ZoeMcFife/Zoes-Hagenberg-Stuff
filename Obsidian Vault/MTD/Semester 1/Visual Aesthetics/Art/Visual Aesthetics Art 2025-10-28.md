@@ -1,4 +1,4 @@
-#visual_aesthetics #art #frog #sketch 
+#visual_aesthetics #art #frog #sketch #squirrel 
 # Frog Sketches
 
 ![[FrogSketch.png]]
@@ -23,3 +23,8 @@
 
 ???
 
+drawing **LIGHT** 
+
+squirrel 
+
+![[IMG_1146.jpg]]
