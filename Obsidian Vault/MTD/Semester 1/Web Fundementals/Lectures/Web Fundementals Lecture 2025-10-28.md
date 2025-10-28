@@ -53,6 +53,32 @@ AuthorUrl: https://www.youtube.com/@WolfgangHochleitner
 > Querver
 > ([[wef1vo-1_skriptum.pdf#page=3&selection=54,0,54,6&color=important|wef1vo-1_skriptum, p.1-2]])
 > weise 
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=36,0,36,4&color=important|wef1vo-1_skriptum, p.1-3]])
+> HTTP
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=40,0,41,1&color=important|wef1vo-1_skriptum, p.1-3]])
+> Hypertext Transfer Protokoll 
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=50,0,50,8&color=important|wef1vo-1_skriptum, p.1-3]])
+> Website 
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=50,12,50,20&color=important|wef1vo-1_skriptum, p.1-3]])
+> Webpage 
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=50,24,50,32&color=important|wef1vo-1_skriptum, p.1-3]])
+> Homepage
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=56,0,56,7&color=important|wef1vo-1_skriptum, p.1-3]])
+> Website
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=58,9,60,8&color=important|wef1vo-1_skriptum, p.1-3]])
+> erbund mehrerer, einzelner Webpages
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=64,2,65,36&color=important|wef1vo-1_skriptum, p.1-3]])
+> Homepage, die als Start- oder Einstiegsseite
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=72,38,72,58&color=important|wef1vo-1_skriptum, p.1-3]])
+> ommunikationsprozess
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=75,0,76,1&color=important|wef1vo-1_skriptum, p.1-3]])
+> Client 
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=78,1,80,1&color=important|wef1vo-1_skriptum, p.1-3]])
+> Server
+> ([[wef1vo-1_skriptum.pdf#page=4&selection=83,76,83,81&color=important|wef1vo-1_skriptum, p.1-3]])
+>  HTTP
+> ([[wef1vo-1_skriptum.pdf#page=5&selection=51,0,52,1&color=important|wef1vo-1_skriptum, p.1-4]])
+> Webbrowser,
 
 
 # Presentation
