@@ -87,6 +87,22 @@ AuthorUrl: https://www.youtube.com/@WolfgangHochleitner
 >  HTTP
 > ([[wef1vo-1_skriptum.pdf#page=5&selection=51,0,52,1&color=important|wef1vo-1_skriptum, p.1-4]])
 > Webbrowser,
+> ([[wef1vo-1_skriptum.pdf#page=5&selection=58,0,59,1&color=important|wef1vo-1_skriptum, p.1-4]])
+> Web-Client 
+> ([[wef1vo-1_skriptum.pdf#page=5&selection=62,4,62,46&color=important|wef1vo-1_skriptum, p.1-4]])
+> Visualisierungsoberfläche für HTML-Markup,
+> ([[wef1vo-1_skriptum.pdf#page=5&selection=67,23,68,31&color=important|wef1vo-1_skriptum, p.1-4]])
+> Es gibt derzeit fünf Browser, die im Bereich der Webentwicklung am Desktop eine Rolle spielen.
+> ([[wef1vo-1_skriptum.pdf#page=6&selection=6,0,6,13&color=important|wef1vo-1_skriptum, p.1-5]])
+> Google Chrome
+> ([[wef1vo-1_skriptum.pdf#page=6&selection=44,0,44,14&color=important|wef1vo-1_skriptum, p.1-5]])
+> Microsoft Edge
+> ([[wef1vo-1_skriptum.pdf#page=7&selection=11,0,11,12&color=important|wef1vo-1_skriptum, p.1-6]])
+> Apple Safari
+> ([[wef1vo-1_skriptum.pdf#page=7&selection=33,0,33,15&color=important|wef1vo-1_skriptum, p.1-6]])
+> Mozilla Firefox
+> ([[wef1vo-1_skriptum.pdf#page=7&selection=66,0,66,5&color=important|wef1vo-1_skriptum, p.1-6]])
+> Opera
 
 
 # Presentation
