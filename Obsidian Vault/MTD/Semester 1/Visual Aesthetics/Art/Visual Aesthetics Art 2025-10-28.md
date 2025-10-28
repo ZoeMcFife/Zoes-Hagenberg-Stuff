@@ -8,3 +8,7 @@
 *i tried*
 
 ![[GangsterFrog.png]]
+
+# Shapes
+
+![[Base Shapes.png]]
