@@ -7,7 +7,15 @@ Author: Wolfgang Hochleitner
 Thumbnail: https://i.ytimg.com/vi/WwHNHSpqVPo/mqdefault.jpg
 AuthorUrl: https://www.youtube.com/@WolfgangHochleitner
 ```
+```vid
+https://www.youtube.com/watch?v=h3w7WeQNmvU
+Title: WEB1VO Teil 1 Fortsetzung
+Author: Wolfgang Hochleitner
+Thumbnail: https://i.ytimg.com/vi/h3w7WeQNmvU/mqdefault.jpg
+AuthorUrl: https://www.youtube.com/@WolfgangHochleitner
+```
 
+> *his laptop crashed lol*
 # Skriptum
 
 ![[wef1vo-1_skriptum.pdf]]
