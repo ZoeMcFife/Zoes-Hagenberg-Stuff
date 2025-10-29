@@ -8,7 +8,7 @@
 1. Shuffle all **Event Cards** and place them face down on the board.  
 2. Shuffle all **Item Cards** and place them in a stack.  
 3. Each player **chooses a Class Card**.  
-4. Each player draws **2 random Item Cards** from the stack.  
+4. Each player draws **3 random Item Cards** from the stack.  
 5. Players start at the **START node**.
 
 ---
@@ -92,7 +92,7 @@ Some events will instruct you to **pull additional Item Cards** as rewards.
 ### Item Attributes
 - **Weight** → affects speed and movement.  
 - **Value** → used to determine victory.  
-- **Special Traits** → some can target players or enemies.
+- **Special Traits** → some can target players or enemies. (Throwable items can only be thrown at players in the same field)
 
 ### Losing Items
 - If a player **loses items** during an event:  
@@ -135,5 +135,3 @@ Some events will instruct you to **pull additional Item Cards** as rewards.
 6. The player with the **most valuable hoard** is crowned **victor**!
 
 ---
-
-*"Fortune favors the bold, Captain — and those who roll high."*
