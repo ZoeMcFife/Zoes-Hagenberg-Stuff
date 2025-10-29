@@ -12,6 +12,8 @@ views:
       - file.embeds
       - file.ext
     sort:
+      - property: file.tags
+        direction: DESC
       - property: file.name
         direction: DESC
       - property: file.ctime
@@ -23,4 +25,4 @@ views:
     columnSize:
       file.ctime: 152
       file.mtime: 137
-      file.tags: 222
+      file.tags: 862
