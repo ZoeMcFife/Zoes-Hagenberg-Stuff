@@ -84,3 +84,5 @@ Adaptive vs Responsive Design
 Adaptive : Templates for layout types
 
 Responsive: stufenlos, reflows dynamically
+
+![[VL3-Layout.pdf]]

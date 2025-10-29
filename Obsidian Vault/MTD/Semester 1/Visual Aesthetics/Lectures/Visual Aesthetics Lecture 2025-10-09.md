@@ -126,3 +126,5 @@ Visuesll komm nur wenn gleicher kultur code
 Organisiert vis elemente automatisch
 
 Bedeutung durch kontext
+
+![[VIA-VL2-Gestaltpsychologie.pdf]]

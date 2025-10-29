@@ -165,6 +165,7 @@ Gute Typografie führt das Auge mühelos durch den Text
 
 ![[a74d8708eb705435fc8cd21c079274f4.jpg]]
 
+![[VIA4_Typografie.pdf]]
 
 ---
 # Pirringer Skript 
