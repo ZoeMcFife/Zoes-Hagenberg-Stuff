@@ -16,3 +16,6 @@ woah
 
 how did i not know
 
+![[Pasted image 20251029133149.png]]
+
+![[Pasted image 20251029133705.png]]
