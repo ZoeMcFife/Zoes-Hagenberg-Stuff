@@ -1,4 +1,4 @@
-\#2d\_design #logo #sketch
+#2d_design #logo #sketch
 
 
 
