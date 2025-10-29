@@ -39,3 +39,5 @@ Vereinbaren --> wie oft!!
 Grenzen definieren!!!!!!
 
 #2d_design #CICD  
+
+![[2025_2DD_VL_02_Workflow_Grundlagen_Teil_1.pdf]]
