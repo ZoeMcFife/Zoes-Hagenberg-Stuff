@@ -50,8 +50,8 @@ Turn order is determined by **Speed** — fastest class starts first:
 ## 😈 The Devil
 
 - After **Turn 3**, the **Devil** enters **Layer 7**.  
-- After **another 3 turns**, the Devil reaches **Layer 6**.  
-- Then **2 turns later**, the Devil reaches **Layer 5**.  
+- After **another 2 turns**, the Devil reaches **Layer 6**.  
+- Then **1 turns later**, the Devil reaches **Layer 5**.  
 - Then **1 turn later**, the Devil reaches **Layer 4**.  
 - The Devil **moves up one layer every turn** thereafter.  
 - The Devil **always moves after all players** have taken their turns.
@@ -77,6 +77,7 @@ Turn order is determined by **Speed** — fastest class starts first:
   - 🧟 Fight an **Enemy** (Attack roll)
   - 🏃 Walk more steps (Speed roll)
   - 💰 Gain items (pull Item Card from stack)
+- While standing on an Event card, you count to the lower field. Once the card has been defeated, you now count to the upper field.
 
 Some events will instruct you to **pull additional Item Cards** as rewards.
 
@@ -113,6 +114,8 @@ Some events will instruct you to **pull additional Item Cards** as rewards.
 - During a turn, a player can **walk up until the next Event Card**.  
 - Only **one action per turn** (excluding walking).  
   - Example: Thief can only **steal once per turn**.  
+- Minimum Movement is 1 per dice! regardless of weight.
+	- e.g Gobling has minimum speed of 4
 
 ---
 

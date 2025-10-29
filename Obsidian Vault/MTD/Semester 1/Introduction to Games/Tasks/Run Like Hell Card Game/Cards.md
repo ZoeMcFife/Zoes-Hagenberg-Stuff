@@ -38,10 +38,10 @@
 | Blahaj             | 2      | 10    |                                   | Can be deployed in battle to distract enemy and flee. Lose no card during battle but discard Blahaj. |
 | Fancy Carpet       | 2      | 10    |                                   |                                                                                                      |
 | Potion of Speed    | 2      | 10    | Speedy.                           | Allows you to walk 10 extra steps when used.                                                         |
-| Potion of Rock     | 4      | 8     | Heavy Rock Potion.                | Can be thrown at another player to slow them down during their next turn (-6 Speed).                 |
+| Potion of Rock     | 2      | 8     | Heavy Rock Potion.                | Can be thrown at another player to slow them down during their next turn (-6 Speed).                 |
 | Climbing Equipment | 2      | 7     | Slightly worn climbing equipment. | Lets you skip Mountains and Pits.                                                                    |
 | Steel Pickaxe      | 3      | 6     |                                   | Allows you to skip a mountain. Discard after use.                                                    |
 | Steel Sword        | 3      | 5     |                                   | Does 6 extra damage when used. Discard after use.                                                    |
 | Gold Nugget        | 1      | 5     | A simple golden nugget.           | None                                                                                                 |
-| Big Rock           | 6      | 1     | Big Rock.                         | Too heavy to throw.                                                                                  |
-| Rock               | 3      | 1     | It’s a rock.                      | Can be thrown at a player. Slows them down by 1 step per turn.                                       |
+| Big Rock           | 3      | 1     | Big Rock.                         | Too heavy to throw.                                                                                  |
+| Rock               | 2      | 1     | It’s a rock.                      | Can be thrown at a player. Slows them down by 1 step per turn.                                       |
