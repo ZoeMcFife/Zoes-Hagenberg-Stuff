@@ -90,3 +90,113 @@ $$
 - Physics can result in chaos
 - physics does not per se guarantee fun
 
+### Collision Detection
+
+- determines when objects in the game world get into contanct
+- therefore, each logical object is represented by one or more simple shapes, called colliders that may or may not intersect
+- Colliders
+	- data structure independent from an object’s represenation in game
+	- simplicity is the key
+	- are represented with a shape and a transform
+	- the shape describes the general form of the collider
+	- the transform positions and orients the shape in 3d space
+
+### Collision and Physics World
+
+- data structure with all colliders
+- holding the **“collision world”** independenly increases performance
+	- only collidable objects are stored
+	- colliders do not need to be indexed
+- the same concept applies for the **”physics world”**, which holds rigid bodies
+
+### Convex and Concave Shapes
+
+- **Convex shapes**: no ray starting within the shape will pass the surface more than once
+- **Concave shapes:** there exist rays within the shape that pass the surface multiple times
+- **Convex hull:** smallest convex shape around a concave object
+
+### Intersections
+
+- intersections drive collisions and physics
+- **set-theory**: the subset of members existing in both sets
+- **geometrical**: the set of all (infinite) points that lie within both shapes
+- points vs sphere
+- sphere vs sphere
+
+- **Collision Primitives**
+	- spheres
+	- capsule
+	- box
+	- k-polytypes
+	- convex volumes
+	- polytype
+- **Compound**
+	- collection of collision primitives
+
+- **Separating axis theorem**
+	- calculation of potential overlaps of collider of projections on each 3d axis
+- if there is an overlap ….
+
+- **Minkowski difference** 
+	- if the subtraction of all points in object A from all points in object B contains the in the diagram origin, they intersect
+- can detect concave collisions
+- precision is depending on the number of all included points
+
+- collider hierachies
+	- replace complex combinations with simple primites and only calculate details when the overarching primitives intersect
+
+- collision queries
+	- Ray Cast
+	- Shape Cast
+	- Phantom: Shape cast with zero distance
+- Collision masks / layers
+- collision callbacks
+	- invoke certain functions when certain collisions are present
+
+### Rigid Body Dynamics
+
+- Classical rigid body dynamics: newtonian Mechanics
+	- objects large enough to omit quantum effects
+	- objects slow enough to omit relativistic effects
+- Constraints collisions
+	- in modern engines, the collision world and physics world are identical
+- at each time step
+
+- Metric units
+- Physics distinguishes between
+	- linear dynamics
+	- angular dynamics
+- center of mass
+- force
+
+### Rigid Body Angular Dynamics
+
+- rotation around an axis
+- angular speed constant rotation
+- angular acceleration 
+- moment of intertia: force needed to change the angular speed
+	- mass near the axis: small moment of intertia
+	- mass away from the axis
+	- torque
+
+### Constraints
+
+- point constraints
+- stiff spring
+- hinge constraint
+- prismatic constraint
+- constraint chains
+- rag doll
+### Design Impacts
+
+- **predictability**: animations and clips are more predictable
+- **Control**: including physics makes the game less controllable
+- **Unexpectedness**
+
+### Engineering Impacts
+
+- **UI**: how to control objects in the physical environment
+- **AI**: actions and paths must be dynamic, as objects may block it anytime
+- **Graphics**: glitches, objects getting stuck in each other, etc
+- **Multiplayer**: where is the physics simulated (client vs server)
+- **Debugging**: record / playback may not work properly
