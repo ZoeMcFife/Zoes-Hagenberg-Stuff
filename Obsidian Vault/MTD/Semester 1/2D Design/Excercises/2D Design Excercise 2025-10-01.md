@@ -1,6 +1,6 @@
 #2d_design #logo #sketch
 
+![[2025_2DD_UE_01_Illustrator_Basics.pdf]]
 
-
-!\[\[Pasted image 20251022215525.png]]!\[\[Pasted image 20251022215532.png]]
-
+![[Übung1_Bee.png]]
+![[Untitled-1-01.png]]
