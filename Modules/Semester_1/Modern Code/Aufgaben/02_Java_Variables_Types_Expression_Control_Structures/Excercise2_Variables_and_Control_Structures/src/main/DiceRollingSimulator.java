@@ -10,12 +10,7 @@ public class DiceRollingSimulator
 
     public boolean isInputValid(int targetRoll)
     {
-        if (targetRoll >= 1 && targetRoll <= 6)
-        {
-            return true;
-        }
-
-        return false;
+        return targetRoll >= 1 && targetRoll <= 6;
     }
 
     public int simulateRollsUntilTarget(int targetRoll)
