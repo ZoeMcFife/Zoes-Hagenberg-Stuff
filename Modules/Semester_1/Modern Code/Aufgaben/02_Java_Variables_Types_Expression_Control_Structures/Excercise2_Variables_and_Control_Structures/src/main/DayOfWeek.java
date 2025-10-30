@@ -4,36 +4,23 @@ public class DayOfWeek
 {
     public boolean isDayValid(int day)
     {
-        if (day > 7 || day < 1)
-        {
-            return false;
-        }
-
-        return true;
+        return day <= 7 && day >= 1;
     }
 
     public String getWeekDayName(int day)
     {
         // map days to day names using a switch statement
-        switch (day)
-        {
-            case 1:
-                return "Monday";
-            case  2:
-                return "Tuesday";
-            case 3:
-                return "Wednesday";
-            case 4:
-                return "Thursday";
-            case  5:
-                return "Friday";
-            case  6:
-                return "Saturday";
-            case  7:
-                return "Sunday";
-        }
+        return switch (day) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            case 7 -> "Sunday";
+            default -> "Invalid";
+        };
 
-        return "Invalid";
     }
 
     public String getDayType(int day)
