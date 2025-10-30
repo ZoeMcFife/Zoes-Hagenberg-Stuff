@@ -87,8 +87,133 @@ Blocks, Decisions, Projectiles, Enemies, …
 	- boss characters
 
 
+## Puzzle Obstacles
 
+#child_of_light
+
+- Lock and Key(s)
+
+## Variety is key!
+
+#celeste
+
+## A Level is an obstacle course.
+
+Players must use thei skills
+
+## Fundamental Skills
+
+#sonic_the_hedgehog
+
+> *Skills are the player’s learned abilities to percieve, interpret, and act within a game’s rule system.*
+
+Skill Trees
+
+### Introducing new Skills
+
+- **Safe introduction** (teaching)
+- **Practice** (application)
+- **Test** (mastery)
+
+- should be distributed equally throughout the game
+
+
+### Skill Gating
+
+- Hide new ability behind a skill gate
+- progress in the game can be tied to a specific skill of the player or character
+- the player should not become frustrated, but rather understand *“im not there yet — but i can get there.”*
+
+### Combining Skills
+
+For Example:
+
+- Jump
+- Climb
+- Jump Climb → for climbing up higher ledges 
+- or run jump
+- or even run jump climb
+
+## Motivation
+
+> intrinsic { Motivation } extrinsic
+
+### Intrinsic
+
+- satisfaction in activity
+- personal enjoyment
+### Extrinsic
+
+- external goals
+- rewards
+- story
+- collectibles
+- upgrades
+
+#the_cake_is_a_lie
+
+# Player Experience
+
+- Tempo and rhythm of a level
+- balance between:
+	- tension and relief
+	- Challenge and reward
+
+Low Tension — High Tension — Relief + Reward
+
+A wave of low and high tension
+
+Introducing new mechanics and processing
+
+## Difficulty Curve
+
+- Exponential curve → Balanced progression
+	- steady but understandable inrcease in difficulty
+
+## Flow State
+
+man wird gechallanged aber es ist nicht zu schwer
+
+nicht langweilig und nicht zu frustierend 
+
+
+> **FIND THE RIGHT BALANCE**
 
 # Spatial Composition and  Building Vocabulary
+
+## Linear
+### Corridor
+
+- Linear
+- for example #limbo 
+
+### L-Shaped Corridor
+
+- #playable_teaser 
+- Loopback
+
+## Semi Linear
+
+### Branching Levels
+
+- chain of paths
+- #dishonored
+
+### Hub and Spoke
+
+- looks like a circle connected to other circles
+- hub world basically
+- #ori_and_the_will_of_the_wisps
+- #league_of_legends ew 
+
+### Arena / Point of Interest
+
+- #league_of_legends #new_super_mario_bros_wii 
+
+## Non Linear
+### Open World
+
+- #starbound STARBOUND MENTION WOOOO
+- #skyrim
 
 # How to make a level
