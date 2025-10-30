@@ -179,7 +179,7 @@ nicht langweilig und nicht zu frustierend
 
 > **FIND THE RIGHT BALANCE**
 
-# Spatial Composition and  Building Vocabulary
+# Spatial Composition 
 
 ## Linear
 ### Corridor
@@ -216,4 +216,80 @@ nicht langweilig und nicht zu frustierend
 - #starbound STARBOUND MENTION WOOOO
 - #skyrim
 
+# Building Vocabulary
+
+Png of a Door.
+## Affordances
+
+- Perceived call to action of an object or space
+- an object tells the player what can be done with it
+	- through its form, material, context or experience
+
+## Readability
+
+**Readability means that the player intuitively understands**
+
+- The game establishes a visual vocabulary
+- if you don’t build or break this vocabulary → confusion
+
+### Readability Tips
+
+- Consistency First
+- Contrast
+	- Interactive objects must be clearly distinguishable from decor
+- Hierarchy
+	- visually prioritze important affordances
+- Reinforce through feedback
+	- when the player acts correctly, confirm it
+- Seed recognition early
+	- show central forms early so that it can be recognized
 # How to make a level
+
+#the_level_design_book
+
+## The Level Design Book
+good book
+
+## 1. Ideation & Pre-Production
+
+### Step 1: Plan the big ideas and overall experience design
+
+#### Ideation
+
+- Player role and identity
+- player experience
+- player goal and motivation
+- core mechanics
+- setting and mood
+
+#### do i need a preproduction
+
+→ depends on scope and goals
+
+**Group and project size**
+→ the larger the project, the more and more precise planning is required
+
+**What do i want to make and how? Genre? mode of play**
+
+→ multiplayer: needs longer blockout phase, testing balance,
+→ single player / narrative: focus on pacing and storytelling → shorter blockout phase
+
+## 2. Layouting
+
+**Bubble Diagram**
+
+**Floor Plan Drawing**
+
+**Top Down Annotated Map**
+
+**Isometric Layouting**
+
+**Annotated Map**
+
+**Isometric Layout**
+
+#half_life_2 #portal_2
+
+**Layout Sketch 2D Platformer**
+
+**No Layout**
