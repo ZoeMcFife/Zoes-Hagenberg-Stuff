@@ -44,9 +44,47 @@ Level Design = Design of Game Spaces + Experiences
 
 # Level Elements
 
-Player → Goal
+Player → Goal → BORING
 
 ![[ralsei_fat_blunt.png]]
+
+
+Player → **Obstacles** → Goal → ALSO BORING
+
+Player → **CHALLENGES** → Goal
+
+Blocks, Decisions, Projectiles, Enemies, …
+
+## Road Blocks
+
+- **Slows down** without stopping
+- forces to **interact with the level**
+
+- Environmental obstacles
+	- terrain
+	- weather
+	- mud
+	- …
+- platforming obstacles
+	- platforms
+	- climbing walls
+	- ladders
+	- …
+
+## Harmful Objects
+
+- Harms players
+- hinders progress
+
+- **Traps** (Part of envirnoment)
+	- Spikes
+	- Abysses
+	- Blades
+	- **Should be announced and clearly visible**
+- **Enemies** (non-player characters)
+	- Hostile creatures
+	- enemy soldiers
+	- boss characters
 
 
 
