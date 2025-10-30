@@ -46,7 +46,7 @@ Level Design = Design of Game Spaces + Experiences
 
 Player → Goal
 
-
+![[ralsei_fat_blunt.png]]
 
 
 
