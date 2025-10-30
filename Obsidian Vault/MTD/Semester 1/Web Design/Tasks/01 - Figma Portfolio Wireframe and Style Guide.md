@@ -25,6 +25,16 @@ Ifynth said stuff about how Navbars are getting out of style. I agree, they’re
 
 idk it seems a bit empty with just two menu points?? 
 
+## Project Detail Page
+
+![[Pasted image 20251030233614.png]]
+
+## Markus Feedback
+
+![[Pasted image 20251030233633.png]]
+![[Pasted image 20251030233640.png]]
+![[Pasted image 20251030233649.png]]
+![[Pasted image 20251030233656.png]]
 # Styleguide
 
 # Project Detail Page
