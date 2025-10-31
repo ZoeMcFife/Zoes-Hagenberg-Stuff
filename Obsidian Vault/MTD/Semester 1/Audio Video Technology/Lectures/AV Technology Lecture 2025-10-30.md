@@ -101,3 +101,4 @@ dBu → 0.775V und dBV → 1V > (> ([[MTD.ba_AVT1_VL04.pdf#page=5&selection=66,0
 > broadcast standard: -23 LUFS
 > ([[MTD.ba_AVT1_VL04.pdf#page=8&selection=48,0,48,21&color=note|MTD.ba_AVT1_VL04, p.8]])
 > Apple Music: -16 LUFS
+
