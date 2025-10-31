@@ -39,7 +39,17 @@ Mila jumps inside a brunnen and dies
 –> afterlife
 
 
+![[IMG_1322.jpg]]
 
+![[IMG_1324.jpg]]
+
+![[IMG_1323.jpg]]
+
+![[IMG_1325.jpg]]
+
+![[IMG_1326.jpg]]
+
+![[IMG_1327.jpg]]
 
 
 
