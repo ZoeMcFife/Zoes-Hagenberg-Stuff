@@ -36,5 +36,8 @@ idk it seems a bit empty with just two menu points??
 ![[Pasted image 20251030233649.png]]
 ![[Pasted image 20251030233656.png]]
 # Styleguide
+![[Pasted image 20251101194907.png]]
 
 # Project Detail Page
+
+![[Pasted image 20251101194850.png]]
