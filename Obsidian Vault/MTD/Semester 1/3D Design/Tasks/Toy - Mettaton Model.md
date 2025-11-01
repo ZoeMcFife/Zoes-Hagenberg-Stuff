@@ -28,3 +28,19 @@
 ![[product_UT_mettaton_fig_designview.webp]]
 
 ![[product_UT_mettaton_fig_back.webp]]
+
+# Modelling
+
+![[Pasted image 20251101143949.png]]
+![[Pasted image 20251101165642.png]]
+![[Pasted image 20251101165645.png]]
+
+# Render
+
+![[4kBackshot.png]]
+
+![[4kRender2.png]]
+
+![[8kRender.png]]
+
+![[Protokoll.pdf]]
