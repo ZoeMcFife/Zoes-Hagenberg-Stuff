@@ -1,4 +1,4 @@
-#introduction_to_games #run_like_hell #card_game #rules
+#introduction_to_games #run_like_hell #card_game #rules #through_the_rings_of_hell
 
 # ⚔️ Game Rules
 
