@@ -1,5 +1,6 @@
 #game_engine_concepts #game_loops #physics
 
+![[MTD_GEC_03_Game_Loop_and_Physics.pdf]]
 # Game Loop
 
 - the game loop is the central component of a game engine
