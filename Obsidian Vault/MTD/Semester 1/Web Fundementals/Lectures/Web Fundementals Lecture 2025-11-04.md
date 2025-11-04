@@ -11,7 +11,7 @@ AuthorUrl: https://www.youtube.com/@WolfgangHochleitner
 
 \<hgroup>
 
-neat tag! 
+neat tag!
 
 # Skript
 
