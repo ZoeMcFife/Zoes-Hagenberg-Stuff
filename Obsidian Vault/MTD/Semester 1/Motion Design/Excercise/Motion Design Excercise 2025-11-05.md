@@ -10,3 +10,19 @@ Solids are basically colors
 
 professor recommends naming scheme like the upper image :LiArrowBigUp:
 
+
+
+![[Pasted image 20251105151712.png]]
+
+keyframe animation
+
+F9 → Easing
+
+![[Pasted image 20251105152010.png]]
+![[Pasted image 20251105152402.png]]
+
+moving position to the right
+
+so it like wooshes away 
+
+woosh 
