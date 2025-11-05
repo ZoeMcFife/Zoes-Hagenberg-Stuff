@@ -26,3 +26,16 @@ moving position to the right
 so it like wooshes away 
 
 woosh 
+
+
+Short Cuts → 
+A → anchor
+P → position
+S → Scale
+R → Rotation
+O → opacity
+
+
+![[Pasted image 20251105153502.png]]
+
+another layer
