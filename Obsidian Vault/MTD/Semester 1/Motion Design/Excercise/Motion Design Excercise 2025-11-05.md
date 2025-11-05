@@ -39,3 +39,8 @@ O → opacity
 ![[Pasted image 20251105153502.png]]
 
 another layer
+
+![[Pasted image 20251105154138.png]]
+
+3 Solid Layers with fill effect with delay and different key frame timings to make a sorta neat effect
+
