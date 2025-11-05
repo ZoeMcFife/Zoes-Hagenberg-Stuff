@@ -47,37 +47,6 @@ pirringer project flaschbacks
 
 → Teams / ELearning für Daten
 
-5.11
-1 Vorlesung → techinische gundlagen
-1 Übungsblock → Interface, workflow, Import / Einstellung, Composition, Layer
-
-
-
-11.11.
-2 vorlesung
-technische Grundlagen 2: farbe, farbraum, animations prinzipien
-
-2 übungsblock Abgabe 1
-Pfad- & Shapeanimation, precomps, keyframeanimation
-
-2.12.
-3 vorlesung
-communications & visuelles story telling
-
-3 übungsblock
-morphin, text animation, style effekte anwenden
-
-17.12.
-4 vorlesung
-typo in motion, art of transitions
-
-4 übungsblock → abgabe 2
-szene mit parallax effekt, timing, expressions
-
-14.1
-5 vrlesung
-
-5 übungsblock
 
 sie hat zu schnell weggemacht
 
@@ -97,3 +66,121 @@ sie hat zu schnell weggemacht
 Moodle und Teams
 
 Fragen über email
+
+
+# After Effects
+
+- Ebenenbasierte Compositing & Animationssoftware
+- jeder PArameter lässt sich mit Keyframes animieren
+- zentrales Element ist die Timeline, in der Digitaler Content wie Video, Foto, usw übereinander gelegt, überblendet, animiert oder mit Effekt belegt werden kann
+
+# Warum verwenden wir After Effects?
+idk fuck adobe (fuck me too)
+
+- **bewährte Software** für Motion Graphics
+- **tolle Anbindung** an Photoshop, Illustrator und Premiere
+- gute **Rendering Performance** (GPU Acceleration)
+- große Auswahl an **Import / Export** **Formaten**
+- zahlreich freie / kostenpflichtige **Plugins** und **Scripts**
+- riesige **Community / Foren** und **Tutorials** (Youtube, etc)
+
+**Tutorials**
+- schoolofmotion.com
+- adobe.com
+- cgi.tutsplus.com
+- videocopilot.net
+
+# Evenbasierter Workflow
+
+uhh
+bild von der After Effects UI 
+
+- Ebenen
+- Timeline
+- Effect-Panel
+- Viewport
+- Toolbar
+- Project Panel
+
+mein laptop wird sicher wieder sterben bei after effects oh noooo
+
+Walter White on a Stripper Pole 
+
+# Technische Begriffe
+
+- Resolution
+- Aspect Ratio
+- Frame Rate
+
+## Resolution
+
+- Resolution = Project Auflösung
+- wird in vertikalen und horizontalen Pixel angegeben
+
+### Pixel
+
+- Kleinste darstellbare Einheit welche sich aus drei Farben RGB zusammenstellt. Die Farbe der wird durch die Mischung der 3 Farbwerte definiert.
+- (Light Leak → Schwarz ist nicht immer wirklich Schwarz bei zb LCD bildschirmen → alfred frage)
+
+- sind die Pixel klein genug kann das Auge die R, G, B Bestandteile der Pixels nicht mehr erkennen und die Mischung aus Rot, Grün, Blau ergibt die Finale Färbung des Pixels
+
+### Farbkanal - RGB
+
+- Bild in die Kanäle Rot, Grün, Blau aufgesplittet
+- Blue Spongebob
+
+### Alphakanal
+
+- Einige Bildformate können zusätzlich zu den 3 Farbkanälen noch einen Alphakanal abspeichern. → Transparenz
+
+- Premultiplied Alpha
+- Straight Apha → besser für bearbeitung!
+- Gay Alpha
+
+- Andere Interpretation uhhh 
+
+## Vektor vs Pixel-Grafik
+
+- Pixel besteht aus Pixeln
+- Vektor → Mathemathische Kurven und Punkte 
+
+### Aufbau eines Bildes
+
+- **Rasterization Button** in After Effects → für Vektor Grafiken
+
+### Datei formate
+
+- unkomprimiert
+- verlustlos komprimiert
+- verlustbehaftet kompromiert
+
+→ Tabelle von Datei formaten
+
+## Aspect Ratio
+
+- Seitenverhältnis von Breite zu Höhe
+- man unterscheidet zwischen Geräte, Projekt Format und Pixel Aspect Ratio
+
+→ es gibt viele ASpect Ratios
+
+- Letterboxing → aspect ratio anders vom screen aspect Ratio
+
+### Pixel Aspect Ratio
+
+- Square Pixel
+- Non-Square Pixel
+
+## Frame Rate
+
+- Europa → 25 / 50 FPS
+- america → 30 / 60 FPS
+
+- Verschiedene Anwendungen
+	- Klassische Animation : 12 FPS
+	- Kino = 24 FPS
+	- Kinfo HFR = 48 FPs
+	- VR = 90 FPS *(lies)*
+
+Animation → 24 FPS better for like uhh it has a lot of dividers so like staying on a frame for 3 frames is better or smth 
+
+**Domi are you understanding everything? just lemme know??**
