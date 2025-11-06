@@ -17,7 +17,7 @@ core mechanics
 **Jump**
 Cast spell
 **Dash**
-**Duck**
+~~**Duck**~~
 **Regenschirm Big Staff,**  ← Weapon,
 
 evil tentacles ← Enemies and more,
