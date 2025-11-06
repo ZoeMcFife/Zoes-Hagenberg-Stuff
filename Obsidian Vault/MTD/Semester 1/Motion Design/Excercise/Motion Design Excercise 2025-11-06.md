@@ -27,3 +27,12 @@ can be simplified
 double click → grey
 
 ALT + CTRL + SCHIFT to transform evenly 
+
+![[Pasted image 20251106141232.png]]
+
+keyframe animation of icons popping up :3
+
+![[Pasted image 20251106143050.png]]
+
+more animation
+
