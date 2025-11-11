@@ -158,3 +158,6 @@
 			- open hand
 
  > What are the users task?
+ 
+ In Vr → all of these
+ Keyboard / Mouse Games → less atomic tasks
