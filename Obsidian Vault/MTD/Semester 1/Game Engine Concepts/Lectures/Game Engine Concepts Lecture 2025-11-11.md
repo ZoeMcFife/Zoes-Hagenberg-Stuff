@@ -161,3 +161,169 @@
  
  In Vr → all of these
  Keyboard / Mouse Games → less atomic tasks
+ 
+# Game Engine Graphics & Rendering
+
+## Relavance
+
+- Foundation for graphical digital media and print media
+- Foundation for special effects and computer-generated movies
+- foundation for computer games
+
+## Visual Perception
+
+- Color → light waves
+- #color 
+## Graphics Pipeline
+
+- Application → Geometry → Rasterization → Screen
+
+- Application
+	- Math
+- Geometry
+	- Geometry
+	- Lighting
+	- Transformations
+	- etc
+- Rasterization
+	- generating 2D image from geometry
+- Screen
+	- final display
+
+## Geometric Primitives
+
+- Triangle Meshes
+- vertices, edges, faces, polygons, surfaces
+
+
+- Vertex is a point in 3D space
+- Triangles consist of
+	- 3 non collinear vertices interconned
+	- 1 mormal vector
+- optimization
+- etc
+
+- Right hand rule
+- relationship between vertex order and normal vector is convention
+- polygons can be stored in different ways
+
+## Coordinate Systems
+
+- 2D
+	- Screen Coords
+	- Viewport
+- 3D
+	- World
+	- Object
+	- hierarchical
+
+
+- Left / right handed
+- Geometrical transformation
+
+## Simple 2D Transformation
+
+- Matrix for scaling
+
+## Projections
+
+- same mechanisms and rules like cameras 
+- Virtual Camera is in World Space
+
+## Frustrum
+
+- Frustrum describes a volume, which content is projected for rendering
+- perspective projection
+- parallel projection
+
+## Perspective Projection
+
+- Aspect Ratio
+- Field of View
+
+## Level of Detail
+
+- Increase rendering performance by reducing the amounts of drawn triangles
+- same 3d object with different resolutions
+- depending on distance
+
+## Scene Graph
+
+- Abstraction layer for graphics programming
+- 3 key areays
+	- object representation
+	- interactivity
+	- architecture
+- Directed Acyclic Graph
+- for the concepts of nested transformations
+- Structure
+	- internal nodes are used for hierarchi building
+	- leaf nodes contain geometry
+
+- Hierarchy
+- Culling
+	- removing everything from a scene that does not contribute to the final iamge
+- Bounding volume hierarcy
+- file i/o
+
+
+- Traversal of the scene graph
+	- 3 phases
+		- Update or application
+		- Cull
+		- Draw or Render
+
+## Culling Techniques
+
+- Frustrum Culling
+- Backface Culling
+- Occlusion Culling
+- Contribution Culling
+
+## Light and Light Sources
+
+- Ambiant Light
+- Directional Light
+- Point Light
+- Spot Light
+
+## Illumination and Reflectance
+
+- Illumination
+	- Light Sources
+	- Surface Properties
+
+- Reflectance
+	- ambient
+	- diffuse
+	- specular
+	- phong #phong 
+
+## Shading
+
+- Flat or constant shading 
+	- most simple and fast shading
+	- triangle is assigned is a single color value
+	- etc
+
+- Gouraud Shading
+	- calcuates the individual colros of vertices
+- Phong Shading
+	- normal vectors are interpolated
+	- more realistic than gouraoud
+	- requires more computation
+
+## Textures
+
+- adds surface details to a 3d model
+- 2d images are mapped onto a 3d geometrical object
+
+## Z-Buffer or Depth Bugger
+
+- Algorithm
+	- for eahc polygon in the frustrum
+		- determin the pixels to be drawn
+		- for each pixel to be drawn
+			- compute the depth value z at the x, y position
+			- if z(x,y) < current value (x,y) then current value (x,y) := z(x,y)
+- Render image
