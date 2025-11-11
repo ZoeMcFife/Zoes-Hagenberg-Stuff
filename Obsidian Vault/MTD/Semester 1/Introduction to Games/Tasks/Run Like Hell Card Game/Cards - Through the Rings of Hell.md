@@ -45,3 +45,4 @@
 | Gold Nugget        | 1      | 5     | A simple golden nugget.           | None                                                                                                 |
 | Big Rock           | 3      | 1     | Big Rock.                         | Too heavy to throw.                                                                                  |
 | Rock               | 2      | 1     | It’s a rock.                      | Can be thrown at a player. Slows them down by 1 step per turn.                                       |
+|                    |        |       |                                   |                                                                                                      |
