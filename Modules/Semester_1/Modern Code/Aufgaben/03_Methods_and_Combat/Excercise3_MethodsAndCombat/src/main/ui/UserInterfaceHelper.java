@@ -122,20 +122,20 @@ public class UserInterfaceHelper
         }
     }
 
-    private static void waitForEnterKey()
+    public static void waitForEnterKey()
     {
         IO.println("Press Enter to continue...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
 
-    private static void delay(double seconds)
+    public static void delay(double seconds)
     {
         try
         {
             Thread.sleep((int) (seconds * 1000));
         }
-        catch (InterruptedException e) 
+        catch (InterruptedException e)
         {
             Thread.currentThread().interrupt();
         }

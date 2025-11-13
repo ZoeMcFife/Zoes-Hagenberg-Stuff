@@ -7,15 +7,21 @@ public class CharacterCreator
 {
     private static final int AVAILABLE_SKILL_POINTS = 10;
 
+    private Player playerCharacter;
+
     public void startCharacterCreation()
     {
         boolean isPlayerSatisfied = false;
 
         do
         {
+            UserInterfaceHelper.clearScreen();
+
             UserInterfaceHelper.printHeading("Character Creator");
 
-            String name = UserInterfaceHelper.getPlayerStringInput("Enter character name: ");
+            String name = UserInterfaceHelper.getPlayerStringInput("Enter character name");
+
+            UserInterfaceHelper.delay(1);
 
             int strength = GameCharacter.MIN_STAT_VALUE;
             int dexterity = GameCharacter.MIN_STAT_VALUE;
@@ -65,25 +71,31 @@ public class CharacterCreator
                 }
 
                 UserInterfaceHelper.clearScreen();
+
             }
 
-            Player player = new Player(name, strength, dexterity, intelligence);
+            UserInterfaceHelper.delay(1);
 
-            UserInterfaceHelper.printCharacterInformation(player);
+            playerCharacter = new Player(name, strength, dexterity, intelligence);
 
-            isPlayerSatisfied = UserInterfaceHelper.getYesNoInput("Are you satisfied with your creation? (y/n): ");
+            UserInterfaceHelper.printCharacterInformation(playerCharacter);
+
+            isPlayerSatisfied = UserInterfaceHelper.getYesNoInput("\nAre you satisfied with your creation?");
 
             if (!isPlayerSatisfied)
             {
                 UserInterfaceHelper.clearScreen();
 
                 IO.println("Your creation has been discarded.");
+                UserInterfaceHelper.delay(4);
             }
         }
         while (!isPlayerSatisfied);
+    }
 
-
-        // Character creation logic goes here
+    public Player getPlayerCharacter()
+    {
+        return playerCharacter;
     }
 
     private void printStatAllocationMenu(int strength, int dexterity, int intelligence, int remainingPoints)
