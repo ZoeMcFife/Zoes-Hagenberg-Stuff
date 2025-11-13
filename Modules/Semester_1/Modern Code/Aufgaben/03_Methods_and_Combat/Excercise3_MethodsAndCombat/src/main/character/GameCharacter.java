@@ -5,6 +5,9 @@ import main.item.Item;
 import main.item.Shield;
 import main.item.Weapon;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameCharacter
 {
     private String name;
@@ -20,6 +23,8 @@ public class GameCharacter
     public static final int MAX_STAT_VALUE = 10;
 
     public static final int CARRY_CAPACITY_PER_STRENGTH = 10;
+
+    public List<Item> inventory = new ArrayList<>();
 
     private Weapon equippedWeapon = new Weapon();
     private Shield equippedShield = new Shield();
