@@ -29,6 +29,13 @@ public class MainMenu extends UserInterface
                     GameManager.difficulty = difficultySelection.getSelectedDifficulty();
                     break;
                 case 3:
+                    if (!canGameStart())
+                    {
+                        IO.println("You must create a character and choose a difficulty before starting the game.");
+                        UserInterfaceHelper.waitForEnterKey();
+                        break;
+                    }
+
                     IO.println("Starting game...");
 
                     break;
@@ -70,5 +77,10 @@ public class MainMenu extends UserInterface
         IO.println("4. Exit");
 
         IO.println("Choose an option (1-4)");
+    }
+
+    public boolean canGameStart()
+    {
+        return GameManager.hasPlayerBeenInitialized && GameManager.difficulty != Difficulty.NONE;
     }
 }
