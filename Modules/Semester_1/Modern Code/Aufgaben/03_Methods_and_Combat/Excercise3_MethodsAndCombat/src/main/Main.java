@@ -3,18 +3,16 @@ package main;
 import main.global.GameManager;
 import main.ui.components.CharacterCreator;
 import main.ui.UserInterfaceHelper;
+import main.ui.components.DifficultySelection;
+import main.ui.components.MainMenu;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        GameManager gameManager = new GameManager();
+        MainMenu menu = new MainMenu();
+        menu.startUI();
 
-        UserInterfaceHelper.displayLogo();
 
-        CharacterCreator characterCreator = new CharacterCreator();
-        characterCreator.startCharacterCreation();
-
-        gameManager.player = characterCreator.getPlayerCharacter();
     }
 }
