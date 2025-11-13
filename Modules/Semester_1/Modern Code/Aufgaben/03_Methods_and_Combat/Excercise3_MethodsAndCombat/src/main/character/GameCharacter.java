@@ -5,7 +5,7 @@ import main.item.Item;
 import main.item.Shield;
 import main.item.Weapon;
 
-public class Character
+public class GameCharacter
 {
     private String name;
 
@@ -21,16 +21,20 @@ public class Character
 
     public static final int CARRY_CAPACITY_PER_STRENGTH = 10;
 
-    private Weapon equippedWeapon;
-    private Shield equippedShield;
-    private Armour equippedArmour;
+    private Weapon equippedWeapon = new Weapon();
+    private Shield equippedShield = new Shield();
+    private Armour equippedArmour = new Armour();
 
-    private CharacterStatus status;
+    private CharacterStatus status = CharacterStatus.ALIVE;
 
-    public Character(String name, double health, double maxHealth, int strength, int dexterity, int intelligence)
+    public GameCharacter(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
-        this.name = name;
-        this.health = maxHealth;
+        setName(name);
+        setMaxHealth(maxHealth);
+        setHealth(maxHealth);
+        setStrength(strength);
+        setDexterity(dexterity);
+        setIntelligence(intelligence);
     }
 
     public void setName(String name)
@@ -172,5 +176,53 @@ public class Character
     public boolean isAlive()
     {
         return health > 0;
+    }
+
+    public String getStatus()
+    {
+        switch (status)
+        {
+            case ALIVE ->
+            {
+                return "Alive";
+            }
+            case DEAD ->
+            {
+                return "Dead";
+            }
+        }
+
+        return "Unknown";
+    }
+
+    public void setMaxHealth(double maxHealth)
+    {
+        if (maxHealth < 1)
+        {
+            this.maxHealth = 1;
+            return;
+        }
+
+        this.maxHealth = maxHealth;
+    }
+
+    public double getMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public Weapon getEquippedWeapon()
+    {
+        return equippedWeapon;
+    }
+
+    public Armour getEquippedArmour()
+    {
+        return equippedArmour;
+    }
+
+    public  Shield getEquippedShield()
+    {
+        return equippedShield;
     }
 }

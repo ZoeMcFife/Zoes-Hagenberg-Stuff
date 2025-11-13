@@ -1,8 +1,8 @@
 package main.commands;
 
-import main.character.Character;
+import main.character.GameCharacter;
 
 public abstract class Command
 {
-    public abstract void execute(Character character);
+    public abstract void execute(GameCharacter gameCharacter);
 }
