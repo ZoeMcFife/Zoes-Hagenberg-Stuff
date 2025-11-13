@@ -5,6 +5,7 @@ public class Item
     private String name;
     private double weight;
     private double value;
+    private ItemRarity rarity;
 
     public Item(String name, double weight, double value)
     {
