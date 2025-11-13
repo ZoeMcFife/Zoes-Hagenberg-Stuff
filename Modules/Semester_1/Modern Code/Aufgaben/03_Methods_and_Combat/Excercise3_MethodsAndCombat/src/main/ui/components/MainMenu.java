@@ -5,7 +5,7 @@ import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
-import static main.util.IO.*;
+import static java.io.IO.*;
 
 public class MainMenu extends UserInterface
 {

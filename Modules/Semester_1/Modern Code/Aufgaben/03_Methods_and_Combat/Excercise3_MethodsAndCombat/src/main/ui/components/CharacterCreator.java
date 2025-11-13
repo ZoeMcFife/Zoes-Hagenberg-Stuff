@@ -5,7 +5,7 @@ import main.character.Player;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
-import static main.util.IO.*;
+import static java.io.IO.*;
 
 public class CharacterCreator extends UserInterface
 {

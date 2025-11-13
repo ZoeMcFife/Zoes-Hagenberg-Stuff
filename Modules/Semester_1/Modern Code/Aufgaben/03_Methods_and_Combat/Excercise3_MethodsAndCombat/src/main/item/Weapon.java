@@ -1,6 +1,6 @@
 package main.item;
 
-import static main.util.IO.*;
+import static java.io.IO.*;
 
 public class Weapon extends Item
 {

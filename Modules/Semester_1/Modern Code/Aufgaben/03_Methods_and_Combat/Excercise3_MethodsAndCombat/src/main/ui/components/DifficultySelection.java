@@ -4,7 +4,7 @@ import main.global.Difficulty;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
-import static main.util.IO.*;
+import static java.io.IO.*;
 
 public class DifficultySelection extends UserInterface
 {

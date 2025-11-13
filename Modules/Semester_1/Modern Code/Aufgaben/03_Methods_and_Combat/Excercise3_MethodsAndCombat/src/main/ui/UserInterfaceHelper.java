@@ -4,7 +4,7 @@ import main.character.GameCharacter;
 
 import java.util.Scanner;
 
-import static main.util.IO.*;
+import static java.io.IO.*;
 
 public class UserInterfaceHelper
 {
