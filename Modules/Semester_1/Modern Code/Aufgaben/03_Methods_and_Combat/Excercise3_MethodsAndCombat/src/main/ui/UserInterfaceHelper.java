@@ -4,18 +4,20 @@ import main.character.GameCharacter;
 
 import java.util.Scanner;
 
+import static main.util.IO.*;
+
 public class UserInterfaceHelper
 {
     public void displayMainMenu()
     {
         displayLogo();
 
-        IO.println("Press any key to start your adventure!");
+        println("Press any key to start your adventure!");
     }
 
     public static void displayLogo()
     {
-        IO.println("                     .__    .___.__               \n" +
+        println("                     .__    .___.__               \n" +
                 "  ____ ___  ___ ____ |__| __| _/|__|__ __  _____  \n" +
                 "_/ __ \\\\  \\/  // ___\\|  |/ __ | |  |  |  \\/     \\ \n" +
                 "\\  ___/ >    <\\  \\___|  / /_/ | |  |  |  /  Y Y  \\\n" +
@@ -26,17 +28,17 @@ public class UserInterfaceHelper
 
     public static void printHeading(String text)
     {
-        IO.println("\n=== " + text + " ===\n");
+        println("\n=== " + text + " ===\n");
     }
 
     public static void printSubHeading(String text)
     {
-        IO.println("\n== " + text + " ==\n");
+        println("\n== " + text + " ==\n");
     }
 
     public static void printPlayerInputPrompt(String text)
     {
-        IO.print("\n" + text + ": ");
+        print("\n" + text + ": ");
     }
 
     public static String getPlayerStringInput(String inputPrompt)
@@ -60,19 +62,19 @@ public class UserInterfaceHelper
 
         printSubHeading("Stats");
 
-        IO.println("Health: \t" + character.getHealth() + " / " + character.getMaxHealth());
-        IO.println("Strength: \t" + character.getStrength());
-        IO.println("Dexterity: \t" + character.getDexterity());
-        IO.println("Intelligence: \t" + character.getIntelligence());
-        IO.println("Status: \t" + character.getStatus());
+        println("Health: \t" + character.getHealth() + " / " + character.getMaxHealth());
+        println("Strength: \t" + character.getStrength());
+        println("Dexterity: \t" + character.getDexterity());
+        println("Intelligence: \t" + character.getIntelligence());
+        println("Status: \t" + character.getStatus());
 
         printSubHeading("Equipment");
 
-        IO.println("Weapon: \t" + character.getEquippedWeapon());
+        println("Weapon: \t" + character.getEquippedWeapon());
         character.getEquippedWeapon().printItemStats();
-        IO.println("Armor: \t" + character.getEquippedArmour());
+        println("Armor: \t" + character.getEquippedArmour());
         character.getEquippedArmour().printItemStats();
-        IO.println("Shield: \t" + character.getEquippedShield());
+        println("Shield: \t" + character.getEquippedShield());
         character.getEquippedShield().printItemStats();
     }
 
@@ -82,7 +84,7 @@ public class UserInterfaceHelper
         {
             try
             {
-                IO.print("> ");
+                print("> ");
                 Scanner scanner = new Scanner(System.in);
 
                 int value = Integer.parseInt(scanner.nextLine());
@@ -97,7 +99,7 @@ public class UserInterfaceHelper
 
             }
 
-            IO.println("Invalid input. Enter a number between " + min + " and " + max + ".");
+            println("Invalid input. Enter a number between " + min + " and " + max + ".");
         }
     }
 
@@ -105,7 +107,7 @@ public class UserInterfaceHelper
     {
         while (true)
         {
-            IO.print(prompt + " (y/n): ");
+            print(prompt + " (y/n): ");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine().trim().toLowerCase();
 
@@ -118,13 +120,13 @@ public class UserInterfaceHelper
                 return false;
             }
 
-            IO.println("Invalid input. Please enter 'y' or 'n'.");
+            println("Invalid input. Please enter 'y' or 'n'.");
         }
     }
 
     public static void waitForEnterKey()
     {
-        IO.println("Press Enter to continue...");
+        println("Press Enter to continue...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }

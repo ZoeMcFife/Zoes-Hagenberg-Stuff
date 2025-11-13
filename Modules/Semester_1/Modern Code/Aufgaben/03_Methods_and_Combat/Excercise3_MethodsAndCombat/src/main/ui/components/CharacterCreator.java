@@ -5,6 +5,8 @@ import main.character.Player;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
+import static main.util.IO.*;
+
 public class CharacterCreator extends UserInterface
 {
     private static final int AVAILABLE_SKILL_POINTS = 10;
@@ -41,7 +43,7 @@ public class CharacterCreator extends UserInterface
                     case 1:
                         if (strength >= GameCharacter.MAX_STAT_VALUE)
                         {
-                            IO.println("Strength is already at maximum value.");
+                            println("Strength is already at maximum value.");
                             continue;
                         }
 
@@ -52,7 +54,7 @@ public class CharacterCreator extends UserInterface
                     case 2:
                         if (dexterity >= GameCharacter.MAX_STAT_VALUE)
                         {
-                            IO.println("Dexterity is already at maximum value.");
+                            println("Dexterity is already at maximum value.");
                             continue;
                         }
 
@@ -63,7 +65,7 @@ public class CharacterCreator extends UserInterface
                     case 3:
                         if (intelligence >= GameCharacter.MAX_STAT_VALUE)
                         {
-                            IO.println("Intelligence is already at maximum value.");
+                            println("Intelligence is already at maximum value.");
                             continue;
                         }
 
@@ -89,7 +91,7 @@ public class CharacterCreator extends UserInterface
             {
                 UserInterfaceHelper.clearScreen();
 
-                IO.println("Your creation has been discarded.");
+                println("Your creation has been discarded.");
                 UserInterfaceHelper.delay(4);
             }
         }
@@ -103,12 +105,12 @@ public class CharacterCreator extends UserInterface
 
     private void printStatAllocationMenu(int strength, int dexterity, int intelligence, int remainingPoints)
     {
-        IO.println("\nAllocate your skill points:");
-        IO.println("1. Strength: " + strength);
-        IO.println("2. Dexterity: " + dexterity);
-        IO.println("3. Intelligence: " + intelligence);
-        IO.println("Remaining Points: " + remainingPoints);
-        IO.println("Choose a stat to increase: (1=STR, 2=DEX, 3=INT)");
+        println("\nAllocate your skill points:");
+        println("1. Strength: " + strength);
+        println("2. Dexterity: " + dexterity);
+        println("3. Intelligence: " + intelligence);
+        println("Remaining Points: " + remainingPoints);
+        println("Choose a stat to increase: (1=STR, 2=DEX, 3=INT)");
     }
 
 

@@ -5,6 +5,8 @@ import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
+import static main.util.IO.*;
+
 public class MainMenu extends UserInterface
 {
     @Override
@@ -31,20 +33,20 @@ public class MainMenu extends UserInterface
                 case 3:
                     if (!canGameStart())
                     {
-                        IO.println("You must create a character and choose a difficulty before starting the game.");
+                        println("You must create a character and choose a difficulty before starting the game.");
                         UserInterfaceHelper.waitForEnterKey();
                         break;
                     }
 
-                    IO.println("Starting game...");
+                    println("Starting game...");
 
                     break;
                 case 4:
-                    IO.println("Exiting game. Goodbye!");
+                    println("Exiting game. Goodbye!");
                     System.exit(0);
                     break;
                 default:
-                    IO.println("Invalid choice. Please try again.");
+                    println("Invalid choice. Please try again.");
                     startUI();
                     break;
             }
@@ -57,26 +59,26 @@ public class MainMenu extends UserInterface
     {
         if (GameManager.hasPlayerBeenInitialized)
         {
-            IO.println("1. Create Character (Current: " + GameManager.getPlayer().getName() + ")");
+            println("1. Create Character (Current: " + GameManager.getPlayer().getName() + ")");
         }
         else
         {
-            IO.println("1. Create Character");
+            println("1. Create Character");
         }
 
         if (GameManager.difficulty == Difficulty.NONE)
         {
-            IO.println("2. Choose Difficulty");
+            println("2. Choose Difficulty");
         }
         else
         {
-            IO.println("2. Choose Difficulty (Current: " + GameManager.difficulty + ")");
+            println("2. Choose Difficulty (Current: " + GameManager.difficulty + ")");
         }
 
-        IO.println("3. Start Game");
-        IO.println("4. Exit");
+        println("3. Start Game");
+        println("4. Exit");
 
-        IO.println("Choose an option (1-4)");
+        println("Choose an option (1-4)");
     }
 
     public boolean canGameStart()

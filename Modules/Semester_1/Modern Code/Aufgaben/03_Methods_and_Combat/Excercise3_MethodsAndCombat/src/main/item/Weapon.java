@@ -1,5 +1,7 @@
 package main.item;
 
+import static main.util.IO.*;
+
 public class Weapon extends Item
 {
     private double damage;
@@ -8,6 +10,13 @@ public class Weapon extends Item
     public Weapon(String name, double weight, double value, double damage, boolean isMagic)
     {
         super(name, weight, value);
+        setDamage(damage);
+        setMagic(isMagic);
+    }
+
+    public Weapon(String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
         setDamage(damage);
         setMagic(isMagic);
     }
@@ -36,7 +45,7 @@ public class Weapon extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        IO.println("Damage:\t" + damage);
-        IO.println("Is Magic:\t" + isMagic);
+        println("Damage:\t" + damage);
+        println("Is Magic:\t" + isMagic);
     }
 }

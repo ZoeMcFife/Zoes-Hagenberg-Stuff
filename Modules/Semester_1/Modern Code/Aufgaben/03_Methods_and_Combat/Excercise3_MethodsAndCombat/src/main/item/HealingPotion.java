@@ -1,5 +1,7 @@
 package main.item;
 
+import static main.util.IO.*;
+
 public class HealingPotion extends Item
 {
     public double healingAmount;
@@ -7,6 +9,12 @@ public class HealingPotion extends Item
     public HealingPotion(String name, double weight, double value, double healingAmount)
     {
         super(name, weight, value);
+        setHealingAmount(healingAmount);
+    }
+
+    public HealingPotion(String name, double weight, double value, double healingAmount, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
         setHealingAmount(healingAmount);
     }
 
@@ -24,6 +32,6 @@ public class HealingPotion extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        IO.println("Healing Amount:\t" + healingAmount);
+        println("Healing Amount:\t" + healingAmount);
     }
 }

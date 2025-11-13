@@ -1,5 +1,7 @@
 package main.item;
 
+import static main.util.IO.*;
+
 public class Shield extends Item
 {
     private double defense;
@@ -7,6 +9,12 @@ public class Shield extends Item
     public Shield(String name, double weight, double value, double defense)
     {
         super(name, weight, value);
+        setDefense(defense);
+    }
+
+    public Shield(String name, double weight, double value, double defense, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
         setDefense(defense);
     }
 
@@ -24,6 +32,6 @@ public class Shield extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        IO.println("Defense:\t" + defense);
+        println("Defense:\t" + defense);
     }
 }

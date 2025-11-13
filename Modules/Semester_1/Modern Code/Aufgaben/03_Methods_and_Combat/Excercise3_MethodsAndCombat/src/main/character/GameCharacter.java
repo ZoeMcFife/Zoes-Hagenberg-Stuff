@@ -23,7 +23,7 @@ public class GameCharacter
     public static final int MIN_STAT_VALUE = 1;
     public static final int MAX_STAT_VALUE = 10;
 
-    private Weapon equippedWeapon = new Weapon("Fists", 0, 0, 1);
+    private Weapon equippedWeapon = new Weapon("Fists", 0, 0, 1, false);
     private Shield equippedShield = new Shield("None", 0, 0, 0);
     private Armour equippedArmour = new Armour("Clothes", 0, 0, 0);
 
