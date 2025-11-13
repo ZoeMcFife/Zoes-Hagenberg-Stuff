@@ -1,7 +1,7 @@
 package main;
 
 import main.global.GameManager;
-import main.ui.CharacterCreator;
+import main.ui.components.CharacterCreator;
 import main.ui.UserInterfaceHelper;
 
 public class Main

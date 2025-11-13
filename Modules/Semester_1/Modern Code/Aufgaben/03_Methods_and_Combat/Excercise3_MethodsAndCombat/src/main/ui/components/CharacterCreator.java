@@ -1,15 +1,18 @@
-package main.ui;
+package main.ui.components;
 
 import main.character.GameCharacter;
 import main.character.Player;
+import main.ui.UserInterface;
+import main.ui.UserInterfaceHelper;
 
-public class CharacterCreator
+public class CharacterCreator extends UserInterface
 {
     private static final int AVAILABLE_SKILL_POINTS = 10;
 
     private Player playerCharacter;
 
-    public void startCharacterCreation()
+    @Override
+    public void startUI()
     {
         boolean isPlayerSatisfied = false;
 
