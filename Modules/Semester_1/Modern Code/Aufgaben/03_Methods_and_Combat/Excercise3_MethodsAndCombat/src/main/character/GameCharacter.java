@@ -27,6 +27,8 @@ public class GameCharacter
     private Shield equippedShield = new Shield("None", 0, 0, 0);
     private Armour equippedArmour = new Armour("Clothes", 0, 0, 0);
 
+    public boolean isDefending = false;
+
     private CharacterStatus status = CharacterStatus.ALIVE;
 
     public GameCharacter(String name, double maxHealth, int strength, int dexterity, int intelligence)
@@ -37,6 +39,21 @@ public class GameCharacter
         setStrength(strength);
         setDexterity(dexterity);
         setIntelligence(intelligence);
+    }
+
+    public void defend()
+    {
+        isDefending = true;
+    }
+
+    public void stopDefending()
+    {
+        isDefending = false;
+    }
+
+    public double getHeatlthPercentage()
+    {
+        return (health / maxHealth);
     }
 
     public double getCarryCapacity()
@@ -142,9 +159,19 @@ public class GameCharacter
         return intelligence;
     }
 
-    public int getCurrentDefense()
+    public double getCurrentDefense()
     {
-        return 1;
+        if (isDefending)
+        {
+            return (equippedArmour.getDefense() + equippedShield.getDefense());
+        }
+
+        return equippedArmour.getDefense();
+    }
+
+    public void attack(GameCharacter target)
+    {
+        target.takeDamage(getDamage());
     }
 
     public void equipItem(Item item)
@@ -171,11 +198,14 @@ public class GameCharacter
 
     }
 
-    public void takeDamage(int damage)
+    public double getDamage()
     {
+        return equippedWeapon.getDamage() * (1 + strength * GameManager.DAMAGE_MULTIPLIER_PER_STRENGTH);
+    }
 
-
-        health -= damage;
+    public void takeDamage(double damage)
+    {
+        health -= Math.max(damage - getCurrentDefense(), 0);
         if (health < 0)
         {
             health = 0;

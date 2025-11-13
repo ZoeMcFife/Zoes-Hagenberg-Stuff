@@ -3,11 +3,13 @@ package main.commands.CharacterCommands;
 import main.character.GameCharacter;
 import main.commands.Command;
 
-public class CharacterPredictCommand extends Command
+public class CharacterUseHealthPotionCommand extends Command
 {
 
+
     @Override
-    public void execute(GameCharacter gameCharacter) {
+    public void execute(GameCharacter gameCharacter)
+    {
 
     }
 }

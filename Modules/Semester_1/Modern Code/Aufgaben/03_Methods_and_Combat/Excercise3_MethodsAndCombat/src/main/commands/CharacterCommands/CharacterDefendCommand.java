@@ -9,6 +9,6 @@ public class CharacterDefendCommand extends Command
     @Override
     public void execute(GameCharacter gameCharacter)
     {
-
+        gameCharacter.defend();
     }
 }
