@@ -6,11 +6,19 @@ public class Item
     private double weight;
     private double value;
 
-    public void printItemStats()
+    public Item(String name, double weight, double value)
     {
-        System.out.println("This is a generic item.");
+        this.name = name;
+        this.weight = weight;
+        this.value = value;
     }
 
+    public void printItemStats()
+    {
+        IO.println("Name:\t" + name);
+        IO.println("Weight:\t" + weight);
+        IO.println("Value:\t" + value);
+    }
 
     public String getName()
     {
@@ -43,4 +51,9 @@ public class Item
         this.value = Math.max(0, value);
     }
 
+    @Override
+    public String toString()
+    {
+        return name;
+    }
 }

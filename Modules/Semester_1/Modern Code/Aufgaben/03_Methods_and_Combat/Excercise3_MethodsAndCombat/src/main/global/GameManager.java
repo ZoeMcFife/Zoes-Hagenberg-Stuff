@@ -11,6 +11,7 @@ public class GameManager
     public static double DAMAGE_MULTIPLIER_PER_INTELLIGENCE = 0.03;
     public static double DODGE_CHANCE_PER_DEXTERITY = 0.02;
     public static double DAMAGE_REDUCTION_PER_DEFENSE = 0.04;
+    public static final int CARRY_CAPACITY_PER_STRENGTH = 10;
 
     public static Difficulty difficulty = Difficulty.NONE;
 

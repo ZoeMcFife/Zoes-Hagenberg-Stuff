@@ -1,5 +1,6 @@
 package main.character;
 
+import main.global.GameManager;
 import main.item.Armour;
 import main.item.Item;
 import main.item.Shield;
@@ -22,13 +23,9 @@ public class GameCharacter
     public static final int MIN_STAT_VALUE = 1;
     public static final int MAX_STAT_VALUE = 10;
 
-    public static final int CARRY_CAPACITY_PER_STRENGTH = 10;
-
-    public List<Item> inventory = new ArrayList<>();
-
-    private Weapon equippedWeapon = new Weapon();
-    private Shield equippedShield = new Shield();
-    private Armour equippedArmour = new Armour();
+    private Weapon equippedWeapon = new Weapon("Fists", 0, 0, 1);
+    private Shield equippedShield = new Shield("None", 0, 0, 0);
+    private Armour equippedArmour = new Armour("Clothes", 0, 0, 0);
 
     private CharacterStatus status = CharacterStatus.ALIVE;
 
@@ -40,6 +37,11 @@ public class GameCharacter
         setStrength(strength);
         setDexterity(dexterity);
         setIntelligence(intelligence);
+    }
+
+    public double getCarryCapacity()
+    {
+        return strength * GameManager.CARRY_CAPACITY_PER_STRENGTH;
     }
 
     public void setName(String name)
