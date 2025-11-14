@@ -25,6 +25,10 @@ public class BattleUI extends UserInterface
     {
         Battle battle = BattleGenerator.generateBattle(dangerLevel);
         displayBattle(battle);
+
+        TurnUI turnUI = new TurnUI(battle);
+        turnUI.startUI();
+
         UserInterfaceHelper.waitForEnterKey();
     }
 

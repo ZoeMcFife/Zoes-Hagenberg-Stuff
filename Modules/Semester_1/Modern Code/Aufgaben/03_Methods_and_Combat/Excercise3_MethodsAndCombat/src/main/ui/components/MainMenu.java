@@ -1,6 +1,7 @@
 package main.ui.components;
 
 import main.character.DangerLevel;
+import main.character.Player;
 import main.global.Difficulty;
 import main.global.GameManager;
 import main.ui.UserInterface;
@@ -13,6 +14,11 @@ public class MainMenu extends UserInterface
     {
         while(true)
         {
+            Player player = new Player("Player", 10, 10, 10);
+            GameManager.setPlayer(player);
+
+            GameManager.difficulty = Difficulty.HARD;
+
             UserInterfaceHelper.displayLogo();
             displayStartOptions();
             int choice = UserInterfaceHelper.getIntInput(1, 4);

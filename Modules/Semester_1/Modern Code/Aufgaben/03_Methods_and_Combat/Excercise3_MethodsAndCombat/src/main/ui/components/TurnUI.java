@@ -75,6 +75,7 @@ public class TurnUI extends UserInterface
         for (Enemy enemy : battle.getEnemies())
         {
             IO.println(i + ". " +enemy.getName());
+            i++;
         }
 
         IO.println("Select an enemy by entering the corresponding number.");

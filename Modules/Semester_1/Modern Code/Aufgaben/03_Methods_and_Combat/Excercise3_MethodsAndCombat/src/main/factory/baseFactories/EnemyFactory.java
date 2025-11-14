@@ -41,7 +41,7 @@ public class EnemyFactory
     {
         // Initialize all enemies with danger levels based on stats and health
         // All stats (strength, dexterity, intelligence) are now within 1-10 range
-        registerEnemy(1, "Abyssal Marauder", 60, 5, 6, 3, "Scavenger pirate mutated by Abyss storms", DangerLevel.MOSTLY_HARMLESS);
+        registerEnemy(1, "Abyssal Marauder", 60, 5, 6, 3, "Scavenger pirate mutated by Abyss storms", DangerLevel.HARMLESS);
         registerEnemy(2, "Gateway Corsair", 85, 6, 6, 5, "Alliance privateer, nimble and slippery", DangerLevel.DANGEROUS);
         registerEnemy(3, "Protectorate Scout", 70, 4, 7, 5, "Trained recon Laikan operative", DangerLevel.MOSTLY_HARMLESS);
         registerEnemy(4, "Fargoth Enforcer", 160, 9, 4, 3, "Heavy-hitter in Fargoth armour", DangerLevel.EXTREME);
