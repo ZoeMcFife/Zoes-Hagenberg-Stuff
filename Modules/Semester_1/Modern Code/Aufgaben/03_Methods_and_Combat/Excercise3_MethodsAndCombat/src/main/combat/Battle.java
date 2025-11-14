@@ -10,4 +10,9 @@ public class Battle
     private List<Enemy> enemies = new ArrayList<>();
 
 
+    public void setEnemies(List<Enemy> enemies)
+    {
+        this.enemies = enemies;
+    }
+
 }

@@ -19,6 +19,12 @@ public class GameManager
     public static int DIFFICULTY_INCREASE_AFTER_TURNS_MEDIUM = 4;
     public static int DIFFICULTY_INCREASE_AFTER_TURNS_HARD = 1;
 
+    public static int MAX_ENEMIES_PER_BATTLE_HARMLESS = 1;
+    public static int MAX_ENEMIES_PER_BATTLE_MOSTLY_HARMLESS = 2;
+    public static int MAX_ENEMIES_PER_BATTLE_DANGEROUS = 2;
+    public static int MAX_ENEMIES_PER_BATTLE_EXTREME = 3;
+    public static int MAX_ENEMIES_PER_BATTLE_DEATH = 4;
+
     public static void setPlayer(Player player)
     {
         GameManager.player = player;

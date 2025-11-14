@@ -11,7 +11,7 @@ import java.util.List;
 
 public class EnemyGenerator
 {
-    private Enemy generateEnemy(DangerLevel dangerLevel)
+    public static Enemy generateEnemy(DangerLevel dangerLevel)
     {
         Enemy enemy = EnemyFactory.createRandomEnemyByDangerLevel(dangerLevel);
 
@@ -28,7 +28,7 @@ public class EnemyGenerator
         return enemy;
     }
 
-    private Weapon generateWeapon(DangerLevel dangerLevel)
+    private static Weapon generateWeapon(DangerLevel dangerLevel)
     {
         return switch (dangerLevel)
         {
@@ -39,7 +39,7 @@ public class EnemyGenerator
         };
     }
 
-    private Armour generateArmour(DangerLevel dangerLevel)
+    private static Armour generateArmour(DangerLevel dangerLevel)
     {
         return switch (dangerLevel)
         {
@@ -50,7 +50,7 @@ public class EnemyGenerator
         };
     }
 
-    private Shield generateShield(DangerLevel dangerLevel)
+    private static Shield generateShield(DangerLevel dangerLevel)
     {
         return switch (dangerLevel)
         {
@@ -61,7 +61,7 @@ public class EnemyGenerator
         };
     }
 
-    private List<HealingPotion> generateHealingPotions(DangerLevel dangerLevel)
+    private static List<HealingPotion> generateHealingPotions(DangerLevel dangerLevel)
     {
         List<HealingPotion> potions = new ArrayList<HealingPotion>();
 
