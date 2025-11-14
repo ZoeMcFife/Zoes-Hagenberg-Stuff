@@ -10,6 +10,12 @@ public class HealingPotion extends Item
         setHealingAmount(healingAmount);
     }
 
+    public HealingPotion(String name, double weight, double value, double healingAmount, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
+        setHealingAmount(healingAmount);
+    }
+
     public double getHealingAmount()
     {
         return healingAmount;

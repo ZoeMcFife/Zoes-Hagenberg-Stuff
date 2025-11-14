@@ -23,7 +23,7 @@ public class GameCharacter
     public static final int MIN_STAT_VALUE = 1;
     public static final int MAX_STAT_VALUE = 10;
 
-    private Weapon equippedWeapon = new Weapon("Fists", 0, 0, 1);
+    private Weapon equippedWeapon = new Weapon("Fists", 0, 0, 1, false);
     private Shield equippedShield = new Shield("None", 0, 0, 0);
     private Armour equippedArmour = new Armour("Clothes", 0, 0, 0);
 
@@ -200,6 +200,11 @@ public class GameCharacter
 
     public double getDamage()
     {
+        if (equippedWeapon.isMagic())
+        {
+            return equippedWeapon.getDamage() * (1 + intelligence * GameManager.DAMAGE_MULTIPLIER_PER_INTELLIGENCE);
+        }
+
         return equippedWeapon.getDamage() * (1 + strength * GameManager.DAMAGE_MULTIPLIER_PER_STRENGTH);
     }
 

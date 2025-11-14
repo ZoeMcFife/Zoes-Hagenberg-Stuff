@@ -10,6 +10,12 @@ public class Shield extends Item
         setDefense(defense);
     }
 
+    public Shield(String name, double weight, double value, double defense, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
+        setDefense(defense);
+    }
+
     public double getDefense()
     {
         return defense;

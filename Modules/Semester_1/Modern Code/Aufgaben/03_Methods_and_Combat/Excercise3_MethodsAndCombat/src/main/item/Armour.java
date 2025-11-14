@@ -1,5 +1,6 @@
 package main.item;
 
+
 public class Armour extends Item
 {
     private double defense;
@@ -7,6 +8,12 @@ public class Armour extends Item
     public Armour(String name, double weight, double value, double defense)
     {
         super(name, weight, value);
+        setDefense(defense);
+    }
+
+    public Armour(String name, double weight, double value, double defense, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
         setDefense(defense);
     }
 

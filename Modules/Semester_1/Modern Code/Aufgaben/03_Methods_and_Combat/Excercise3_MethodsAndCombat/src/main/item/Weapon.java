@@ -12,6 +12,13 @@ public class Weapon extends Item
         setMagic(isMagic);
     }
 
+    public Weapon(String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
+        setDamage(damage);
+        setMagic(isMagic);
+    }
+
     public double getDamage()
     {
         return damage;

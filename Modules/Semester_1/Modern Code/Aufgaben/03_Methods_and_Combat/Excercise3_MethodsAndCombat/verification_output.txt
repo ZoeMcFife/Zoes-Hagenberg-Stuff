@@ -1,0 +1,41 @@
+=== Factory Demonstration ===
+
+--- Enemy Factory ---
+Total enemies: 50
+Enemy by ID 1: Abyssal Marauder (HP: 60.0)
+Enemy by name 'Rift Goliath': Rift Goliath (HP: 360.0)
+Random enemy: Rune-masked Berserker
+Random DEATH level enemy: Relic-bound Revenant (HP: 240.0)
+
+--- Weapon Factory ---
+Total weapons: 23
+Weapon by ID 1: Gateway Cutlass (Damage: 18.0, Rarity: MEDIUM)
+Weapon by name 'Starcore Blade': Starcore Blade (Damage: 62.0, Magic: true)
+Random weapon: Warpspike Lance
+Random LEGENDARY weapon: Warpspike Lance (Damage: 54.0)
+
+--- Shield Factory ---
+Total shields: 6
+Shield by ID 1: Echo Shard Shield (Defense: 28.0, Rarity: LEGENDARY)
+Shield by name 'Shield of Wolfram': Shield of Wolfram (Defense: 30.0)
+Random shield: Nebular Disk Shield
+
+--- Armour Factory ---
+Total armours: 17
+Armour by ID 1: Fargoth War Gauntlet (Defense: 12.0, Rarity: HIGH)
+Armour by name 'Skymetal Plate': Skymetal Plate (Defense: 36.0)
+Random armour: Guardian Frame Mk III
+
+--- Healing Potion Factory ---
+Total healing potions: 21
+Potion by ID 1: Small Health Potion (Healing: 20.0, Rarity: LOW)
+Potion by name 'Emergency Tonic': Emergency Tonic (Healing: 50.0)
+Random potion: Small Med-Pack
+
+=== All Factories Working! ===
+Summary:
+  - 50 enemies
+  - 23 weapons
+  - 6 shields
+  - 17 armours
+  - 21 healing potions
