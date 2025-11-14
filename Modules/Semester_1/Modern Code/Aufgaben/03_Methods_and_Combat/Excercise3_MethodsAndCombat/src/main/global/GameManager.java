@@ -15,6 +15,10 @@ public class GameManager
 
     public static Difficulty difficulty = Difficulty.NONE;
 
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_EASY = 6;
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_MEDIUM = 4;
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_HARD = 1;
+
     public static void setPlayer(Player player)
     {
         GameManager.player = player;

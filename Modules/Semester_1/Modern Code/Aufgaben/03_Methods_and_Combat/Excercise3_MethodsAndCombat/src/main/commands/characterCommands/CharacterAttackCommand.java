@@ -1,4 +1,4 @@
-package main.commands.CharacterCommands;
+package main.commands.characterCommands;
 
 import main.character.GameCharacter;
 import main.commands.Command;

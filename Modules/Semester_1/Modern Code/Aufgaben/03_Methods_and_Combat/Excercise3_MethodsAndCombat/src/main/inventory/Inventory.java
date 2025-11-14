@@ -42,4 +42,11 @@ public class Inventory
         items.remove(item);
     }
 
+    public void addItems(Item[] items)
+    {
+        for (Item item : items)
+        {
+            addItem(item);
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package main.factory;
+package main.factory.baseFactories;
 
 import main.item.HealingPotion;
 import main.item.ItemRarity;
@@ -56,6 +56,7 @@ public class HealingPotionFactory
         registerPotion(19, "Small Vitality Vial", 0.2, 16, 20, ItemRarity.LOW);
         registerPotion(20, "Emergency Tonic", 0.4, 45, 50, ItemRarity.HIGH);
         registerPotion(21, "Protectorate Med-Patch", 0.1, 40, 20, ItemRarity.LOW);
+        registerPotion(22, "Brand X Elixir", 0.5, 100, 80, ItemRarity.LEGENDARY);
     }
 
     private static void registerPotion(int id, String name, double weight, double value, double healingAmount, ItemRarity rarity)
@@ -73,6 +74,24 @@ public class HealingPotionFactory
         {
             throw new IllegalArgumentException("Healing potion with ID " + id + " not found");
         }
+        return createPotionFromData(data);
+    }
+
+    public static HealingPotion createRandomPotionByRarity(ItemRarity rarity)
+    {
+        List<PotionData> filteredPotions = new ArrayList<>();
+        for (PotionData data : ALL_POTIONS)
+        {
+            if (data.rarity == rarity)
+            {
+                filteredPotions.add(data);
+            }
+        }
+        if (filteredPotions.isEmpty())
+        {
+            throw new IllegalArgumentException("No healing potions found with rarity: " + rarity);
+        }
+        PotionData data = filteredPotions.get(random.nextInt(filteredPotions.size()));
         return createPotionFromData(data);
     }
 

@@ -2,7 +2,7 @@ package test;
 
 import main.character.DangerLevel;
 import main.character.Enemy;
-import main.factory.*;
+import main.factory.baseFactories.*;
 import main.item.*;
 import org.junit.jupiter.api.Test;
 

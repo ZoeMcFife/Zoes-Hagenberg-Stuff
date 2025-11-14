@@ -1,12 +1,12 @@
 package main.character;
 
 import main.global.GameManager;
+import main.inventory.Inventory;
 import main.item.Armour;
 import main.item.Item;
 import main.item.Shield;
 import main.item.Weapon;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GameCharacter
@@ -31,6 +31,8 @@ public class GameCharacter
 
     private CharacterStatus status = CharacterStatus.ALIVE;
 
+    private Inventory inventory = new Inventory(this);
+
     public GameCharacter(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
         setName(name);
@@ -39,6 +41,24 @@ public class GameCharacter
         setStrength(strength);
         setDexterity(dexterity);
         setIntelligence(intelligence);
+    }
+
+    public void addItemToInventory(Item item)
+    {
+        inventory.addItem(item);
+    }
+
+    public void addItemsToInventory(Item... items)
+    {
+        inventory.addItems(items);
+    }
+
+    public void addItemsToInventory(List<Item> items)
+    {
+        Item[] itemArray = new Item[items.size()];
+        items.toArray(itemArray);
+
+        inventory.addItems(itemArray);
     }
 
     public void defend()

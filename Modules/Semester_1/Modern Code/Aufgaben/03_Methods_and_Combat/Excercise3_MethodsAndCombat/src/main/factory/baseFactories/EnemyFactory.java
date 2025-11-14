@@ -1,4 +1,4 @@
-package main.factory;
+package main.factory.baseFactories;
 
 import main.character.DangerLevel;
 import main.character.Enemy;
