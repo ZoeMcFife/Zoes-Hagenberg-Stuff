@@ -1,7 +1,5 @@
 package main.item;
 
-import static java.io.IO.*;
-
 public class Shield extends Item
 {
     private double defense;
@@ -32,6 +30,6 @@ public class Shield extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        println("Defense:\t" + defense);
+        IO.println("Defense:\t" + defense);
     }
 }

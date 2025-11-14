@@ -4,8 +4,6 @@ import main.global.Difficulty;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
-import static java.io.IO.*;
-
 public class DifficultySelection extends UserInterface
 {
     private Difficulty selectedDifficulty;
@@ -39,23 +37,23 @@ public class DifficultySelection extends UserInterface
                     difficultySelected = true;
                     break;
                 default:
-                    println("Invalid choice. Please select a valid difficulty option.");
+                    IO.println("Invalid choice. Please select a valid difficulty option.");
                     break;
             }
         }
         while (!difficultySelected);
 
-        println("You have selected " + selectedDifficulty + " difficulty.");
+        IO.println("You have selected " + selectedDifficulty + " difficulty.");
         UserInterfaceHelper.delay(5);
     }
 
     private void displayDifficultyOptions()
     {
-        println("\nDifficulty:");
-        println("1. EASY: Smell the flowers.");
-        println("2. MEDIUM: Hold your ground.");
-        println("3. HARD: This will make your life hell.");
-        println("Choose a stat to increase: (1=EASY, 2=MEDIUM, 3=HARD)");
+        IO.println("\nDifficulty:");
+        IO.println("1. EASY: Smell the flowers.");
+        IO.println("2. MEDIUM: Hold your ground.");
+        IO.println("3. HARD: This will make your life hell.");
+        IO.println("Choose a stat to increase: (1=EASY, 2=MEDIUM, 3=HARD)");
     }
 
     public Difficulty getSelectedDifficulty()

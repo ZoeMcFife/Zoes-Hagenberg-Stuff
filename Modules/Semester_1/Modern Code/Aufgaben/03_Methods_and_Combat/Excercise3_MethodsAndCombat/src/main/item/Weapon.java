@@ -1,7 +1,5 @@
 package main.item;
 
-import static java.io.IO.*;
-
 public class Weapon extends Item
 {
     private double damage;
@@ -45,7 +43,7 @@ public class Weapon extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        println("Damage:\t" + damage);
-        println("Is Magic:\t" + isMagic);
+        IO.println("Damage:\t" + damage);
+        IO.println("Is Magic:\t" + isMagic);
     }
 }

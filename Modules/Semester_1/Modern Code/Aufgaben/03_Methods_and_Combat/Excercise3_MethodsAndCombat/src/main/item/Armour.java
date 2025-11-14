@@ -1,6 +1,5 @@
 package main.item;
 
-import static java.io.IO.*;
 
 public class Armour extends Item
 {
@@ -32,6 +31,6 @@ public class Armour extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        println("Defense:\t" + defense);
+        IO.println("Defense:\t" + defense);
     }
 }

@@ -1,7 +1,5 @@
 package main.item;
 
-import static java.io.IO.*;
-
 public class Item
 {
     private String name;
@@ -27,10 +25,10 @@ public class Item
 
     public void printItemStats()
     {
-        println("Name:\t" + name);
-        println("Weight:\t" + weight);
-        println("Value:\t" + value);
-        println("Rarity:\t" + rarity);
+        IO.println("Name:\t" + name);
+        IO.println("Weight:\t" + weight);
+        IO.println("Value:\t" + value);
+        IO.println("Rarity:\t" + rarity);
     }
 
     public String getName()

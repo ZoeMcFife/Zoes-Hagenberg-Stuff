@@ -1,7 +1,5 @@
 package main.item;
 
-import static java.io.IO.*;
-
 public class HealingPotion extends Item
 {
     public double healingAmount;
@@ -32,6 +30,6 @@ public class HealingPotion extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        println("Healing Amount:\t" + healingAmount);
+        IO.println("Healing Amount:\t" + healingAmount);
     }
 }
