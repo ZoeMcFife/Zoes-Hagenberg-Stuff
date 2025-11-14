@@ -200,6 +200,11 @@ public class GameCharacter
 
     public double getDamage()
     {
+        if (equippedWeapon.isMagic())
+        {
+            return equippedWeapon.getDamage() * (1 + intelligence * GameManager.DAMAGE_MULTIPLIER_PER_INTELLIGENCE);
+        }
+
         return equippedWeapon.getDamage() * (1 + strength * GameManager.DAMAGE_MULTIPLIER_PER_STRENGTH);
     }
 
