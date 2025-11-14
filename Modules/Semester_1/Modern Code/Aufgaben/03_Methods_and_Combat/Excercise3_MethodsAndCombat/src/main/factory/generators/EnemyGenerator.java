@@ -23,7 +23,12 @@ public class EnemyGenerator
         enemy.equipItem(armour);
         enemy.equipItem(shield);
 
-        enemy.addItemsToInventory((Item) generateHealingPotions(dangerLevel));
+        List<HealingPotion> healingPotions = generateHealingPotions(dangerLevel);
+
+        for (HealingPotion potion : healingPotions)
+        {
+            enemy.addItemToInventory(potion);
+        }
 
         return enemy;
     }

@@ -1,5 +1,6 @@
 package main.global;
 
+import main.character.DangerLevel;
 import main.character.Player;
 
 public class GameManager
@@ -15,8 +16,8 @@ public class GameManager
 
     public static Difficulty difficulty = Difficulty.NONE;
 
-    public static int DIFFICULTY_INCREASE_AFTER_TURNS_EASY = 6;
-    public static int DIFFICULTY_INCREASE_AFTER_TURNS_MEDIUM = 4;
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_EASY = 5;
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_MEDIUM = 3;
     public static int DIFFICULTY_INCREASE_AFTER_TURNS_HARD = 1;
 
     public static int MAX_ENEMIES_PER_BATTLE_HARMLESS = 1;
@@ -35,5 +36,4 @@ public class GameManager
     {
         return GameManager.player;
     }
-
 }

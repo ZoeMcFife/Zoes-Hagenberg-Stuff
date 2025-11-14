@@ -1,5 +1,6 @@
 package main.ui.components;
 
+import main.character.DangerLevel;
 import main.global.Difficulty;
 import main.global.GameManager;
 import main.ui.UserInterface;
@@ -29,6 +30,8 @@ public class MainMenu extends UserInterface
                     GameManager.difficulty = difficultySelection.getSelectedDifficulty();
                     break;
                 case 3:
+
+
                     if (!canGameStart())
                     {
                         IO.println("You must create a character and choose a difficulty before starting the game.");
@@ -37,6 +40,10 @@ public class MainMenu extends UserInterface
                     }
 
                     IO.println("Starting game...");
+                    UserInterfaceHelper.clearScreen();
+
+                    GameLoop gameLoop = new GameLoop();
+                    gameLoop.startUI();
 
                     break;
                 case 4:

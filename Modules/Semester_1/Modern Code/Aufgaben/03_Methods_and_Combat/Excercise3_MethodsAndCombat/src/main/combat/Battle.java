@@ -15,4 +15,9 @@ public class Battle
         this.enemies = enemies;
     }
 
+    public List<Enemy> getEnemies()
+    {
+        return enemies;
+    }
+
 }

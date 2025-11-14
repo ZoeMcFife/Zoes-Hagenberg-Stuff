@@ -38,13 +38,18 @@ public class BattleGenerator
 
         return switch (dangerLevel)
         {
-            case DangerLevel.HARMLESS -> random.nextInt(1, GameManager.MAX_ENEMIES_PER_BATTLE_HARMLESS);
-            case DangerLevel.MOSTLY_HARMLESS -> random.nextInt(1, GameManager.MAX_ENEMIES_PER_BATTLE_MOSTLY_HARMLESS);
-            case DangerLevel.DANGEROUS -> random.nextInt(1, GameManager.MAX_ENEMIES_PER_BATTLE_DANGEROUS);
-            case DangerLevel.EXTREME -> random.nextInt(1, GameManager.MAX_ENEMIES_PER_BATTLE_EXTREME);
-            case DangerLevel.DEATH -> random.nextInt(1, GameManager.MAX_ENEMIES_PER_BATTLE_DEATH);
+            case DangerLevel.HARMLESS -> getRandomIntInRange(1, GameManager.MAX_ENEMIES_PER_BATTLE_HARMLESS);
+            case DangerLevel.MOSTLY_HARMLESS -> getRandomIntInRange(1, GameManager.MAX_ENEMIES_PER_BATTLE_MOSTLY_HARMLESS);
+            case DangerLevel.DANGEROUS -> getRandomIntInRange(1, GameManager.MAX_ENEMIES_PER_BATTLE_DANGEROUS);
+            case DangerLevel.EXTREME -> getRandomIntInRange(1, GameManager.MAX_ENEMIES_PER_BATTLE_EXTREME);
+            case DangerLevel.DEATH -> getRandomIntInRange(1, GameManager.MAX_ENEMIES_PER_BATTLE_DEATH);
         };
     }
 
+    private static int getRandomIntInRange(int min, int max)
+    {
+        Random random = new Random();
+        return random.nextInt(min, max + 1);
+    }
 
 }

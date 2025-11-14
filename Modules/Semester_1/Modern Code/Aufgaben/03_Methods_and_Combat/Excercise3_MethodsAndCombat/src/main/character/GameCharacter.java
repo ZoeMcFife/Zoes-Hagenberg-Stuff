@@ -289,4 +289,54 @@ public class GameCharacter
     {
         return equippedShield;
     }
+
+    public List<String> getDisplayBox()
+    {
+        List<String> box = new java.util.ArrayList<>();
+
+        String nameLine = String.format("| %-36s |", getName());
+        String hpLine   = String.format("| Health: %.0f / %.0f%20s|", getHealth(), getMaxHealth(), "");
+
+        int barLength = 30;
+        double pct = getHeatlthPercentage();
+        int filled = (int) (pct * barLength);
+        String bar = "=".repeat(filled) + " ".repeat(barLength - filled);
+        String barLine = "| " + bar + " |";
+
+        String state = isDefending ? "Defending" : "Idle";
+        String stateLine = String.format("| %-36s |", "(" + state + ")");
+
+        String border = "----------------------------------------";
+
+        box.add(border);
+        box.add(nameLine);
+        box.add(hpLine);
+        box.add("| " + bar + "       |");
+        box.add(stateLine);
+        box.add(border);
+
+        return box;
+    }
+
+    public static List<String> combineEnemyBoxes(List<List<String>> boxes)
+    {
+        List<String> result = new java.util.ArrayList<>();
+
+        int height = boxes.getFirst().size(); // all same height
+
+        for (int line = 0; line < height; line++)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (List<String> box : boxes)
+            {
+                sb.append(box.get(line)).append("   "); // 3 spaces padding
+            }
+
+            result.add(sb.toString());
+        }
+
+        return result;
+    }
+
 }
