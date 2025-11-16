@@ -328,8 +328,8 @@ public class GameCharacter
         String healthText = String.format("Health: %.0f / %.0f", getHealth(), getMaxHealth());
         String hpLine = String.format("| %-36s |", healthText);
 
-        // Health bar (30 '=' or ' ' characters + 2 for "| " + 2 for " |" = 34 total, need 2 more spaces)
-        int barLength = 30;
+        // Health bar (36 '=' or ' ' characters to fill the entire box width)
+        int barLength = 36;
         double pct = getHeatlthPercentage();
         int filled = (int) (pct * barLength);
         String bar = "=".repeat(filled) + " ".repeat(barLength - filled);
@@ -338,6 +338,10 @@ public class GameCharacter
         // Stats line in format: D6, I2, S10
         String statsText = String.format("D%d, I%d, S%d", getDexterity(), getIntelligence(), getStrength());
         String statsLine = String.format("| %-36s |", statsText);
+
+        // Attack and Defense stats line
+        String attackDefenseText = String.format("Attack: %.0f, Defense: %.0f", getDamage(), getCurrentDefense());
+        String attackDefenseLine = String.format("| %-36s |", attackDefenseText);
 
         String state = getStatus().toString();
         String stateLine = String.format("| %-36s |", "(" + state + ")");
@@ -349,6 +353,7 @@ public class GameCharacter
         box.add(hpLine);
         box.add(barLine);
         box.add(statsLine);
+        box.add(attackDefenseLine);
         box.add(stateLine);
         box.add(border);
 
