@@ -37,6 +37,8 @@ public class TurnUI extends UserInterface
 
             actionPass();
 
+            stopDefendingPass();
+
             UserInterfaceHelper.waitForEnterKey();
         }
 
@@ -70,6 +72,21 @@ public class TurnUI extends UserInterface
             }
         }
     }
+
+    private void stopDefendingPass()
+    {
+        for (GameCharacter character : battle.getParticipantsOrderedByDexterity())
+        {
+            if (character.isAlive())
+            {
+                if (character.isDefending)
+                {
+                    character.stopDefending();
+                }
+            }
+        }
+    }
+
 
     private void defensePass()
     {
