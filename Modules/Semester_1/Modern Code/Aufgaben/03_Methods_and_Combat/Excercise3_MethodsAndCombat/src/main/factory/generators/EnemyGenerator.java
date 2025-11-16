@@ -9,8 +9,18 @@ import main.item.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Generates fully equipped enemies with gear and healing items appropriate for their danger level.
+ * Higher danger levels result in better equipment and more healing potions.
+ */
 public class EnemyGenerator
 {
+    /**
+     * Creates a fully equipped enemy with appropriate gear for the danger level.
+     * 
+     * @param dangerLevel The danger level determining enemy type and equipment quality
+     * @return A fully equipped enemy character
+     */
     public static Enemy generateEnemy(DangerLevel dangerLevel)
     {
         Enemy enemy = EnemyFactory.createRandomEnemyByDangerLevel(dangerLevel);
@@ -33,6 +43,12 @@ public class EnemyGenerator
         return enemy;
     }
 
+    /**
+     * Generates a weapon with rarity matching the danger level.
+     * 
+     * @param dangerLevel The danger level
+     * @return A weapon of appropriate rarity
+     */
     private static Weapon generateWeapon(DangerLevel dangerLevel)
     {
         return switch (dangerLevel)
@@ -44,6 +60,12 @@ public class EnemyGenerator
         };
     }
 
+    /**
+     * Generates armour with rarity matching the danger level.
+     * 
+     * @param dangerLevel The danger level
+     * @return Armour of appropriate rarity
+     */
     private static Armour generateArmour(DangerLevel dangerLevel)
     {
         return switch (dangerLevel)
@@ -55,6 +77,12 @@ public class EnemyGenerator
         };
     }
 
+    /**
+     * Generates a shield with rarity matching the danger level.
+     * 
+     * @param dangerLevel The danger level
+     * @return A shield of appropriate rarity
+     */
     private static Shield generateShield(DangerLevel dangerLevel)
     {
         return switch (dangerLevel)
@@ -66,6 +94,13 @@ public class EnemyGenerator
         };
     }
 
+    /**
+     * Generates healing potions appropriate for the danger level.
+     * Higher danger levels result in more potions of higher quality.
+     * 
+     * @param dangerLevel The danger level
+     * @return List of healing potions
+     */
     private static List<HealingPotion> generateHealingPotions(DangerLevel dangerLevel)
     {
         List<HealingPotion> potions = new ArrayList<HealingPotion>();
