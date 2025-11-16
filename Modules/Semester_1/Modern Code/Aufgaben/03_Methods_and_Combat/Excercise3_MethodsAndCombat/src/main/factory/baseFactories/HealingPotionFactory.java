@@ -5,6 +5,11 @@ import main.item.ItemRarity;
 
 import java.util.*;
 
+/**
+ * Factory class for creating healing potion items.
+ * Provides methods to create potions by ID, name, rarity, or randomly.
+ * Contains 21 predefined healing potions with various healing amounts.
+ */
 public class HealingPotionFactory
 {
     private static final Map<Integer, PotionData> POTIONS_BY_ID = new HashMap<>();

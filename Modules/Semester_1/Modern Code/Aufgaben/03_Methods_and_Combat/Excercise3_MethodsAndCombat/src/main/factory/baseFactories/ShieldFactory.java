@@ -5,6 +5,11 @@ import main.item.Shield;
 
 import java.util.*;
 
+/**
+ * Factory class for creating shield items.
+ * Provides methods to create shields by ID, name, rarity, or randomly.
+ * Contains 6 predefined shields with various defensive capabilities.
+ */
 public class ShieldFactory
 {
     private static final Map<Integer, ShieldData> SHIELDS_BY_ID = new HashMap<>();
