@@ -324,13 +324,21 @@ public class GameCharacter
         List<String> box = new java.util.ArrayList<>();
 
         String nameLine = String.format("| %-36s |", getName());
-        String hpLine   = String.format("| Health: %.0f / %.0f%20s|", getHealth(), getMaxHealth(), "");
+        
+        // Format health with proper spacing to fit in 36 characters
+        String healthText = String.format("Health: %.0f / %.0f", getHealth(), getMaxHealth());
+        String hpLine = String.format("| %-36s |", healthText);
 
+        // Health bar (30 '=' or ' ' characters + 2 for "| " + 2 for " |" = 34 total, need 2 more spaces)
         int barLength = 30;
         double pct = getHeatlthPercentage();
         int filled = (int) (pct * barLength);
         String bar = "=".repeat(filled) + " ".repeat(barLength - filled);
-        String barLine = "| " + bar + " |";
+        String barLine = String.format("| %-36s |", bar);
+
+        // Stats line in format: D6, I2, S10
+        String statsText = String.format("D%d, I%d, S%d", getDexterity(), getIntelligence(), getStrength());
+        String statsLine = String.format("| %-36s |", statsText);
 
         String state = getStatus().toString();
         String stateLine = String.format("| %-36s |", "(" + state + ")");
@@ -340,7 +348,8 @@ public class GameCharacter
         box.add(border);
         box.add(nameLine);
         box.add(hpLine);
-        box.add("| " + bar + "       |");
+        box.add(barLine);
+        box.add(statsLine);
         box.add(stateLine);
         box.add(border);
 
