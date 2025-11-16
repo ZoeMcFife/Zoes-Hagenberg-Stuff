@@ -59,12 +59,12 @@ public class Enemy extends GameCharacter
 
         if (selfStatus == CharacterStatus.CRITICALLY_HURT)
         {
-            return randomWeightedAction(10, 20, 70);
+            return randomWeightedAction(5, 35, 65);
 
         }
         else if (selfStatus == CharacterStatus.SEVERELY_HURT)
         {
-            return randomWeightedAction(50, 20, 30);
+            return randomWeightedAction(40, 40, 20);
         }
         else if (selfStatus == CharacterStatus.HURT)
         {
