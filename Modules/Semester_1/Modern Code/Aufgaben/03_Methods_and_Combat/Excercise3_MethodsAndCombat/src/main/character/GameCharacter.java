@@ -29,7 +29,7 @@ public class GameCharacter
 
     public boolean isDefending = false;
 
-    private CharacterStatus status = CharacterStatus.ALIVE;
+    //private CharacterStatus status = CharacterStatus.ALIVE;
 
     private Inventory inventory = new Inventory(this);
 
@@ -63,11 +63,13 @@ public class GameCharacter
 
     public void defend()
     {
+        IO.println(getName() + " is defending!");
         isDefending = true;
     }
 
     public void stopDefending()
     {
+        IO.println(getName() + " stopped defending!");
         isDefending = false;
     }
 
@@ -191,6 +193,7 @@ public class GameCharacter
 
     public void attack(GameCharacter target)
     {
+        IO.println(getName() + " attacks " + target.getName() + " for " + getDamage() + " damage!");
         target.takeDamage(getDamage());
     }
 
@@ -230,10 +233,14 @@ public class GameCharacter
 
     public void takeDamage(double damage)
     {
-        health -= Math.max(damage - getCurrentDefense(), 0);
+        double damageTaken = Math.max(damage - getCurrentDefense(), 0);
+        IO.println(getName() + " takes " + damageTaken + " damage!");
+
+        health -= damageTaken;
         if (health < 0)
         {
             health = 0;
+            IO.println(getName() + " died!");
         }
     }
 
@@ -242,21 +249,30 @@ public class GameCharacter
         return health > 0;
     }
 
-    public String getStatus()
+    public CharacterStatus getStatus()
     {
-        switch (status)
+        if (getHeatlthPercentage() == 1)
         {
-            case ALIVE ->
-            {
-                return "Alive";
-            }
-            case DEAD ->
-            {
-                return "Dead";
-            }
+            return CharacterStatus.ALIVE;
         }
 
-        return "Unknown";
+        if (getHeatlthPercentage() > 0.5)
+        {
+            return CharacterStatus.HURT;
+        }
+
+        if (getHeatlthPercentage() > 0.3)
+        {
+            return CharacterStatus.SEVERELY_HURT;
+        }
+
+        if (getHeatlthPercentage() > 0)
+        {
+            return CharacterStatus.CRITICALLY_HURT;
+        }
+
+        return CharacterStatus.DEAD;
+
     }
 
     public void setMaxHealth(double maxHealth)

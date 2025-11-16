@@ -1,12 +1,15 @@
 package main.character;
 
 
+import main.combat.ActionType;
 import main.item.Armour;
 import main.item.Shield;
 import main.item.Weapon;
 
 public class Enemy extends GameCharacter
 {
+    private ActionType nextAction;
+
     public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
         super(name, maxHealth, strength, dexterity, intelligence);
@@ -20,4 +23,9 @@ public class Enemy extends GameCharacter
         equipItem(shield);
     }
 
+    public void think(GameCharacter attacker)
+    {
+        // if self is healthy and player is healthy, attack 100%
+        // if
+    }
 }

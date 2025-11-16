@@ -2,12 +2,15 @@ package main.ui.components;
 
 import main.character.Enemy;
 import main.combat.Battle;
+import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
 public class TurnUI extends UserInterface
 {
-    private Battle battle;
+    private final Battle battle;
+    private int selectedEnemy;
+    private int actionChoice;
 
     public TurnUI(Battle battle)
     {
@@ -17,7 +20,15 @@ public class TurnUI extends UserInterface
     @Override
     public void startUI()
     {
-        int selectedEnemy = -1;
+        enemySelection();
+
+        actionSelection();
+
+    }
+
+    public void enemySelection()
+    {
+        selectedEnemy = -1;
 
         while (selectedEnemy < 1)
         {
@@ -30,8 +41,11 @@ public class TurnUI extends UserInterface
                 selectedEnemy = -1;
             }
         }
+    }
 
-        int actionChoice = -1;
+    public void actionSelection()
+    {
+        actionChoice = -1;
 
         while (actionChoice < 1)
         {
@@ -41,10 +55,10 @@ public class TurnUI extends UserInterface
             switch (actionChoice)
             {
                 case 1:
-                    IO.println("You chose to Attack!");
+                    GameManager.getPlayer().attack(battle.getEnemies().get(selectedEnemy - 1));
                     break;
                 case 2:
-                    IO.println("You chose to Defend!");
+                    GameManager.getPlayer().defend();
                     break;
                 case 3:
                     IO.println("You chose to Use Item!");
