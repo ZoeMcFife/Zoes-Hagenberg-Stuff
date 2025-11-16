@@ -1,7 +1,6 @@
 package main.item;
 
 
-import main.global.IO;
 public class Armour extends Item
 {
     private double defense;

@@ -1,6 +1,5 @@
 package main.item;
 
-import main.global.IO;
 public class HealingPotion extends Item
 {
     public double healingAmount;

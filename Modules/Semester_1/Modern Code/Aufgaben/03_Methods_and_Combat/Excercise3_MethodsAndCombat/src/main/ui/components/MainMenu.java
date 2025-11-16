@@ -1,7 +1,5 @@
 package main.ui.components;
 
-import main.global.IO;
-import main.character.DangerLevel;
 import main.character.Player;
 import main.factory.baseFactories.ArmourFactory;
 import main.factory.baseFactories.ShieldFactory;

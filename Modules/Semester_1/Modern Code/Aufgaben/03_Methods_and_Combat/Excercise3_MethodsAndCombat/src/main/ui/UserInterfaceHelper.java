@@ -2,7 +2,6 @@ package main.ui;
 
 import main.character.Enemy;
 import main.character.GameCharacter;
-import main.global.IO;
 import main.character.Player;
 import main.combat.Battle;
 
