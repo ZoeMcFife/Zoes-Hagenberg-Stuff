@@ -1,6 +1,7 @@
 package main.ui.components;
 
 import main.character.Enemy;
+import main.character.GameCharacter;
 import main.combat.Battle;
 import main.global.GameManager;
 import main.ui.UserInterface;
@@ -20,6 +21,16 @@ public class TurnUI extends UserInterface
     @Override
     public void startUI()
     {
+        for (Enemy enemy : battle.getEnemies())
+        {
+            enemy.think(GameManager.getPlayer());
+        }
+
+        for (GameCharacter character : battle.getParticipantsOrderedByDexterity())
+        {
+
+        }
+
         enemySelection();
 
         actionSelection();

@@ -18,12 +18,17 @@ public class Battle
         participantsOrderedByDexterity.add(player);
     }
 
-    public void setParticipantsOrderedByDexterity(List<Enemy> enemies, Player player)
+    private void setParticipantsOrderedByDexterity(List<Enemy> enemies, Player player)
     {
         participantsOrderedByDexterity.addAll(enemies);
         participantsOrderedByDexterity.add(player);
 
         participantsOrderedByDexterity.sort((a, b) -> b.getDexterity() - a.getDexterity());
+    }
+
+    public List<GameCharacter> getParticipantsOrderedByDexterity()
+    {
+        return participantsOrderedByDexterity;
     }
 
     public void setEnemies(List<Enemy> enemies)
