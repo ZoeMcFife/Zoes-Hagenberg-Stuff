@@ -1,5 +1,6 @@
 package main.ui.components;
 
+import main.global.IO;
 import main.character.GameCharacter;
 import main.character.Player;
 import main.ui.UserInterface;

@@ -1,5 +1,6 @@
 package main.ui.components;
 
+import main.global.IO;
 import main.global.Difficulty;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;

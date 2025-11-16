@@ -1,6 +1,7 @@
 package main.ui;
 
 import main.character.GameCharacter;
+import main.global.IO;
 
 import java.util.Scanner;
 

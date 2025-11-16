@@ -1,5 +1,6 @@
 package main.item;
 
+import main.global.IO;
 public class Item
 {
     private String name;

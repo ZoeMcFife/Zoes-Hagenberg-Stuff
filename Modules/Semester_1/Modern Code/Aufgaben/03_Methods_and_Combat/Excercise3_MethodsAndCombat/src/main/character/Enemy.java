@@ -1,6 +1,7 @@
 package main.character;
 
 
+import main.global.IO;
 import main.combat.ActionType;
 import main.item.Armour;
 import main.item.Shield;
