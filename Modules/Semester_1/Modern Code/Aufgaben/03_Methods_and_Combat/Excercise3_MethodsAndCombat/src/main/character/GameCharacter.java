@@ -110,6 +110,11 @@ public class GameCharacter
         this.health = health;
     }
 
+    public boolean canHeal()
+    {
+        return inventory.containsHealingItem();
+    }
+
     public double getHealth()
     {
         return health;
