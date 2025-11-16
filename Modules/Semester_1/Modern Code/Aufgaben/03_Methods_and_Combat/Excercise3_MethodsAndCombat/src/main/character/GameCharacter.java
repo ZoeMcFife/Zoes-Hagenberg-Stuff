@@ -322,7 +322,7 @@ public class GameCharacter
     {
         List<String> result = new java.util.ArrayList<>();
 
-        int height = boxes.getFirst().size(); // all same height
+        int height = boxes.get(0).size(); // all same height
 
         for (int line = 0; line < height; line++)
         {
