@@ -33,7 +33,7 @@ public class Enemy extends GameCharacter
 
     public void useHealingItem()
     {
-
+        IO.println(getName() + " uses a healing item!");
     }
 
     public void think(GameCharacter attacker)
