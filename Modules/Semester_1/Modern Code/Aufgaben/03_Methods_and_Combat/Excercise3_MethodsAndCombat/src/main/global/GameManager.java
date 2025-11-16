@@ -37,5 +37,10 @@ public class GameManager
         return GameManager.player;
     }
 
+    public static void removePlayer()
+    {
+        GameManager.player = null;
+        hasPlayerBeenInitialized = false;
+    }
 
 }

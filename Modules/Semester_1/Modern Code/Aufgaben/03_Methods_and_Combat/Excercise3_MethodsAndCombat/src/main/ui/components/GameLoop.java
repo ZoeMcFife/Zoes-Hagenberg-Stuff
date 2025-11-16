@@ -8,7 +8,7 @@ import main.ui.UserInterface;
 
 public class GameLoop extends UserInterface
 {
-    private int battleCount = 0;
+    private int battleCount = 1;
     private int currentTurnCount = 0;
 
     private DangerLevel currentDangerLevel = DangerLevel.EXTREME;
@@ -31,11 +31,14 @@ public class GameLoop extends UserInterface
     {
         while (GameManager.getPlayer().isAlive())
         {
-            BattleUI battleUI = new BattleUI(currentDangerLevel);
+            BattleUI battleUI = new BattleUI(currentDangerLevel, battleCount);
             battleUI.startUI();
             battleCount++;
             updateDangerLevel();
         }
+
+        DeathUI deathUI = new DeathUI();
+        deathUI.startUI();
     }
 
     private void updateDangerLevel()

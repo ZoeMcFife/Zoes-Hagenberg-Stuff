@@ -1,7 +1,12 @@
 package main.ui;
 
+import main.character.Enemy;
 import main.character.GameCharacter;
+import main.character.Player;
+import main.combat.Battle;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterfaceHelper
@@ -138,6 +143,33 @@ public class UserInterfaceHelper
         catch (InterruptedException e)
         {
             Thread.currentThread().interrupt();
+        }
+    }
+
+    public static void displayPlayer(Player player)
+    {
+        List<String> playerBox = player.getDisplayBox();
+
+        for (String line : playerBox)
+        {
+            IO.println(line);
+        }
+    }
+
+    public static void displayEnemies(Battle battle)
+    {
+        List<List<String>> enemyBoxes = new ArrayList<>();
+
+        for (Enemy enemy : battle.getEnemies())
+        {
+            enemyBoxes.add(enemy.getDisplayBox());
+        }
+
+        List<String> finalOutput = GameCharacter.combineEnemyBoxes(enemyBoxes);
+
+        for (String line : finalOutput)
+        {
+            IO.println(line);
         }
     }
 }
