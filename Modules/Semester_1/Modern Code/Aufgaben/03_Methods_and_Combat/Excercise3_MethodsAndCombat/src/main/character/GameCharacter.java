@@ -1,5 +1,6 @@
 package main.character;
 
+import main.combat.ActionType;
 import main.global.GameManager;
 import main.inventory.Inventory;
 import main.item.Armour;
@@ -12,6 +13,7 @@ import java.util.List;
 public class GameCharacter
 {
     private String name;
+    public ActionType nextAction;
 
     private double health;
     private double maxHealth;
@@ -198,7 +200,12 @@ public class GameCharacter
 
     public void attack(GameCharacter target)
     {
-        IO.println(getName() + " attacks " + target.getName() + " for " + getDamage() + " damage!");
+        if (!target.isAlive())
+        {
+            return;
+        }
+
+        IO.println(getName() + " attacks " + target.getName() + " for " + Math.round(getDamage()) + " damage!");
         target.takeDamage(getDamage());
     }
 
@@ -239,7 +246,7 @@ public class GameCharacter
     public void takeDamage(double damage)
     {
         double damageTaken = Math.max(damage - getCurrentDefense(), 0);
-        IO.println(getName() + " takes " + damageTaken + " damage!");
+        IO.println(getName() + " takes " + Math.round(damageTaken) + " damage!");
 
         health -= damageTaken;
         if (health < 0)
@@ -324,7 +331,7 @@ public class GameCharacter
         String bar = "=".repeat(filled) + " ".repeat(barLength - filled);
         String barLine = "| " + bar + " |";
 
-        String state = isDefending ? "Defending" : "Idle";
+        String state = getStatus().toString();
         String stateLine = String.format("| %-36s |", "(" + state + ")");
 
         String border = "----------------------------------------";

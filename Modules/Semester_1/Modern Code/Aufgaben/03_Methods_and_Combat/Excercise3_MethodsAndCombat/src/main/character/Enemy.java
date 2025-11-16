@@ -8,8 +8,6 @@ import main.item.Weapon;
 
 public class Enemy extends GameCharacter
 {
-    public ActionType nextAction;
-
     public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
         super(name, maxHealth, strength, dexterity, intelligence);

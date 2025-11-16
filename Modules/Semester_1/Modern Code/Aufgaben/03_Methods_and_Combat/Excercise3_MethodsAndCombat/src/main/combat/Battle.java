@@ -15,7 +15,7 @@ public class Battle
     public Battle(List<Enemy> enemies, Player player)
     {
         setEnemies(enemies);
-        participantsOrderedByDexterity.add(player);
+        setParticipantsOrderedByDexterity(enemies, player);
     }
 
     private void setParticipantsOrderedByDexterity(List<Enemy> enemies, Player player)

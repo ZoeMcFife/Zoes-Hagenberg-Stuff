@@ -27,7 +27,6 @@ public class BattleUI extends UserInterface
 
         while (true)
         {
-            displayBattle(battle);
             TurnUI turnUI = new TurnUI(battle);
             turnUI.startUI();
 
@@ -36,21 +35,5 @@ public class BattleUI extends UserInterface
 
     }
 
-    private void displayBattle(Battle battle)
-    {
-        List<List<String>> enemyBoxes = new ArrayList<>();
 
-        for (Enemy enemy : battle.getEnemies())
-        {
-            enemyBoxes.add(enemy.getDisplayBox());
-        }
-
-        List<String> finalOutput = GameCharacter.combineEnemyBoxes(enemyBoxes);
-
-        for (String line : finalOutput)
-        {
-            IO.println(line);
-        }
-
-    }
 }
