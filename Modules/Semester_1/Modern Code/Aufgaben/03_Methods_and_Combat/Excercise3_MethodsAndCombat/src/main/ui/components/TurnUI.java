@@ -10,8 +10,6 @@ import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class TurnUI extends UserInterface
 {
@@ -31,8 +29,8 @@ public class TurnUI extends UserInterface
     {
         while (GameManager.getPlayer().isAlive())
         {
-            displayEnemies(battle);
-            displayPlayer(GameManager.getPlayer());
+            UserInterfaceHelper.displayEnemies(battle);
+            UserInterfaceHelper.displayPlayer(GameManager.getPlayer());
 
             thinkingPass();
 
@@ -180,33 +178,6 @@ public class TurnUI extends UserInterface
         }
 
         IO.println("Select an enemy by entering the corresponding number.");
-    }
-
-    private void displayPlayer(Player player)
-    {
-        List<String> playerBox = player.getDisplayBox();
-
-        for (String line : playerBox)
-        {
-            IO.println(line);
-        }
-    }
-
-    private void displayEnemies(Battle battle)
-    {
-        List<List<String>> enemyBoxes = new ArrayList<>();
-
-        for (Enemy enemy : battle.getEnemies())
-        {
-            enemyBoxes.add(enemy.getDisplayBox());
-        }
-
-        List<String> finalOutput = GameCharacter.combineEnemyBoxes(enemyBoxes);
-
-        for (String line : finalOutput)
-        {
-            IO.println(line);
-        }
     }
 
 }
