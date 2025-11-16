@@ -2,7 +2,6 @@ package main.character;
 
 import main.combat.ActionType;
 import main.global.GameManager;
-import main.global.IO;
 import main.inventory.Inventory;
 import main.item.Armour;
 import main.item.Item;

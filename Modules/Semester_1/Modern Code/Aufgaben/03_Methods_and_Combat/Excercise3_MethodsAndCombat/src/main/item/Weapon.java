@@ -1,6 +1,5 @@
 package main.item;
 
-import main.global.IO;
 public class Weapon extends Item
 {
     private double damage;
