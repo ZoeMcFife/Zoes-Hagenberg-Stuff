@@ -178,6 +178,6 @@ class FactoryTest
         assertEquals(24, WeaponFactory.getWeaponCount());
         assertEquals(7, ShieldFactory.getShieldCount());
         assertEquals(18, ArmourFactory.getArmourCount());
-        assertEquals(21, HealingPotionFactory.getPotionCount());
+        assertEquals(22, HealingPotionFactory.getPotionCount());
     }
 }
