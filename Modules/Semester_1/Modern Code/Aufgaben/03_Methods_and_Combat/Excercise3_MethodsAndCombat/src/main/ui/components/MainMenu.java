@@ -11,8 +11,17 @@ import main.item.Weapon;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
+/**
+ * Main menu UI screen for the game.
+ * Provides options to create a character, select difficulty, start the game, or exit.
+ */
 public class MainMenu extends UserInterface
 {
+    /**
+     * Displays the main menu and processes player choices.
+     * Loops indefinitely until the player exits the game.
+     * Creates a default player with legendary equipment for testing.
+     */
     @Override
     public void startUI()
     {
@@ -74,6 +83,10 @@ public class MainMenu extends UserInterface
         }
     }
 
+    /**
+     * Displays the available menu options.
+     * Shows current character and difficulty if they have been set.
+     */
     public void displayStartOptions()
     {
         if (GameManager.hasPlayerBeenInitialized)
@@ -100,6 +113,12 @@ public class MainMenu extends UserInterface
         IO.println("Choose an option (1-4)");
     }
 
+    /**
+     * Checks if the game can be started.
+     * Requires both a player character and difficulty to be set.
+     * 
+     * @return true if a character has been created and difficulty selected, false otherwise
+     */
     public boolean canGameStart()
     {
         return GameManager.hasPlayerBeenInitialized && GameManager.difficulty != Difficulty.NONE;

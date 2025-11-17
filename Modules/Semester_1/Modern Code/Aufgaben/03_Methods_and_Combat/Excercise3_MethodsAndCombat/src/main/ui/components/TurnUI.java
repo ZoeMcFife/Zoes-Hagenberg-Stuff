@@ -10,19 +10,33 @@ import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
 
+/**
+ * UI screen for managing a single combat turn.
+ * Handles character thinking, defense, actions, and turn flow.
+ */
 public class TurnUI extends UserInterface
 {
     private final Battle battle;
     private int selectedEnemy;
     private int actionChoice;
 
+    /** Delay in seconds between turn actions */
     private final int TURN_DELAY = 1;
 
+    /**
+     * Creates a new turn UI for the specified battle.
+     * 
+     * @param battle The battle context for this turn
+     */
     public TurnUI(Battle battle)
     {
         this.battle = battle;
     }
 
+    /**
+     * Executes a single combat turn.
+     * Displays combatants, processes thinking, defense, actions, and cleanup.
+     */
     @Override
     public void startUI()
     {
@@ -44,6 +58,10 @@ public class TurnUI extends UserInterface
 
     }
 
+    /**
+     * Executes all character actions in turn order.
+     * Characters attack or use healing items based on their selected action.
+     */
     private void actionPass()
     {
         for (GameCharacter character : battle.getParticipantsOrderedByDexterity())
@@ -73,6 +91,9 @@ public class TurnUI extends UserInterface
         }
     }
 
+    /**
+     * Removes defensive stance from all defending characters at the end of turn.
+     */
     private void stopDefendingPass()
     {
         for (GameCharacter character : battle.getParticipantsOrderedByDexterity())
@@ -88,6 +109,9 @@ public class TurnUI extends UserInterface
     }
 
 
+    /**
+     * Applies defensive stance to characters who chose to defend.
+     */
     private void defensePass()
     {
         for (GameCharacter character : battle.getParticipantsOrderedByDexterity())
@@ -100,6 +124,10 @@ public class TurnUI extends UserInterface
         }
     }
 
+    /**
+     * Thinking phase where each character decides their action.
+     * Enemies use AI, player chooses through menu.
+     */
     private void thinkingPass()
     {
         for (GameCharacter character : battle.getParticipantsOrderedByDexterity())
@@ -124,6 +152,10 @@ public class TurnUI extends UserInterface
         }
     }
 
+    /**
+     * Prompts the player to select a target enemy.
+     * Continues until a valid enemy is selected.
+     */
     private void enemySelection()
     {
         selectedEnemy = -1;
@@ -141,6 +173,10 @@ public class TurnUI extends UserInterface
         }
     }
 
+    /**
+     * Prompts the player to select their action for this turn.
+     * Options include Attack, Defend, or Use Item.
+     */
     private void actionSelection()
     {
         actionChoice = -1;
@@ -172,6 +208,9 @@ public class TurnUI extends UserInterface
         }
     }
 
+    /**
+     * Displays the available battle action options.
+     */
     private void displayBattleOptions()
     {
         UserInterfaceHelper.printSubHeading("Battle Options");
@@ -181,6 +220,9 @@ public class TurnUI extends UserInterface
         IO.println("Select an action by entering the corresponding number.");
     }
 
+    /**
+     * Displays the list of enemies that can be targeted.
+     */
     private void displayEnemySelection()
     {
         UserInterfaceHelper.printSubHeading("Select an Enemy to Target");

@@ -5,6 +5,11 @@ import main.item.ItemRarity;
 
 import java.util.*;
 
+/**
+ * Factory class for creating armour items.
+ * Provides methods to create armour by ID, name, rarity, or randomly.
+ * Contains 17 predefined armour pieces with various defensive capabilities.
+ */
 public class ArmourFactory
 {
     private static final Map<Integer, ArmourData> ARMOURS_BY_ID = new HashMap<>();

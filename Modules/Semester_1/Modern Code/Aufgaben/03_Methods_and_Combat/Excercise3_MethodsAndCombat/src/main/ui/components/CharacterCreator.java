@@ -5,12 +5,22 @@ import main.character.Player;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
+/**
+ * UI screen for creating a new player character.
+ * Allows the player to choose a name and allocate stat points.
+ */
 public class CharacterCreator extends UserInterface
 {
+    /** Total number of skill points available for stat allocation */
     private static final int AVAILABLE_SKILL_POINTS = 10;
 
     private Player playerCharacter;
 
+    /**
+     * Displays the character creation interface.
+     * Prompts for name and stat allocation, then confirms the creation.
+     * Repeats if the player is not satisfied with their creation.
+     */
     @Override
     public void startUI()
     {
@@ -96,11 +106,24 @@ public class CharacterCreator extends UserInterface
         while (!isPlayerSatisfied);
     }
 
+    /**
+     * Gets the created player character.
+     * 
+     * @return The player character created during character creation
+     */
     public Player getPlayerCharacter()
     {
         return playerCharacter;
     }
 
+    /**
+     * Displays the stat allocation menu showing current stats and remaining points.
+     * 
+     * @param strength Current strength value
+     * @param dexterity Current dexterity value
+     * @param intelligence Current intelligence value
+     * @param remainingPoints Number of unallocated skill points
+     */
     private void printStatAllocationMenu(int strength, int dexterity, int intelligence, int remainingPoints)
     {
         IO.println("\nAllocate your skill points:");

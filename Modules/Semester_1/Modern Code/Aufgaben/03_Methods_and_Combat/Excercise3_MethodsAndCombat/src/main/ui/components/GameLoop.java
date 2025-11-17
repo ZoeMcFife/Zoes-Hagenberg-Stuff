@@ -6,6 +6,10 @@ import main.global.Difficulty;
 import main.global.GameManager;
 import main.ui.UserInterface;
 
+/**
+ * Main game loop that manages sequential battles.
+ * Tracks battle count and progressively increases difficulty based on game settings.
+ */
 public class GameLoop extends UserInterface
 {
     private int battleCount = 1;
@@ -15,6 +19,10 @@ public class GameLoop extends UserInterface
 
     private final int difficultyIncreaseInterval;
 
+    /**
+     * Creates a new game loop.
+     * Initializes difficulty increase interval based on the selected game difficulty.
+     */
     public GameLoop()
     {
         switch (GameManager.difficulty)
@@ -26,6 +34,10 @@ public class GameLoop extends UserInterface
         }
     }
 
+    /**
+     * Starts the main game loop.
+     * Continues running battles until the player dies, then shows the death screen.
+     */
     @Override
     public void startUI()
     {
@@ -41,6 +53,10 @@ public class GameLoop extends UserInterface
         deathUI.startUI();
     }
 
+    /**
+     * Updates the danger level based on battle count and difficulty settings.
+     * Progressively increases danger from HARMLESS to DEATH.
+     */
     private void updateDangerLevel()
     {
         if (battleCount % difficultyIncreaseInterval == 0)

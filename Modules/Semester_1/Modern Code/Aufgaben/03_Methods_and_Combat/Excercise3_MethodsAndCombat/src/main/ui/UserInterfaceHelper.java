@@ -9,8 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Utility class providing common UI functions for displaying game elements
+ * and handling user input throughout the game.
+ */
 public class UserInterfaceHelper
 {
+    /**
+     * Displays the main menu screen with the game logo.
+     */
     public void displayMainMenu()
     {
         displayLogo();
@@ -18,6 +25,9 @@ public class UserInterfaceHelper
         IO.println("Press any key to start your adventure!");
     }
 
+    /**
+     * Displays the game's ASCII art logo.
+     */
     public static void displayLogo()
     {
         IO.println("                     .__    .___.__               \n" +
@@ -29,21 +39,42 @@ public class UserInterfaceHelper
                 "                                                  \n");
     }
 
+    /**
+     * Prints a formatted heading with equal signs.
+     * 
+     * @param text The heading text to display
+     */
     public static void printHeading(String text)
     {
         IO.println("\n=== " + text + " ===\n");
     }
 
+    /**
+     * Prints a formatted sub-heading with double equal signs.
+     * 
+     * @param text The sub-heading text to display
+     */
     public static void printSubHeading(String text)
     {
         IO.println("\n== " + text + " ==\n");
     }
 
+    /**
+     * Prints a prompt for player input.
+     * 
+     * @param text The prompt text to display
+     */
     public static void printPlayerInputPrompt(String text)
     {
         IO.print("\n" + text + ": ");
     }
 
+    /**
+     * Gets a string input from the player with a custom prompt.
+     * 
+     * @param inputPrompt The prompt to display to the player
+     * @return The player's input string
+     */
     public static String getPlayerStringInput(String inputPrompt)
     {
         printPlayerInputPrompt(inputPrompt);
@@ -51,6 +82,9 @@ public class UserInterfaceHelper
         return scanner.nextLine();
     }
 
+    /**
+     * Clears the console screen by printing blank lines.
+     */
     public static void clearScreen()
     {
         for (int i = 0; i < 50; i++)
@@ -59,6 +93,11 @@ public class UserInterfaceHelper
         }
     }
 
+    /**
+     * Displays detailed information about a character including stats and equipment.
+     * 
+     * @param character The character whose information to display
+     */
     public static void printCharacterInformation(GameCharacter character)
     {
         printHeading(character.getName());
@@ -81,6 +120,14 @@ public class UserInterfaceHelper
         character.getEquippedShield().printItemStats();
     }
 
+    /**
+     * Gets an integer input from the player within a specified range.
+     * Continues to prompt until valid input is provided.
+     * 
+     * @param min The minimum allowed value (inclusive)
+     * @param max The maximum allowed value (inclusive)
+     * @return The validated integer input
+     */
     public static int getIntInput(int min, int max)
     {
         while (true)
@@ -106,6 +153,13 @@ public class UserInterfaceHelper
         }
     }
 
+    /**
+     * Gets a yes/no response from the player.
+     * Accepts 'y', 'yes', 'n', or 'no' (case insensitive).
+     * 
+     * @param prompt The question to ask the player
+     * @return true for yes, false for no
+     */
     public static boolean getYesNoInput(String prompt)
     {
         while (true)
@@ -127,6 +181,9 @@ public class UserInterfaceHelper
         }
     }
 
+    /**
+     * Pauses execution until the player presses Enter.
+     */
     public static void waitForEnterKey()
     {
         IO.println("Press Enter to continue...");
@@ -134,6 +191,11 @@ public class UserInterfaceHelper
         scanner.nextLine();
     }
 
+    /**
+     * Pauses execution for a specified duration.
+     * 
+     * @param seconds The number of seconds to delay
+     */
     public static void delay(double seconds)
     {
         try
@@ -146,6 +208,11 @@ public class UserInterfaceHelper
         }
     }
 
+    /**
+     * Displays the player's character box with stats and status.
+     * 
+     * @param player The player character to display
+     */
     public static void displayPlayer(Player player)
     {
         List<String> playerBox = player.getDisplayBox();
@@ -156,6 +223,11 @@ public class UserInterfaceHelper
         }
     }
 
+    /**
+     * Displays all enemies in a battle side by side.
+     * 
+     * @param battle The battle containing the enemies to display
+     */
     public static void displayEnemies(Battle battle)
     {
         List<List<String>> enemyBoxes = new ArrayList<>();

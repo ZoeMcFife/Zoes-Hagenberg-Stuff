@@ -5,6 +5,11 @@ import main.item.Weapon;
 
 import java.util.*;
 
+/**
+ * Factory class for creating weapon items.
+ * Provides methods to create weapons by ID, name, or randomly.
+ * Contains 23 predefined weapons with various rarities and properties.
+ */
 public class WeaponFactory
 {
     private static final Map<Integer, WeaponData> WEAPONS_BY_ID = new HashMap<>();
@@ -13,6 +18,9 @@ public class WeaponFactory
     private static final List<WeaponData> ALL_WEAPONS = new ArrayList<>();
     private static final Random random = new Random();
 
+    /**
+     * Internal data structure for storing weapon information before instantiation.
+     */
     private static class WeaponData
     {
         int id;
@@ -74,6 +82,13 @@ public class WeaponFactory
         ALL_WEAPONS.add(data);
     }
 
+    /**
+     * Creates a weapon by its unique ID.
+     * 
+     * @param id The weapon ID (1-23)
+     * @return A new weapon instance
+     * @throws IllegalArgumentException if no weapon exists with the given ID
+     */
     public static Weapon createWeaponById(int id)
     {
         WeaponData data = WEAPONS_BY_ID.get(id);
@@ -84,6 +99,13 @@ public class WeaponFactory
         return createWeaponFromData(data);
     }
 
+    /**
+     * Creates a weapon by its name (case-insensitive).
+     * 
+     * @param name The weapon name
+     * @return A new weapon instance
+     * @throws IllegalArgumentException if no weapon exists with the given name
+     */
     public static Weapon createWeaponByName(String name)
     {
         WeaponData data = WEAPONS_BY_NAME.get(name.toLowerCase());
@@ -94,6 +116,12 @@ public class WeaponFactory
         return createWeaponFromData(data);
     }
 
+    /**
+     * Creates a random weapon from all available weapons.
+     * 
+     * @return A new random weapon instance
+     * @throws IllegalStateException if no weapons are registered
+     */
     public static Weapon createRandomWeapon()
     {
         if (ALL_WEAPONS.isEmpty())
@@ -104,6 +132,13 @@ public class WeaponFactory
         return createWeaponFromData(data);
     }
 
+    /**
+     * Creates a random weapon of the specified rarity.
+     * 
+     * @param rarity The desired weapon rarity
+     * @return A new random weapon of the specified rarity
+     * @throws IllegalArgumentException if no weapons exist for the given rarity
+     */
     public static Weapon createRandomWeaponByRarity(ItemRarity rarity)
     {
         List<WeaponData> weapons = WEAPONS_BY_RARITY.get(rarity);
@@ -120,11 +155,21 @@ public class WeaponFactory
         return new Weapon(data.name, data.weight, data.value, data.damage, data.isMagic, data.rarity);
     }
 
+    /**
+     * Gets a list of all weapon names.
+     * 
+     * @return List of all registered weapon names
+     */
     public static List<String> getAllWeaponNames()
     {
         return ALL_WEAPONS.stream().map(w -> w.name).toList();
     }
 
+    /**
+     * Gets the total number of registered weapons.
+     * 
+     * @return The weapon count (always 23)
+     */
     public static int getWeaponCount()
     {
         return ALL_WEAPONS.size();

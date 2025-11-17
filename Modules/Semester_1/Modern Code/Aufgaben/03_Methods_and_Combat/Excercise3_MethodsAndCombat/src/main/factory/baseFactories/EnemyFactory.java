@@ -5,6 +5,11 @@ import main.character.Enemy;
 
 import java.util.*;
 
+/**
+ * Factory class for creating enemy characters.
+ * Provides methods to create enemies by ID, name, danger level, or randomly.
+ * Contains 50 predefined enemies with various danger levels and stats.
+ */
 public class EnemyFactory
 {
     private static final Map<Integer, EnemyData> ENEMIES_BY_ID = new HashMap<>();
@@ -13,6 +18,9 @@ public class EnemyFactory
     private static final List<EnemyData> ALL_ENEMIES = new ArrayList<>();
     private static final Random random = new Random();
 
+    /**
+     * Internal data structure for storing enemy information before instantiation.
+     */
     private static class EnemyData
     {
         int id;
@@ -102,6 +110,13 @@ public class EnemyFactory
         ALL_ENEMIES.add(data);
     }
 
+    /**
+     * Creates an enemy by its unique ID.
+     * 
+     * @param id The enemy ID (1-50)
+     * @return A new enemy instance
+     * @throws IllegalArgumentException if no enemy exists with the given ID
+     */
     public static Enemy createEnemyById(int id)
     {
         EnemyData data = ENEMIES_BY_ID.get(id);
@@ -112,6 +127,13 @@ public class EnemyFactory
         return createEnemyFromData(data);
     }
 
+    /**
+     * Creates an enemy by its name (case-insensitive).
+     * 
+     * @param name The enemy name
+     * @return A new enemy instance
+     * @throws IllegalArgumentException if no enemy exists with the given name
+     */
     public static Enemy createEnemyByName(String name)
     {
         EnemyData data = ENEMIES_BY_NAME.get(name.toLowerCase());
@@ -122,6 +144,12 @@ public class EnemyFactory
         return createEnemyFromData(data);
     }
 
+    /**
+     * Creates a random enemy from all available enemies.
+     * 
+     * @return A new random enemy instance
+     * @throws IllegalStateException if no enemies are registered
+     */
     public static Enemy createRandomEnemy()
     {
         if (ALL_ENEMIES.isEmpty())
@@ -132,6 +160,13 @@ public class EnemyFactory
         return createEnemyFromData(data);
     }
 
+    /**
+     * Creates a random enemy of the specified danger level.
+     * 
+     * @param dangerLevel The desired danger level
+     * @return A new random enemy of the specified danger level
+     * @throws IllegalArgumentException if no enemies exist for the given danger level
+     */
     public static Enemy createRandomEnemyByDangerLevel(DangerLevel dangerLevel)
     {
         List<EnemyData> enemies = ENEMIES_BY_DANGER.get(dangerLevel);
@@ -148,11 +183,21 @@ public class EnemyFactory
         return new Enemy(data.name, data.maxHealth, data.strength, data.dexterity, data.intelligence);
     }
 
+    /**
+     * Gets a list of all enemy names.
+     * 
+     * @return List of all registered enemy names
+     */
     public static List<String> getAllEnemyNames()
     {
         return ALL_ENEMIES.stream().map(e -> e.name).toList();
     }
 
+    /**
+     * Gets the total number of registered enemies.
+     * 
+     * @return The enemy count (always 50)
+     */
     public static int getEnemyCount()
     {
         return ALL_ENEMIES.size();

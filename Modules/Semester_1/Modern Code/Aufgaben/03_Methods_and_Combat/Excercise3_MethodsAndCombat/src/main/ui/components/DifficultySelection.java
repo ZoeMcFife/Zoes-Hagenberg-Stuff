@@ -4,10 +4,18 @@ import main.global.Difficulty;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
+/**
+ * UI screen for selecting game difficulty.
+ * Allows the player to choose between Easy, Medium, or Hard difficulty.
+ */
 public class DifficultySelection extends UserInterface
 {
     private Difficulty selectedDifficulty;
 
+    /**
+     * Displays the difficulty selection menu and processes the player's choice.
+     * Continues prompting until a valid difficulty is selected.
+     */
     @Override
     public void startUI()
     {
@@ -47,6 +55,9 @@ public class DifficultySelection extends UserInterface
         UserInterfaceHelper.delay(5);
     }
 
+    /**
+     * Displays the available difficulty options with descriptions.
+     */
     private void displayDifficultyOptions()
     {
         IO.println("\nDifficulty:");
@@ -56,6 +67,11 @@ public class DifficultySelection extends UserInterface
         IO.println("Choose a stat to increase: (1=EASY, 2=MEDIUM, 3=HARD)");
     }
 
+    /**
+     * Gets the difficulty selected by the player.
+     * 
+     * @return The selected difficulty level
+     */
     public Difficulty getSelectedDifficulty()
     {
         return selectedDifficulty;

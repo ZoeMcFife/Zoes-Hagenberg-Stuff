@@ -12,17 +12,31 @@ import main.ui.UserInterfaceHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * UI screen for managing a single battle encounter.
+ * Generates enemies based on danger level and manages turn-based combat.
+ */
 public class BattleUI extends UserInterface
 {
     private DangerLevel dangerLevel;
     private int battleNumber;
 
+    /**
+     * Creates a new battle UI screen.
+     * 
+     * @param dangerLevel The difficulty level of enemies to generate
+     * @param battleNumber The sequential number of this battle in the game
+     */
     public BattleUI(DangerLevel dangerLevel, int battleNumber)
     {
         this.dangerLevel = dangerLevel;
         this.battleNumber = battleNumber;
     }
 
+    /**
+     * Starts the battle sequence.
+     * Generates enemies and runs turns until the player dies.
+     */
     @Override
     public void startUI()
     {
@@ -40,6 +54,9 @@ public class BattleUI extends UserInterface
 
     }
 
+    /**
+     * Displays the battle start message with ASCII art and battle information.
+     */
     public void displayBattleStartMessage()
     {
         IO.println("  ____        _   _   _         _____ _             _   \n" +
