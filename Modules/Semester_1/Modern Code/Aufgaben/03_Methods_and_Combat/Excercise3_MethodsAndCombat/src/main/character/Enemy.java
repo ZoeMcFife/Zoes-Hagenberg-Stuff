@@ -1,6 +1,7 @@
 package main.character;
 
 
+import main.combat.ActionType;
 import main.item.Armour;
 import main.item.Shield;
 import main.item.Weapon;
@@ -20,4 +21,83 @@ public class Enemy extends GameCharacter
         equipItem(shield);
     }
 
+    public void executeAction(ActionType action, GameCharacter attacker)
+    {
+        switch (action)
+        {
+            case ATTACK -> attack(attacker);
+            case DEFEND -> defend();
+            case HEAL -> useHealingItem();
+        }
+    }
+
+    public void useHealingItem()
+    {
+        IO.println(getName() + " uses a healing item!");
+    }
+
+    public void think(GameCharacter attacker)
+    {
+        IO.println(getName() + " is thinking...");
+        nextAction = calculateNextAction(attacker);
+    }
+
+    public ActionType calculateNextAction(GameCharacter attacker)
+    {
+        CharacterStatus selfStatus = getStatus();
+        CharacterStatus attackerStatus = attacker.getStatus();
+
+        if (attackerStatus == CharacterStatus.CRITICALLY_HURT)
+        {
+            return randomWeightedAction(80, 20, 0);
+        }
+        else if (attackerStatus == CharacterStatus.SEVERELY_HURT)
+        {
+            return randomWeightedAction(90, 5, 5);
+        }
+
+        if (selfStatus == CharacterStatus.CRITICALLY_HURT)
+        {
+            return randomWeightedAction(5, 35, 65);
+
+        }
+        else if (selfStatus == CharacterStatus.SEVERELY_HURT)
+        {
+            return randomWeightedAction(40, 40, 20);
+        }
+        else if (selfStatus == CharacterStatus.HURT)
+        {
+            return randomWeightedAction(80, 10, 10);
+        }
+        else
+        {
+            return ActionType.ATTACK;
+        }
+    }
+
+    private ActionType randomWeightedAction(int attackWeight, int defendWeight, int healWeight)
+    {
+        if (!canHeal())
+        {
+            attackWeight = healWeight / 2;
+            defendWeight = defendWeight / 2;
+            healWeight = 0;
+        }
+
+        int totalWeight = attackWeight + defendWeight + healWeight;
+        int randomValue = (int) (Math.random() * totalWeight);
+
+        if (randomValue < attackWeight)
+        {
+            return ActionType.ATTACK;
+        }
+        else if (randomValue < attackWeight + defendWeight)
+        {
+            return ActionType.DEFEND;
+        }
+        else
+        {
+            return ActionType.HEAL;
+        }
+    }
 }

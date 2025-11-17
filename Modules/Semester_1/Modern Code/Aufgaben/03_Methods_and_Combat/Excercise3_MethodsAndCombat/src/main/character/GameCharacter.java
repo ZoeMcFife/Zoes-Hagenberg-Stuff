@@ -1,5 +1,6 @@
 package main.character;
 
+import main.combat.ActionType;
 import main.global.GameManager;
 import main.inventory.Inventory;
 import main.item.Armour;
@@ -12,6 +13,7 @@ import java.util.List;
 public class GameCharacter
 {
     private String name;
+    public ActionType nextAction;
 
     private double health;
     private double maxHealth;
@@ -29,7 +31,7 @@ public class GameCharacter
 
     public boolean isDefending = false;
 
-    private CharacterStatus status = CharacterStatus.ALIVE;
+    //private CharacterStatus status = CharacterStatus.ALIVE;
 
     private Inventory inventory = new Inventory(this);
 
@@ -63,11 +65,13 @@ public class GameCharacter
 
     public void defend()
     {
+        IO.println(getName() + " is defending!");
         isDefending = true;
     }
 
     public void stopDefending()
     {
+        IO.println(getName() + " stopped defending!");
         isDefending = false;
     }
 
@@ -106,6 +110,11 @@ public class GameCharacter
         }
 
         this.health = health;
+    }
+
+    public boolean canHeal()
+    {
+        return inventory.containsHealingItem();
     }
 
     public double getHealth()
@@ -191,6 +200,12 @@ public class GameCharacter
 
     public void attack(GameCharacter target)
     {
+        if (!target.isAlive())
+        {
+            return;
+        }
+
+        IO.println(getName() + " attacks " + target.getName() + " for " + Math.round(getDamage()) + " damage!");
         target.takeDamage(getDamage());
     }
 
@@ -230,10 +245,14 @@ public class GameCharacter
 
     public void takeDamage(double damage)
     {
-        health -= Math.max(damage - getCurrentDefense(), 0);
+        double damageTaken = Math.max(damage - getCurrentDefense(), 0);
+        IO.println(getName() + " takes " + Math.round(damageTaken) + " damage!");
+
+        health -= damageTaken;
         if (health < 0)
         {
             health = 0;
+            IO.println(getName() + " died!");
         }
     }
 
@@ -242,21 +261,30 @@ public class GameCharacter
         return health > 0;
     }
 
-    public String getStatus()
+    public CharacterStatus getStatus()
     {
-        switch (status)
+        if (getHeatlthPercentage() == 1)
         {
-            case ALIVE ->
-            {
-                return "Alive";
-            }
-            case DEAD ->
-            {
-                return "Dead";
-            }
+            return CharacterStatus.ALIVE;
         }
 
-        return "Unknown";
+        if (getHeatlthPercentage() > 0.5)
+        {
+            return CharacterStatus.HURT;
+        }
+
+        if (getHeatlthPercentage() > 0.3)
+        {
+            return CharacterStatus.SEVERELY_HURT;
+        }
+
+        if (getHeatlthPercentage() > 0)
+        {
+            return CharacterStatus.CRITICALLY_HURT;
+        }
+
+        return CharacterStatus.DEAD;
+
     }
 
     public void setMaxHealth(double maxHealth)
@@ -295,15 +323,27 @@ public class GameCharacter
         List<String> box = new java.util.ArrayList<>();
 
         String nameLine = String.format("| %-36s |", getName());
-        String hpLine   = String.format("| Health: %.0f / %.0f%20s|", getHealth(), getMaxHealth(), "");
+        
+        // Format health with proper spacing to fit in 36 characters
+        String healthText = String.format("Health: %.0f / %.0f", getHealth(), getMaxHealth());
+        String hpLine = String.format("| %-36s |", healthText);
 
-        int barLength = 30;
+        // Health bar (36 '=' or ' ' characters to fill the entire box width)
+        int barLength = 36;
         double pct = getHeatlthPercentage();
         int filled = (int) (pct * barLength);
         String bar = "=".repeat(filled) + " ".repeat(barLength - filled);
-        String barLine = "| " + bar + " |";
+        String barLine = String.format("| %-36s |", bar);
 
-        String state = isDefending ? "Defending" : "Idle";
+        // Stats line in format: D6, I2, S10
+        String statsText = String.format("D%d, I%d, S%d", getDexterity(), getIntelligence(), getStrength());
+        String statsLine = String.format("| %-36s |", statsText);
+
+        // Attack and Defense stats line
+        String attackDefenseText = String.format("Attack: %.0f, Defense: %.0f", getDamage(), getCurrentDefense());
+        String attackDefenseLine = String.format("| %-36s |", attackDefenseText);
+
+        String state = getStatus().toString();
         String stateLine = String.format("| %-36s |", "(" + state + ")");
 
         String border = "----------------------------------------";
@@ -311,7 +351,9 @@ public class GameCharacter
         box.add(border);
         box.add(nameLine);
         box.add(hpLine);
-        box.add("| " + bar + "       |");
+        box.add(barLine);
+        box.add(statsLine);
+        box.add(attackDefenseLine);
         box.add(stateLine);
         box.add(border);
 

@@ -25,11 +25,7 @@ public class BattleGenerator
             enemies.add(enemy);
         }
 
-        Battle battle = new Battle();
-
-        battle.setEnemies(enemies);
-
-        return battle;
+        return new Battle(enemies, GameManager.getPlayer());
     }
 
     private static int getEnemyCountForDangerLevel(DangerLevel dangerLevel)

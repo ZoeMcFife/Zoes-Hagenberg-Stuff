@@ -5,6 +5,7 @@ import main.character.Enemy;
 import main.character.GameCharacter;
 import main.combat.Battle;
 import main.factory.generators.BattleGenerator;
+import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
@@ -14,39 +15,43 @@ import java.util.List;
 public class BattleUI extends UserInterface
 {
     private DangerLevel dangerLevel;
+    private int battleNumber;
 
-    public BattleUI(DangerLevel dangerLevel)
+    public BattleUI(DangerLevel dangerLevel, int battleNumber)
     {
         this.dangerLevel = dangerLevel;
+        this.battleNumber = battleNumber;
     }
 
     @Override
     public void startUI()
     {
         Battle battle = BattleGenerator.generateBattle(dangerLevel);
-        displayBattle(battle);
 
-        TurnUI turnUI = new TurnUI(battle);
-        turnUI.startUI();
+        displayBattleStartMessage();
 
-        UserInterfaceHelper.waitForEnterKey();
+        while (GameManager.getPlayer().isAlive())
+        {
+            TurnUI turnUI = new TurnUI(battle);
+            turnUI.startUI();
+
+            UserInterfaceHelper.waitForEnterKey();
+        }
+
     }
 
-    private void displayBattle(Battle battle)
+    public void displayBattleStartMessage()
     {
-        List<List<String>> enemyBoxes = new ArrayList<>();
-
-        for (Enemy enemy : battle.getEnemies())
-        {
-            enemyBoxes.add(enemy.getDisplayBox());
-        }
-
-        List<String> finalOutput = GameCharacter.combineEnemyBoxes(enemyBoxes);
-
-        for (String line : finalOutput)
-        {
-            IO.println(line);
-        }
-
+        IO.println("  ____        _   _   _         _____ _             _   \n" +
+                " |  _ \\      | | | | | |       / ____| |           | |  \n" +
+                " | |_) | __ _| |_| |_| | ___  | (___ | |_ __ _ _ __| |_ \n" +
+                " |  _ < / _` | __| __| |/ _ \\  \\___ \\| __/ _` | '__| __|\n" +
+                " | |_) | (_| | |_| |_| |  __/  ____) | || (_| | |  | |_ \n" +
+                " |____/ \\__,_|\\__|\\__|_|\\___| |_____/ \\__\\__,_|_|   \\__|\n" +
+                "                                                        \n" +
+                "                                                        ");
+        IO.println("Battle " + battleNumber + " begins!");
+        IO.println("Danger Level: " + dangerLevel);
     }
+
 }

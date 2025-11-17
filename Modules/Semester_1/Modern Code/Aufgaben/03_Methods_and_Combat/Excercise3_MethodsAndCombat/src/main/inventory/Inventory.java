@@ -2,6 +2,7 @@ package main.inventory;
 
 import main.character.GameCharacter;
 import main.character.Player;
+import main.item.HealingPotion;
 import main.item.Item;
 
 import java.util.ArrayList;
@@ -48,5 +49,17 @@ public class Inventory
         {
             addItem(item);
         }
+    }
+
+    public boolean containsHealingItem()
+    {
+        for (Item item : items)
+        {
+            if (item instanceof HealingPotion)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,9 +1,13 @@
 package main.ui.components;
 
-import main.character.DangerLevel;
 import main.character.Player;
+import main.factory.baseFactories.ArmourFactory;
+import main.factory.baseFactories.ShieldFactory;
+import main.factory.baseFactories.WeaponFactory;
 import main.global.Difficulty;
 import main.global.GameManager;
+import main.item.ItemRarity;
+import main.item.Weapon;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
 
@@ -16,6 +20,10 @@ public class MainMenu extends UserInterface
         {
             Player player = new Player("Player", 10, 10, 10);
             GameManager.setPlayer(player);
+            Weapon weapon = WeaponFactory.createRandomWeaponByRarity(ItemRarity.LEGENDARY);
+            player.equipItem(weapon);
+            player.equipItem(ArmourFactory.createRandomArmourByRarity(ItemRarity.LEGENDARY));
+            player.equipItem(ShieldFactory.createRandomShieldByRarity(ItemRarity.LEGENDARY));
 
             GameManager.difficulty = Difficulty.HARD;
 
