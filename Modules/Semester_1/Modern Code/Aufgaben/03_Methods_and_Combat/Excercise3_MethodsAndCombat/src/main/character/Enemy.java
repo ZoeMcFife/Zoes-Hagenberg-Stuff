@@ -6,13 +6,38 @@ import main.item.Armour;
 import main.item.Shield;
 import main.item.Weapon;
 
+/**
+ * Represents an enemy character in the game.
+ * Enemies have AI behavior to determine their actions in combat.
+ */
 public class Enemy extends GameCharacter
 {
+    /**
+     * Creates a new enemy with specified stats.
+     * 
+     * @param name The enemy's name
+     * @param maxHealth The maximum health of the enemy
+     * @param strength The enemy's strength stat (affects physical damage)
+     * @param dexterity The enemy's dexterity stat (affects turn order)
+     * @param intelligence The enemy's intelligence stat (affects magic damage)
+     */
     public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
         super(name, maxHealth, strength, dexterity, intelligence);
     }
 
+    /**
+     * Creates a new enemy with specified stats and equipment.
+     * 
+     * @param name The enemy's name
+     * @param maxHealth The maximum health of the enemy
+     * @param strength The enemy's strength stat (affects physical damage)
+     * @param dexterity The enemy's dexterity stat (affects turn order)
+     * @param intelligence The enemy's intelligence stat (affects magic damage)
+     * @param weapon The weapon to equip
+     * @param armour The armour to equip
+     * @param shield The shield to equip
+     */
     public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, Weapon weapon, Armour armour, Shield shield)
     {
         this(name, maxHealth, strength, dexterity, intelligence);
@@ -21,6 +46,12 @@ public class Enemy extends GameCharacter
         equipItem(shield);
     }
 
+    /**
+     * Executes the specified action against the target.
+     * 
+     * @param action The action to perform (ATTACK, DEFEND, or HEAL)
+     * @param attacker The target of the action
+     */
     public void executeAction(ActionType action, GameCharacter attacker)
     {
         switch (action)
@@ -31,17 +62,34 @@ public class Enemy extends GameCharacter
         }
     }
 
+    /**
+     * Uses a healing item from the enemy's inventory.
+     * Outputs a message indicating the enemy is healing.
+     */
     public void useHealingItem()
     {
         IO.println(getName() + " uses a healing item!");
     }
 
+    /**
+     * Makes the enemy think about their next action.
+     * Determines the best action based on the current battle state.
+     * 
+     * @param attacker The character the enemy is fighting against
+     */
     public void think(GameCharacter attacker)
     {
         IO.println(getName() + " is thinking...");
         nextAction = calculateNextAction(attacker);
     }
 
+    /**
+     * Calculates the next action for the enemy based on battle conditions.
+     * Uses AI logic that considers both the enemy's and attacker's health status.
+     * 
+     * @param attacker The character the enemy is fighting against
+     * @return The calculated action type (ATTACK, DEFEND, or HEAL)
+     */
     public ActionType calculateNextAction(GameCharacter attacker)
     {
         CharacterStatus selfStatus = getStatus();
@@ -75,6 +123,15 @@ public class Enemy extends GameCharacter
         }
     }
 
+    /**
+     * Randomly selects an action based on weighted probabilities.
+     * If healing is not available, redistributes heal weight to attack and defend.
+     * 
+     * @param attackWeight The relative probability of attacking
+     * @param defendWeight The relative probability of defending
+     * @param healWeight The relative probability of healing
+     * @return The randomly selected action based on weights
+     */
     private ActionType randomWeightedAction(int attackWeight, int defendWeight, int healWeight)
     {
         if (!canHeal())
