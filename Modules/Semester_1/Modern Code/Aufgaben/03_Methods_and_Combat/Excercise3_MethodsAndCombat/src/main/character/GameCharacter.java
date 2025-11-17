@@ -130,7 +130,7 @@ public class GameCharacter
      * 
      * @return Health percentage (0.0 to 1.0)
      */
-    public double getHeatlthPercentage()
+    public double getHealthPercentage()
     {
         return (health / maxHealth);
     }
@@ -429,22 +429,22 @@ public class GameCharacter
      */
     public CharacterStatus getStatus()
     {
-        if (getHeatlthPercentage() == 1)
+        if (getHealthPercentage() == 1)
         {
             return CharacterStatus.ALIVE;
         }
 
-        if (getHeatlthPercentage() > 0.5)
+        if (getHealthPercentage() > 0.5)
         {
             return CharacterStatus.HURT;
         }
 
-        if (getHeatlthPercentage() > 0.3)
+        if (getHealthPercentage() > 0.3)
         {
             return CharacterStatus.SEVERELY_HURT;
         }
 
-        if (getHeatlthPercentage() > 0)
+        if (getHealthPercentage() > 0)
         {
             return CharacterStatus.CRITICALLY_HURT;
         }
@@ -528,7 +528,7 @@ public class GameCharacter
 
         // Health bar (36 '=' or ' ' characters to fill the entire box width)
         int barLength = 36;
-        double pct = getHeatlthPercentage();
+        double pct = getHealthPercentage();
         int filled = (int) (pct * barLength);
         String bar = "=".repeat(filled) + " ".repeat(barLength - filled);
         String barLine = String.format("| %-36s |", bar);
