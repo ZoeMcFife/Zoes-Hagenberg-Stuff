@@ -39,7 +39,7 @@ public class BattleUI extends UserInterface
 
         displayBattleStartMessage();
 
-        while (GameManager.getPlayer().isAlive())
+        while (GameManager.getPlayer().isAlive() && !battle.isBattleOver())
         {
             TurnUI turnUI = new TurnUI(battle);
             turnUI.startUI();

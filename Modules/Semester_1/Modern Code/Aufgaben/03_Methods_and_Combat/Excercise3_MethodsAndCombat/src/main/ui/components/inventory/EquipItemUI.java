@@ -1,4 +1,13 @@
 package main.ui.components.inventory;
 
-public class EquipItemUI {
+import main.ui.UserInterface;
+
+public class EquipItemUI extends UserInterface
+{
+
+    @Override
+    public void startUI()
+    {
+
+    }
 }

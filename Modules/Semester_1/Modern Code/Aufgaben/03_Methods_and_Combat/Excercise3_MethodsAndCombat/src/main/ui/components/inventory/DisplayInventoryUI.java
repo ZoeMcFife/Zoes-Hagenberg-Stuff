@@ -6,11 +6,17 @@ import main.ui.UserInterface;
 
 public class DisplayInventoryUI extends UserInterface
 {
+    private final Inventory inventory;
+
+    public DisplayInventoryUI(Inventory inventory)
+    {
+        this.inventory = inventory;
+    }
 
     @Override
     public void startUI()
     {
-        displayInventory(GameManager.getPlayer().GetInventory());
+        displayInventory(inventory);
     }
 
     private void displayInventory(Inventory inventory)

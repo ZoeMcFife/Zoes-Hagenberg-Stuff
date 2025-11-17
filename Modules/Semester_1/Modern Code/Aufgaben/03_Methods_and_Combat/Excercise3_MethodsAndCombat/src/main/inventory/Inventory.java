@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class Inventory
 {
-    private List<Item> items = new ArrayList<>();
-    private GameCharacter character;
+    private final List<Item> items = new ArrayList<>();
+    private final GameCharacter character;
 
     /**
      * Creates a new inventory for the specified character.
@@ -35,6 +35,27 @@ public class Inventory
     public List<Item> getItems()
     {
         return items;
+    }
+
+    /**
+     * Gets the item at the specified index.
+     *
+     * @param index The index of the item
+     * @return The item at the specified index
+     */
+    public Item getItemAt(int index)
+    {
+        return items.get(index);
+    }
+
+    /**
+     * Gets the number of items in the inventory.
+     *
+     * @return The item count
+     */
+    public int getItemCount()
+    {
+        return items.size();
     }
 
     /**

@@ -14,7 +14,7 @@ public class GameLoop extends UserInterface
     private int battleCount = 1;
     private int currentTurnCount = 0;
 
-    private DangerLevel currentDangerLevel = DangerLevel.EXTREME;
+    private DangerLevel currentDangerLevel = DangerLevel.HARMLESS;
 
     private final int difficultyIncreaseInterval;
 
@@ -50,10 +50,13 @@ public class GameLoop extends UserInterface
             battleCount++;
             updateDangerLevel();
 
+            UserInterfaceHelper.clearScreen();
+
             RestUI restUI = new RestUI();
             restUI.startUI();
         }
 
+        UserInterfaceHelper.clearScreen();
         DeathUI deathUI = new DeathUI();
         deathUI.startUI();
     }

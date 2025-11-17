@@ -95,6 +95,11 @@ public class Enemy extends GameCharacter
         CharacterStatus selfStatus = getStatus();
         CharacterStatus attackerStatus = attacker.getStatus();
 
+        if (randomSuicideTrigger())
+        {
+            return ActionType.SUICIDE;
+        }
+
         if (attackerStatus == CharacterStatus.CRITICALLY_HURT)
         {
             return randomWeightedAction(80, 20, 0);
@@ -156,5 +161,10 @@ public class Enemy extends GameCharacter
         {
             return ActionType.HEAL;
         }
+    }
+
+    private boolean randomSuicideTrigger()
+    {
+        return Math.random() < 0.9;
     }
 }

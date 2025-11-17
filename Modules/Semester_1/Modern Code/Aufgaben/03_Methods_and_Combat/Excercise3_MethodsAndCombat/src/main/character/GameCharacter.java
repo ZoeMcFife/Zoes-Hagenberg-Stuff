@@ -1,12 +1,13 @@
 package main.character;
 
 import main.combat.ActionType;
+import main.factory.baseFactories.ArmourFactory;
+import main.factory.baseFactories.ShieldFactory;
+import main.factory.baseFactories.WeaponFactory;
 import main.global.GameManager;
 import main.inventory.Inventory;
-import main.item.Armour;
-import main.item.Item;
-import main.item.Shield;
-import main.item.Weapon;
+import main.item.*;
+import main.ui.UserInterfaceHelper;
 
 import java.util.List;
 
@@ -33,16 +34,14 @@ public class GameCharacter
     /** Maximum allowed value for character stats */
     public static final int MAX_STAT_VALUE = 10;
 
-    private Weapon equippedWeapon = new Weapon("Fists", 0, 0, 1, false);
-    private Shield equippedShield = new Shield("None", 0, 0, 0);
-    private Armour equippedArmour = new Armour("Clothes", 0, 0, 0);
+    private Weapon equippedWeapon = WeaponFactory.createBaseWeapon();
+    private Shield equippedShield = ShieldFactory.createBaseShield();
+    private Armour equippedArmour = ArmourFactory.createBaseArmour();
 
     /** Indicates whether the character is currently in a defensive stance */
     public boolean isDefending = false;
 
-    //private CharacterStatus status = CharacterStatus.ALIVE;
-
-    private Inventory inventory = new Inventory(this);
+    private final Inventory inventory = new Inventory(this);
 
     /**
      * Creates a new game character with specified attributes.
@@ -71,6 +70,7 @@ public class GameCharacter
     public void addItemToInventory(Item item)
     {
         inventory.addItem(item);
+        IO.println(getName() + " obtained " + item.getName() + "!");
     }
 
     /**
@@ -341,39 +341,76 @@ public class GameCharacter
     }
 
     /**
+     * Causes the character to repeatedly attack themselves until death.
+     */
+    public void suicide()
+    {
+        while (isAlive())
+        {
+            attack(this);
+            UserInterfaceHelper.delay(1);
+            IO.println(getName() + " has given up.");
+            IO.println();
+        }
+    }
+
+    /**
      * Equips an item to the appropriate slot.
-     * Automatically drops the currently equipped item of the same type.
-     * 
+     * Automatically adds currently equipped item back to inventory if it has weight.
+     *
      * @param item The item to equip
      */
     public void equipItem(Item item)
     {
         if (item instanceof Weapon)
         {
-            dropItem(equippedWeapon);
+            if (item.getWeight() != 0) /* Since fists are Weapons, check if an item has weight or not before being added to inventory, so that the player can't have their fists in the inventory */
+            {
+                addItemToInventory(equippedWeapon);
+            }
             equippedWeapon = (Weapon) item;
         }
         else if (item instanceof Shield)
         {
-            dropItem(equippedWeapon);
+            if (item.getWeight() != 0)
+            {
+                addItemToInventory(equippedShield);
+            }
             equippedShield = (Shield) item;
         }
         else if (item instanceof Armour)
         {
-            dropItem(equippedWeapon);
+            if (item.getWeight() != 0)
+            {
+                addItemToInventory(equippedArmour);
+            }
             equippedArmour = (Armour) item;
         }
     }
 
     /**
      * Drops an item from inventory.
-     * Currently does nothing (placeholder for future implementation).
      * 
      * @param item The item to drop
      */
     public void dropItem(Item item)
     {
+        inventory.removeItem(item);
+        IO.println(getName() + " dropped " + item.getName() + "!");
+    }
 
+    public void useItem(Item item)
+    {
+        if (item instanceof HealingPotion)
+        {
+            setHealth(getHealth() + ((HealingPotion) item).getHealingAmount());
+            IO.println(getName() + " used " + item.getName() + " and healed for " + ((HealingPotion) item).getHealingAmount() + " health!");
+            inventory.removeItem(item);
+        }
+        else
+        {
+            IO.println("Cannot use " + item.getName() + "!");
+        }
     }
 
     /**
@@ -569,7 +606,7 @@ public class GameCharacter
     {
         List<String> result = new java.util.ArrayList<>();
 
-        int height = boxes.get(0).size(); // all same height
+        int height = boxes.getFirst().size(); // all same height
 
         for (int line = 0; line < height; line++)
         {

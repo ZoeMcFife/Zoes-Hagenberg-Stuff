@@ -40,7 +40,7 @@ public class TurnUI extends UserInterface
     @Override
     public void startUI()
     {
-        while (GameManager.getPlayer().isAlive())
+        while (GameManager.getPlayer().isAlive() && !battle.isBattleOver())
         {
             UserInterfaceHelper.displayEnemies(battle);
             UserInterfaceHelper.displayPlayer(GameManager.getPlayer());
@@ -68,7 +68,11 @@ public class TurnUI extends UserInterface
         {
             if (character.isAlive())
             {
-                if (character instanceof Enemy enemy)
+                if (character.nextAction == ActionType.SUICIDE)
+                {
+                    character.suicide();
+                }
+                else if (character instanceof Enemy enemy)
                 {
                     switch (enemy.nextAction)
                     {

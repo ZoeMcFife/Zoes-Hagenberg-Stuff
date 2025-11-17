@@ -30,13 +30,15 @@ public class UserInterfaceHelper
      */
     public static void displayLogo()
     {
-        IO.println("                     .__    .___.__               \n" +
-                "  ____ ___  ___ ____ |__| __| _/|__|__ __  _____  \n" +
-                "_/ __ \\\\  \\/  // ___\\|  |/ __ | |  |  |  \\/     \\ \n" +
-                "\\  ___/ >    <\\  \\___|  / /_/ | |  |  |  /  Y Y  \\\n" +
-                " \\___  >__/\\_ \\\\___  >__\\____ | |__|____/|__|_|  /\n" +
-                "     \\/      \\/    \\/        \\/                \\/ \n" +
-                "                                                  \n");
+        IO.println("""
+                                     .__    .___.__              \s
+                  ____ ___  ___ ____ |__| __| _/|__|__ __  _____ \s
+                _/ __ \\\\  \\/  // ___\\|  |/ __ | |  |  |  \\/     \\\s
+                \\  ___/ >    <\\  \\___|  / /_/ | |  |  |  /  Y Y  \\
+                 \\___  >__/\\_ \\\\___  >__\\____ | |__|____/|__|_|  /
+                     \\/      \\/    \\/        \\/                \\/\s
+                                                                 \s
+                """);
     }
 
     /**
@@ -78,8 +80,7 @@ public class UserInterfaceHelper
     public static String getPlayerStringInput(String inputPrompt)
     {
         printPlayerInputPrompt(inputPrompt);
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return IO.readln();
     }
 
     /**
@@ -135,9 +136,8 @@ public class UserInterfaceHelper
             try
             {
                 IO.print("> ");
-                Scanner scanner = new Scanner(System.in);
 
-                int value = Integer.parseInt(scanner.nextLine());
+                int value = Integer.parseInt(IO.readln());
 
                 if (value >= min && value <= max)
                 {
@@ -165,8 +165,7 @@ public class UserInterfaceHelper
         while (true)
         {
             IO.print(prompt + " (y/n): ");
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine().trim().toLowerCase();
+            String input = IO.readln().trim().toLowerCase();
 
             if (input.equals("y") || input.equals("yes"))
             {
@@ -187,8 +186,7 @@ public class UserInterfaceHelper
     public static void waitForEnterKey()
     {
         IO.println("Press Enter to continue...");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
+        IO.readln();
     }
 
     /**

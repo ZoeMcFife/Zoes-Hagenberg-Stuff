@@ -13,4 +13,6 @@ public enum ActionType
     
     /** Use a healing item to restore health */
     HEAL,
+    /** Character chooses to end their own life */
+    SUICIDE
 }
