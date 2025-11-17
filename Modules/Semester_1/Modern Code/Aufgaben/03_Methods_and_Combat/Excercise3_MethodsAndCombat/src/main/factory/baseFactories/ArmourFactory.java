@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Factory class for creating armour items.
  * Provides methods to create armour by ID, name, rarity, or randomly.
- * Contains 17 predefined armour pieces with various defensive capabilities.
+ * Contains 18 predefined armour pieces with various defensive capabilities.
  */
 public class ArmourFactory
 {
@@ -60,6 +60,7 @@ public class ArmourFactory
         registerArmour(15, "Fargoth Barrier Cloak", 2.0, 800, 16, ItemRarity.LEGENDARY);
         registerArmour(16, "Explorer's Webbing", 4.0, 150, 10, ItemRarity.LOW);
         registerArmour(17, "Crimson Vambraces", 2.5, 300, 12, ItemRarity.MEDIUM);
+        registerArmour(18, "Clothes", 1.0, 2, 0, ItemRarity.LOW);
     }
 
     private static void registerArmour(int id, String name, double weight, double value, double defense, ItemRarity rarity)

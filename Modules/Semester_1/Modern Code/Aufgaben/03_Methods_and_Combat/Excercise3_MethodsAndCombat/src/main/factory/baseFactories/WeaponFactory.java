@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Factory class for creating weapon items.
  * Provides methods to create weapons by ID, name, or randomly.
- * Contains 23 predefined weapons with various rarities and properties.
+ * Contains 24 predefined weapons with various rarities and properties.
  */
 public class WeaponFactory
 {
@@ -71,6 +71,7 @@ public class WeaponFactory
         registerWeapon(21, "Fargoth Execution Blade", 11.0, 980, 60, false, ItemRarity.LEGENDARY);
         registerWeapon(22, "Echo Reaver Staff", 4.8, 360, 20, true, ItemRarity.HIGH);
         registerWeapon(23, "Stormcall Crossbow", 7.0, 400, 36, false, ItemRarity.HIGH);
+        registerWeapon(24, "Fists", 0.0, 0, 5, false, ItemRarity.LOW);
     }
 
     private static void registerWeapon(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity)
@@ -85,7 +86,7 @@ public class WeaponFactory
     /**
      * Creates a weapon by its unique ID.
      * 
-     * @param id The weapon ID (1-23)
+     * @param id The weapon ID (1-24)
      * @return A new weapon instance
      * @throws IllegalArgumentException if no weapon exists with the given ID
      */
@@ -168,7 +169,7 @@ public class WeaponFactory
     /**
      * Gets the total number of registered weapons.
      * 
-     * @return The weapon count (always 23)
+     * @return The weapon count (always 24)
      */
     public static int getWeaponCount()
     {
