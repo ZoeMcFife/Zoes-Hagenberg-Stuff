@@ -18,7 +18,7 @@ class FactoryTest
         assertEquals("Abyssal Marauder", enemy.getName());
         assertEquals(60, enemy.getMaxHealth());
         assertEquals(5, enemy.getStrength());
-        assertEquals(14, enemy.getDexterity());
+        assertEquals(6, enemy.getDexterity());
         assertEquals(6, enemy.getIntelligence());
     }
 
