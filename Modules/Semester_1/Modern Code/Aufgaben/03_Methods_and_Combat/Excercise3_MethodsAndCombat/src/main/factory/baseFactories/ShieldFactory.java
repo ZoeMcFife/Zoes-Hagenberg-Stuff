@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Factory class for creating shield items.
  * Provides methods to create shields by ID, name, rarity, or randomly.
- * Contains 6 predefined shields with various defensive capabilities.
+ * Contains 7 predefined shields with various defensive capabilities.
  */
 public class ShieldFactory
 {
@@ -49,6 +49,7 @@ public class ShieldFactory
         // Additional shields from the extended list
         registerShield(5, "Patch-Steel Shield", 5.0, 120, 12, ItemRarity.LOW);
         registerShield(6, "Nebular Disk Shield", 3.5, 340, 18, ItemRarity.MEDIUM);
+        registerShield(7, "Fists", 0.0, 0, 1, ItemRarity.LOW);
     }
 
     private static void registerShield(int id, String name, double weight, double value, double defense, ItemRarity rarity)
