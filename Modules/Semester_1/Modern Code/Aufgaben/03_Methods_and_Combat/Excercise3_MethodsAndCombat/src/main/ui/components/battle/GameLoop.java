@@ -1,10 +1,9 @@
-package main.ui.components;
+package main.ui.components.battle;
 
 import main.character.DangerLevel;
-import main.combat.Battle;
-import main.global.Difficulty;
 import main.global.GameManager;
 import main.ui.UserInterface;
+import main.ui.UserInterfaceHelper;
 
 /**
  * Main game loop that manages sequential battles.
@@ -43,10 +42,16 @@ public class GameLoop extends UserInterface
     {
         while (GameManager.getPlayer().isAlive())
         {
+            UserInterfaceHelper.clearScreen();
+
             BattleUI battleUI = new BattleUI(currentDangerLevel, battleCount);
             battleUI.startUI();
+
             battleCount++;
             updateDangerLevel();
+
+            RestUI restUI = new RestUI();
+            restUI.startUI();
         }
 
         DeathUI deathUI = new DeathUI();

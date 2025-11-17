@@ -1,4 +1,4 @@
-package main.ui.components;
+package main.ui.components.battle;
 
 import main.global.GameManager;
 import main.ui.UserInterface;

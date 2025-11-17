@@ -1,4 +1,4 @@
-package main.ui.components;
+package main.ui.components.main_menu;
 
 import main.character.GameCharacter;
 import main.character.Player;

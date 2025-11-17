@@ -1,10 +1,6 @@
 package main;
 
-import main.global.GameManager;
-import main.ui.components.CharacterCreator;
-import main.ui.UserInterfaceHelper;
-import main.ui.components.DifficultySelection;
-import main.ui.components.MainMenu;
+import main.ui.components.main_menu.MainMenu;
 
 /**
  * Main entry point for the game application.

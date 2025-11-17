@@ -97,6 +97,16 @@ public class GameCharacter
     }
 
     /**
+     * Gets the character's inventory.
+     *
+     * @return The inventory object
+     */
+    public Inventory getInventory()
+    {
+        return inventory;
+    }
+
+    /**
      * Puts the character in a defensive stance.
      * While defending, the character gains additional defense from their shield.
      */

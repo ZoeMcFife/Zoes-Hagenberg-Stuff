@@ -28,6 +28,16 @@ public class Inventory
     }
 
     /**
+     * Gets the list of items in the inventory.
+     *
+     * @return List of items in the inventory
+     */
+    public List<Item> getItems()
+    {
+        return items;
+    }
+
+    /**
      * Calculates the total weight of all items in the inventory.
      * 
      * @return The total weight of all items

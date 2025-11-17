@@ -1,16 +1,11 @@
-package main.ui.components;
+package main.ui.components.battle;
 
 import main.character.DangerLevel;
-import main.character.Enemy;
-import main.character.GameCharacter;
 import main.combat.Battle;
 import main.factory.generators.BattleGenerator;
 import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * UI screen for managing a single battle encounter.

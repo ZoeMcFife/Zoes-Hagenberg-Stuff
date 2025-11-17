@@ -1,4 +1,4 @@
-package main.ui.components;
+package main.ui.components.battle;
 
 import main.character.Enemy;
 import main.character.GameCharacter;

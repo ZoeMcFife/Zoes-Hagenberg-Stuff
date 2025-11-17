@@ -1,4 +1,4 @@
-package main.ui.components;
+package main.ui.components.main_menu;
 
 import main.character.Player;
 import main.factory.baseFactories.ArmourFactory;
@@ -10,6 +10,7 @@ import main.item.ItemRarity;
 import main.item.Weapon;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
+import main.ui.components.battle.GameLoop;
 
 /**
  * Main menu UI screen for the game.
