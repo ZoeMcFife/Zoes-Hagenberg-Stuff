@@ -19,6 +19,7 @@ public class TurnUI extends UserInterface
     private final Battle battle;
     private int selectedEnemy;
     private int actionChoice;
+    private int turnCount = 1;
 
     /**
      * Creates a new turn UI for the specified battle.
@@ -39,6 +40,8 @@ public class TurnUI extends UserInterface
     {
         while (GameManager.getPlayer().isAlive() && !battle.isBattleOver())
         {
+            displayTurnHeader();
+
             UserInterfaceHelper.displayEnemies(battle);
             UserInterfaceHelper.displayPlayer(GameManager.getPlayer());
 
@@ -51,8 +54,15 @@ public class TurnUI extends UserInterface
             stopDefendingPass();
 
             UserInterfaceHelper.waitForEnterKey();
+            UserInterfaceHelper.clearScreen();
         }
 
+    }
+
+    private void displayTurnHeader()
+    {
+        UserInterfaceHelper.printHeading("Turn " + turnCount);
+        turnCount++;
     }
 
     /**

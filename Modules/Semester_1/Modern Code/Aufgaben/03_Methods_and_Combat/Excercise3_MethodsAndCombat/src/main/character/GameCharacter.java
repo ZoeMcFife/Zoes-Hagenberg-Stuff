@@ -62,13 +62,37 @@ public class GameCharacter
         setIntelligence(intelligence);
     }
 
+    public void addItemToInventory(Item item)
+    {
+        addItemToInventory(item, true, false);
+    }
+
+    public void addItemToInventory(Item item, boolean displayMessage)
+    {
+        addItemToInventory(item, displayMessage, false);
+    }
+
     /**
      * Adds a single item to the character's inventory.
      * 
      * @param item The item to add
+     * @param displayMessage if obtain message gets displayed or not
+     * @param ignoreWeightLimit if true, ignores carry weight limit when adding item
      */
-    public void addItemToInventory(Item item, boolean displayMessage)
+    public void addItemToInventory(Item item, boolean displayMessage, boolean ignoreWeightLimit)
     {
+        if (!ignoreWeightLimit)
+        {
+            if (inventory.getWeight() + item.getWeight() > getCarryCapacity())
+            {
+                if (displayMessage)
+                {
+                    IO.println(getName() + " cannot carry any more items!");
+                }
+                return;
+            }
+        }
+
         inventory.addItem(item);
         if (displayMessage)
         {
@@ -394,7 +418,7 @@ public class GameCharacter
         {
             if (!equippedWeapon.getName().equals("Fists") && storePreviousItem) /* Since fists are Weapons, check if an item has weight or not before being added to inventory, so that the player can't have their fists in the inventory */
             {
-                addItemToInventory(equippedWeapon, displayMessage);
+                addItemToInventory(equippedWeapon, displayMessage, false);
             }
             equippedWeapon = (Weapon) item;
 
@@ -409,7 +433,7 @@ public class GameCharacter
         {
             if (!equippedShield.getName().equals("Fists") && storePreviousItem)
             {
-                addItemToInventory(equippedShield, displayMessage);
+                addItemToInventory(equippedShield, displayMessage, false);
             }
             equippedShield = (Shield) item;
 
@@ -424,7 +448,7 @@ public class GameCharacter
         {
             if (item.getWeight() != 0 && storePreviousItem)
             {
-                addItemToInventory(equippedArmour, displayMessage);
+                addItemToInventory(equippedArmour, displayMessage, false);
             }
             equippedArmour = (Armour) item;
 
