@@ -75,10 +75,6 @@ public class GameCharacter
             IO.println(getName() + " obtained " + item.getName() + "!");
         }
     }
-    {
-        inventory.addItem(item);
-        IO.println(getName() + " obtained " + item.getName() + "!");
-    }
 
     /**
      * Adds multiple items to the character's inventory.
@@ -119,7 +115,7 @@ public class GameCharacter
      */
     public void defend()
     {
-        IO.println(getName() + " is defending!");
+        IO.println(getName() + " is defending for " + equippedShield.getDefense() + " extra defense!");
         isDefending = true;
     }
 
@@ -355,7 +351,7 @@ public class GameCharacter
         while (isAlive())
         {
             attack(this);
-            UserInterfaceHelper.delay(1);
+            UserInterfaceHelper.delayMedium();
             IO.println(getName() + " has given up.");
             IO.println();
         }
@@ -363,36 +359,64 @@ public class GameCharacter
 
     /**
      * Equips an item to the appropriate slot.
+     * Displays a message.
+     * Stores previous item in inventory.
+     *
+     * @param item Item to be equipped.
+     */
+    public void equipItem(Item item)
+    {
+        equipItem(item, true, true);
+    }
+
+    /**
+     * Equips an item to the appropriate slot.
+     * Stores previous item in inventory.
+     *
+     * @param item Item to be equipped.
+     */
+    public void equipItem(Item item, boolean displayMessage)
+    {
+        equipItem(item, displayMessage, true);
+    }
+
+    /**
+     * Equips an item to the appropriate slot.
      * Automatically adds currently equipped item back to inventory if it has weight.
+     *
      *
      * @param item The item to equip
      * @param displayMessage if equip message gets displayed or not
      */
-    public void equipItem(Item item, boolean displayMessage)
+    public void equipItem(Item item, boolean displayMessage, boolean storePreviousItem)
     {
         if (item instanceof Weapon)
         {
-            if (!item.getName().equals("Fists")) /* Since fists are Weapons, check if an item has weight or not before being added to inventory, so that the player can't have their fists in the inventory */
+            if (!equippedWeapon.getName().equals("Fists") && storePreviousItem) /* Since fists are Weapons, check if an item has weight or not before being added to inventory, so that the player can't have their fists in the inventory */
             {
                 addItemToInventory(equippedWeapon, displayMessage);
             }
             equippedWeapon = (Weapon) item;
+
+            inventory.removeItem(item);
         }
         else if (item instanceof Shield)
         {
-            if (!item.getName().equals("Fists"))
+            if (!equippedShield.getName().equals("Fists") && storePreviousItem)
             {
                 addItemToInventory(equippedShield, displayMessage);
             }
             equippedShield = (Shield) item;
+            inventory.removeItem(item);
         }
         else if (item instanceof Armour)
         {
-            if (item.getWeight() != 0)
+            if (item.getWeight() != 0 && storePreviousItem)
             {
                 addItemToInventory(equippedArmour, displayMessage);
             }
             equippedArmour = (Armour) item;
+            inventory.removeItem(item);
         }
     }
 

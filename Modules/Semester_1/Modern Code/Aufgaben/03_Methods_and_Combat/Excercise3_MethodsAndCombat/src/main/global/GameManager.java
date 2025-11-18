@@ -55,6 +55,10 @@ public class GameManager
     /** Maximum enemies per battle at DEATH danger level */
     public static int MAX_ENEMIES_PER_BATTLE_DEATH = 4;
 
+    public static double DELAY_SHORT = 0.5;
+    public static double DELAY_MEDIUM = 1;
+    public static double DELAY_LONG = 2;
+
     /**
      * Sets the active player character.
      * 

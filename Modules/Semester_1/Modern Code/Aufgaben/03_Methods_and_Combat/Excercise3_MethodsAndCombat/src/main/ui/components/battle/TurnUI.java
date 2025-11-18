@@ -20,9 +20,6 @@ public class TurnUI extends UserInterface
     private int selectedEnemy;
     private int actionChoice;
 
-    /** Delay in seconds between turn actions */
-    private final int TURN_DELAY = 1;
-
     /**
      * Creates a new turn UI for the specified battle.
      * 
@@ -80,7 +77,7 @@ public class TurnUI extends UserInterface
                         case HEAL -> enemy.useHealingItem();
                     }
 
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    UserInterfaceHelper.delayMedium();
                 }
                 else if (character instanceof Player player)
                 {
@@ -89,7 +86,7 @@ public class TurnUI extends UserInterface
                         case ATTACK -> player.attack(battle.getEnemies().get(selectedEnemy - 1));
                         case HEAL -> IO.println("Healing item used!");
                     }
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    UserInterfaceHelper.delayMedium();
                 }
             }
         }
@@ -123,7 +120,7 @@ public class TurnUI extends UserInterface
             if (character.nextAction == ActionType.DEFEND && character.isAlive())
             {
                 character.defend();
-                UserInterfaceHelper.delay(TURN_DELAY);
+                UserInterfaceHelper.delayMedium();
             }
         }
     }
@@ -141,7 +138,7 @@ public class TurnUI extends UserInterface
                 if (character instanceof Enemy enemy)
                 {
                     enemy.think(GameManager.getPlayer());
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    UserInterfaceHelper.delayMedium();
                 }
                 else if (character instanceof Player)
                 {
@@ -150,7 +147,7 @@ public class TurnUI extends UserInterface
                     enemySelection();
                     actionSelection();
 
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    UserInterfaceHelper.delayMedium();
                 }
             }
         }

@@ -29,15 +29,15 @@ public class EnemyGenerator
         Armour armour = generateArmour(dangerLevel);
         Shield shield = generateShield(dangerLevel);
 
-        enemy.equipItem(weapon);
-        enemy.equipItem(armour);
-        enemy.equipItem(shield);
+        enemy.equipItem(weapon, false, false);
+        enemy.equipItem(armour, false, false);
+        enemy.equipItem(shield, false, false);
 
         List<HealingPotion> healingPotions = generateHealingPotions(dangerLevel);
 
         for (HealingPotion potion : healingPotions)
         {
-            enemy.addItemToInventory(potion);
+            enemy.addItemToInventory(potion, false);
         }
 
         return enemy;

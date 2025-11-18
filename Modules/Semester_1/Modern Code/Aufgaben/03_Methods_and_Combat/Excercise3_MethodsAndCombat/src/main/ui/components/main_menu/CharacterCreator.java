@@ -34,7 +34,7 @@ public class CharacterCreator extends UserInterface
 
             String name = UserInterfaceHelper.getPlayerStringInput("Enter character name");
 
-            UserInterfaceHelper.delay(1);
+            UserInterfaceHelper.delayMedium();
 
             int strength = GameCharacter.MIN_STAT_VALUE;
             int dexterity = GameCharacter.MIN_STAT_VALUE;
@@ -87,7 +87,7 @@ public class CharacterCreator extends UserInterface
 
             }
 
-            UserInterfaceHelper.delay(1);
+            UserInterfaceHelper.delayMedium();
 
             playerCharacter = new Player(name, strength, dexterity, intelligence);
 
@@ -100,7 +100,7 @@ public class CharacterCreator extends UserInterface
                 UserInterfaceHelper.clearScreen();
 
                 IO.println("Your creation has been discarded.");
-                UserInterfaceHelper.delay(4);
+                UserInterfaceHelper.delayLong();
             }
         }
         while (!isPlayerSatisfied);

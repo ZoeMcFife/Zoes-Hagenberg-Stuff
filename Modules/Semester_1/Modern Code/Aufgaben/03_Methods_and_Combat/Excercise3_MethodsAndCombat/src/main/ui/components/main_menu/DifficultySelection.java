@@ -52,7 +52,7 @@ public class DifficultySelection extends UserInterface
         while (!difficultySelected);
 
         IO.println("You have selected " + selectedDifficulty + " difficulty.");
-        UserInterfaceHelper.delay(5);
+        UserInterfaceHelper.delayLong();
     }
 
     /**

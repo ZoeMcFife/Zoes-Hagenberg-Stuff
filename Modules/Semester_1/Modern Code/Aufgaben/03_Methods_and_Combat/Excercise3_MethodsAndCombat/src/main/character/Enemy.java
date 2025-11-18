@@ -41,9 +41,9 @@ public class Enemy extends GameCharacter
     public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, Weapon weapon, Armour armour, Shield shield)
     {
         this(name, maxHealth, strength, dexterity, intelligence);
-        equipItem(weapon);
-        equipItem(armour);
-        equipItem(shield);
+        equipItem(weapon, false, false);
+        equipItem(armour, false, false);
+        equipItem(shield, false, false);
     }
 
     /**

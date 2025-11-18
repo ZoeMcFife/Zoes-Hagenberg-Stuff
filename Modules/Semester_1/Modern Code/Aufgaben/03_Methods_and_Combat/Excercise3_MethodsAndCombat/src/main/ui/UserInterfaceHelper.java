@@ -4,6 +4,7 @@ import main.character.Enemy;
 import main.character.GameCharacter;
 import main.character.Player;
 import main.combat.Battle;
+import main.global.GameManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -189,12 +190,27 @@ public class UserInterfaceHelper
         IO.readln();
     }
 
+    public static void delayShort()
+    {
+        delay(GameManager.DELAY_SHORT);
+    }
+
+    public static void delayMedium()
+    {
+        delay(GameManager.DELAY_MEDIUM);
+    }
+
+    public static void delayLong()
+    {
+        delay(GameManager.DELAY_LONG);
+    }
+
     /**
      * Pauses execution for a specified duration.
      * 
      * @param seconds The number of seconds to delay
      */
-    public static void delay(double seconds)
+    private static void delay(double seconds)
     {
         try
         {

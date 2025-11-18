@@ -43,7 +43,7 @@ public class RestUI extends UserInterface
                 break;
             case 4:
                 IO.println("Continuing may lead to unforeseen consequences...");
-                UserInterfaceHelper.delay(2);
+                UserInterfaceHelper.delayLong();
                 isResting = false;
                 break;
             case 5:
