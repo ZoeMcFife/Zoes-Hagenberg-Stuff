@@ -144,7 +144,7 @@ Game Controller Breakthroughs auch
 Screenshot von gmae → input mögl9ichkeit am besten + begründen 
 
 
-Higgs law
+Hickss law
 
 Typing performance measures nicht wissen
 
@@ -155,9 +155,61 @@ Moorhuhnjagd lore
 
 List auswahl
 
+Hicks Law exampls
+
+Keine Formel wissen
+
+Hierarchical task Analysis (wharscheinlich für die Klausur zu viel)
+
+nicht wissen
+
+## 5. Graphics and Rendering
+
+relvance of computer graphics!!
+
+visible light spectrum ! 
+
+Render Pipeline ist wichtig (einzelne punkte und reihnenfole))
+
+Geometric Primitives
+
+!!!!
+
+coordinate systems → geometrical Transformations → einige nennen können
+
+object skalieren → wie sieht die matrix aus
 
 
+Frustrum and projections 
+
+Aspect Ration FOV
+
+Level of Detail why and what
+
+Scene graph kommt nicht
+
+Culling Techniques schon 
+
+Light Sources
+
+Illumination and Reflectance 
+
+Ambient + Diffuse + Specular = Phong
 
 
+Textures
 
+Z-Buffer 
+
+## 6. Scripting 
+
+How does a game work 
+
+initiliatetion, animations, user input, etc
+
+stuff in between here; Predefined functions
+
+Components
+
+Game State Examples
 
