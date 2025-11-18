@@ -67,7 +67,14 @@ public class GameCharacter
      * 
      * @param item The item to add
      */
-    public void addItemToInventory(Item item)
+    public void addItemToInventory(Item item, boolean displayMessage)
+    {
+        inventory.addItem(item);
+        if (displayMessage)
+        {
+            IO.println(getName() + " obtained " + item.getName() + "!");
+        }
+    }
     {
         inventory.addItem(item);
         IO.println(getName() + " obtained " + item.getName() + "!");
@@ -359,22 +366,23 @@ public class GameCharacter
      * Automatically adds currently equipped item back to inventory if it has weight.
      *
      * @param item The item to equip
+     * @param displayMessage if equip message gets displayed or not
      */
-    public void equipItem(Item item)
+    public void equipItem(Item item, boolean displayMessage)
     {
         if (item instanceof Weapon)
         {
-            if (item.getWeight() != 0) /* Since fists are Weapons, check if an item has weight or not before being added to inventory, so that the player can't have their fists in the inventory */
+            if (!item.getName().equals("Fists")) /* Since fists are Weapons, check if an item has weight or not before being added to inventory, so that the player can't have their fists in the inventory */
             {
-                addItemToInventory(equippedWeapon);
+                addItemToInventory(equippedWeapon, displayMessage);
             }
             equippedWeapon = (Weapon) item;
         }
         else if (item instanceof Shield)
         {
-            if (item.getWeight() != 0)
+            if (!item.getName().equals("Fists"))
             {
-                addItemToInventory(equippedShield);
+                addItemToInventory(equippedShield, displayMessage);
             }
             equippedShield = (Shield) item;
         }
@@ -382,7 +390,7 @@ public class GameCharacter
         {
             if (item.getWeight() != 0)
             {
-                addItemToInventory(equippedArmour);
+                addItemToInventory(equippedArmour, displayMessage);
             }
             equippedArmour = (Armour) item;
         }

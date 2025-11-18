@@ -163,8 +163,14 @@ public class Enemy extends GameCharacter
         }
     }
 
+    /**
+     * randomly determines if the enemy will commit suicide.
+     * why did i bother implementing this?
+     *
+     * @return true if the enemy will suicide, false otherwise
+     */
     private boolean randomSuicideTrigger()
     {
-        return Math.random() < 0.9;
+        return Math.random() < 0.005;
     }
 }

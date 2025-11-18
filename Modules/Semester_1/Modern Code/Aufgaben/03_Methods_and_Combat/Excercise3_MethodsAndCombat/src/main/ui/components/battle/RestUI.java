@@ -9,15 +9,18 @@ import main.ui.components.inventory.UseItemUI;
 
 public class RestUI extends UserInterface
 {
+    private boolean isResting = true;
+
     @Override
     public void startUI()
     {
         displayRestTitle();
-        displayOptions();
-        selectOption();
 
-        //UseItemUI useItemUI = new UseItemUI(GameManager.getPlayer().getInventory());
-        //useItemUI.startUI();
+        while (isResting)
+        {
+            displayOptions();
+            selectOption();
+        }
     }
 
     private void selectOption()
@@ -35,11 +38,13 @@ public class RestUI extends UserInterface
                 dropItemUI.startUI();
                 break;
             case 3:
-                UseItemUI useItemUI = new UseItemUI(GameManager.getPlayer().getInventory());
+                UseItemUI useItemUI = new UseItemUI();
                 useItemUI.startUI();
                 break;
             case 4:
                 IO.println("Continuing may lead to unforeseen consequences...");
+                UserInterfaceHelper.delay(2);
+                isResting = false;
                 break;
             case 5:
                 IO.println("You have chosen to give up. Game Over.");
