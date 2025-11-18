@@ -186,8 +186,7 @@ public class UserInterfaceHelper
      */
     public static void waitForEnterKey()
     {
-        IO.println("Press Enter to continue...");
-        IO.readln();
+        IO.readln("Press Enter to continue...");
     }
 
     public static void delayShort()

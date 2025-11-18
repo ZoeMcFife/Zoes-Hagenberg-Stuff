@@ -3,6 +3,7 @@ package main.ui.components.battle;
 import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
+import main.ui.components.character.PlayerStatsUI;
 import main.ui.components.inventory.DropItemUI;
 import main.ui.components.inventory.EquipItemUI;
 import main.ui.components.inventory.UseItemUI;
@@ -14,13 +15,25 @@ public class RestUI extends UserInterface
     @Override
     public void startUI()
     {
-        displayRestTitle();
-
         while (isResting)
         {
+            displayRestTitle();
+            displayPlayer();
             displayOptions();
             selectOption();
+            UserInterfaceHelper.clearScreen();
         }
+    }
+
+    private void displayPlayer()
+    {
+        UserInterfaceHelper.displayPlayer(GameManager.getPlayer());
+    }
+
+    private void displayCurrentPlayerStats()
+    {
+        PlayerStatsUI playerStatsUI = new PlayerStatsUI();
+        playerStatsUI.startUI();
     }
 
     private void selectOption()
@@ -30,29 +43,36 @@ public class RestUI extends UserInterface
         switch (choice)
         {
             case 1:
-                EquipItemUI equipItemUI = new EquipItemUI();
-                equipItemUI.startUI();
+                displayCurrentPlayerStats();
                 break;
             case 2:
-                DropItemUI dropItemUI = new DropItemUI();
-                dropItemUI.startUI();
+                EquipItemUI equipItemUI = new EquipItemUI();
+                equipItemUI.startUI();
+                UserInterfaceHelper.delayLong();
                 break;
             case 3:
-                UseItemUI useItemUI = new UseItemUI();
-                useItemUI.startUI();
+                DropItemUI dropItemUI = new DropItemUI();
+                dropItemUI.startUI();
+                UserInterfaceHelper.delayLong();
                 break;
             case 4:
+                UseItemUI useItemUI = new UseItemUI();
+                useItemUI.startUI();
+                UserInterfaceHelper.delayLong();
+                break;
+            case 5:
                 IO.println("Continuing may lead to unforeseen consequences...");
                 UserInterfaceHelper.delayLong();
                 isResting = false;
                 break;
-            case 5:
+            case 6:
                 IO.println("You have chosen to give up. Game Over.");
+                UserInterfaceHelper.delayMedium();
                 GameManager.getPlayer().suicide();
                 break;
             default:
                 IO.println("Invalid choice. Please try again.");
-                selectOption();
+                UserInterfaceHelper.delayMedium();
                 break;
         }
     }
@@ -61,11 +81,12 @@ public class RestUI extends UserInterface
     private void displayOptions()
     {
         UserInterfaceHelper.printSubHeading("You have survived the battle!");
-        IO.println("1. Equip Item");
-        IO.println("2. Drop Item");
-        IO.println("3. Use Items");
-        IO.println("4. Continue Journey");
-        IO.println("5. Give up");
+        IO.println("1. View Character");
+        IO.println("2. Equip Item");
+        IO.println("3. Drop Item");
+        IO.println("4. Use Items");
+        IO.println("5. Continue Journey");
+        IO.println("6. Give up");
         IO.println("Select an action by entering the corresponding number.");
     }
 

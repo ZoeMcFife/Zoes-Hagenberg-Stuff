@@ -398,6 +398,11 @@ public class GameCharacter
             }
             equippedWeapon = (Weapon) item;
 
+            if (displayMessage)
+            {
+                IO.println(getName() + " equipped " + item.getName() + "!");
+            }
+
             inventory.removeItem(item);
         }
         else if (item instanceof Shield)
@@ -407,6 +412,12 @@ public class GameCharacter
                 addItemToInventory(equippedShield, displayMessage);
             }
             equippedShield = (Shield) item;
+
+            if (displayMessage)
+            {
+                IO.println(getName() + " equipped " + item.getName() + "!");
+            }
+
             inventory.removeItem(item);
         }
         else if (item instanceof Armour)
@@ -416,7 +427,20 @@ public class GameCharacter
                 addItemToInventory(equippedArmour, displayMessage);
             }
             equippedArmour = (Armour) item;
+
+            if (displayMessage)
+            {
+                IO.println(getName() + " equipped " + item.getName() + "!");
+            }
+
             inventory.removeItem(item);
+        }
+        else
+        {
+            if (displayMessage)
+            {
+                IO.println("Cannot equip " + item.getName() + "!");
+            }
         }
     }
 

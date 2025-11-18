@@ -1,5 +1,6 @@
 package main.ui.components.inventory;
 
+import main.character.GameCharacter;
 import main.inventory.Inventory;
 import main.ui.UserInterface;
 import main.ui.UserInterfaceHelper;
@@ -15,20 +16,20 @@ public class SelectItemUI extends UserInterface
     /**
      * Displays inventory and prompts user to select an item.
      *
-     * @param inventory The inventory from which to select an item.
+     * @param gameCharacter The character from which to select an item.
      *
      * @return The index of the selected item in the inventory. Zero-based index.
      */
-    public static int itemSelection(Inventory inventory)
+    public static int itemSelection(GameCharacter gameCharacter)
     {
-        DisplayInventoryUI displayInventoryUI = new DisplayInventoryUI(inventory);
+        DisplayInventoryUI displayInventoryUI = new DisplayInventoryUI(gameCharacter);
         displayInventoryUI.startUI();
 
         int itemSelected = -1;
 
         while (itemSelected == -1)
         {
-            itemSelected = UserInterfaceHelper.getIntInput(1, inventory.getItemCount());
+            itemSelected = UserInterfaceHelper.getIntInput(1, gameCharacter.getInventory().getItemCount());
         }
 
         return itemSelected - 1; // Convert to zero-based index

@@ -9,7 +9,7 @@ public class DropItemUI extends UserInterface
     @Override
     public void startUI()
     {
-        int selectedItem = SelectItemUI.itemSelection(GameManager.getPlayer().getInventory());
+        int selectedItem = SelectItemUI.itemSelection(GameManager.getPlayer());
 
         GameManager.getPlayer().dropItem(GameManager.getPlayer().getInventory().getItemAt(selectedItem));
     }

@@ -142,10 +142,12 @@ public class TurnUI extends UserInterface
                 }
                 else if (character instanceof Player)
                 {
-                    UserInterfaceHelper.printSubHeading("Your Turn!");
+                    UserInterfaceHelper.printHeading("Your Turn!");
 
                     enemySelection();
                     actionSelection();
+
+                    IO.println();
 
                     UserInterfaceHelper.delayMedium();
                 }

@@ -44,6 +44,12 @@ public class BattleUI extends UserInterface
             TurnUI turnUI = new TurnUI(battle);
             turnUI.startUI();
 
+            UserInterfaceHelper.delayLong();
+
+            UserInterfaceHelper.clearScreen();
+
+            displayBattleEndMessage();
+
             UserInterfaceHelper.waitForEnterKey();
         }
 
@@ -66,4 +72,8 @@ public class BattleUI extends UserInterface
         IO.println("Danger Level: " + dangerLevel);
     }
 
+    public void displayBattleEndMessage()
+    {
+        IO.println("Battle " + battleNumber + " has ended!");
+    }
 }
