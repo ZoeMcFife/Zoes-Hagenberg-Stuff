@@ -19,3 +19,4 @@ Structure
 ![[Pasted image 20251119111026.png]]
 
 
+![[Web Design - VL04 - Components, Icons Images.pdf]]
