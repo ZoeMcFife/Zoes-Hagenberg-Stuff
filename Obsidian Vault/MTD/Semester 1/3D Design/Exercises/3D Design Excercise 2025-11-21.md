@@ -21,3 +21,7 @@ woaah
 ![[Pasted image 20251121113248.png]]
 crying
 
+![[Pasted image 20251121115820.png]]
+
+table
+
