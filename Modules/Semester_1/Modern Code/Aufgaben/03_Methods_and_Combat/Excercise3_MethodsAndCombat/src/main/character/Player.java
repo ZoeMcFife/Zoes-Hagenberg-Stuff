@@ -92,7 +92,7 @@ public class Player extends GameCharacter
 
     public int getExperienceNeededForNextLevel()
     {
-        return (100 * this.level);
+        return (50 * this.level);
     }
 
     public int getAvailableStatPoints()

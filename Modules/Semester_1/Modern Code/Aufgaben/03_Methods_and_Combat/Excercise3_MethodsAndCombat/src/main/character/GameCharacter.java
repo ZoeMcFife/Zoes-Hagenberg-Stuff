@@ -410,6 +410,7 @@ public abstract class GameCharacter
             IO.println();
         }
         IO.println(getName() + " has given up.");
+        UIHelper.delayLong();
     }
 
     /**
