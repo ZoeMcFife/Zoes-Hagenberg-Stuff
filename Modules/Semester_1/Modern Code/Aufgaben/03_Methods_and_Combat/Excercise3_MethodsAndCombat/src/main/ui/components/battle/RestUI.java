@@ -38,7 +38,7 @@ public class RestUI extends UserInterface
 
     private void selectOption()
     {
-        int choice = UIHelper.getIntInput(1, 5);
+        int choice = UIHelper.getIntInput(1, 6);
 
         switch (choice)
         {

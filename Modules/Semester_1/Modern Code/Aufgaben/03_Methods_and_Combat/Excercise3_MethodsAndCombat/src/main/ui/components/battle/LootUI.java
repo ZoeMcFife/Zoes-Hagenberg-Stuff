@@ -48,7 +48,7 @@ public class LootUI extends UserInterface
 
         int choice = UIHelper.getIntInput(0, loot.size()) - 1;
 
-        if (choice == 0)
+        if (choice == -1)
         {
             stopLooting = true;
             return;
