@@ -19,10 +19,10 @@ public class GameManager
     public static double DAMAGE_MULTIPLIER_PER_STRENGTH = 0.06;
 
     /** Damage multiplier applied per point of intelligence for magical weapons */
-    public static double DAMAGE_MULTIPLIER_PER_INTELLIGENCE = 0.05;
+    public static double DAMAGE_MULTIPLIER_PER_INTELLIGENCE = 0.1;
 
     /** Dodge chance percentage gained per point of dexterity */
-    public static double DODGE_CHANCE_PER_DEXTERITY = 0.02;
+    public static double DODGE_CHANCE_PER_DEXTERITY = 0.021;
 
     /** Weight carrying capacity granted per point of strength */
     public static final int CARRY_CAPACITY_PER_STRENGTH = 5;
@@ -63,8 +63,8 @@ public class GameManager
 
     public static int MAX_PP_INCREASE_PER_LEVEL = 35;
     public static int STAT_POINTS_PER_LEVEL = 1;
-    public static double HEALTH_INCREASE_PER_LEVEL = 80;
-    public static double HEALTH_INCREASE_PER_STRENGTH = 15;
+    public static double HEALTH_INCREASE_PER_LEVEL = 70;
+    public static double HEALTH_INCREASE_PER_STRENGTH = 18;
     public static double HEALTH_INCREASE_PER_INTELLIGENCE = 10;
     public static double HEALTH_INCREASE_PER_DEXTERITY = 10;
 
@@ -73,6 +73,8 @@ public class GameManager
     public static double DELAY_SHORT = 0.5;
     public static double DELAY_MEDIUM = 1;
     public static double DELAY_LONG = 2;
+
+    public static double PLAYER_BASE_DEFENCE = 11;
 
     /**
      * Sets the active player character.

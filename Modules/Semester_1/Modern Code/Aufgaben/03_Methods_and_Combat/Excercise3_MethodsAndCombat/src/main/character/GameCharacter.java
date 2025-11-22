@@ -357,10 +357,10 @@ public abstract class GameCharacter
     {
         if (isDefending)
         {
-            return (equippedArmour.getDefense() + equippedShield.getDefense());
+            return (equippedArmour.getDefense() + equippedShield.getDefense()) + GameManager.PLAYER_BASE_DEFENCE;
         }
 
-        return equippedArmour.getDefense();
+        return equippedArmour.getDefense() + GameManager.PLAYER_BASE_DEFENCE;
     }
 
     /**
@@ -395,6 +395,39 @@ public abstract class GameCharacter
         target.takeDamage(getDamage());
     }
 
+    public void attack(GameCharacter target, boolean ignoreDefense)
+    {
+        if (!target.isAlive())
+        {
+            return;
+        }
+
+        if (this instanceof Player player)
+        {
+            player.gainPP(equippedWeapon.getPpGainPerUse());
+        }
+
+        IO.println(getName() + " attacks " + target.getName() + " for " + Math.round(getDamage()) + " damage!");
+
+        if (ignoreDefense)
+        {
+            double damage = getDamage();
+            IO.println(target.getName() + " takes " + Math.round(damage) + " damage!");
+            target.getEquippedArmour().reduceDurability(damage);
+            target.setHealth(target.getHealth() - damage);
+            if (target.getHealth() <= 0)
+            {
+                target.setHealth(0);
+                IO.println(target.getName() + " died!");
+                target.onDeath();
+            }
+        }
+        else
+        {
+            target.takeDamage(getDamage());
+        }
+    }
+
     /**
      * Causes the character to repeatedly attack themselves until death.
      */
@@ -405,11 +438,12 @@ public abstract class GameCharacter
 
         while (isAlive())
         {
-            attack(this);
+            attack(this, true);
             UIHelper.delayShort();
             IO.println();
         }
         IO.println(getName() + " has given up.");
+        UIHelper.delayLong();
     }
 
     /**

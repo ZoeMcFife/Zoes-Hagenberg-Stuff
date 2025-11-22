@@ -31,6 +31,7 @@ public class UIHelper
                      \\/      \\/    \\/        \\/                \\/\s
                                                                  \s
                 """);
+        IO.println("by Zoe McFife\n");
     }
 
     /**
