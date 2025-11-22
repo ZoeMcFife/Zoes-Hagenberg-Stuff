@@ -101,6 +101,7 @@ public class TurnUI extends UserInterface
                             ItemActionSelectionUI itemActionSelectionUI = new ItemActionSelectionUI();
                             itemActionSelectionUI.startUI();
                         }
+                        case USE_SPECIAL -> player.useSpecial(battle.getEnemies().get(selectedEnemy - 1));
                     }
                     UIHelper.delayMedium();
                 }
@@ -194,7 +195,7 @@ public class TurnUI extends UserInterface
 
     /**
      * Prompts the player to select their action for this turn.
-     * Options include Attack, Defend, or Use Item.
+     * Options include Attack, Defend, Use Item, or Use Special.
      */
     private void actionSelection()
     {
@@ -203,7 +204,7 @@ public class TurnUI extends UserInterface
         while (actionChoice < 1)
         {
             displayBattleOptions();
-            actionChoice = UIHelper.getIntInput(1, 3);
+            actionChoice = UIHelper.getIntInput(1, 4);
 
             switch (actionChoice)
             {
@@ -219,6 +220,10 @@ public class TurnUI extends UserInterface
                     GameManager.getPlayer().nextAction = ActionType.USE_ITEM;
                     IO.println("You chose to Use Item!");
                     break;
+                case 4:
+                    GameManager.getPlayer().nextAction = ActionType.USE_SPECIAL;
+                    IO.println("You chose to Use Special!");
+                    break;
                 default:
                     IO.println("Invalid selection. Please try again.");
                     actionChoice = -1;
@@ -233,9 +238,11 @@ public class TurnUI extends UserInterface
     private void displayBattleOptions()
     {
         UIHelper.printSubHeading("Battle Options");
+        IO.println("Current PP: " + GameManager.getPlayer().getCurrentPP());
         IO.println("1. Attack");
         IO.println("2. Defend");
         IO.println("3. Use Item");
+        IO.println("4. Use Special (" + GameManager.getPlayer().getEquippedWeapon().getPpCost() + " PP)");
         IO.println("Select an action by entering the corresponding number.");
     }
 

@@ -26,6 +26,7 @@ public class ShieldFactory
         double value;
         double defense;
         ItemRarity rarity;
+        int ppGain;
 
         ShieldData(int id, String name, double weight, double value, double defense, ItemRarity rarity)
         {
@@ -35,6 +36,18 @@ public class ShieldFactory
             this.value = value;
             this.defense = defense;
             this.rarity = rarity;
+            this.ppGain = 0;
+        }
+
+        ShieldData(int id, String name, double weight, double value, double defense, ItemRarity rarity, int ppGain)
+        {
+            this.id = id;
+            this.name = name;
+            this.weight = weight;
+            this.value = value;
+            this.defense = defense;
+            this.rarity = rarity;
+            this.ppGain = ppGain;
         }
     }
 
@@ -45,30 +58,30 @@ public class ShieldFactory
         // MEDIUM: defense 12-20, weight and value scaled
         // HIGH: defense 20-30, weight and value scaled
         // LEGENDARY: defense 28-40, weight and value scaled
-        registerShield(1, "Echo Shard Shield", 7.0, 1420, 35, ItemRarity.LEGENDARY);
-        registerShield(2, "Stormbreaker Shield", 8.0, 780, 26, ItemRarity.HIGH);
-        registerShield(3, "Hollowbone Shield", 3.5, 140, 8, ItemRarity.LOW);
-        registerShield(4, "Shield of Wolfram", 9.0, 850, 28, ItemRarity.HIGH);
+        registerShield(1, "Echo Shard Shield", 7.0, 1420, 35, ItemRarity.LEGENDARY, 15);
+        registerShield(2, "Stormbreaker Shield", 8.0, 780, 26, ItemRarity.HIGH, 12);
+        registerShield(3, "Hollowbone Shield", 3.5, 140, 8, ItemRarity.LOW, 5);
+        registerShield(4, "Shield of Wolfram", 9.0, 850, 28, ItemRarity.HIGH, 12);
         
         // Additional shields from the extended list
-        registerShield(5, "Patch-Steel Shield", 4.0, 180, 10, ItemRarity.LOW);
-        registerShield(6, "Nebular Disk Shield", 5.5, 320, 16, ItemRarity.MEDIUM);
-        registerShield(7, "Fists", 0.0, 0, 1, ItemRarity.LOW);
+        registerShield(5, "Patch-Steel Shield", 4.0, 180, 10, ItemRarity.LOW, 5);
+        registerShield(6, "Nebular Disk Shield", 5.5, 320, 16, ItemRarity.MEDIUM, 8);
+        registerShield(7, "Fists", 0.0, 0, 1, ItemRarity.LOW, 3);
 
         // --- SHIELDS 8-100 (adds 93, bringing total to 100) ---
-        registerShield(8, "Runewood Buckler", 3.5, 160, 9, ItemRarity.LOW);
-        registerShield(9, "Canyon Bulwark", 9.5, 1580, 38, ItemRarity.LEGENDARY);
-        registerShield(10, "Smelter Plate", 2.5, 90, 6, ItemRarity.LOW);
-        registerShield(11, "Gutter Parry", 8.5, 1520, 36, ItemRarity.LEGENDARY);
-        registerShield(12, "Abyssal Aegis", 7.5, 740, 25, ItemRarity.HIGH);
-        registerShield(13, "Seaworn Pavise", 8.0, 820, 27, ItemRarity.HIGH);
-        registerShield(14, "Beacon Disk", 6.0, 360, 18, ItemRarity.MEDIUM);
-        registerShield(15, "Void Shard Guard", 5.5, 340, 16, ItemRarity.MEDIUM);
-        registerShield(16, "Echo Resonator", 7.0, 720, 24, ItemRarity.HIGH);
-        registerShield(17, "Hearthshield", 6.5, 380, 19, ItemRarity.MEDIUM);
-        registerShield(18, "Sporeguard Barrier", 5.0, 300, 15, ItemRarity.MEDIUM);
-        registerShield(19, "Marrow Bulwark", 3.0, 120, 7, ItemRarity.LOW);
-        registerShield(20, "Nebula Disk MkII", 7.5, 760, 25, ItemRarity.HIGH);
+        registerShield(8, "Runewood Buckler", 3.5, 160, 9, ItemRarity.LOW, 5);
+        registerShield(9, "Canyon Bulwark", 9.5, 1580, 38, ItemRarity.LEGENDARY, 15);
+        registerShield(10, "Smelter Plate", 2.5, 90, 6, ItemRarity.LOW, 4);
+        registerShield(11, "Gutter Parry", 8.5, 1520, 36, ItemRarity.LEGENDARY, 15);
+        registerShield(12, "Abyssal Aegis", 7.5, 740, 25, ItemRarity.HIGH, 12);
+        registerShield(13, "Seaworn Pavise", 8.0, 820, 27, ItemRarity.HIGH, 12);
+        registerShield(14, "Beacon Disk", 6.0, 360, 18, ItemRarity.MEDIUM, 8);
+        registerShield(15, "Void Shard Guard", 5.5, 340, 16, ItemRarity.MEDIUM, 8);
+        registerShield(16, "Echo Resonator", 7.0, 720, 24, ItemRarity.HIGH, 11);
+        registerShield(17, "Hearthshield", 6.5, 380, 19, ItemRarity.MEDIUM, 9);
+        registerShield(18, "Sporeguard Barrier", 5.0, 300, 15, ItemRarity.MEDIUM, 8);
+        registerShield(19, "Marrow Bulwark", 3.0, 120, 7, ItemRarity.LOW, 4);
+        registerShield(20, "Nebula Disk MkII", 7.5, 760, 25, ItemRarity.HIGH, 12);
         registerShield(21, "Tollguard Shield", 7.0, 710, 24, ItemRarity.HIGH);
         registerShield(22, "Patch-Steel MkII", 6.5, 370, 18, ItemRarity.MEDIUM);
         registerShield(23, "Smogveil Shield", 5.0, 310, 15, ItemRarity.MEDIUM);
@@ -166,6 +179,15 @@ public class ShieldFactory
         ALL_SHIELDS.add(data);
     }
 
+    private static void registerShield(int id, String name, double weight, double value, double defense, ItemRarity rarity, int ppGain)
+    {
+        ShieldData data = new ShieldData(id, name, weight, value, defense, rarity, ppGain);
+        SHIELDS_BY_ID.put(id, data);
+        SHIELDS_BY_NAME.put(name.toLowerCase(), data);
+        SHIELDS_BY_RARITY.computeIfAbsent(rarity, k -> new ArrayList<>()).add(data);
+        ALL_SHIELDS.add(data);
+    }
+
     public static Shield createShieldById(int id)
     {
         ShieldData data = SHIELDS_BY_ID.get(id);
@@ -209,7 +231,7 @@ public class ShieldFactory
 
     private static Shield createShieldFromData(ShieldData data)
     {
-        return new Shield(data.name, data.weight, data.value, data.defense, data.rarity);
+        return new Shield(data.name, data.weight, data.value, data.defense, data.rarity, data.ppGain);
     }
 
     public static List<String> getAllShieldNames()

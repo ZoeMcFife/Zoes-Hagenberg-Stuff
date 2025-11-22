@@ -11,6 +11,7 @@ public class Player extends GameCharacter
     private int level = 1;
     private int experience = 0;
     private int availableStatPoints = 0;
+    private int currentPP = 0;
 
     /** Default maximum health for all player characters */
     public static double DEFAULT_PLAYER_MAX_HEALTH = 100.0;
@@ -105,5 +106,55 @@ public class Player extends GameCharacter
         this.availableStatPoints += 1;
 
         IO.println(getName() + " leveled up to level " + this.level + "!");
+    }
+
+    /**
+     * Gets the player's current Power Points.
+     * 
+     * @return Current PP
+     */
+    public int getCurrentPP()
+    {
+        return currentPP;
+    }
+
+    /**
+     * Adds PP to the player's current PP pool.
+     * 
+     * @param amount Amount of PP to add
+     */
+    public void gainPP(int amount)
+    {
+        this.currentPP += amount;
+        IO.println(getName() + " gained " + amount + " PP! (Current PP: " + currentPP + ")");
+    }
+
+    /**
+     * Uses the equipped weapon's special attack on a target.
+     * Checks if player has enough PP, deducts cost, deals damage, and displays flavor text.
+     * 
+     * @param target The character to attack with the special
+     */
+    public void useSpecial(GameCharacter target)
+    {
+        if (getEquippedWeapon().getPpCost() > currentPP)
+        {
+            IO.println(getName() + " doesn't have enough PP to use " + getEquippedWeapon().getName() + "'s special attack!");
+            IO.println("Need " + getEquippedWeapon().getPpCost() + " PP, but only have " + currentPP + " PP.");
+            return;
+        }
+
+        currentPP -= getEquippedWeapon().getPpCost();
+        
+        if (!getEquippedWeapon().getSpecialFlavorText().isEmpty())
+        {
+            IO.println(getEquippedWeapon().getSpecialFlavorText());
+        }
+        
+        double totalDamage = getDamage() + getEquippedWeapon().getSpecialDamage();
+        IO.println(getName() + " uses " + getEquippedWeapon().getName() + "'s special attack on " + target.getName() + " for " + Math.round(totalDamage) + " damage!");
+        IO.println("PP remaining: " + currentPP);
+        
+        target.takeDamage(totalDamage);
     }
 }

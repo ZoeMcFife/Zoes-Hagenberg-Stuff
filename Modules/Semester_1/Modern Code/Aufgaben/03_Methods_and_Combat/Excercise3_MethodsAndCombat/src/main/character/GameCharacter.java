@@ -330,6 +330,12 @@ public abstract class GameCharacter
     {
         IO.println(getName() + " is defending for " + equippedShield.getDefense() + " extra defense!");
         isDefending = true;
+        
+        // Grant PP to players when defending
+        if (this instanceof Player player)
+        {
+            player.gainPP(equippedShield.getPpGain());
+        }
     }
 
     /**

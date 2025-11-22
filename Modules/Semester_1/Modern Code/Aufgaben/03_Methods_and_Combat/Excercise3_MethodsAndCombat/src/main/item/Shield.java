@@ -7,6 +7,7 @@ package main.item;
 public class Shield extends Item
 {
     private double defense;
+    private int ppGain;
 
     /**
      * Creates a new shield with default MEDIUM rarity.
@@ -20,6 +21,7 @@ public class Shield extends Item
     {
         super(name, weight, value);
         setDefense(defense);
+        this.ppGain = 0;
     }
 
     /**
@@ -35,6 +37,24 @@ public class Shield extends Item
     {
         super(name, weight, value, rarity);
         setDefense(defense);
+        this.ppGain = 0;
+    }
+
+    /**
+     * Creates a new shield with specified rarity and PP gain.
+     * 
+     * @param name The shield's name
+     * @param weight The shield's weight
+     * @param value The shield's monetary value
+     * @param defense The defense value the shield provides
+     * @param rarity The shield's rarity level
+     * @param ppGain PP gained when defending with this shield
+     */
+    public Shield(String name, double weight, double value, double defense, ItemRarity rarity, int ppGain)
+    {
+        super(name, weight, value, rarity);
+        setDefense(defense);
+        setPpGain(ppGain);
     }
 
     /**
@@ -56,6 +76,27 @@ public class Shield extends Item
     public void setDefense(double defense)
     {
         this.defense = Math.max(0, defense);
+    }
+
+    /**
+     * Gets the PP gain when defending with this shield.
+     * 
+     * @return PP gain value
+     */
+    public int getPpGain()
+    {
+        return ppGain;
+    }
+
+    /**
+     * Sets the PP gain when defending with this shield.
+     * Minimum value is 0.
+     * 
+     * @param ppGain The PP gain value
+     */
+    public void setPpGain(int ppGain)
+    {
+        this.ppGain = Math.max(0, ppGain);
     }
 
     /**

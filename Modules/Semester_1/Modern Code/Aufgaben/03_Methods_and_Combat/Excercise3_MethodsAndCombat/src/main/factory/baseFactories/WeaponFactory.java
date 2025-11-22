@@ -30,6 +30,9 @@ public class WeaponFactory
         double damage;
         boolean isMagic;
         ItemRarity rarity;
+        double specialDamage;
+        String specialFlavorText;
+        int ppCost;
 
         WeaponData(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity)
         {
@@ -40,6 +43,24 @@ public class WeaponFactory
             this.damage = damage;
             this.isMagic = isMagic;
             this.rarity = rarity;
+            this.specialDamage = 0;
+            this.specialFlavorText = "";
+            this.ppCost = 0;
+        }
+
+        WeaponData(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity,
+                   double specialDamage, String specialFlavorText, int ppCost)
+        {
+            this.id = id;
+            this.name = name;
+            this.weight = weight;
+            this.value = value;
+            this.damage = damage;
+            this.isMagic = isMagic;
+            this.rarity = rarity;
+            this.specialDamage = specialDamage;
+            this.specialFlavorText = specialFlavorText;
+            this.ppCost = ppCost;
         }
     }
 
@@ -50,32 +71,32 @@ public class WeaponFactory
         // MEDIUM: damage 40-60, weight similar, value 200-500
         // HIGH: damage 60-80, weight similar, value 500-1000
         // LEGENDARY: damage 80-120, weight similar, value 1000+
-        registerWeapon(1, "Gateway Cutlass", 2.5, 280, 45, false, ItemRarity.MEDIUM);
-        registerWeapon(2, "Abyssic Longrifle", 8.0, 750, 72, false, ItemRarity.HIGH);
-        registerWeapon(3, "Protectorate Saber", 2.0, 320, 48, false, ItemRarity.MEDIUM);
-        registerWeapon(4, "Riftfire Pistol", 2.2, 680, 68, true, ItemRarity.HIGH);
-        registerWeapon(5, "Bonecut Halberd", 7.5, 380, 55, false, ItemRarity.MEDIUM);
-        registerWeapon(6, "Echo Daggers (pair)", 1.5, 350, 52, true, ItemRarity.MEDIUM);
-        registerWeapon(7, "Warpspike Lance", 9.5, 1450, 98, false, ItemRarity.LEGENDARY);
-        registerWeapon(8, "Arc Thrower (hand)", 3.0, 820, 74, false, ItemRarity.HIGH);
-        registerWeapon(9, "Phasebreaker Blade", 2.8, 1350, 92, true, ItemRarity.LEGENDARY);
-        registerWeapon(10, "Starforged Rapier", 1.8, 295, 44, false, ItemRarity.MEDIUM);
-        registerWeapon(11, "Seabreaker Trident", 6.0, 410, 58, false, ItemRarity.MEDIUM);
-        registerWeapon(12, "Circuit Lacer", 2.5, 550, 62, false, ItemRarity.HIGH);
-        registerWeapon(13, "Starcore Blade", 3.2, 1620, 105, true, ItemRarity.LEGENDARY);
-        registerWeapon(14, "Riftfang Blade", 2.0, 380, 50, true, ItemRarity.MEDIUM);
-        registerWeapon(15, "Wolfclan Hammer", 9.0, 780, 76, false, ItemRarity.HIGH);
-        registerWeapon(16, "Protectorate Arc Pike", 8.5, 1280, 88, true, ItemRarity.LEGENDARY);
-        registerWeapon(17, "Scrapgun Mk II", 6.0, 150, 32, false, ItemRarity.LOW);
-        registerWeapon(18, "Smuggler's Repeater", 3.0, 340, 46, false, ItemRarity.MEDIUM);
-        registerWeapon(19, "Runeforge Mace", 5.5, 690, 70, true, ItemRarity.HIGH);
-        registerWeapon(20, "Bonechime Dagger", 1.2, 280, 42, true, ItemRarity.MEDIUM);
-        registerWeapon(21, "Fargoth Execution Blade", 10.0, 1580, 112, false, ItemRarity.LEGENDARY);
-        registerWeapon(22, "Echo Reaver Staff", 4.5, 620, 66, true, ItemRarity.HIGH);
-        registerWeapon(23, "Stormcall Crossbow", 7.5, 740, 72, false, ItemRarity.HIGH);
-        registerWeapon(24, "Fists", 0.0, 0, 5, false, ItemRarity.LOW);
-        registerWeapon(25, "Coalspike Cleaver", 4.0, 380, 54, false, ItemRarity.MEDIUM);
-        registerWeapon(26, "Canyon Cleaver", 7.5, 1420, 96, false, ItemRarity.LEGENDARY);
+        registerWeapon(1, "Gateway Cutlass", 2.5, 280, 45, false, ItemRarity.MEDIUM, 25, "The blade gleams with arcane energy as it slashes through the air!", 30);
+        registerWeapon(2, "Abyssic Longrifle", 8.0, 750, 72, false, ItemRarity.HIGH, 40, "A devastating shot echoes from the depths of the abyss!", 40);
+        registerWeapon(3, "Protectorate Saber", 2.0, 320, 48, false, ItemRarity.MEDIUM, 28, "The saber's edge burns with protective fury!", 30);
+        registerWeapon(4, "Riftfire Pistol", 2.2, 680, 68, true, ItemRarity.HIGH, 38, "Rift energy erupts in a blazing inferno!", 40);
+        registerWeapon(5, "Bonecut Halberd", 7.5, 380, 55, false, ItemRarity.MEDIUM, 30, "The halberd cleaves through bone and armor alike!", 35);
+        registerWeapon(6, "Echo Daggers (pair)", 1.5, 350, 52, true, ItemRarity.MEDIUM, 32, "Echoes of past strikes converge on the target!", 35);
+        registerWeapon(7, "Warpspike Lance", 9.5, 1450, 98, false, ItemRarity.LEGENDARY, 60, "Reality warps as the lance pierces through dimensions!", 50);
+        registerWeapon(8, "Arc Thrower (hand)", 3.0, 820, 74, false, ItemRarity.HIGH, 42, "Lightning arcs across the battlefield!", 40);
+        registerWeapon(9, "Phasebreaker Blade", 2.8, 1350, 92, true, ItemRarity.LEGENDARY, 58, "The blade shatters the very fabric of reality!", 50);
+        registerWeapon(10, "Starforged Rapier", 1.8, 295, 44, false, ItemRarity.MEDIUM, 24, "Starlight trails from the rapier's swift thrust!", 30);
+        registerWeapon(11, "Seabreaker Trident", 6.0, 410, 58, false, ItemRarity.MEDIUM, 33, "Waves crash as the trident strikes!", 35);
+        registerWeapon(12, "Circuit Lacer", 2.5, 550, 62, false, ItemRarity.HIGH, 36, "Electric circuits overload in a burst of energy!", 40);
+        registerWeapon(13, "Starcore Blade", 3.2, 1620, 105, true, ItemRarity.LEGENDARY, 65, "The core of a star blazes through your enemy!", 55);
+        registerWeapon(14, "Riftfang Blade", 2.0, 380, 50, true, ItemRarity.MEDIUM, 30, "Void energy tears at the target!", 35);
+        registerWeapon(15, "Wolfclan Hammer", 9.0, 780, 76, false, ItemRarity.HIGH, 44, "The hammer falls with the fury of the wolf pack!", 45);
+        registerWeapon(16, "Protectorate Arc Pike", 8.5, 1280, 88, true, ItemRarity.LEGENDARY, 55, "Protective arcs surge along the pike's length!", 50);
+        registerWeapon(17, "Scrapgun Mk II", 6.0, 150, 32, false, ItemRarity.LOW, 18, "Scrap metal flies in all directions!", 25);
+        registerWeapon(18, "Smuggler's Repeater", 3.0, 340, 46, false, ItemRarity.MEDIUM, 26, "A rapid barrage of shots rings out!", 30);
+        registerWeapon(19, "Runeforge Mace", 5.5, 690, 70, true, ItemRarity.HIGH, 40, "Ancient runes flare with destructive power!", 40);
+        registerWeapon(20, "Bonechime Dagger", 1.2, 280, 42, true, ItemRarity.MEDIUM, 24, "The dagger rings like a death knell!", 30);
+        registerWeapon(21, "Fargoth Execution Blade", 10.0, 1580, 112, false, ItemRarity.LEGENDARY, 70, "The executioner's blade delivers final judgment!", 55);
+        registerWeapon(22, "Echo Reaver Staff", 4.5, 620, 66, true, ItemRarity.HIGH, 38, "Echoes of destruction reverberate from the staff!", 40);
+        registerWeapon(23, "Stormcall Crossbow", 7.5, 740, 72, false, ItemRarity.HIGH, 42, "A storm is summoned with each bolt!", 40);
+        registerWeapon(24, "Fists", 0.0, 0, 5, false, ItemRarity.LOW, 3, "A desperate flurry of punches!", 20);
+        registerWeapon(25, "Coalspike Cleaver", 4.0, 380, 54, false, ItemRarity.MEDIUM, 31, "Burning coal dust engulfs the target!", 35);
+        registerWeapon(26, "Canyon Cleaver", 7.5, 1420, 96, false, ItemRarity.LEGENDARY, 60, "The cleaver strikes with the force of a rockslide!", 50);
         registerWeapon(27, "Runic Pickaxe", 5.5, 125, 22, false, ItemRarity.LOW);
         registerWeapon(28, "Gutterboard Saw", 2.5, 720, 68, false, ItemRarity.HIGH);
         registerWeapon(29, "Feyspinner Bow", 2.0, 95, 18, false, ItemRarity.LOW);
@@ -172,6 +193,16 @@ public class WeaponFactory
         ALL_WEAPONS.add(data);
     }
 
+    private static void registerWeapon(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity,
+                                       double specialDamage, String specialFlavorText, int ppCost)
+    {
+        WeaponData data = new WeaponData(id, name, weight, value, damage, isMagic, rarity, specialDamage, specialFlavorText, ppCost);
+        WEAPONS_BY_ID.put(id, data);
+        WEAPONS_BY_NAME.put(name.toLowerCase(), data);
+        WEAPONS_BY_RARITY.computeIfAbsent(rarity, k -> new ArrayList<>()).add(data);
+        ALL_WEAPONS.add(data);
+    }
+
     /**
      * Creates a weapon by its unique ID.
      * 
@@ -242,7 +273,8 @@ public class WeaponFactory
 
     private static Weapon createWeaponFromData(WeaponData data)
     {
-        return new Weapon(data.name, data.weight, data.value, data.damage, data.isMagic, data.rarity);
+        return new Weapon(data.name, data.weight, data.value, data.damage, data.isMagic, data.rarity,
+                         data.specialDamage, data.specialFlavorText, data.ppCost);
     }
 
     /**
