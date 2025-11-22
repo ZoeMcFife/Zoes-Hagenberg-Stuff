@@ -200,4 +200,52 @@ public class Player extends GameCharacter
         
         target.takeDamage(totalDamage);
     }
+
+    @Override
+    public java.util.List<String> getDisplayBox()
+    {
+        java.util.List<String> box = new java.util.ArrayList<>();
+
+        String nameLine = String.format("| %-36s |", getName());
+        
+        // Format health with proper spacing
+        String healthText = String.format("Health: %.0f / %.0f", getHealth(), getMaxHealth());
+        String hpLine = String.format("| %-36s |", healthText);
+
+        // Health bar
+        int barLength = 36;
+        double pct = getHealthPercentage();
+        int filled = (int) (pct * barLength);
+        String bar = "=".repeat(filled) + " ".repeat(barLength - filled);
+        String barLine = String.format("| %-36s |", bar);
+
+        // Stats line with Level
+        String statsText = String.format("Level %d - D%d, I%d, S%d", getLevel(), getDexterity(), getIntelligence(), getStrength());
+        String statsLine = String.format("| %-36s |", statsText);
+
+        // Attack and Defense stats line
+        String attackDefenseText = String.format("Attack: %.0f, Defense: %.0f", getDamage(), getCurrentDefense());
+        String attackDefenseLine = String.format("| %-36s |", attackDefenseText);
+
+        // Armour status line
+        String armourStatusText = String.format("Armour: %s", getEquippedArmour().getState().name());
+        String armourStatusLine = String.format("| %-36s |", armourStatusText);
+
+        String state = getStatus().toString();
+        String stateLine = String.format("| %-36s |", "(" + state + ")");
+
+        String border = "----------------------------------------";
+
+        box.add(border);
+        box.add(nameLine);
+        box.add(hpLine);
+        box.add(barLine);
+        box.add(statsLine);
+        box.add(attackDefenseLine);
+        box.add(armourStatusLine);
+        box.add(stateLine);
+        box.add(border);
+
+        return box;
+    }
 }

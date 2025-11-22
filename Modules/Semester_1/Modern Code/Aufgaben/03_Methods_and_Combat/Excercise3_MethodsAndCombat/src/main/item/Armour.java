@@ -67,6 +67,24 @@ public class Armour extends Item
     }
 
     /**
+     * Creates new armour with specified maximum durability and rarity.
+     *
+     * @param name The armour's name
+     * @param weight The armour's weight
+     * @param value The armour's monetary value
+     * @param defense The defense value the armour provides
+     * @param maxDurability The maximum durability of the armour
+     * @param rarity The armour's rarity level
+     */
+    public Armour(String name, double weight, double value, double defense, double maxDurability, ItemRarity rarity)
+    {
+        super(name, weight, value, rarity);
+        setDefense(defense);
+        this.maxDurability = maxDurability;
+        this.durability = maxDurability;
+    }
+
+    /**
      * Gets the armour's defense value.
      * 
      * @return The defense value

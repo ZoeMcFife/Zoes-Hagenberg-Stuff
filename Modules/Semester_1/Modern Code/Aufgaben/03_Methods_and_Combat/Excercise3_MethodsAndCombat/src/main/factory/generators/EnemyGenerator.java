@@ -53,10 +53,11 @@ public class EnemyGenerator
     {
         return switch (dangerLevel)
         {
-            case DangerLevel.HARMLESS, DangerLevel.MOSTLY_HARMLESS -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.LOW);
-            case DangerLevel.DANGEROUS -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.MEDIUM);
-            case DangerLevel.EXTREME -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.HIGH);
-            case DangerLevel.DEATH -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.LEGENDARY);
+            case HARMLESS -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.LOW);
+            case MOSTLY_HARMLESS -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.MEDIUM);
+            case DANGEROUS -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.MEDIUM);
+            case EXTREME -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.HIGH);
+            case DEATH -> WeaponFactory.createRandomWeaponByRarity(ItemRarity.LEGENDARY);
         };
     }
 
@@ -70,10 +71,11 @@ public class EnemyGenerator
     {
         return switch (dangerLevel)
         {
-            case DangerLevel.HARMLESS, DangerLevel.MOSTLY_HARMLESS -> ArmourFactory.createRandomArmourByRarity(ItemRarity.LOW);
-            case DangerLevel.DANGEROUS -> ArmourFactory.createRandomArmourByRarity(ItemRarity.MEDIUM);
-            case DangerLevel.EXTREME -> ArmourFactory.createRandomArmourByRarity(ItemRarity.HIGH);
-            case DangerLevel.DEATH -> ArmourFactory.createRandomArmourByRarity(ItemRarity.LEGENDARY);
+            case HARMLESS -> ArmourFactory.createRandomArmourByRarity(ItemRarity.LOW);
+            case MOSTLY_HARMLESS -> ArmourFactory.createRandomArmourByRarity(ItemRarity.MEDIUM);
+            case DANGEROUS -> ArmourFactory.createRandomArmourByRarity(ItemRarity.MEDIUM);
+            case EXTREME -> ArmourFactory.createRandomArmourByRarity(ItemRarity.HIGH);
+            case DEATH -> ArmourFactory.createRandomArmourByRarity(ItemRarity.LEGENDARY);
         };
     }
 
@@ -87,10 +89,11 @@ public class EnemyGenerator
     {
         return switch (dangerLevel)
         {
-            case DangerLevel.HARMLESS, DangerLevel.MOSTLY_HARMLESS -> ShieldFactory.createRandomShieldByRarity(ItemRarity.LOW);
-            case DangerLevel.DANGEROUS -> ShieldFactory.createRandomShieldByRarity(ItemRarity.MEDIUM);
-            case DangerLevel.EXTREME -> ShieldFactory.createRandomShieldByRarity(ItemRarity.HIGH);
-            case DangerLevel.DEATH -> ShieldFactory.createRandomShieldByRarity(ItemRarity.LEGENDARY);
+            case HARMLESS -> ShieldFactory.createRandomShieldByRarity(ItemRarity.LOW);
+            case MOSTLY_HARMLESS -> ShieldFactory.createRandomShieldByRarity(ItemRarity.MEDIUM);
+            case DANGEROUS -> ShieldFactory.createRandomShieldByRarity(ItemRarity.MEDIUM);
+            case EXTREME -> ShieldFactory.createRandomShieldByRarity(ItemRarity.HIGH);
+            case DEATH -> ShieldFactory.createRandomShieldByRarity(ItemRarity.LEGENDARY);
         };
     }
 
@@ -107,10 +110,10 @@ public class EnemyGenerator
 
         int potionCount = switch (dangerLevel)
         {
-            case DangerLevel.HARMLESS, DangerLevel.MOSTLY_HARMLESS -> 1;
-            case DangerLevel.DANGEROUS -> 2;
-            case DangerLevel.EXTREME -> 3;
-            case DangerLevel.DEATH -> 5;
+            case HARMLESS, MOSTLY_HARMLESS -> 1;
+            case DANGEROUS -> 2;
+            case EXTREME -> 3;
+            case DEATH -> 5;
         };
 
         for (int i = 0; i < potionCount; i++)
@@ -118,10 +121,10 @@ public class EnemyGenerator
             HealingPotion potion = HealingPotionFactory.createRandomPotionByRarity(
                 switch (dangerLevel)
                 {
-                    case DangerLevel.HARMLESS, DangerLevel.MOSTLY_HARMLESS -> ItemRarity.LOW;
-                    case DangerLevel.DANGEROUS -> ItemRarity.MEDIUM;
-                    case DangerLevel.EXTREME -> ItemRarity.HIGH;
-                    case DangerLevel.DEATH -> ItemRarity.LEGENDARY;
+                    case HARMLESS, MOSTLY_HARMLESS -> ItemRarity.LOW;
+                    case DANGEROUS -> ItemRarity.MEDIUM;
+                    case EXTREME -> ItemRarity.HIGH;
+                    case DEATH -> ItemRarity.LEGENDARY;
                 }
             );
 
