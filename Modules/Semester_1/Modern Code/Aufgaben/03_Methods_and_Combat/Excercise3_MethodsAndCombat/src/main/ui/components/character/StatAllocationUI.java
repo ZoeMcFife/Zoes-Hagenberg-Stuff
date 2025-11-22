@@ -40,6 +40,7 @@ public class StatAllocationUI extends UserInterface
                     }
 
                     player.addStrength(1);
+                    player.spendStatPoint();
 
                     remainingPoints--;
 
@@ -52,6 +53,8 @@ public class StatAllocationUI extends UserInterface
                     }
 
                     player.addDexterity(1);
+                    player.spendStatPoint();
+
                     remainingPoints--;
 
                     break;
@@ -63,6 +66,7 @@ public class StatAllocationUI extends UserInterface
                     }
 
                     player.addIntelligence(1);
+                    player.spendStatPoint();
                     remainingPoints--;
 
                     break;

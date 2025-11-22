@@ -32,11 +32,10 @@ public class MainMenu extends UserInterface
         player.equipItem(ArmourFactory.createRandomArmourByRarity(ItemRarity.LEGENDARY), false);
         player.equipItem(ShieldFactory.createRandomShieldByRarity(ItemRarity.LEGENDARY), false);
         player.addItemsToInventory(HealingPotionFactory.createRandomPotion(), HealingPotionFactory.createRandomPotion(), HealingPotionFactory.createRandomPotion());
+        GameManager.difficulty = Difficulty.HARD;
 
         while(true)
         {
-            GameManager.difficulty = Difficulty.HARD;
-
             UIHelper.displayLogo();
             displayStartOptions();
             int choice = UIHelper.getIntInput(1, 4);

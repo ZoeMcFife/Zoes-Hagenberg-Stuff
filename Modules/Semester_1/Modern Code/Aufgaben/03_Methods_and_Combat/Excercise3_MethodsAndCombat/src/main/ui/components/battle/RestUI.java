@@ -75,6 +75,7 @@ public class RestUI extends UserInterface
             case 7:
                 IO.println("You have chosen to give up. Game Over.");
                 UIHelper.delayMedium();
+                isResting = false;
                 GameManager.getPlayer().suicide();
                 break;
             default:

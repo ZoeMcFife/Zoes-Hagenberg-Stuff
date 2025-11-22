@@ -1,6 +1,7 @@
 package main.ui.components.battle;
 
 import main.character.DangerLevel;
+import main.character.GameCharacter;
 import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UIHelper;
@@ -49,6 +50,8 @@ public class GameLoop extends UserInterface
 
             battleCount++;
             updateDangerLevel();
+
+            GameManager.getPlayer().addExperience(5000);
 
             UIHelper.clearScreen();
 

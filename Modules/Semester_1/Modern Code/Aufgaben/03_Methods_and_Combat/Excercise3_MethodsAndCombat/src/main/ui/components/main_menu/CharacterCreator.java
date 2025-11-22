@@ -13,7 +13,7 @@ import main.ui.components.character.StatAllocationUI;
 public class CharacterCreator extends UserInterface
 {
     /** Total number of skill points available for stat allocation */
-    private static final int AVAILABLE_SKILL_POINTS = 10;
+    private static final int AVAILABLE_SKILL_POINTS = 5;
 
     private Player playerCharacter;
 
