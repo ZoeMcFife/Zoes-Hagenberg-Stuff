@@ -14,6 +14,7 @@ public class LootUI extends UserInterface
 {
     private final List<Item> loot;
     private int lootableItemsLeft;
+    private boolean stopLooting = false;
 
     public LootUI(List<Item> loot)
     {
@@ -29,7 +30,7 @@ public class LootUI extends UserInterface
     @Override
     public void startUI()
     {
-        while (lootableItemsLeft > 0)
+        while (lootableItemsLeft > 0 && !stopLooting)
         {
             displayLootHeader();
 
@@ -45,7 +46,14 @@ public class LootUI extends UserInterface
         displayLootItems();
         displayLootPrompt();
 
-        int choice = UIHelper.getIntInput(1, loot.size()) - 1;
+        int choice = UIHelper.getIntInput(0, loot.size()) - 1;
+
+        if (choice == 0)
+        {
+            stopLooting = true;
+            return;
+        }
+
         Item selectedItem = loot.get(choice);
 
         if (GameManager.getPlayer().canCarry(selectedItem))
@@ -63,7 +71,10 @@ public class LootUI extends UserInterface
 
     private void displayLootItems()
     {
-        IO.println("Looted Items:");
+        IO.println("Lootable Items:");
+
+        IO.println(0 + ": Exit");
+
         for (int i = 0; i < loot.size(); i++)
         {
             IO.print((i + 1) + ": " + loot.get(i) + " | Weight: " + loot.get(i).getWeight());
@@ -117,6 +128,7 @@ public class LootUI extends UserInterface
                 case null, default -> IO.print("\n");
             }
         }
+        
     }
 
     private void displayLootPrompt()
