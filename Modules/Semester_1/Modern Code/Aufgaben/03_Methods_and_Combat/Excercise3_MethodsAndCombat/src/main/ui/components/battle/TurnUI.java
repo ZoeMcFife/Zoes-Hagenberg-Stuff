@@ -111,7 +111,7 @@ public class TurnUI extends UserInterface
         {
             if (character.isAlive())
             {
-                if (character.isDefending)
+                if (character.isDefending())
                 {
                     character.stopDefending();
                 }

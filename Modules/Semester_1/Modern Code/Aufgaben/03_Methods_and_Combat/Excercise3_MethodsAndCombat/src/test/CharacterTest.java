@@ -67,11 +67,11 @@ class CharacterTest
     @Test
     void testDefendMechanism()
     {
-        assertFalse(testPlayer.isDefending);
+        assertFalse(testPlayer.isDefending());
         testPlayer.defend();
-        assertTrue(testPlayer.isDefending);
+        assertTrue(testPlayer.isDefending());
         testPlayer.stopDefending();
-        assertFalse(testPlayer.isDefending);
+        assertFalse(testPlayer.isDefending());
     }
 
     @Test
