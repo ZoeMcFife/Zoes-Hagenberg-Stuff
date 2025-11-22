@@ -27,6 +27,8 @@ public class PlayerStatsUI extends UserInterface
     {
         UIHelper.printHeading("Information");
         IO.println("Name: \t\t" + player.getName());
+        IO.println("Level: \t\t" + player.getLevel());
+        IO.println("Experience: \t" + player.getExperience() + "/" + player.getExperienceNeededForNextLevel());
     }
 
     private void displayPlayerStats()

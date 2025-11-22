@@ -1,6 +1,7 @@
 package main.ui.components.battle;
 
 import main.character.DangerLevel;
+import main.character.GameCharacter;
 import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UIHelper;
@@ -52,8 +53,11 @@ public class GameLoop extends UserInterface
 
             UIHelper.clearScreen();
 
-            RestUI restUI = new RestUI();
-            restUI.startUI();
+            if (GameManager.getPlayer().isAlive())
+            {
+                RestUI restUI = new RestUI();
+                restUI.startUI();
+            }
         }
 
         UIHelper.clearScreen();

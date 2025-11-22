@@ -26,7 +26,7 @@ public class GameManager
     public static double DAMAGE_REDUCTION_PER_DEFENSE = 0.04;
 
     /** Weight carrying capacity granted per point of strength */
-    public static final int CARRY_CAPACITY_PER_STRENGTH = 10;
+    public static final int CARRY_CAPACITY_PER_STRENGTH = 5;
 
     /** Current game difficulty setting */
     public static Difficulty difficulty = Difficulty.NONE;
