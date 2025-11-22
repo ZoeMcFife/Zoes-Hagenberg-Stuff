@@ -74,6 +74,8 @@ public class GameManager
     public static double DELAY_MEDIUM = 1;
     public static double DELAY_LONG = 2;
 
+    public static double PLAYER_BASE_DEFENCE = 10;
+
     /**
      * Sets the active player character.
      *
