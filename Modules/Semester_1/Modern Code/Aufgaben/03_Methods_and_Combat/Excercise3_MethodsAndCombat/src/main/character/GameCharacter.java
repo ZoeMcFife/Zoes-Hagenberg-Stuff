@@ -314,6 +314,14 @@ public abstract class GameCharacter
     //endregion
 
     //region Combat Methods
+    public boolean dodgeRoll()
+    {
+        double dodgeChance = dexterity * GameManager.DODGE_CHANCE_PER_DEXTERITY;
+        double roll = Math.random();
+
+        return roll < dodgeChance;
+    }
+
     /**
      * Puts the character in a defensive stance.
      * While defending, the character gains additional defense from their shield.
@@ -415,6 +423,12 @@ public abstract class GameCharacter
      */
     public void takeDamage(double damage)
     {
+        if (dodgeRoll())
+        {
+            IO.println(getName() + " dodged the attack!");
+            return;
+        }
+
         double damageTaken = Math.max(damage - getCurrentDefense(), 0);
         IO.println(getName() + " takes " + Math.round(damageTaken) + " damage!");
 
