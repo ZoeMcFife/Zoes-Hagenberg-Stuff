@@ -46,7 +46,7 @@ public class Enemy extends GameCharacter
      * @param shield The shield to equip
      * @param experienceReward Experience rewarded upon death.
      */
-    public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, int experienceReward,Weapon weapon, Armour armour, Shield shield)
+    public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, int experienceReward, Weapon weapon, Armour armour, Shield shield)
     {
         this(name, maxHealth, strength, dexterity, intelligence, experienceReward);
         equipItem(weapon, false, false);
