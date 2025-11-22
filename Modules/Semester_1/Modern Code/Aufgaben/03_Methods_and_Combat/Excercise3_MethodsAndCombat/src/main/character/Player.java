@@ -12,9 +12,11 @@ public class Player extends GameCharacter
     private int experience = 0;
     private int availableStatPoints = 0;
     private int currentPP = 0;
+    private int maxPP = 100;
 
     /** Default maximum health for all player characters */
     public static double DEFAULT_PLAYER_MAX_HEALTH = 100.0;
+    public static int DEFAULT_PLAYER_MAX_PP = 100;
 
     /**
      * Creates a new player with specified stats and max health.
@@ -28,6 +30,7 @@ public class Player extends GameCharacter
     public Player(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
         super(name, maxHealth, strength, dexterity, intelligence);
+        this.setMaxPP(DEFAULT_PLAYER_MAX_PP);
     }
 
     @Override
@@ -103,7 +106,8 @@ public class Player extends GameCharacter
     private void levelUp()
     {
         this.level += 1;
-        this.availableStatPoints += 1;
+        this.availableStatPoints += GameManager.STAT_POINTS_PER_LEVEL;
+        setMaxPP(getMaxPP() + GameManager.MAX_PP_INCREASE_PER_LEVEL);
 
         IO.println(getName() + " leveled up to level " + this.level + "!");
     }
@@ -129,9 +133,33 @@ public class Player extends GameCharacter
         {
             return;
         }
-        
+
+        if (this.currentPP + amount > this.maxPP)
+        {
+            amount = this.maxPP - this.currentPP;
+        }
+
         this.currentPP += amount;
         IO.println(getName() + " gained " + amount + " PP! (Current PP: " + currentPP + ")");
+    }
+
+    /**
+     * Gets the player's maximum Power Points.
+     *
+     * @return Maximum PP
+     */
+    public int getMaxPP()
+    {
+        return maxPP;
+    }
+
+    /**
+     * Sets the player's maximum Power Points.
+     * @param maxPP New maximum PP value
+     */
+    private void setMaxPP(int maxPP)
+    {
+        this.maxPP = maxPP;
     }
 
     /**
@@ -142,7 +170,7 @@ public class Player extends GameCharacter
      */
     public void useSpecial(GameCharacter target)
     {
-        if (getEquippedWeapon().getPpCost() > currentPP)
+        if (getEquippedWeapon().getPpCost() > getCurrentPP())
         {
             String specialName = getEquippedWeapon().getSpecialAttackName().isEmpty() ? "special attack" : getEquippedWeapon().getSpecialAttackName();
             IO.println(getName() + " doesn't have enough PP to use " + specialName + "!");

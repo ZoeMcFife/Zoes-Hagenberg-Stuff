@@ -20,7 +20,6 @@ public class TurnUI extends UserInterface
 {
     private final Battle battle;
     private int selectedEnemy;
-    private int actionChoice;
     private int turnCount = 1;
 
     /**
@@ -199,7 +198,7 @@ public class TurnUI extends UserInterface
      */
     private void actionSelection()
     {
-        actionChoice = -1;
+        int actionChoice = -1;
 
         while (actionChoice < 1)
         {
@@ -213,8 +212,15 @@ public class TurnUI extends UserInterface
                     IO.println("You chose to Attack!");
                     break;
                 case 2:
+                    if (GameManager.getPlayer().getCurrentPP() < GameManager.getPlayer().getEquippedWeapon().getPpCost())
+                    {
+                        IO.println("Not enough PP to use " + GameManager.getPlayer().getEquippedWeapon().getSpecialAttackName() + ". Please choose another action.");
+                        actionChoice = -1;
+                        break;
+                    }
+
                     GameManager.getPlayer().nextAction = ActionType.USE_SPECIAL;
-                    IO.println("You chose to Use Special!");
+                    IO.println("You chose to use " + GameManager.getPlayer().getEquippedWeapon().getSpecialAttackName());
                     break;
                 case 3:
                     GameManager.getPlayer().nextAction = ActionType.DEFEND;
@@ -238,7 +244,7 @@ public class TurnUI extends UserInterface
     private void displayBattleOptions()
     {
         UIHelper.printSubHeading("Battle Options");
-        IO.println("Current PP: " + GameManager.getPlayer().getCurrentPP());
+        IO.println("Current PP: " + GameManager.getPlayer().getCurrentPP() + "/" + GameManager.getPlayer().getMaxPP());
         
         String specialName = GameManager.getPlayer().getEquippedWeapon().getSpecialAttackName();
         if (specialName == null || specialName.isEmpty()) {

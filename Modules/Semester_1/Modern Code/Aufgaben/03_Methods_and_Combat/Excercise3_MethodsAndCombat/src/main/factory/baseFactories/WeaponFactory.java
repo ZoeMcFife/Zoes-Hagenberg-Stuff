@@ -255,7 +255,7 @@ public class WeaponFactory
     private static Weapon createWeaponFromData(WeaponData data)
     {
         return new Weapon(data.name, data.weight, data.value, data.damage, data.isMagic, data.rarity,
-                         data.specialDamage, data.specialAttackName, data.specialFlavorText, data.ppCost);
+                         data.specialDamage, data.specialAttackName, data.specialFlavorText, data.ppCost, data.ppGainPerUse);
     }
 
     /**
