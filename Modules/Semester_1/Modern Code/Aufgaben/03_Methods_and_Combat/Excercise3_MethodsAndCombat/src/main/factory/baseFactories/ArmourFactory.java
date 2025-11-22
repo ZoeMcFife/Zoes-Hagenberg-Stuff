@@ -25,42 +25,41 @@ public class ArmourFactory
         double weight;
         double value;
         double defense;
+        double maxDurability;
         ItemRarity rarity;
 
-        ArmourData(int id, String name, double weight, double value, double defense, ItemRarity rarity)
+        ArmourData(int id, String name, double weight, double value, double defense, double maxDurability, ItemRarity rarity)
         {
             this.id = id;
             this.name = name;
             this.weight = weight;
             this.value = value;
             this.defense = defense;
+            this.maxDurability = maxDurability;
             this.rarity = rarity;
         }
     }
 
     static
     {
-        // Armours from the item list
-        registerArmour(1, "Fargoth War Gauntlet", 5.0, 420, 12, ItemRarity.HIGH);
-        registerArmour(2, "Null-Field Cloak", 1.5, 480, 8, ItemRarity.HIGH);
-        registerArmour(3, "Skymetal Plate", 22.0, 900, 36, ItemRarity.LEGENDARY);
-        registerArmour(4, "Ironclad Greaves", 6.0, 140, 10, ItemRarity.LOW);
-        registerArmour(5, "Rune-etched Helm", 3.0, 260, 12, ItemRarity.MEDIUM);
-        registerArmour(6, "Aegis Mesh Vest", 4.0, 360, 18, ItemRarity.HIGH);
-        registerArmour(7, "Shadowstep Boots", 1.8, 420, 6, ItemRarity.HIGH);
-        registerArmour(8, "Warden's Mantle", 2.2, 520, 14, ItemRarity.HIGH);
-        registerArmour(9, "Patchwork Armour Mk I", 10.0, 95, 6, ItemRarity.LOW);
-        
-        // Additional armours from the extended list
-        registerArmour(10, "Abysswatcher Helm", 2.2, 220, 10, ItemRarity.MEDIUM);
-        registerArmour(11, "Shadowweave Coat", 1.6, 280, 8, ItemRarity.HIGH);
-        registerArmour(12, "Guardian Frame Mk III", 18.0, 1000, 40, ItemRarity.LEGENDARY);
-        registerArmour(13, "Wolfclan Chestplate", 12.0, 500, 24, ItemRarity.HIGH);
-        registerArmour(14, "Runic Guard Plate", 9.0, 460, 30, ItemRarity.HIGH);
-        registerArmour(15, "Fargoth Barrier Cloak", 2.0, 800, 16, ItemRarity.LEGENDARY);
-        registerArmour(16, "Explorer's Webbing", 4.0, 150, 10, ItemRarity.LOW);
-        registerArmour(17, "Crimson Vambraces", 2.5, 300, 12, ItemRarity.MEDIUM);
-        registerArmour(18, "Clothes", 1.0, 2, 0, ItemRarity.LOW);
+        registerArmour(1, "Fargoth War Gauntlet", 5.0, 420, 12, 500, ItemRarity.HIGH);
+        registerArmour(2, "Null-Field Cloak", 1.5, 480, 8, 600, ItemRarity.HIGH);
+        registerArmour(3, "Skymetal Plate", 22.0, 900, 36, 1500, ItemRarity.LEGENDARY);
+        registerArmour(4, "Ironclad Greaves", 6.0, 140, 10, 100, ItemRarity.LOW);
+        registerArmour(5, "Rune-etched Helm", 3.0, 260, 12, 400, ItemRarity.MEDIUM);
+        registerArmour(6, "Aegis Mesh Vest", 4.0, 360, 18, 750, ItemRarity.HIGH);
+        registerArmour(7, "Shadowstep Boots", 1.8, 420, 6, 450, ItemRarity.HIGH);
+        registerArmour(8, "Warden's Mantle", 2.2, 520, 14, 500, ItemRarity.HIGH);
+        registerArmour(9, "Patchwork Armour Mk I", 10.0, 95, 6, 180, ItemRarity.LOW);
+        registerArmour(10, "Abysswatcher Helm", 2.2, 220, 10, 450, ItemRarity.MEDIUM);
+        registerArmour(11, "Shadowweave Coat", 1.6, 280, 8, 900, ItemRarity.HIGH);
+        registerArmour(12, "Guardian Frame Mk III", 18.0, 1000, 40, 1750, ItemRarity.LEGENDARY);
+        registerArmour(13, "Wolfclan Chestplate", 12.0, 500, 24, 180, ItemRarity.HIGH);
+        registerArmour(14, "Runic Guard Plate", 9.0, 460, 30, 800, ItemRarity.HIGH);
+        registerArmour(15, "Fargoth Barrier Cloak", 2.0, 800, 16, 2000, ItemRarity.LEGENDARY);
+        registerArmour(16, "Explorer's Webbing", 4.0, 150, 10, 150, ItemRarity.LOW);
+        registerArmour(17, "Crimson Vambraces", 2.5, 300, 12, 450, ItemRarity.MEDIUM);
+        registerArmour(18, "Clothes", 1.0, 2, 0, 50, ItemRarity.LOW);
     }
 
     public static Armour createBaseArmour()
@@ -68,9 +67,9 @@ public class ArmourFactory
         return createArmourByName("Clothes");
     }
 
-    private static void registerArmour(int id, String name, double weight, double value, double defense, ItemRarity rarity)
+    private static void registerArmour(int id, String name, double weight, double value, double defense, double maxDurability, ItemRarity rarity)
     {
-        ArmourData data = new ArmourData(id, name, weight, value, defense, rarity);
+        ArmourData data = new ArmourData(id, name, weight, value, defense, maxDurability, rarity);
         ARMOURS_BY_ID.put(id, data);
         ARMOURS_BY_NAME.put(name.toLowerCase(), data);
         ARMOURS_BY_RARITY.computeIfAbsent(rarity, k -> new ArrayList<>()).add(data);
