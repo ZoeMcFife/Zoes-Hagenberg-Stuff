@@ -7,7 +7,7 @@ import main.combat.ActionType;
 import main.combat.Battle;
 import main.global.GameManager;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 
 
 /**
@@ -42,8 +42,8 @@ public class TurnUI extends UserInterface
         {
             displayTurnHeader();
 
-            UserInterfaceHelper.displayEnemies(battle);
-            UserInterfaceHelper.displayPlayer(GameManager.getPlayer());
+            UIHelper.displayEnemies(battle);
+            UIHelper.displayPlayer(GameManager.getPlayer());
 
             thinkingPass();
 
@@ -53,15 +53,15 @@ public class TurnUI extends UserInterface
 
             stopDefendingPass();
 
-            UserInterfaceHelper.waitForEnterKey();
-            UserInterfaceHelper.clearScreen();
+            UIHelper.waitForEnterKey();
+            UIHelper.clearScreen();
         }
 
     }
 
     private void displayTurnHeader()
     {
-        UserInterfaceHelper.printHeading("Turn " + turnCount);
+        UIHelper.printHeading("Turn " + turnCount);
         turnCount++;
     }
 
@@ -87,7 +87,7 @@ public class TurnUI extends UserInterface
                         case HEAL -> enemy.useHealingItem();
                     }
 
-                    UserInterfaceHelper.delayMedium();
+                    UIHelper.delayMedium();
                 }
                 else if (character instanceof Player player)
                 {
@@ -96,7 +96,7 @@ public class TurnUI extends UserInterface
                         case ATTACK -> player.attack(battle.getEnemies().get(selectedEnemy - 1));
                         case HEAL -> IO.println("Healing item used!");
                     }
-                    UserInterfaceHelper.delayMedium();
+                    UIHelper.delayMedium();
                 }
             }
         }
@@ -130,7 +130,7 @@ public class TurnUI extends UserInterface
             if (character.nextAction == ActionType.DEFEND && character.isAlive())
             {
                 character.defend();
-                UserInterfaceHelper.delayMedium();
+                UIHelper.delayMedium();
             }
         }
     }
@@ -148,18 +148,18 @@ public class TurnUI extends UserInterface
                 if (character instanceof Enemy enemy)
                 {
                     enemy.think(GameManager.getPlayer());
-                    UserInterfaceHelper.delayMedium();
+                    UIHelper.delayMedium();
                 }
                 else if (character instanceof Player)
                 {
-                    UserInterfaceHelper.printHeading("Your Turn!");
+                    UIHelper.printHeading("Your Turn!");
 
                     enemySelection();
                     actionSelection();
 
                     IO.println();
 
-                    UserInterfaceHelper.delayMedium();
+                    UIHelper.delayMedium();
                 }
             }
         }
@@ -176,7 +176,7 @@ public class TurnUI extends UserInterface
         while (selectedEnemy < 1)
         {
             displayEnemySelection();
-            selectedEnemy = UserInterfaceHelper.getIntInput(1, battle.getEnemies().size());
+            selectedEnemy = UIHelper.getIntInput(1, battle.getEnemies().size());
 
             if (selectedEnemy < 1 || selectedEnemy > battle.getEnemies().size())
             {
@@ -197,7 +197,7 @@ public class TurnUI extends UserInterface
         while (actionChoice < 1)
         {
             displayBattleOptions();
-            actionChoice = UserInterfaceHelper.getIntInput(1, 3);
+            actionChoice = UIHelper.getIntInput(1, 3);
 
             switch (actionChoice)
             {
@@ -226,7 +226,7 @@ public class TurnUI extends UserInterface
      */
     private void displayBattleOptions()
     {
-        UserInterfaceHelper.printSubHeading("Battle Options");
+        UIHelper.printSubHeading("Battle Options");
         IO.println("1. Attack");
         IO.println("2. Defend");
         IO.println("3. Use Item");
@@ -238,7 +238,7 @@ public class TurnUI extends UserInterface
      */
     private void displayEnemySelection()
     {
-        UserInterfaceHelper.printSubHeading("Select an Enemy to Target");
+        UIHelper.printSubHeading("Select an Enemy to Target");
 
         int i = 1;
 

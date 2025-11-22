@@ -8,23 +8,14 @@ import main.global.GameManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Utility class providing common UI functions for displaying game elements
  * and handling user input throughout the game.
  */
-public class UserInterfaceHelper
+public class UIHelper
 {
-    /**
-     * Displays the main menu screen with the game logo.
-     */
-    public void displayMainMenu()
-    {
-        displayLogo();
 
-        IO.println("Press any key to start your adventure!");
-    }
 
     /**
      * Displays the game's ASCII art logo.

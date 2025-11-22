@@ -1,9 +1,8 @@
 package main.ui.components.inventory;
 
 import main.character.GameCharacter;
-import main.inventory.Inventory;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 
 public class SelectItemUI extends UserInterface
 {
@@ -29,7 +28,7 @@ public class SelectItemUI extends UserInterface
 
         while (itemSelected == -1)
         {
-            itemSelected = UserInterfaceHelper.getIntInput(1, gameCharacter.getInventory().getItemCount());
+            itemSelected = UIHelper.getIntInput(1, gameCharacter.getInventory().getItemCount());
         }
 
         return itemSelected - 1; // Convert to zero-based index

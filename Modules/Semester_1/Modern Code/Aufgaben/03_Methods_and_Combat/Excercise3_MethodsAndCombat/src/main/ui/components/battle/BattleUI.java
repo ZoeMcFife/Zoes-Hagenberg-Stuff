@@ -5,7 +5,7 @@ import main.combat.Battle;
 import main.factory.generators.BattleGenerator;
 import main.global.GameManager;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 
 /**
  * UI screen for managing a single battle encounter.
@@ -44,13 +44,13 @@ public class BattleUI extends UserInterface
             TurnUI turnUI = new TurnUI(battle);
             turnUI.startUI();
 
-            UserInterfaceHelper.delayLong();
+            UIHelper.delayLong();
 
-            UserInterfaceHelper.clearScreen();
+            UIHelper.clearScreen();
 
             displayBattleEndMessage();
 
-            UserInterfaceHelper.waitForEnterKey();
+            UIHelper.waitForEnterKey();
         }
 
     }

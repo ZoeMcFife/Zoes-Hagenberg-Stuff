@@ -8,9 +8,8 @@ import main.factory.baseFactories.WeaponFactory;
 import main.global.Difficulty;
 import main.global.GameManager;
 import main.item.ItemRarity;
-import main.item.Weapon;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 import main.ui.components.battle.GameLoop;
 
 /**
@@ -39,9 +38,9 @@ public class MainMenu extends UserInterface
 
             GameManager.difficulty = Difficulty.HARD;
 
-            UserInterfaceHelper.displayLogo();
+            UIHelper.displayLogo();
             displayStartOptions();
-            int choice = UserInterfaceHelper.getIntInput(1, 4);
+            int choice = UIHelper.getIntInput(1, 4);
 
             switch (choice)
             {
@@ -61,12 +60,12 @@ public class MainMenu extends UserInterface
                     if (!canGameStart())
                     {
                         IO.println("You must create a character and choose a difficulty before starting the game.");
-                        UserInterfaceHelper.waitForEnterKey();
+                        UIHelper.waitForEnterKey();
                         break;
                     }
 
                     IO.println("Starting game...");
-                    UserInterfaceHelper.clearScreen();
+                    UIHelper.clearScreen();
 
                     GameLoop gameLoop = new GameLoop();
                     gameLoop.startUI();
@@ -82,7 +81,7 @@ public class MainMenu extends UserInterface
                     break;
             }
 
-            UserInterfaceHelper.clearScreen();
+            UIHelper.clearScreen();
         }
     }
 

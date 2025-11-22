@@ -7,7 +7,7 @@ import main.factory.baseFactories.WeaponFactory;
 import main.global.GameManager;
 import main.inventory.Inventory;
 import main.item.*;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 import java.util.List;
 
 /**
@@ -372,7 +372,7 @@ public class GameCharacter
         while (isAlive())
         {
             attack(this);
-            UserInterfaceHelper.delayMedium();
+            UIHelper.delayMedium();
             IO.println(getName() + " has given up.");
             IO.println();
         }

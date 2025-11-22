@@ -2,9 +2,8 @@ package main.ui.components.character;
 
 import main.character.Player;
 import main.global.GameManager;
-import main.inventory.Inventory;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 import main.ui.components.inventory.DisplayInventoryUI;
 
 public class PlayerStatsUI extends UserInterface
@@ -14,25 +13,25 @@ public class PlayerStatsUI extends UserInterface
     @Override
     public void startUI()
     {
-        UserInterfaceHelper.clearScreen();
+        UIHelper.clearScreen();
 
         displayPlayerInformation();
         displayPlayerStats();
         displayPlayerEquipment();
         displayPlayerInventory();
 
-        UserInterfaceHelper.waitForEnterKey();
+        UIHelper.waitForEnterKey();
     }
 
     private void displayPlayerInformation()
     {
-        UserInterfaceHelper.printHeading("Information");
+        UIHelper.printHeading("Information");
         IO.println("Name: \t\t" + player.getName());
     }
 
     private void displayPlayerStats()
     {
-        UserInterfaceHelper.printHeading("Stats");
+        UIHelper.printHeading("Stats");
         IO.println("Health: \t\t" + player.getHealth() + "/" + player.getMaxHealth());
         IO.println("Defense: \t\t" + player.getCurrentDefense());
         IO.println("Attack: \t\t" + player.getDamage());
@@ -43,21 +42,21 @@ public class PlayerStatsUI extends UserInterface
 
     private void displayPlayerEquipment()
     {
-        UserInterfaceHelper.printHeading("Equipment");
+        UIHelper.printHeading("Equipment");
 
-        UserInterfaceHelper.printSubHeading("Weapon");
+        UIHelper.printSubHeading("Weapon");
         player.getEquippedWeapon().printItemStats();
 
-        UserInterfaceHelper.printSubHeading("Armor");
+        UIHelper.printSubHeading("Armor");
         player.getEquippedArmour().printItemStats();
 
-        UserInterfaceHelper.printSubHeading("Shield");
+        UIHelper.printSubHeading("Shield");
         player.getEquippedShield().printItemStats();
     }
 
     private void displayPlayerInventory()
     {
-        UserInterfaceHelper.printHeading("Inventory");
+        UIHelper.printHeading("Inventory");
 
         DisplayInventoryUI displayInventoryUI = new DisplayInventoryUI(player);
         displayInventoryUI.startUI();

@@ -2,7 +2,7 @@ package main.ui.components.battle;
 
 import main.global.GameManager;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 
 /**
  * UI screen displayed when the player character dies.
@@ -17,16 +17,16 @@ public class DeathUI extends UserInterface
     @Override
     public void startUI()
     {
-        UserInterfaceHelper.clearScreen();
+        UIHelper.clearScreen();
 
-        UserInterfaceHelper.displayLogo();
+        UIHelper.displayLogo();
 
-        UserInterfaceHelper.printHeading(GameManager.getPlayer().getName() + " has perished in battle!");
+        UIHelper.printHeading(GameManager.getPlayer().getName() + " has perished in battle!");
 
-        UserInterfaceHelper.displayPlayer(GameManager.getPlayer());
+        UIHelper.displayPlayer(GameManager.getPlayer());
 
         GameManager.removePlayer();
 
-        UserInterfaceHelper.waitForEnterKey();
+        UIHelper.waitForEnterKey();
     }
 }
