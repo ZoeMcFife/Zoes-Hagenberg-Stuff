@@ -34,24 +34,10 @@ public class WeaponFactory
         String specialAttackName;
         String specialFlavorText;
         int ppCost;
-
-        WeaponData(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity)
-        {
-            this.id = id;
-            this.name = name;
-            this.weight = weight;
-            this.value = value;
-            this.damage = damage;
-            this.isMagic = isMagic;
-            this.rarity = rarity;
-            this.specialDamage = 0;
-            this.specialAttackName = "";
-            this.specialFlavorText = "";
-            this.ppCost = 0;
-        }
+        int ppGainPerUse;
 
         WeaponData(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity,
-                   double specialDamage, String specialAttackName, String specialFlavorText, int ppCost)
+                   double specialDamage, String specialAttackName, String specialFlavorText, int ppCost, int ppGainPerUse)
         {
             this.id = id;
             this.name = name;
@@ -64,6 +50,7 @@ public class WeaponFactory
             this.specialAttackName = specialAttackName;
             this.specialFlavorText = specialFlavorText;
             this.ppCost = ppCost;
+            this.ppGainPerUse = ppGainPerUse;
         }
     }
 
@@ -187,19 +174,10 @@ public class WeaponFactory
         return createWeaponByName("Fists");
     }
 
-    private static void registerWeapon(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity)
-    {
-        WeaponData data = new WeaponData(id, name, weight, value, damage, isMagic, rarity);
-        WEAPONS_BY_ID.put(id, data);
-        WEAPONS_BY_NAME.put(name.toLowerCase(), data);
-        WEAPONS_BY_RARITY.computeIfAbsent(rarity, k -> new ArrayList<>()).add(data);
-        ALL_WEAPONS.add(data);
-    }
-
     private static void registerWeapon(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity,
-                                       double specialDamage, String specialAttackName, String specialFlavorText, int ppCost)
+                                       double specialDamage, String specialAttackName, String specialFlavorText, int ppCost, int ppGainPerUse)
     {
-        WeaponData data = new WeaponData(id, name, weight, value, damage, isMagic, rarity, specialDamage, specialAttackName, specialFlavorText, ppCost);
+        WeaponData data = new WeaponData(id, name, weight, value, damage, isMagic, rarity, specialDamage, specialAttackName, specialFlavorText, ppCost, ppGainPerUse);
         WEAPONS_BY_ID.put(id, data);
         WEAPONS_BY_NAME.put(name.toLowerCase(), data);
         WEAPONS_BY_RARITY.computeIfAbsent(rarity, k -> new ArrayList<>()).add(data);

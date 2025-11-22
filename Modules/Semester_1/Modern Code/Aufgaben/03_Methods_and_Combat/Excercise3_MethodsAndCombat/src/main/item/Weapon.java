@@ -12,6 +12,7 @@ public class Weapon extends Item
     private String specialAttackName;
     private String specialFlavorText;
     private int ppCost;
+    private int ppGainPerUse;
 
     /**
      * Creates a new weapon with default MEDIUM rarity.
@@ -67,9 +68,10 @@ public class Weapon extends Item
      * @param specialAttackName Name of the special attack
      * @param specialFlavorText Flavor text displayed when special is used
      * @param ppCost Power Points required to use special attack
+     * @param ppGainPerUse Power Points gained per normal attack with this weapon
      */
     public Weapon(String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity,
-                  double specialDamage, String specialAttackName, String specialFlavorText, int ppCost)
+                  double specialDamage, String specialAttackName, String specialFlavorText, int ppCost, int ppGainPerUse)
     {
         super(name, weight, value, rarity);
         setDamage(damage);
@@ -78,6 +80,7 @@ public class Weapon extends Item
         setSpecialAttackName(specialAttackName);
         setSpecialFlavorText(specialFlavorText);
         setPpCost(ppCost);
+        setPpGainPerUse(ppGainPerUse);
     }
 
     /**
@@ -201,6 +204,27 @@ public class Weapon extends Item
     public void setPpCost(int ppCost)
     {
         this.ppCost = Math.max(0, ppCost);
+    }
+
+    /**
+     * Sets the PP gained per normal attack with this weapon.
+     * Minimum value is 0.
+     *
+     * @param ppGainPerUse The PP gain per use
+     */
+    public void setPpGainPerUse(int ppGainPerUse)
+    {
+        this.ppGainPerUse = Math.max(0, ppGainPerUse);
+    }
+
+    /**
+     * Gets the PP gained per normal attack with this weapon.
+     *
+     * @return PP gain per use
+     */
+    public int getPpGainPerUse()
+    {
+        return ppGainPerUse;
     }
 
     /**
