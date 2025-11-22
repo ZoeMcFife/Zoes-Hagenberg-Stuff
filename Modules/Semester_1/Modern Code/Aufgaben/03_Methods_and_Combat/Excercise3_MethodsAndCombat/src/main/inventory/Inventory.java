@@ -73,6 +73,9 @@ public class Inventory
         return totalWeight;
     }
 
+    // TODO: doing the check here could be problematic!!!
+    // especially since i forgot i do the check here
+
     /**
      * Adds an item to the inventory if there is enough carrying capacity.
      * If adding the item would exceed capacity, the item is not added.
@@ -128,5 +131,23 @@ public class Inventory
             }
         }
         return false;
+    }
+
+    /**
+     * Gets a list of all healing items in the inventory.
+     *
+     * @return List of healing potions
+     */
+    public List<HealingPotion> getHealingItems()
+    {
+        List<HealingPotion> healingItems = new ArrayList<>();
+        for (Item item : items)
+        {
+            if (item instanceof HealingPotion healingPotion)
+            {
+                healingItems.add(healingPotion);
+            }
+        }
+        return healingItems;
     }
 }

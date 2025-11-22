@@ -15,7 +15,7 @@ public class UseItemUI extends ItemUsageUI
             return;
         }
 
-        int selectedItem = SelectItemUI.itemSelection(GameManager.getPlayer());
+        int selectedItem = SelectItemUI.healthItemSelection(GameManager.getPlayer());
 
         GameManager.getPlayer().useItem(GameManager.getPlayer().getInventory().getItemAt(selectedItem));
     }

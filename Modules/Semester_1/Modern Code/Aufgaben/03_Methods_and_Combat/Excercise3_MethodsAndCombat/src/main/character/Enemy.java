@@ -3,8 +3,11 @@ package main.character;
 
 import main.combat.ActionType;
 import main.item.Armour;
+import main.item.HealingPotion;
 import main.item.Shield;
 import main.item.Weapon;
+
+import java.util.List;
 
 /**
  * Represents an enemy character in the game.
@@ -63,12 +66,15 @@ public class Enemy extends GameCharacter
     }
 
     /**
-     * Uses a healing item from the enemy's inventory.
-     * Outputs a message indicating the enemy is healing.
+     * Uses a random healing item from the enemy's inventory.
      */
     public void useHealingItem()
     {
-        IO.println(getName() + " uses a healing item!");
+        List<HealingPotion> healingItems = getInventory().getHealingItems();
+
+        HealingPotion randomHealingItem = healingItems.get((int) (Math.random() * healingItems.size()));
+
+        useItem(randomHealingItem);
     }
 
     /**
