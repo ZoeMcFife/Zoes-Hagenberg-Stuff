@@ -418,6 +418,8 @@ public class GameCharacter
         double damageTaken = Math.max(damage - getCurrentDefense(), 0);
         IO.println(getName() + " takes " + Math.round(damageTaken) + " damage!");
 
+        getEquippedArmour().reduceDurability(damageTaken);
+
         health -= damageTaken;
         if (health < 0)
         {
