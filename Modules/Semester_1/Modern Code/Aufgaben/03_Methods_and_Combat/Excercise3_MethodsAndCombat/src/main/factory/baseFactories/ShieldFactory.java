@@ -40,16 +40,116 @@ public class ShieldFactory
 
     static
     {
-        // Shields from the item list
-        registerShield(1, "Echo Shard Shield", 6.5, 700, 28, ItemRarity.LEGENDARY);
-        registerShield(2, "Stormbreaker Shield", 7.8, 520, 22, ItemRarity.HIGH);
-        registerShield(3, "Hollowbone Shield", 4.5, 95, 8, ItemRarity.LOW);
-        registerShield(4, "Shield of Wolfram", 9.0, 640, 30, ItemRarity.HIGH);
+        // Shields rebalanced by rarity
+        // LOW: defense 5-12, weight and value scaled
+        // MEDIUM: defense 12-20, weight and value scaled
+        // HIGH: defense 20-30, weight and value scaled
+        // LEGENDARY: defense 28-40, weight and value scaled
+        registerShield(1, "Echo Shard Shield", 7.0, 1420, 35, ItemRarity.LEGENDARY);
+        registerShield(2, "Stormbreaker Shield", 8.0, 780, 26, ItemRarity.HIGH);
+        registerShield(3, "Hollowbone Shield", 3.5, 140, 8, ItemRarity.LOW);
+        registerShield(4, "Shield of Wolfram", 9.0, 850, 28, ItemRarity.HIGH);
         
         // Additional shields from the extended list
-        registerShield(5, "Patch-Steel Shield", 5.0, 120, 12, ItemRarity.LOW);
-        registerShield(6, "Nebular Disk Shield", 3.5, 340, 18, ItemRarity.MEDIUM);
+        registerShield(5, "Patch-Steel Shield", 4.0, 180, 10, ItemRarity.LOW);
+        registerShield(6, "Nebular Disk Shield", 5.5, 320, 16, ItemRarity.MEDIUM);
         registerShield(7, "Fists", 0.0, 0, 1, ItemRarity.LOW);
+
+        // --- SHIELDS 8-100 (adds 93, bringing total to 100) ---
+        registerShield(8, "Runewood Buckler", 3.5, 160, 9, ItemRarity.LOW);
+        registerShield(9, "Canyon Bulwark", 9.5, 1580, 38, ItemRarity.LEGENDARY);
+        registerShield(10, "Smelter Plate", 2.5, 90, 6, ItemRarity.LOW);
+        registerShield(11, "Gutter Parry", 8.5, 1520, 36, ItemRarity.LEGENDARY);
+        registerShield(12, "Abyssal Aegis", 7.5, 740, 25, ItemRarity.HIGH);
+        registerShield(13, "Seaworn Pavise", 8.0, 820, 27, ItemRarity.HIGH);
+        registerShield(14, "Beacon Disk", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(15, "Void Shard Guard", 5.5, 340, 16, ItemRarity.MEDIUM);
+        registerShield(16, "Echo Resonator", 7.0, 720, 24, ItemRarity.HIGH);
+        registerShield(17, "Hearthshield", 6.5, 380, 19, ItemRarity.MEDIUM);
+        registerShield(18, "Sporeguard Barrier", 5.0, 300, 15, ItemRarity.MEDIUM);
+        registerShield(19, "Marrow Bulwark", 3.0, 120, 7, ItemRarity.LOW);
+        registerShield(20, "Nebula Disk MkII", 7.5, 760, 25, ItemRarity.HIGH);
+        registerShield(21, "Tollguard Shield", 7.0, 710, 24, ItemRarity.HIGH);
+        registerShield(22, "Patch-Steel MkII", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(23, "Smogveil Shield", 5.0, 310, 15, ItemRarity.MEDIUM);
+        registerShield(24, "Fargoth Kite", 9.0, 1640, 40, ItemRarity.LEGENDARY);
+        registerShield(25, "Warden's Barrier", 5.5, 330, 16, ItemRarity.MEDIUM);
+        registerShield(26, "Pilot's Buckle", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(27, "Runic Disk", 7.5, 780, 26, ItemRarity.HIGH);
+        registerShield(28, "Wolfclan Heater", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(29, "Shardmesh Shield", 6.5, 380, 19, ItemRarity.MEDIUM);
+        registerShield(30, "Gale Disk", 7.0, 730, 24, ItemRarity.HIGH);
+        registerShield(31, "Ironrein Buckler", 5.5, 330, 16, ItemRarity.MEDIUM);
+        registerShield(32, "Leviathan Scute", 9.5, 1660, 38, ItemRarity.LEGENDARY);
+        registerShield(33, "Netherguard", 6.0, 350, 17, ItemRarity.MEDIUM);
+        registerShield(34, "Portal Disk", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(35, "Gravewatch Shield", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(36, "Coalface Plate", 7.0, 700, 23, ItemRarity.HIGH);
+        registerShield(37, "Harpooner's Guard", 9.0, 1580, 37, ItemRarity.LEGENDARY);
+        registerShield(38, "Smuggler's Parrion", 5.5, 340, 16, ItemRarity.MEDIUM);
+        registerShield(39, "Tideward Shield", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(40, "Runebone Buckler", 5.5, 330, 16, ItemRarity.MEDIUM);
+        registerShield(41, "Abyss Echo Shield", 7.5, 760, 25, ItemRarity.HIGH);
+        registerShield(42, "Echofoam Shield", 8.0, 840, 27, ItemRarity.HIGH);
+        registerShield(43, "Stormbreaker MkII", 5.0, 300, 15, ItemRarity.MEDIUM);
+        registerShield(44, "Cliffside Shield", 5.5, 320, 16, ItemRarity.MEDIUM);
+        registerShield(45, "Forgeplate Buckler", 6.5, 380, 19, ItemRarity.MEDIUM);
+        registerShield(46, "Hollowbone Tower", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(47, "Seamguard Disk", 7.5, 750, 25, ItemRarity.HIGH);
+        registerShield(48, "Shipwright Shield", 7.5, 760, 25, ItemRarity.HIGH);
+        registerShield(49, "Sparkshell Ward", 8.0, 820, 27, ItemRarity.HIGH);
+        registerShield(50, "Gloomshield", 7.0, 710, 24, ItemRarity.HIGH);
+        registerShield(51, "Wolfram Barrier", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(52, "Beacon Circle", 7.5, 770, 26, ItemRarity.HIGH);
+        registerShield(53, "Rift Barrier", 6.0, 350, 17, ItemRarity.MEDIUM);
+        registerShield(54, "Searplate Shield", 7.5, 750, 25, ItemRarity.HIGH);
+        registerShield(55, "Cargo Clamp", 3.0, 110, 7, ItemRarity.LOW);
+        registerShield(56, "Skymetal Disk", 8.0, 860, 28, ItemRarity.HIGH);
+        registerShield(57, "Runic Pavilion", 8.5, 880, 29, ItemRarity.HIGH);
+        registerShield(58, "Voidflame Targe", 5.5, 340, 16, ItemRarity.MEDIUM);
+        registerShield(59, "Starforged Shield", 9.0, 1540, 36, ItemRarity.LEGENDARY);
+        registerShield(60, "Pilot's Kite", 6.5, 380, 19, ItemRarity.MEDIUM);
+        registerShield(61, "Warden's Disc", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(62, "Boneflame Guard", 8.0, 820, 27, ItemRarity.HIGH);
+        registerShield(63, "Shade Screen", 7.5, 760, 25, ItemRarity.HIGH);
+        registerShield(64, "Ironclad Wall", 5.0, 310, 15, ItemRarity.MEDIUM);
+        registerShield(65, "Echo Mesh Shield", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(66, "Tollkeeper Buckler", 2.5, 95, 6, ItemRarity.LOW);
+        registerShield(67, "Patchwork Cover", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(68, "Nether Plate", 7.5, 780, 26, ItemRarity.HIGH);
+        registerShield(69, "Smokestack Shield", 5.5, 320, 16, ItemRarity.MEDIUM);
+        registerShield(70, "Runeforge Ward", 7.5, 770, 26, ItemRarity.HIGH);
+        registerShield(71, "Beacon Aegis", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(72, "Coalplate Bulwark", 7.0, 700, 23, ItemRarity.HIGH);
+        registerShield(73, "Rune-etched Targe", 7.5, 790, 27, ItemRarity.HIGH);
+        registerShield(74, "Seabreak Guard", 8.0, 810, 27, ItemRarity.HIGH);
+        registerShield(75, "Gravplate", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(76, "Hearth Disk", 8.0, 840, 28, ItemRarity.HIGH);
+        registerShield(77, "Stalwart Shield", 5.0, 310, 15, ItemRarity.MEDIUM);
+        registerShield(78, "Spiral Guard", 7.5, 780, 26, ItemRarity.HIGH);
+        registerShield(79, "Voidglass Targe", 9.5, 1620, 39, ItemRarity.LEGENDARY);
+        registerShield(80, "Galeguard", 5.5, 330, 16, ItemRarity.MEDIUM);
+        registerShield(81, "Riftsteel Disk", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(82, "Forgeborn Shield", 7.0, 710, 24, ItemRarity.HIGH);
+        registerShield(83, "Mariner's Shield", 8.0, 820, 27, ItemRarity.HIGH);
+        registerShield(84, "Rustwarden Disk", 7.5, 790, 26, ItemRarity.HIGH);
+        registerShield(85, "Spore Curtain", 5.5, 320, 16, ItemRarity.MEDIUM);
+        registerShield(86, "Hoarder's Buckler", 7.5, 790, 26, ItemRarity.HIGH);
+        registerShield(87, "Beacon Pavise", 5.5, 320, 16, ItemRarity.MEDIUM);
+        registerShield(88, "Lionheart Guard", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(89, "Steelcrest", 5.5, 340, 17, ItemRarity.MEDIUM);
+        registerShield(90, "Aegis of Eternity", 9.0, 1560, 37, ItemRarity.LEGENDARY);
+        registerShield(91, "Stormwall", 7.0, 710, 24, ItemRarity.HIGH);
+        registerShield(92, "Titan's Bulwark", 8.0, 850, 28, ItemRarity.HIGH);
+        registerShield(93, "Iron Sentinel", 7.5, 770, 25, ItemRarity.HIGH);
+        registerShield(94, "Shadow Guard", 6.5, 380, 19, ItemRarity.MEDIUM);
+        registerShield(95, "Bronze Bastion", 5.0, 300, 14, ItemRarity.MEDIUM);
+        registerShield(96, "Ravencrest", 5.0, 310, 15, ItemRarity.MEDIUM);
+        registerShield(97, "Falcon Shield", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(98, "Traveler's Buckler", 3.5, 130, 8, ItemRarity.LOW);
+        registerShield(99, "Celestial Aegis", 9.0, 1600, 38, ItemRarity.LEGENDARY);
+        registerShield(100, "Dragonplate", 7.5, 760, 25, ItemRarity.HIGH);
+
     }
 
     public static Shield createBaseShield()

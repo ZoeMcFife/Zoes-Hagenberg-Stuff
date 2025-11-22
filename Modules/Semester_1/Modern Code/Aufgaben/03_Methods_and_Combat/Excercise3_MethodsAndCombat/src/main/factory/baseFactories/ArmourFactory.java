@@ -42,24 +42,112 @@ public class ArmourFactory
 
     static
     {
-        registerArmour(1, "Fargoth War Gauntlet", 5.0, 420, 12, 500, ItemRarity.HIGH);
-        registerArmour(2, "Null-Field Cloak", 1.5, 480, 8, 600, ItemRarity.HIGH);
-        registerArmour(3, "Skymetal Plate", 22.0, 900, 36, 1500, ItemRarity.LEGENDARY);
-        registerArmour(4, "Ironclad Greaves", 6.0, 140, 10, 100, ItemRarity.LOW);
-        registerArmour(5, "Rune-etched Helm", 3.0, 260, 12, 400, ItemRarity.MEDIUM);
-        registerArmour(6, "Aegis Mesh Vest", 4.0, 360, 18, 750, ItemRarity.HIGH);
-        registerArmour(7, "Shadowstep Boots", 1.8, 420, 6, 450, ItemRarity.HIGH);
-        registerArmour(8, "Warden's Mantle", 2.2, 520, 14, 500, ItemRarity.HIGH);
-        registerArmour(9, "Patchwork Armour Mk I", 10.0, 95, 6, 180, ItemRarity.LOW);
-        registerArmour(10, "Abysswatcher Helm", 2.2, 220, 10, 450, ItemRarity.MEDIUM);
-        registerArmour(11, "Shadowweave Coat", 1.6, 280, 8, 900, ItemRarity.HIGH);
-        registerArmour(12, "Guardian Frame Mk III", 18.0, 1000, 40, 1750, ItemRarity.LEGENDARY);
-        registerArmour(13, "Wolfclan Chestplate", 12.0, 500, 24, 180, ItemRarity.HIGH);
-        registerArmour(14, "Runic Guard Plate", 9.0, 460, 30, 800, ItemRarity.HIGH);
-        registerArmour(15, "Fargoth Barrier Cloak", 2.0, 800, 16, 2000, ItemRarity.LEGENDARY);
-        registerArmour(16, "Explorer's Webbing", 4.0, 150, 10, 150, ItemRarity.LOW);
-        registerArmour(17, "Crimson Vambraces", 2.5, 300, 12, 450, ItemRarity.MEDIUM);
-        registerArmour(18, "Clothes", 1.0, 2, 0, 50, ItemRarity.LOW);
+        // Armour rebalanced by rarity
+        // LOW: defense 5-20, durability 100-200, weight 1-6, value proportional
+        // MEDIUM: defense 20-40, durability 200-500, weight 2-10, value proportional
+        // HIGH: defense 40-60, durability 500-900, weight 3-15, value proportional
+        // LEGENDARY: defense 60-80, durability 900-2000, weight 5-20, value proportional
+        registerArmour(1, "Fargoth War Gauntlet", 10.0, 750, 52, 680, ItemRarity.HIGH);
+        registerArmour(2, "Null-Field Cloak", 8.0, 820, 56, 720, ItemRarity.HIGH);
+        registerArmour(3, "Skymetal Plate", 18.0, 1650, 72, 1480, ItemRarity.LEGENDARY);
+        registerArmour(4, "Ironclad Greaves", 4.0, 280, 12, 140, ItemRarity.LOW);
+        registerArmour(5, "Rune-etched Helm", 6.0, 380, 28, 320, ItemRarity.MEDIUM);
+        registerArmour(6, "Aegis Mesh Vest", 9.0, 880, 58, 780, ItemRarity.HIGH);
+        registerArmour(7, "Shadowstep Boots", 7.0, 720, 48, 620, ItemRarity.HIGH);
+        registerArmour(8, "Warden's Mantle", 8.5, 760, 54, 700, ItemRarity.HIGH);
+        registerArmour(9, "Patchwork Armour Mk I", 5.0, 180, 14, 160, ItemRarity.LOW);
+        registerArmour(10, "Abysswatcher Helm", 6.5, 360, 26, 310, ItemRarity.MEDIUM);
+        registerArmour(11, "Shadowweave Coat", 8.0, 780, 52, 720, ItemRarity.HIGH);
+        registerArmour(12, "Guardian Frame Mk III", 16.0, 1840, 76, 1620, ItemRarity.LEGENDARY);
+        registerArmour(13, "Wolfclan Chestplate", 11.0, 840, 56, 750, ItemRarity.HIGH);
+        registerArmour(14, "Runic Guard Plate", 10.5, 820, 54, 730, ItemRarity.HIGH);
+        registerArmour(15, "Fargoth Barrier Cloak", 12.0, 1720, 68, 1540, ItemRarity.LEGENDARY);
+        registerArmour(16, "Explorer's Webbing", 3.5, 260, 10, 150, ItemRarity.LOW);
+        registerArmour(17, "Crimson Vambraces", 6.0, 390, 28, 340, ItemRarity.MEDIUM);
+        registerArmour(18, "Clothes", 1.0, 50, 2, 50, ItemRarity.LOW);
+        registerArmour(19, "Coalminer Vest", 4.5, 220, 15, 160, ItemRarity.LOW);
+        registerArmour(20, "Fey-silk Coat", 9.5, 790, 52, 710, ItemRarity.HIGH);
+        registerArmour(21, "Runebound Plate", 15.0, 1920, 74, 1680, ItemRarity.LEGENDARY);
+        registerArmour(22, "Tunnelweave Harness", 7.0, 420, 32, 380, ItemRarity.MEDIUM);
+        registerArmour(23, "Smelter Apron", 12.0, 860, 58, 790, ItemRarity.HIGH);
+        registerArmour(24, "Gutterhide Jacket", 6.5, 380, 30, 340, ItemRarity.MEDIUM);
+        registerArmour(25, "Cindermail", 10.0, 810, 54, 720, ItemRarity.HIGH);
+        registerArmour(26, "Void-forged Cuirass", 17.0, 1880, 76, 1720, ItemRarity.LEGENDARY);
+        registerArmour(27, "Seamrunner Jacket", 7.5, 410, 32, 370, ItemRarity.MEDIUM);
+        registerArmour(28, "Nebula Overcoat", 13.0, 920, 58, 840, ItemRarity.HIGH);
+        registerArmour(29, "Echo Mesh", 8.0, 440, 34, 400, ItemRarity.MEDIUM);
+        registerArmour(30, "Hearthguard Mail", 11.5, 850, 56, 770, ItemRarity.HIGH);
+        registerArmour(31, "Sporeguard Robes", 9.0, 780, 52, 700, ItemRarity.HIGH);
+        registerArmour(32, "Marrow Plate", 7.0, 390, 30, 350, ItemRarity.MEDIUM);
+        registerArmour(33, "Gravel Shielding", 19.0, 1760, 72, 1580, ItemRarity.LEGENDARY);
+        registerArmour(34, "Tinkerwright Gear", 8.5, 450, 34, 410, ItemRarity.MEDIUM);
+        registerArmour(35, "Ironbark Vest", 12.5, 880, 58, 800, ItemRarity.HIGH);
+        registerArmour(36, "Sirenscale Jacket", 3.5, 240, 12, 170, ItemRarity.LOW);
+        registerArmour(37, "Abysswatch Cloak", 10.0, 840, 56, 760, ItemRarity.HIGH);
+        registerArmour(38, "Blinkweave Vest", 6.5, 400, 30, 360, ItemRarity.MEDIUM);
+        registerArmour(39, "Starforged Mail", 13.5, 900, 58, 820, ItemRarity.HIGH);
+        registerArmour(40, "Runic Workplate", 16.5, 1810, 70, 1640, ItemRarity.LEGENDARY);
+        registerArmour(41, "Forgeplate Greaves", 7.5, 420, 32, 380, ItemRarity.MEDIUM);
+        registerArmour(42, "Hollowbone Greaves", 5.5, 330, 24, 290, ItemRarity.MEDIUM);
+        registerArmour(43, "Smogproof Tunic", 11.0, 870, 56, 790, ItemRarity.HIGH);
+        registerArmour(44, "Warden's Pauldrons", 9.5, 810, 54, 730, ItemRarity.HIGH);
+        registerArmour(45, "Coalplate Breast", 14.5, 1580, 66, 1420, ItemRarity.LEGENDARY);
+        registerArmour(46, "Mariner's Jerkin", 10.5, 760, 50, 680, ItemRarity.HIGH);
+        registerArmour(47, "Rustwarden Hauberk", 6.0, 370, 28, 330, ItemRarity.MEDIUM);
+        registerArmour(48, "Voidward Girdle", 18.5, 1940, 78, 1780, ItemRarity.LEGENDARY);
+        registerArmour(49, "Galeweave Shirt", 9.0, 790, 52, 710, ItemRarity.HIGH);
+        registerArmour(50, "Stonebound Hauberk", 7.0, 410, 32, 370, ItemRarity.MEDIUM);
+        registerArmour(51, "Runeweave Gloves", 6.0, 380, 28, 340, ItemRarity.MEDIUM);
+        registerArmour(52, "Tidecaller's Wrap", 6.5, 390, 30, 350, ItemRarity.MEDIUM);
+        registerArmour(53, "Graveyard Shroud", 7.0, 400, 30, 360, ItemRarity.MEDIUM);
+        registerArmour(54, "Smuggler's Leathers", 14.0, 1680, 68, 1520, ItemRarity.LEGENDARY);
+        registerArmour(55, "Harpooner's Coat", 7.5, 420, 32, 380, ItemRarity.MEDIUM);
+        registerArmour(56, "Brineproof Suit", 12.0, 890, 58, 810, ItemRarity.HIGH);
+        registerArmour(57, "Rift-stitched Overalls", 11.5, 860, 56, 780, ItemRarity.HIGH);
+        registerArmour(58, "Shardbound Vest", 10.5, 830, 54, 750, ItemRarity.HIGH);
+        registerArmour(59, "Gloomcloak", 8.5, 450, 34, 410, ItemRarity.MEDIUM);
+        registerArmour(60, "Pilot's Armor", 15.5, 1720, 70, 1560, ItemRarity.LEGENDARY);
+        registerArmour(61, "Engineer Apron MkII", 7.0, 410, 32, 370, ItemRarity.MEDIUM);
+        registerArmour(62, "Sparksmith Jacket", 9.5, 800, 52, 720, ItemRarity.HIGH);
+        registerArmour(63, "Runic Keeper Plate", 10.0, 820, 54, 740, ItemRarity.HIGH);
+        registerArmour(64, "Wolfclan Greaves MkII", 16.0, 1780, 72, 1600, ItemRarity.LEGENDARY);
+        registerArmour(65, "Wolfram Helm", 10.5, 850, 56, 770, ItemRarity.HIGH);
+        registerArmour(66, "Seabreak Helm", 6.0, 370, 28, 330, ItemRarity.MEDIUM);
+        registerArmour(67, "Beacon Harness", 11.0, 870, 56, 790, ItemRarity.HIGH);
+        registerArmour(68, "Abyssal Mantle", 15.0, 1640, 68, 1480, ItemRarity.LEGENDARY);
+        registerArmour(69, "Coal-smelter Helm", 18.0, 1860, 74, 1680, ItemRarity.LEGENDARY);
+        registerArmour(70, "Echo Guard Chest", 7.5, 420, 32, 380, ItemRarity.MEDIUM);
+        registerArmour(71, "Netherweave Vest", 11.0, 870, 56, 790, ItemRarity.HIGH);
+        registerArmour(72, "Protectorate Harness", 12.0, 900, 58, 820, ItemRarity.HIGH);
+        registerArmour(73, "Fargoth Platelet", 8.0, 440, 34, 400, ItemRarity.MEDIUM);
+        registerArmour(74, "Gateway Harness", 17.5, 1820, 74, 1660, ItemRarity.LEGENDARY);
+        registerArmour(75, "Portalkeeper Shawl", 9.0, 780, 52, 700, ItemRarity.HIGH);
+        registerArmour(76, "Shadecloak", 16.5, 1740, 70, 1580, ItemRarity.LEGENDARY);
+        registerArmour(77, "Runic Ceremonial Coat", 6.5, 390, 30, 350, ItemRarity.MEDIUM);
+        registerArmour(78, "Voidsteel Brigandine", 7.0, 400, 30, 360, ItemRarity.MEDIUM);
+        registerArmour(79, "Starhelm", 19.0, 1900, 76, 1740, ItemRarity.LEGENDARY);
+        registerArmour(80, "Golem Harness", 5.0, 320, 22, 280, ItemRarity.MEDIUM);
+        registerArmour(81, "Ironbender Waist", 17.0, 1820, 74, 1660, ItemRarity.LEGENDARY);
+        registerArmour(82, "Dustward Tunic", 10.0, 820, 54, 740, ItemRarity.HIGH);
+        registerArmour(83, "Spirit-etched Mesh", 6.0, 370, 28, 330, ItemRarity.MEDIUM);
+        registerArmour(84, "Cargo Handler Vest", 13.0, 920, 58, 840, ItemRarity.HIGH);
+        registerArmour(85, "Leviathan-hide Coat", 7.5, 410, 32, 370, ItemRarity.MEDIUM);
+        registerArmour(86, "Riftsteel Mail", 6.5, 390, 30, 350, ItemRarity.MEDIUM);
+        registerArmour(87, "Tollkeeper Vest", 4.0, 250, 14, 180, ItemRarity.LOW);
+        registerArmour(88, "Forgeborn Girdle", 12.5, 900, 58, 820, ItemRarity.HIGH);
+        registerArmour(89, "Beacon Plate", 6.0, 380, 28, 340, ItemRarity.MEDIUM);
+        registerArmour(90, "Rundown Vest", 3.5, 230, 12, 160, ItemRarity.LOW);
+        registerArmour(91, "Patchwork MkII", 5.5, 340, 24, 300, ItemRarity.MEDIUM);
+        registerArmour(92, "Sootguard Cloak", 5.0, 310, 22, 270, ItemRarity.MEDIUM);
+        registerArmour(93, "Dragonhide Plate", 18.5, 1880, 76, 1720, ItemRarity.LEGENDARY);
+        registerArmour(94, "Ironwarden Suit", 6.0, 370, 28, 330, ItemRarity.MEDIUM);
+        registerArmour(95, "Stormbreaker Armor", 9.5, 800, 52, 720, ItemRarity.HIGH);
+        registerArmour(96, "Celestial Aegis Armor", 15.5, 1700, 68, 1540, ItemRarity.LEGENDARY);
+        registerArmour(97, "Steel Sentinel", 8.0, 440, 34, 400, ItemRarity.MEDIUM);
+        registerArmour(98, "Shadowguard Vest", 8.5, 450, 34, 410, ItemRarity.MEDIUM);
+        registerArmour(99, "Lionheart Plate", 9.0, 460, 36, 420, ItemRarity.MEDIUM);
+        registerArmour(100, "Falconwing Armor", 7.5, 420, 32, 380, ItemRarity.MEDIUM);
+
     }
 
     public static Armour createBaseArmour()
