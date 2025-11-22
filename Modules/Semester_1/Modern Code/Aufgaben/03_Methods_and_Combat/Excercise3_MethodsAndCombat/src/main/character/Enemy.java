@@ -15,6 +15,8 @@ import java.util.List;
  */
 public class Enemy extends GameCharacter
 {
+    public int experienceReward;
+
     /**
      * Creates a new enemy with specified stats.
      * 
@@ -24,9 +26,10 @@ public class Enemy extends GameCharacter
      * @param dexterity The enemy's dexterity stat (affects turn order)
      * @param intelligence The enemy's intelligence stat (affects magic damage)
      */
-    public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence)
+    public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, int experienceReward)
     {
         super(name, maxHealth, strength, dexterity, intelligence);
+        this.experienceReward = experienceReward;
     }
 
     /**
@@ -40,10 +43,11 @@ public class Enemy extends GameCharacter
      * @param weapon The weapon to equip
      * @param armour The armour to equip
      * @param shield The shield to equip
+     * @param experienceReward Experience rewarded upon death.
      */
-    public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, Weapon weapon, Armour armour, Shield shield)
+    public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, int experienceReward,Weapon weapon, Armour armour, Shield shield)
     {
-        this(name, maxHealth, strength, dexterity, intelligence);
+        this(name, maxHealth, strength, dexterity, intelligence, experienceReward);
         equipItem(weapon, false, false);
         equipItem(armour, false, false);
         equipItem(shield, false, false);
