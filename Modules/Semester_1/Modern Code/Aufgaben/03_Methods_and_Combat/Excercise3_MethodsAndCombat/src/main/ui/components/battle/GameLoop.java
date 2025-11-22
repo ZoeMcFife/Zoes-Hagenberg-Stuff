@@ -15,7 +15,7 @@ public class GameLoop extends UserInterface
     private int battleCount = 1;
     private int currentTurnCount = 0;
 
-    private DangerLevel currentDangerLevel = DangerLevel.HARMLESS;
+    private DangerLevel currentDangerLevel = DangerLevel.DEATH;
 
     private final int difficultyIncreaseInterval;
 

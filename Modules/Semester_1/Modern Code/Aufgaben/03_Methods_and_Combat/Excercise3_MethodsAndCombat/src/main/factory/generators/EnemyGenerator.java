@@ -110,9 +110,9 @@ public class EnemyGenerator
 
         int potionCount = switch (dangerLevel)
         {
-            case HARMLESS, MOSTLY_HARMLESS -> 1;
-            case DANGEROUS -> 2;
-            case EXTREME -> 3;
+            case HARMLESS, MOSTLY_HARMLESS -> 2;
+            case DANGEROUS -> 3;
+            case EXTREME -> 4;
             case DEATH -> 5;
         };
 
