@@ -138,18 +138,18 @@ public class WeaponFactory
         registerWeapon(86, "Harbinger Pike", 6.0, 390, 54, false, ItemRarity.MEDIUM);
         registerWeapon(87, "Fargoth Cleaver", 7.5, 840, 78, false, ItemRarity.HIGH);
         registerWeapon(88, "Hollowblade Scimitar", 3.5, 360, 52, false, ItemRarity.MEDIUM);
-        registerWeapon(89, "Variant 65 Blade", 3.0, 410, 56, false, ItemRarity.MEDIUM);
-        registerWeapon(90, "Variant 66 Blade", 4.5, 170, 32, false, ItemRarity.LOW);
-        registerWeapon(91, "Variant 67 Blade", 3.5, 380, 54, false, ItemRarity.MEDIUM);
-        registerWeapon(92, "Variant 68 Blade", 3.0, 1480, 102, false, ItemRarity.LEGENDARY);
-        registerWeapon(93, "Variant 69 Blade", 2.5, 1360, 96, false, ItemRarity.LEGENDARY);
-        registerWeapon(94, "Variant 70 Blade", 5.5, 750, 72, false, ItemRarity.HIGH);
-        registerWeapon(95, "Variant 71 Blade", 3.5, 370, 52, false, ItemRarity.MEDIUM);
-        registerWeapon(96, "Variant 72 Blade", 4.0, 165, 30, false, ItemRarity.LOW);
-        registerWeapon(97, "Variant 73 Blade", 5.0, 780, 74, false, ItemRarity.HIGH);
-        registerWeapon(98, "Variant 74 Blade", 3.0, 350, 50, false, ItemRarity.MEDIUM);
-        registerWeapon(99, "Variant 75 Blade", 5.5, 820, 76, false, ItemRarity.HIGH);
-        registerWeapon(100, "Variant 76 Blade", 3.5, 1540, 108, false, ItemRarity.LEGENDARY);
+        registerWeapon(89, "Crimson Fang", 3.0, 410, 56, false, ItemRarity.MEDIUM);
+        registerWeapon(90, "Rustbite Dagger", 4.5, 170, 32, false, ItemRarity.LOW);
+        registerWeapon(91, "Shadowfang", 3.5, 380, 54, false, ItemRarity.MEDIUM);
+        registerWeapon(92, "Eclipse Edge", 3.0, 1480, 102, false, ItemRarity.LEGENDARY);
+        registerWeapon(93, "Oblivion Fang", 2.5, 1360, 96, false, ItemRarity.LEGENDARY);
+        registerWeapon(94, "Stormreaver", 5.5, 750, 72, false, ItemRarity.HIGH);
+        registerWeapon(95, "Ironclaw", 3.5, 370, 52, false, ItemRarity.MEDIUM);
+        registerWeapon(96, "Whisperfang", 4.0, 165, 30, false, ItemRarity.LOW);
+        registerWeapon(97, "Thunderstrike", 5.0, 780, 74, false, ItemRarity.HIGH);
+        registerWeapon(98, "Nightfang", 3.0, 350, 50, false, ItemRarity.MEDIUM);
+        registerWeapon(99, "Lionheart Edge", 5.5, 820, 76, false, ItemRarity.HIGH);
+        registerWeapon(100, "Dragonfang", 3.5, 1540, 108, false, ItemRarity.LEGENDARY);
 
     }
 

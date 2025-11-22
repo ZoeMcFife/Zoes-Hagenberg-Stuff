@@ -136,19 +136,19 @@ public class ShieldFactory
         registerShield(85, "Spore Curtain", 5.5, 320, 16, ItemRarity.MEDIUM);
         registerShield(86, "Hoarder's Buckler", 7.5, 790, 26, ItemRarity.HIGH);
         registerShield(87, "Beacon Pavise", 5.5, 320, 16, ItemRarity.MEDIUM);
-        registerShield(88, "Variant Shield 1", 6.0, 360, 18, ItemRarity.MEDIUM);
-        registerShield(89, "Variant Shield 82", 5.5, 340, 17, ItemRarity.MEDIUM);
-        registerShield(90, "Variant Shield 83", 9.0, 1560, 37, ItemRarity.LEGENDARY);
-        registerShield(91, "Variant Shield 84", 7.0, 710, 24, ItemRarity.HIGH);
-        registerShield(92, "Variant Shield 85", 8.0, 850, 28, ItemRarity.HIGH);
-        registerShield(93, "Variant Shield 86", 7.5, 770, 25, ItemRarity.HIGH);
-        registerShield(94, "Variant Shield 87", 6.5, 380, 19, ItemRarity.MEDIUM);
-        registerShield(95, "Variant Shield 88", 5.0, 300, 14, ItemRarity.MEDIUM);
-        registerShield(96, "Variant Shield 89", 5.0, 310, 15, ItemRarity.MEDIUM);
-        registerShield(97, "Variant Shield 90", 6.5, 370, 18, ItemRarity.MEDIUM);
-        registerShield(98, "Variant Shield 91", 3.5, 130, 8, ItemRarity.LOW);
-        registerShield(99, "Variant Shield 92", 9.0, 1600, 38, ItemRarity.LEGENDARY);
-        registerShield(100, "Variant Shield 93", 7.5, 760, 25, ItemRarity.HIGH);
+        registerShield(88, "Lionheart Guard", 6.0, 360, 18, ItemRarity.MEDIUM);
+        registerShield(89, "Steelcrest", 5.5, 340, 17, ItemRarity.MEDIUM);
+        registerShield(90, "Aegis of Eternity", 9.0, 1560, 37, ItemRarity.LEGENDARY);
+        registerShield(91, "Stormwall", 7.0, 710, 24, ItemRarity.HIGH);
+        registerShield(92, "Titan's Bulwark", 8.0, 850, 28, ItemRarity.HIGH);
+        registerShield(93, "Iron Sentinel", 7.5, 770, 25, ItemRarity.HIGH);
+        registerShield(94, "Shadow Guard", 6.5, 380, 19, ItemRarity.MEDIUM);
+        registerShield(95, "Bronze Bastion", 5.0, 300, 14, ItemRarity.MEDIUM);
+        registerShield(96, "Ravencrest", 5.0, 310, 15, ItemRarity.MEDIUM);
+        registerShield(97, "Falcon Shield", 6.5, 370, 18, ItemRarity.MEDIUM);
+        registerShield(98, "Traveler's Buckler", 3.5, 130, 8, ItemRarity.LOW);
+        registerShield(99, "Celestial Aegis", 9.0, 1600, 38, ItemRarity.LEGENDARY);
+        registerShield(100, "Dragonplate", 7.5, 760, 25, ItemRarity.HIGH);
 
     }
 

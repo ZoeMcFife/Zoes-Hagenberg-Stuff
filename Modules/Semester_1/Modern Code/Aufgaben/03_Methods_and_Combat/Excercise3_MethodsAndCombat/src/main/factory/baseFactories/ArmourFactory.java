@@ -139,14 +139,14 @@ public class ArmourFactory
         registerArmour(90, "Rundown Vest", 3.5, 230, 12, 160, ItemRarity.LOW);
         registerArmour(91, "Patchwork MkII", 5.5, 340, 24, 300, ItemRarity.MEDIUM);
         registerArmour(92, "Sootguard Cloak", 5.0, 310, 22, 270, ItemRarity.MEDIUM);
-        registerArmour(93, "Variant Armor 75", 18.5, 1880, 76, 1720, ItemRarity.LEGENDARY);
-        registerArmour(94, "Variant Armor 76", 6.0, 370, 28, 330, ItemRarity.MEDIUM);
-        registerArmour(95, "Variant Armor 77", 9.5, 800, 52, 720, ItemRarity.HIGH);
-        registerArmour(96, "Variant Armor 78", 15.5, 1700, 68, 1540, ItemRarity.LEGENDARY);
-        registerArmour(97, "Variant Armor 79", 8.0, 440, 34, 400, ItemRarity.MEDIUM);
-        registerArmour(98, "Variant Armor 80", 8.5, 450, 34, 410, ItemRarity.MEDIUM);
-        registerArmour(99, "Variant Armor 81", 9.0, 460, 36, 420, ItemRarity.MEDIUM);
-        registerArmour(100, "Variant Armor 82", 7.5, 420, 32, 380, ItemRarity.MEDIUM);
+        registerArmour(93, "Dragonhide Plate", 18.5, 1880, 76, 1720, ItemRarity.LEGENDARY);
+        registerArmour(94, "Ironwarden Suit", 6.0, 370, 28, 330, ItemRarity.MEDIUM);
+        registerArmour(95, "Stormbreaker Armor", 9.5, 800, 52, 720, ItemRarity.HIGH);
+        registerArmour(96, "Celestial Aegis Armor", 15.5, 1700, 68, 1540, ItemRarity.LEGENDARY);
+        registerArmour(97, "Steel Sentinel", 8.0, 440, 34, 400, ItemRarity.MEDIUM);
+        registerArmour(98, "Shadowguard Vest", 8.5, 450, 34, 410, ItemRarity.MEDIUM);
+        registerArmour(99, "Lionheart Plate", 9.0, 460, 36, 420, ItemRarity.MEDIUM);
+        registerArmour(100, "Falconwing Armor", 7.5, 420, 32, 380, ItemRarity.MEDIUM);
 
     }
 
