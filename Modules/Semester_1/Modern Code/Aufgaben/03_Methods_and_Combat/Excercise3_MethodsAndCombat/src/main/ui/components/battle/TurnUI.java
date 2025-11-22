@@ -210,19 +210,19 @@ public class TurnUI extends UserInterface
             {
                 case 1:
                     GameManager.getPlayer().nextAction = ActionType.ATTACK;
-                    //GameManager.getPlayer().attack(battle.getEnemies().get(selectedEnemy - 1));
+                    IO.println("You chose to Attack!");
                     break;
                 case 2:
-                    GameManager.getPlayer().nextAction = ActionType.DEFEND;
-                    //GameManager.getPlayer().defend();
-                    break;
-                case 3:
-                    GameManager.getPlayer().nextAction = ActionType.USE_ITEM;
-                    IO.println("You chose to Use Item!");
-                    break;
-                case 4:
                     GameManager.getPlayer().nextAction = ActionType.USE_SPECIAL;
                     IO.println("You chose to Use Special!");
+                    break;
+                case 3:
+                    GameManager.getPlayer().nextAction = ActionType.DEFEND;
+                    IO.println("You chose to Defend!");
+                    break;
+                case 4:
+                    GameManager.getPlayer().nextAction = ActionType.USE_ITEM;
+                    IO.println("You chose to Use Item!");
                     break;
                 default:
                     IO.println("Invalid selection. Please try again.");
@@ -246,9 +246,9 @@ public class TurnUI extends UserInterface
         }
         
         IO.println("1. Attack");
-        IO.println("2. Defend");
-        IO.println("3. Use Item");
-        IO.println("4. " + specialName + " (" + GameManager.getPlayer().getEquippedWeapon().getPpCost() + " PP)");
+        IO.println("2. " + specialName + " (" + GameManager.getPlayer().getEquippedWeapon().getPpCost() + " PP)");
+        IO.println("3. Defend");
+        IO.println("4. Use Item");
         IO.println("Select an action by entering the corresponding number.");
     }
 
