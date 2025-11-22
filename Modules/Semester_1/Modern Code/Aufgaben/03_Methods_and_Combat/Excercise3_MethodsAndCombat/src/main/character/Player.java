@@ -121,10 +121,15 @@ public class Player extends GameCharacter
     /**
      * Adds PP to the player's current PP pool.
      * 
-     * @param amount Amount of PP to add
+     * @param amount Amount of PP to add (must be positive)
      */
     public void gainPP(int amount)
     {
+        if (amount <= 0)
+        {
+            return;
+        }
+        
         this.currentPP += amount;
         IO.println(getName() + " gained " + amount + " PP! (Current PP: " + currentPP + ")");
     }
