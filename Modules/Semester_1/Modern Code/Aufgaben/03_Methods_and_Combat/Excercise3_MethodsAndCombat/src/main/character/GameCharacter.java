@@ -420,12 +420,19 @@ public abstract class GameCharacter
      */
     public double getDamage()
     {
-        if (equippedWeapon.isMagic())
+        double damage_multiplier = 1;
+
+        if (getStatus() == CharacterStatus.CRITICALLY_HURT)
         {
-            return equippedWeapon.getDamage() * (1 + intelligence * GameManager.DAMAGE_MULTIPLIER_PER_INTELLIGENCE);
+            damage_multiplier = GameManager.DAMAGE_REDUCTION_WHEN_CRITICAL_STATUS;
         }
 
-        return equippedWeapon.getDamage() * (1 + strength * GameManager.DAMAGE_MULTIPLIER_PER_STRENGTH);
+        if (equippedWeapon.isMagic())
+        {
+            return equippedWeapon.getDamage() * (1 + intelligence * GameManager.DAMAGE_MULTIPLIER_PER_INTELLIGENCE) * damage_multiplier;
+        }
+
+        return equippedWeapon.getDamage() * (1 + strength * GameManager.DAMAGE_MULTIPLIER_PER_STRENGTH) * damage_multiplier;
     }
 
     /**

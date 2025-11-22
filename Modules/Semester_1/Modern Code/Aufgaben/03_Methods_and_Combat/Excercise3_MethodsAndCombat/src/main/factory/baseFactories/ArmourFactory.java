@@ -64,7 +64,7 @@ public class ArmourFactory
         registerArmour(15, "Fargoth Barrier Cloak", 12.0, 1720, 68, 15400, ItemRarity.LEGENDARY);
         registerArmour(16, "Explorer's Webbing", 3.5, 260, 10, 1500, ItemRarity.LOW);
         registerArmour(17, "Crimson Vambraces", 6.0, 390, 28, 3400, ItemRarity.MEDIUM);
-        registerArmour(18, "Clothes", 1.0, 50, 2, 50, ItemRarity.LOW);
+        registerArmour(18, "Clothes", 1.0, 50, 10, 450, ItemRarity.LOW);
         registerArmour(19, "Coalminer Vest", 4.5, 220, 15, 1600, ItemRarity.LOW);
         registerArmour(20, "Fey-silk Coat", 9.5, 790, 52, 7100, ItemRarity.HIGH);
         registerArmour(21, "Runebound Plate", 15.0, 1920, 84, 16800, ItemRarity.LEGENDARY);

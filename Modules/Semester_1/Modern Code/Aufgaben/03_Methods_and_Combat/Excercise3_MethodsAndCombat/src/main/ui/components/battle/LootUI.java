@@ -72,6 +72,7 @@ public class LootUI extends UserInterface
     private void displayLootItems()
     {
         IO.println("Lootable Items:");
+        IO.println("Carry Capacity: " + Math.round(GameManager.getPlayer().getInventory().getWeight()) + "/" + GameManager.getPlayer().getCarryCapacity());
 
         IO.println(0 + ": Exit");
 

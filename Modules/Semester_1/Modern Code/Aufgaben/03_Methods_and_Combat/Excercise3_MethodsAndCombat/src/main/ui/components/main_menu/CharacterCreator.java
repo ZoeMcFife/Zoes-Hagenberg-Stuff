@@ -2,6 +2,8 @@ package main.ui.components.main_menu;
 
 import main.character.GameCharacter;
 import main.character.Player;
+import main.factory.baseFactories.HealingPotionFactory;
+import main.item.ItemRarity;
 import main.ui.UserInterface;
 import main.ui.UIHelper;
 import main.ui.components.character.StatAllocationUI;
@@ -42,7 +44,6 @@ public class CharacterCreator extends UserInterface
 
             UIHelper.delayMedium();
 
-
             UIHelper.printCharacterInformation(playerCharacter);
 
             isPlayerSatisfied = UIHelper.getYesNoInput("\nAre you satisfied with your creation?");
@@ -56,6 +57,9 @@ public class CharacterCreator extends UserInterface
             }
         }
         while (!isPlayerSatisfied);
+
+        // Give the player some starter healing items
+        playerCharacter.addItemsToInventory(HealingPotionFactory.createRandomPotionByRarity(ItemRarity.LOW), HealingPotionFactory.createRandomPotionByRarity(ItemRarity.LOW), HealingPotionFactory.createPotionById(76));
     }
 
     /**

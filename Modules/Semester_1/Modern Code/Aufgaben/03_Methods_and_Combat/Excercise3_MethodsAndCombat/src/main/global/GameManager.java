@@ -31,19 +31,19 @@ public class GameManager
     public static Difficulty difficulty = Difficulty.NONE;
 
     /** Number of turns before difficulty increases on Easy mode */
-    public static int DIFFICULTY_INCREASE_AFTER_TURNS_EASY = 6;
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_EASY = 12;
 
     /** Number of turns before difficulty increases on Medium mode */
-    public static int DIFFICULTY_INCREASE_AFTER_TURNS_MEDIUM = 5;
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_MEDIUM = 6;
 
     /** Number of turns before difficulty increases on Hard mode */
-    public static int DIFFICULTY_INCREASE_AFTER_TURNS_HARD = 2;
+    public static int DIFFICULTY_INCREASE_AFTER_TURNS_HARD = 3;
 
     /** Maximum enemies per battle at HARMLESS danger level */
     public static int MAX_ENEMIES_PER_BATTLE_HARMLESS = 1;
 
     /** Maximum enemies per battle at MOSTLY_HARMLESS danger level */
-    public static int MAX_ENEMIES_PER_BATTLE_MOSTLY_HARMLESS = 2;
+    public static int MAX_ENEMIES_PER_BATTLE_MOSTLY_HARMLESS = 1;
 
     /** Maximum enemies per battle at DANGEROUS danger level */
     public static int MAX_ENEMIES_PER_BATTLE_DANGEROUS = 2;
@@ -55,18 +55,20 @@ public class GameManager
     public static int MAX_ENEMIES_PER_BATTLE_DEATH = 4;
 
     /** Number of items able to be looted after battle on Easy mode */
-    public static int ITEM_LOOT_COUNT_EASY = 6;
+    public static int ITEM_LOOT_COUNT_EASY = 8;
     /** Number of items able to be looted after battle on Medium mode */
-    public static int ITEM_LOOT_COUNT_MEDIUM = 4;
+    public static int ITEM_LOOT_COUNT_MEDIUM = 5;
     /** Number of items able to be looted after battle on Hard mode */
-    public static int ITEM_LOOT_COUNT_HARD = 2;
+    public static int ITEM_LOOT_COUNT_HARD = 3;
 
-    public static int MAX_PP_INCREASE_PER_LEVEL = 30;
+    public static int MAX_PP_INCREASE_PER_LEVEL = 35;
     public static int STAT_POINTS_PER_LEVEL = 1;
-    public static double HEALTH_INCREASE_PER_LEVEL = 50;
-    public static double HEALTH_INCREASE_PER_STRENGTH = 10;
-    public static double HEALTH_INCREASE_PER_INTELLIGENCE = 5;
-    public static double HEALTH_INCREASE_PER_DEXTERITY = 5;
+    public static double HEALTH_INCREASE_PER_LEVEL = 80;
+    public static double HEALTH_INCREASE_PER_STRENGTH = 15;
+    public static double HEALTH_INCREASE_PER_INTELLIGENCE = 10;
+    public static double HEALTH_INCREASE_PER_DEXTERITY = 10;
+
+    public static double DAMAGE_REDUCTION_WHEN_CRITICAL_STATUS = 0.3;
 
     public static double DELAY_SHORT = 0.5;
     public static double DELAY_MEDIUM = 1;
