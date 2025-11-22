@@ -420,12 +420,19 @@ public abstract class GameCharacter
      */
     public double getDamage()
     {
-        if (equippedWeapon.isMagic())
+        double damage_multiplier = 1;
+
+        if (getStatus() == CharacterStatus.CRITICALLY_HURT)
         {
-            return equippedWeapon.getDamage() * (1 + intelligence * GameManager.DAMAGE_MULTIPLIER_PER_INTELLIGENCE);
+            damage_multiplier = GameManager.DAMAGE_REDUCTION_WHEN_CRITICAL_STATUS;
         }
 
-        return equippedWeapon.getDamage() * (1 + strength * GameManager.DAMAGE_MULTIPLIER_PER_STRENGTH);
+        if (equippedWeapon.isMagic())
+        {
+            return equippedWeapon.getDamage() * (1 + intelligence * GameManager.DAMAGE_MULTIPLIER_PER_INTELLIGENCE) * damage_multiplier;
+        }
+
+        return equippedWeapon.getDamage() * (1 + strength * GameManager.DAMAGE_MULTIPLIER_PER_STRENGTH) * damage_multiplier;
     }
 
     /**
@@ -748,6 +755,8 @@ public abstract class GameCharacter
     public void addStrength(int amount)
     {
         setStrength(this.strength + amount);
+        setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_STRENGTH);
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_STRENGTH);
     }
 
     /**
@@ -757,6 +766,8 @@ public abstract class GameCharacter
     public void addDexterity(int amount)
     {
         setDexterity(this.dexterity + amount);
+        setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_DEXTERITY);
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_DEXTERITY);
     }
 
     /**
@@ -766,6 +777,8 @@ public abstract class GameCharacter
     public void addIntelligence(int amount)
     {
         setIntelligence(this.intelligence + amount);
+        setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_INTELLIGENCE);
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_INTELLIGENCE);
     }
 
     //endregion

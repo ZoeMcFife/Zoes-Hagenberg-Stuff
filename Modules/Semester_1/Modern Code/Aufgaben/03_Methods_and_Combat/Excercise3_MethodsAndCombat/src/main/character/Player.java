@@ -101,6 +101,11 @@ public class Player extends GameCharacter
     public void spendStatPoint()
     {
         this.availableStatPoints -= 1;
+
+        if (this.availableStatPoints < 0)
+        {
+            this.availableStatPoints = 0;
+        }
     }
 
     private void levelUp()
@@ -108,6 +113,8 @@ public class Player extends GameCharacter
         this.level += 1;
         this.availableStatPoints += GameManager.STAT_POINTS_PER_LEVEL;
         setMaxPP(getMaxPP() + GameManager.MAX_PP_INCREASE_PER_LEVEL);
+        setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_LEVEL);
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_LEVEL);
 
         IO.println(getName() + " leveled up to level " + this.level + "!");
     }

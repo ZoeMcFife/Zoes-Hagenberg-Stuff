@@ -64,7 +64,7 @@ public class ShieldFactory
         registerShield(4, "Shield of Wolfram", 9.0, 850, 28, ItemRarity.HIGH, 37);
         registerShield(5, "Patch-Steel Shield", 4.0, 180, 10, ItemRarity.LOW, 15);
         registerShield(6, "Nebular Disk Shield", 5.5, 320, 16, ItemRarity.MEDIUM, 30);
-        registerShield(7, "Fists", 0.0, 0, 1, ItemRarity.LOW, 11);
+        registerShield(7, "Fists", 0.0, 0, 4, ItemRarity.LOW, 10);
         registerShield(8, "Runewood Buckler", 3.5, 160, 9, ItemRarity.LOW, 17);
         registerShield(9, "Canyon Bulwark", 9.5, 1580, 38, ItemRarity.LEGENDARY, 53);
         registerShield(10, "Smelter Plate", 2.5, 90, 6, ItemRarity.LOW, 14);

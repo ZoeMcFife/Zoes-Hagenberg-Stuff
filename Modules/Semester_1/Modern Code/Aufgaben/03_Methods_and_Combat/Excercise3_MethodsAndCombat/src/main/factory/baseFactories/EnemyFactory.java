@@ -155,6 +155,22 @@ public class EnemyFactory
         registerEnemy(98, "Goblin Drudge", 285, 8, 7, 8, "runic-etched marauder from old mines", DangerLevel.EXTREME, 350);
         registerEnemy(99, "Torch Warden", 138, 6, 6, 6, "mechanical shamble with coal-smoke lungs", DangerLevel.DANGEROUS, 200);
         registerEnemy(100, "Spore Forager", 38, 2, 3, 1, "canyon scavenger that ambushes at dusk", DangerLevel.HARMLESS, 50);
+        registerEnemy(101, "Dust Hopper", 12, 1, 1, 1, "tiny critter that flees instantly", DangerLevel.HARMLESS, 50);
+        registerEnemy(102, "Pebble Crawler", 14, 1, 1, 1, "slow rock-like insect barely able to move", DangerLevel.HARMLESS, 50);
+        registerEnemy(103, "Gully Chirper", 16, 1, 1, 1, "harmless bird-thing that chirps nervously", DangerLevel.HARMLESS, 50);
+        registerEnemy(104, "Fungus Mite", 10, 1, 1, 1, "microscopic mushroom pest with no real attack", DangerLevel.HARMLESS, 50);
+        registerEnemy(105, "Glowbug Scuttler", 15, 1, 1, 1, "glows brightly, fights terribly", DangerLevel.HARMLESS, 50);
+        registerEnemy(106, "Canyon Tumblepuff", 18, 1, 1, 1, "rolls around uncontrollably and bumps into things", DangerLevel.HARMLESS, 50);
+        registerEnemy(107, "Softshell Skitter", 13, 1, 1, 1, "soft-bodied creature that folds instantly under pressure", DangerLevel.HARMLESS, 50);
+        registerEnemy(108, "Wisp-Moth Nibbler", 11, 1, 1, 1, "nibbles without commitment", DangerLevel.HARMLESS, 50);
+        registerEnemy(109, "Shy Pebbleback", 14, 1, 1, 1, "skittish creature that hides more than attacks", DangerLevel.HARMLESS, 50);
+        registerEnemy(110, "Creaking Bushling", 20, 1, 1, 1, "animated shrub that mostly squeaks and rustles", DangerLevel.HARMLESS, 50);
+        registerEnemy(111, "Foglet Drifter", 17, 1, 1, 1, "wispy entity that disperses when struck", DangerLevel.HARMLESS, 50);
+        registerEnemy(112, "Moss Cub", 22, 1, 1, 1, "slow moss-covered critter with no real bite", DangerLevel.HARMLESS, 50);
+        registerEnemy(113, "River Pebble-Skipper", 19, 1, 1, 1, "jumps clumsily and falls over a lot", DangerLevel.HARMLESS, 50);
+        registerEnemy(114, "Cave Flutterling", 12, 1, 1, 1, "flutters too weakly to escape or harm", DangerLevel.HARMLESS, 50);
+        registerEnemy(115, "Cliffside Murmur", 21, 1, 1, 1, "makes spooky noises but can’t hurt a soul", DangerLevel.HARMLESS, 50);
+
     }
 
     private static void registerEnemy(int id, String name, int maxHealth, int strength, int dexterity, int intelligence, String flavor, DangerLevel dangerLevel, int experienceReward)
