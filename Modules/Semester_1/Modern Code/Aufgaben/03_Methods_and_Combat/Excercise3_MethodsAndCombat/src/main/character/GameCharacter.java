@@ -330,6 +330,12 @@ public abstract class GameCharacter
     {
         IO.println(getName() + " is defending for " + equippedShield.getDefense() + " extra defense!");
         isDefending = true;
+        
+        // Grant PP to players when defending
+        if (this instanceof Player player)
+        {
+            player.gainPP(equippedShield.getPpGain());
+        }
     }
 
     /**
@@ -380,6 +386,11 @@ public abstract class GameCharacter
             return;
         }
 
+        if (this instanceof Player player)
+        {
+            player.gainPP(equippedWeapon.getPpGainPerUse());
+        }
+
         IO.println(getName() + " attacks " + target.getName() + " for " + Math.round(getDamage()) + " damage!");
         target.takeDamage(getDamage());
     }
@@ -389,13 +400,16 @@ public abstract class GameCharacter
      */
     public void suicide()
     {
+        IO.println(getName() + " has given up.");
+        UIHelper.delayLong();
+
         while (isAlive())
         {
             attack(this);
-            UIHelper.delayMedium();
-            IO.println(getName() + " has given up.");
+            UIHelper.delayShort();
             IO.println();
         }
+        IO.println(getName() + " has given up.");
     }
 
     /**

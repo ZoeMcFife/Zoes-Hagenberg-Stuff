@@ -20,7 +20,6 @@ public class TurnUI extends UserInterface
 {
     private final Battle battle;
     private int selectedEnemy;
-    private int actionChoice;
     private int turnCount = 1;
 
     /**
@@ -101,6 +100,7 @@ public class TurnUI extends UserInterface
                             ItemActionSelectionUI itemActionSelectionUI = new ItemActionSelectionUI();
                             itemActionSelectionUI.startUI();
                         }
+                        case USE_SPECIAL -> player.useSpecial(battle.getEnemies().get(selectedEnemy - 1));
                     }
                     UIHelper.delayMedium();
                 }
@@ -194,28 +194,39 @@ public class TurnUI extends UserInterface
 
     /**
      * Prompts the player to select their action for this turn.
-     * Options include Attack, Defend, or Use Item.
+     * Options include Attack, Defend, Use Item, or Use Special.
      */
     private void actionSelection()
     {
-        actionChoice = -1;
+        int actionChoice = -1;
 
         while (actionChoice < 1)
         {
             displayBattleOptions();
-            actionChoice = UIHelper.getIntInput(1, 3);
+            actionChoice = UIHelper.getIntInput(1, 4);
 
             switch (actionChoice)
             {
                 case 1:
                     GameManager.getPlayer().nextAction = ActionType.ATTACK;
-                    //GameManager.getPlayer().attack(battle.getEnemies().get(selectedEnemy - 1));
+                    IO.println("You chose to Attack!");
                     break;
                 case 2:
-                    GameManager.getPlayer().nextAction = ActionType.DEFEND;
-                    //GameManager.getPlayer().defend();
+                    if (GameManager.getPlayer().getCurrentPP() < GameManager.getPlayer().getEquippedWeapon().getPpCost())
+                    {
+                        IO.println("Not enough PP to use " + GameManager.getPlayer().getEquippedWeapon().getSpecialAttackName() + ". Please choose another action.");
+                        actionChoice = -1;
+                        break;
+                    }
+
+                    GameManager.getPlayer().nextAction = ActionType.USE_SPECIAL;
+                    IO.println("You chose to use " + GameManager.getPlayer().getEquippedWeapon().getSpecialAttackName());
                     break;
                 case 3:
+                    GameManager.getPlayer().nextAction = ActionType.DEFEND;
+                    IO.println("You chose to Defend!");
+                    break;
+                case 4:
                     GameManager.getPlayer().nextAction = ActionType.USE_ITEM;
                     IO.println("You chose to Use Item!");
                     break;
@@ -233,9 +244,17 @@ public class TurnUI extends UserInterface
     private void displayBattleOptions()
     {
         UIHelper.printSubHeading("Battle Options");
+        IO.println("Current PP: " + GameManager.getPlayer().getCurrentPP() + "/" + GameManager.getPlayer().getMaxPP());
+        
+        String specialName = GameManager.getPlayer().getEquippedWeapon().getSpecialAttackName();
+        if (specialName == null || specialName.isEmpty()) {
+            specialName = "Special";
+        }
+        
         IO.println("1. Attack");
-        IO.println("2. Defend");
-        IO.println("3. Use Item");
+        IO.println("2. " + specialName + " (" + GameManager.getPlayer().getEquippedWeapon().getPpCost() + " PP)");
+        IO.println("3. Defend");
+        IO.println("4. Use Item");
         IO.println("Select an action by entering the corresponding number.");
     }
 

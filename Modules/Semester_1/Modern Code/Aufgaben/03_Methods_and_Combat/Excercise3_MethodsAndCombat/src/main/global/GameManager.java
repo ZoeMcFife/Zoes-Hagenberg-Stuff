@@ -59,6 +59,9 @@ public class GameManager
     /** Number of items able to be looted after battle on Hard mode */
     public static int ITEM_LOOT_COUNT_HARD = 2;
 
+    public static int MAX_PP_INCREASE_PER_LEVEL = 30;
+    public static int STAT_POINTS_PER_LEVEL = 1;
+
     public static double DELAY_SHORT = 0.5;
     public static double DELAY_MEDIUM = 1;
     public static double DELAY_LONG = 2;

@@ -11,9 +11,12 @@ public class Player extends GameCharacter
     private int level = 1;
     private int experience = 0;
     private int availableStatPoints = 0;
+    private int currentPP = 0;
+    private int maxPP = 100;
 
     /** Default maximum health for all player characters */
     public static double DEFAULT_PLAYER_MAX_HEALTH = 100.0;
+    public static int DEFAULT_PLAYER_MAX_PP = 100;
 
     /**
      * Creates a new player with specified stats and max health.
@@ -27,6 +30,7 @@ public class Player extends GameCharacter
     public Player(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
         super(name, maxHealth, strength, dexterity, intelligence);
+        this.setMaxPP(DEFAULT_PLAYER_MAX_PP);
     }
 
     @Override
@@ -102,8 +106,91 @@ public class Player extends GameCharacter
     private void levelUp()
     {
         this.level += 1;
-        this.availableStatPoints += 1;
+        this.availableStatPoints += GameManager.STAT_POINTS_PER_LEVEL;
+        setMaxPP(getMaxPP() + GameManager.MAX_PP_INCREASE_PER_LEVEL);
 
         IO.println(getName() + " leveled up to level " + this.level + "!");
+    }
+
+    /**
+     * Gets the player's current Power Points.
+     * 
+     * @return Current PP
+     */
+    public int getCurrentPP()
+    {
+        return currentPP;
+    }
+
+    /**
+     * Adds PP to the player's current PP pool.
+     * 
+     * @param amount Amount of PP to add (must be positive)
+     */
+    public void gainPP(int amount)
+    {
+        if (amount <= 0)
+        {
+            return;
+        }
+
+        if (this.currentPP + amount > this.maxPP)
+        {
+            amount = this.maxPP - this.currentPP;
+        }
+
+        this.currentPP += amount;
+        IO.println(getName() + " gained " + amount + " PP! (Current PP: " + currentPP + ")");
+    }
+
+    /**
+     * Gets the player's maximum Power Points.
+     *
+     * @return Maximum PP
+     */
+    public int getMaxPP()
+    {
+        return maxPP;
+    }
+
+    /**
+     * Sets the player's maximum Power Points.
+     * @param maxPP New maximum PP value
+     */
+    private void setMaxPP(int maxPP)
+    {
+        this.maxPP = maxPP;
+    }
+
+    /**
+     * Uses the equipped weapon's special attack on a target.
+     * Checks if player has enough PP, deducts cost, deals damage, and displays flavor text.
+     * 
+     * @param target The character to attack with the special
+     */
+    public void useSpecial(GameCharacter target)
+    {
+        if (getEquippedWeapon().getPpCost() > getCurrentPP())
+        {
+            String specialName = getEquippedWeapon().getSpecialAttackName().isEmpty() ? "special attack" : getEquippedWeapon().getSpecialAttackName();
+            IO.println(getName() + " doesn't have enough PP to use " + specialName + "!");
+            IO.println("Need " + getEquippedWeapon().getPpCost() + " PP, but only have " + currentPP + " PP.");
+            return;
+        }
+
+        currentPP -= getEquippedWeapon().getPpCost();
+        
+        String specialName = getEquippedWeapon().getSpecialAttackName().isEmpty() ? "special attack" : getEquippedWeapon().getSpecialAttackName();
+        
+        if (!getEquippedWeapon().getSpecialFlavorText().isEmpty())
+        {
+            IO.println(getEquippedWeapon().getSpecialFlavorText());
+        }
+        
+        double totalDamage = getDamage() + getEquippedWeapon().getSpecialDamage();
+        IO.println(getName() + " uses " + specialName + " on " + target.getName() + " for " + Math.round(totalDamage) + " damage!");
+        IO.println("PP remaining: " + currentPP);
+        
+        target.takeDamage(totalDamage);
     }
 }
