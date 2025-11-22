@@ -230,7 +230,8 @@ public class Player extends GameCharacter
         String attackDefenseLine = String.format("| %-36s |", attackDefenseText);
 
         // Armour status line
-        String armourStatusText = String.format("Armour: %s", getEquippedArmour().getState().name());
+        String armourStatus = getEquippedArmour() != null ? getEquippedArmour().getState().name() : "NONE";
+        String armourStatusText = String.format("Armour: %s", armourStatus);
         String armourStatusLine = String.format("| %-36s |", armourStatusText);
 
         String state = getStatus().toString();

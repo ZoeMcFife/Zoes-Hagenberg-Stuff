@@ -7,15 +7,18 @@ package main.item;
  */
 public class Armour extends Item
 {
+    /** Default maximum durability for armour when not specified */
+    private static final double DEFAULT_MAX_DURABILITY = 100.0;
+    
     private double defense;
     /**
      * The durability of the armour. When durability reaches 0, the armour breaks and provides no defense.
      */
-    private double durability = 100;
+    private double durability = DEFAULT_MAX_DURABILITY;
     /**
      * The maximum durability of the armour.
      */
-    private double maxDurability = 100;
+    private double maxDurability = DEFAULT_MAX_DURABILITY;
 
     /**
      * Creates new armour with default MEDIUM rarity.
@@ -30,7 +33,7 @@ public class Armour extends Item
         super(name, weight, value);
         setDefense(defense);
 
-        this.maxDurability = 100;
+        this.maxDurability = DEFAULT_MAX_DURABILITY;
         this.durability = maxDurability;
     }
 
@@ -64,7 +67,7 @@ public class Armour extends Item
     {
         super(name, weight, value, rarity);
         setDefense(defense);
-        this.maxDurability = 100;
+        this.maxDurability = DEFAULT_MAX_DURABILITY;
         this.durability = maxDurability;
     }
 
