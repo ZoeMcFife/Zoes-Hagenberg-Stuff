@@ -61,6 +61,16 @@ public class Player extends GameCharacter
         this(name, DEFAULT_PLAYER_MAX_HEALTH, strength, dexterity, intelligence);
     }
 
+    public int getLevel()
+    {
+        return this.level;
+    }
+
+    public int getExperience()
+    {
+        return this.experience;
+    }
+
     public void addExperience(int exp)
     {
         this.experience += exp;
@@ -74,7 +84,7 @@ public class Player extends GameCharacter
         }
     }
 
-    private int getExperienceNeededForNextLevel()
+    public int getExperienceNeededForNextLevel()
     {
         return (100 * this.level);
     }

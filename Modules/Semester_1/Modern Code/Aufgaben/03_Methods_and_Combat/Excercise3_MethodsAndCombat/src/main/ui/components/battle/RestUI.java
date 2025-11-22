@@ -1,9 +1,11 @@
 package main.ui.components.battle;
 
+import main.character.GameCharacter;
 import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UIHelper;
 import main.ui.components.character.PlayerStatsUI;
+import main.ui.components.character.UseAvailableStatPointsUI;
 import main.ui.components.inventory.DropItemUI;
 import main.ui.components.inventory.EquipItemUI;
 import main.ui.components.inventory.UseItemUI;
@@ -38,7 +40,7 @@ public class RestUI extends UserInterface
 
     private void selectOption()
     {
-        int choice = UIHelper.getIntInput(1, 6);
+        int choice = UIHelper.getIntInput(1, 7);
 
         switch (choice)
         {
@@ -46,26 +48,31 @@ public class RestUI extends UserInterface
                 displayCurrentPlayerStats();
                 break;
             case 2:
+                UseAvailableStatPointsUI useAvailableStatPointsUI = new UseAvailableStatPointsUI();
+                useAvailableStatPointsUI.startUI();
+                UIHelper.delayLong();
+                break;
+            case 3:
                 EquipItemUI equipItemUI = new EquipItemUI();
                 equipItemUI.startUI();
                 UIHelper.delayLong();
                 break;
-            case 3:
+            case 4:
                 DropItemUI dropItemUI = new DropItemUI();
                 dropItemUI.startUI();
                 UIHelper.delayLong();
                 break;
-            case 4:
+            case 5:
                 UseItemUI useItemUI = new UseItemUI();
                 useItemUI.startUI();
                 UIHelper.delayLong();
                 break;
-            case 5:
+            case 6:
                 IO.println("Continuing may lead to unforeseen consequences...");
                 UIHelper.delayLong();
                 isResting = false;
                 break;
-            case 6:
+            case 7:
                 IO.println("You have chosen to give up. Game Over.");
                 UIHelper.delayMedium();
                 GameManager.getPlayer().suicide();
@@ -82,11 +89,12 @@ public class RestUI extends UserInterface
     {
         UIHelper.printSubHeading("You have survived the battle!");
         IO.println("1. View Character");
-        IO.println("2. Equip Item");
-        IO.println("3. Drop Item");
-        IO.println("4. Use Items");
-        IO.println("5. Continue Journey");
-        IO.println("6. Give up");
+        IO.println("2. Use Stat Points (" + GameManager.getPlayer().getAvailableStatPoints() + " available)");
+        IO.println("3. Equip Item");
+        IO.println("4. Drop Item");
+        IO.println("5. Use Items");
+        IO.println("6. Continue Journey");
+        IO.println("7. Give up");
         IO.println("Select an action by entering the corresponding number.");
     }
 
