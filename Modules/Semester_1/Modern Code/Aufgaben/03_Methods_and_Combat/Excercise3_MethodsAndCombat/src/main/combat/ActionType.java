@@ -13,6 +13,10 @@ public enum ActionType
     
     /** Use a healing item to restore health */
     USE_ITEM,
+    
+    /** Use a special attack with the equipped weapon */
+    USE_SPECIAL,
+    
     /** Character chooses to end their own life */
     SUICIDE
 }
