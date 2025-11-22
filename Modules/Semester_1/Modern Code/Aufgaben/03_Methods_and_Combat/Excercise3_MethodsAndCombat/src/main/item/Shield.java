@@ -106,12 +106,12 @@ public class Shield extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        IO.println("Defense:\t" + defense);
+        IO.println("Defense:\t" + String.format("%.1f", defense));
     }
 
     @Override
     public String toString()
     {
-        return getName() + " +" + defense + " DEF";
+        return getName() + " +" + String.format("%.1f", defense) + " DEF";
     }
 }

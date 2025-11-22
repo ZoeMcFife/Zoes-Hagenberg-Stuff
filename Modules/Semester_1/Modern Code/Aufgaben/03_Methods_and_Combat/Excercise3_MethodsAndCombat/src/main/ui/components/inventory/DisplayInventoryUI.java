@@ -26,11 +26,11 @@ public class DisplayInventoryUI extends UserInterface
     private void displayInventory(GameCharacter gameCharacter)
     {
         IO.println("Inventory:");
-        IO.println("Weight: " + Math.round(gameCharacter.getInventory().getWeight()) + "/" + gameCharacter.getCarryCapacity());
+        IO.println("Weight: " + String.format("%.1f", gameCharacter.getInventory().getWeight()) + "/" + String.format("%.1f", gameCharacter.getCarryCapacity()));
 
         for (int i = 0; i < gameCharacter.getInventory().getItemCount(); i++)
         {
-            IO.print((i + 1) + ": " + gameCharacter.getInventory().getItemAt(i) + " | Weight: " + gameCharacter.getInventory().getItemAt(i).getWeight());
+            IO.print((i + 1) + ": " + gameCharacter.getInventory().getItemAt(i) + " | Weight: " + String.format("%.1f", gameCharacter.getInventory().getItemAt(i).getWeight()));
 
             switch (gameCharacter.getInventory().getItemAt(i)) {
                 case Weapon weapon -> {
@@ -39,9 +39,9 @@ public class DisplayInventoryUI extends UserInterface
                     String compareText;
 
                     if (diff > 0) {
-                        compareText = "Compare: +" + diff + " DMG";
+                        compareText = "Compare: +" + String.format("%.1f", diff) + " DMG";
                     } else if (diff < 0) {
-                        compareText = "Compare: " + diff + " DMG";
+                        compareText = "Compare: " + String.format("%.1f", diff) + " DMG";
                     } else {
                         compareText = "Compare: = DMG";
                     }
@@ -54,9 +54,9 @@ public class DisplayInventoryUI extends UserInterface
                     String compareText;
 
                     if (diff > 0) {
-                        compareText = "Compare: +" + diff + " DEF";
+                        compareText = "Compare: +" + String.format("%.1f", diff) + " DEF";
                     } else if (diff < 0) {
-                        compareText = "Compare: " + diff + " DEF";
+                        compareText = "Compare: " + String.format("%.1f", diff) + " DEF";
                     } else {
                         compareText = "Compare: = DEF";
                     }
@@ -69,9 +69,9 @@ public class DisplayInventoryUI extends UserInterface
                     String compareText;
 
                     if (diff > 0) {
-                        compareText = "Compare: +" + diff + " DEF";
+                        compareText = "Compare: +" + String.format("%.1f", diff) + " DEF";
                     } else if (diff < 0) {
-                        compareText = "Compare: " + diff + " DEF";
+                        compareText = "Compare: " + String.format("%.1f", diff) + " DEF";
                     } else {
                         compareText = "Compare: = DEF";
                     }

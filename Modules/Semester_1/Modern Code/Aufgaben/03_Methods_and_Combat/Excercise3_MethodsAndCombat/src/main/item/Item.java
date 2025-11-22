@@ -49,8 +49,8 @@ public class Item
     public void printItemStats()
     {
         IO.println("Name:\t" + name);
-        IO.println("Weight:\t" + weight);
-        IO.println("Value:\t" + value);
+        IO.println("Weight:\t" + String.format("%.1f", weight));
+        IO.println("Value:\t" + String.format("%.1f", value));
         IO.println("Rarity:\t" + rarity);
     }
 

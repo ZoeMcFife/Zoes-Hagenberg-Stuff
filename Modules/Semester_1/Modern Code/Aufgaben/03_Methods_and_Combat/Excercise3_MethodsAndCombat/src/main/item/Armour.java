@@ -168,14 +168,14 @@ public class Armour extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        IO.println("Defense:\t" + getDefense());
-        IO.println("Durability:\t" + getDurability() + " / " + getMaxDurability() + " (" + getState().name() + ")");
+        IO.println("Defense:\t" + String.format("%.1f", getDefense()));
+        IO.println("Durability:\t" + String.format("%.1f", getDurability()) + " / " + String.format("%.1f", getMaxDurability()) + " (" + getState().name() + ")");
         IO.println("State:\t" + getState().name());
     }
 
     @Override
     public String toString()
     {
-        return getName() + " +" + getDefense() + " DEF" + " (" + getState().name() + ")";
+        return getName() + " +" + String.format("%.1f", getDefense()) + " DEF" + " (" + getState().name() + ")";
     }
 }
