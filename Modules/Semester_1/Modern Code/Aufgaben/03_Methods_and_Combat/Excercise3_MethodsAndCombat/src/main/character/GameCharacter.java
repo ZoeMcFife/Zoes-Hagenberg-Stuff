@@ -173,6 +173,18 @@ public class GameCharacter
     {
         return strength * GameManager.CARRY_CAPACITY_PER_STRENGTH;
     }
+
+    /**
+     * Checks if the character can carry a specific item without exceeding capacity.
+     *
+     * @param selectedItem The item to check
+     * @return true if the item can be carried, false otherwise
+     */
+    public boolean canCarry(Item selectedItem)
+    {
+        return (inventory.getWeight() + selectedItem.getWeight() <= getCarryCapacity());
+    }
+
     //endregion
 
     // region Equipment Management
