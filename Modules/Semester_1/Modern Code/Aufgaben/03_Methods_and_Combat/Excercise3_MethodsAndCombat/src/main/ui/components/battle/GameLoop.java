@@ -50,9 +50,7 @@ public class GameLoop extends UserInterface
 
             battleCount++;
             updateDangerLevel();
-
-            GameManager.getPlayer().addExperience(5000);
-
+            
             UIHelper.clearScreen();
 
             if (GameManager.getPlayer().isAlive())
