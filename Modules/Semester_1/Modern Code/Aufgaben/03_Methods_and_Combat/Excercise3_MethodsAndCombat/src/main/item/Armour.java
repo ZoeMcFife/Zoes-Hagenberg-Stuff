@@ -11,11 +11,11 @@ public class Armour extends Item
     /**
      * The durability of the armour. When durability reaches 0, the armour breaks and provides no defense.
      */
-    private double durability;
+    private double durability = 100;
     /**
      * The maximum durability of the armour.
      */
-    private double maxDurability;
+    private double maxDurability = 100;
 
     /**
      * Creates new armour with default MEDIUM rarity.
@@ -145,12 +145,14 @@ public class Armour extends Item
     public void printItemStats()
     {
         super.printItemStats();
-        IO.println("Defense:\t" + defense);
+        IO.println("Defense:\t" + getDefense());
+        IO.println("Durability:\t" + getDurability() + " / " + getMaxDurability() + " (" + getState().name() + ")");
+        IO.println("State:\t" + getState().name());
     }
 
     @Override
     public String toString()
     {
-        return getName() + " +" + defense + " DEF" + " (" + getState().name() + ")";
+        return getName() + " +" + getDefense() + " DEF" + " (" + getState().name() + ")";
     }
 }
