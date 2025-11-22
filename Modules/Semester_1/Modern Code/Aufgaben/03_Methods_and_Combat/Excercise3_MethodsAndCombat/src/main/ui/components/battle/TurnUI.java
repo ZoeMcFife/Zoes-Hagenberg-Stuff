@@ -8,6 +8,7 @@ import main.combat.Battle;
 import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UIHelper;
+import main.ui.components.inventory.UseItemUI;
 
 
 /**
@@ -94,7 +95,11 @@ public class TurnUI extends UserInterface
                     switch (player.nextAction)
                     {
                         case ATTACK -> player.attack(battle.getEnemies().get(selectedEnemy - 1));
-                        case HEAL -> IO.println("Healing item used!");
+                        case HEAL ->
+                        {
+                            UseItemUI useItemUI = new UseItemUI();
+                            useItemUI.startUI();
+                        }
                     }
                     UIHelper.delayMedium();
                 }
