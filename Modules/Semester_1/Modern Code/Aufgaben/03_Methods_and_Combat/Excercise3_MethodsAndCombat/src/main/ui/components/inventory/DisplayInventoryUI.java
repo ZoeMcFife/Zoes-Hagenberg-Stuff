@@ -23,7 +23,7 @@ public class DisplayInventoryUI extends UserInterface
     private void displayInventory(GameCharacter gameCharacter)
     {
         IO.println("Inventory:");
-        IO.println("Weight: " + gameCharacter.getInventory().getWeight() + "/" + gameCharacter.getCarryCapacity());
+        IO.println("Weight: " + Math.round(gameCharacter.getInventory().getWeight()) + "/" + gameCharacter.getCarryCapacity());
 
         for (int i = 0; i < gameCharacter.getInventory().getItems().size(); i++)
         {

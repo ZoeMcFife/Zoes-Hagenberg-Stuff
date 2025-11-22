@@ -213,8 +213,8 @@ class BattleTest
         testPlayer.nextAction = ActionType.DEFEND;
         assertEquals(ActionType.DEFEND, testPlayer.nextAction);
         
-        testPlayer.nextAction = ActionType.HEAL;
-        assertEquals(ActionType.HEAL, testPlayer.nextAction);
+        testPlayer.nextAction = ActionType.USE_ITEM;
+        assertEquals(ActionType.USE_ITEM, testPlayer.nextAction);
     }
 
     @Test

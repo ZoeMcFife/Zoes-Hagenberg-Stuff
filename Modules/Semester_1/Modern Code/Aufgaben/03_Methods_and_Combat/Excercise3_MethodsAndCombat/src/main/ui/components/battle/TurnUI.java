@@ -8,6 +8,7 @@ import main.combat.Battle;
 import main.global.GameManager;
 import main.ui.UserInterface;
 import main.ui.UIHelper;
+import main.ui.components.inventory.ItemActionSelectionUI;
 import main.ui.components.inventory.UseItemUI;
 
 
@@ -85,7 +86,7 @@ public class TurnUI extends UserInterface
                     switch (enemy.nextAction)
                     {
                         case ATTACK -> enemy.attack(GameManager.getPlayer());
-                        case HEAL -> enemy.useHealingItem();
+                        case USE_ITEM -> enemy.useHealingItem();
                     }
 
                     UIHelper.delayMedium();
@@ -95,10 +96,10 @@ public class TurnUI extends UserInterface
                     switch (player.nextAction)
                     {
                         case ATTACK -> player.attack(battle.getEnemies().get(selectedEnemy - 1));
-                        case HEAL ->
+                        case USE_ITEM ->
                         {
-                            UseItemUI useItemUI = new UseItemUI();
-                            useItemUI.startUI();
+                            ItemActionSelectionUI itemActionSelectionUI = new ItemActionSelectionUI();
+                            itemActionSelectionUI.startUI();
                         }
                     }
                     UIHelper.delayMedium();
@@ -215,7 +216,7 @@ public class TurnUI extends UserInterface
                     //GameManager.getPlayer().defend();
                     break;
                 case 3:
-                    GameManager.getPlayer().nextAction = ActionType.HEAL;
+                    GameManager.getPlayer().nextAction = ActionType.USE_ITEM;
                     IO.println("You chose to Use Item!");
                     break;
                 default:

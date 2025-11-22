@@ -61,7 +61,7 @@ public class Enemy extends GameCharacter
         {
             case ATTACK -> attack(attacker);
             case DEFEND -> defend();
-            case HEAL -> useHealingItem();
+            case USE_ITEM -> useHealingItem();
         }
     }
 
@@ -165,7 +165,7 @@ public class Enemy extends GameCharacter
         }
         else
         {
-            return ActionType.HEAL;
+            return ActionType.USE_ITEM;
         }
     }
 

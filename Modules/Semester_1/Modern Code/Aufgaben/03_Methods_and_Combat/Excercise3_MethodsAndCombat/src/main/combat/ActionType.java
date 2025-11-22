@@ -12,7 +12,7 @@ public enum ActionType
     DEFEND,
     
     /** Use a healing item to restore health */
-    HEAL,
+    USE_ITEM,
     /** Character chooses to end their own life */
     SUICIDE
 }
