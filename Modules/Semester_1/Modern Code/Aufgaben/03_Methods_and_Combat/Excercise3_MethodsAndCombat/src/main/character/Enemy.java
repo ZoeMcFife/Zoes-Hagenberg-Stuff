@@ -147,8 +147,8 @@ public class Enemy extends GameCharacter
     {
         if (!canHeal())
         {
-            attackWeight = healWeight / 2;
-            defendWeight = defendWeight / 2;
+            attackWeight += healWeight / 2;
+            defendWeight += healWeight / 2;
             healWeight = 0;
         }
 
@@ -171,7 +171,7 @@ public class Enemy extends GameCharacter
 
     /**
      * randomly determines if the enemy will commit suicide.
-     * why did i bother implementing this?
+     * why did I bother implementing this?
      *
      * @return true if the enemy will suicide, false otherwise
      */
