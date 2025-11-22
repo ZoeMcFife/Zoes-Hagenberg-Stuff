@@ -3,8 +3,11 @@ package main.character;
 
 import main.combat.ActionType;
 import main.item.Armour;
+import main.item.HealingPotion;
 import main.item.Shield;
 import main.item.Weapon;
+
+import java.util.List;
 
 /**
  * Represents an enemy character in the game.
@@ -41,9 +44,9 @@ public class Enemy extends GameCharacter
     public Enemy(String name, double maxHealth, int strength, int dexterity, int intelligence, Weapon weapon, Armour armour, Shield shield)
     {
         this(name, maxHealth, strength, dexterity, intelligence);
-        equipItem(weapon);
-        equipItem(armour);
-        equipItem(shield);
+        equipItem(weapon, false, false);
+        equipItem(armour, false, false);
+        equipItem(shield, false, false);
     }
 
     /**
@@ -58,17 +61,20 @@ public class Enemy extends GameCharacter
         {
             case ATTACK -> attack(attacker);
             case DEFEND -> defend();
-            case HEAL -> useHealingItem();
+            case USE_ITEM -> useHealingItem();
         }
     }
 
     /**
-     * Uses a healing item from the enemy's inventory.
-     * Outputs a message indicating the enemy is healing.
+     * Uses a random healing item from the enemy's inventory.
      */
     public void useHealingItem()
     {
-        IO.println(getName() + " uses a healing item!");
+        List<HealingPotion> healingItems = getInventory().getHealingItems();
+
+        HealingPotion randomHealingItem = healingItems.get((int) (Math.random() * healingItems.size()));
+
+        useItem(randomHealingItem);
     }
 
     /**
@@ -94,6 +100,11 @@ public class Enemy extends GameCharacter
     {
         CharacterStatus selfStatus = getStatus();
         CharacterStatus attackerStatus = attacker.getStatus();
+
+        if (randomSuicideTrigger())
+        {
+            return ActionType.SUICIDE;
+        }
 
         if (attackerStatus == CharacterStatus.CRITICALLY_HURT)
         {
@@ -136,8 +147,8 @@ public class Enemy extends GameCharacter
     {
         if (!canHeal())
         {
-            attackWeight = healWeight / 2;
-            defendWeight = defendWeight / 2;
+            attackWeight += healWeight / 2;
+            defendWeight += healWeight / 2;
             healWeight = 0;
         }
 
@@ -154,7 +165,18 @@ public class Enemy extends GameCharacter
         }
         else
         {
-            return ActionType.HEAL;
+            return ActionType.USE_ITEM;
         }
+    }
+
+    /**
+     * randomly determines if the enemy will commit suicide.
+     * why did I bother implementing this?
+     *
+     * @return true if the enemy will suicide, false otherwise
+     */
+    private boolean randomSuicideTrigger()
+    {
+        return Math.random() < 0.005;
     }
 }

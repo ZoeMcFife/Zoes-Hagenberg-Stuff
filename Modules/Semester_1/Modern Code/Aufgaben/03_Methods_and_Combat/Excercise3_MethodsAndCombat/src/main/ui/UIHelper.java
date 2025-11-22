@@ -4,39 +4,33 @@ import main.character.Enemy;
 import main.character.GameCharacter;
 import main.character.Player;
 import main.combat.Battle;
+import main.global.GameManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Utility class providing common UI functions for displaying game elements
  * and handling user input throughout the game.
  */
-public class UserInterfaceHelper
+public class UIHelper
 {
-    /**
-     * Displays the main menu screen with the game logo.
-     */
-    public void displayMainMenu()
-    {
-        displayLogo();
 
-        IO.println("Press any key to start your adventure!");
-    }
 
     /**
      * Displays the game's ASCII art logo.
      */
     public static void displayLogo()
     {
-        IO.println("                     .__    .___.__               \n" +
-                "  ____ ___  ___ ____ |__| __| _/|__|__ __  _____  \n" +
-                "_/ __ \\\\  \\/  // ___\\|  |/ __ | |  |  |  \\/     \\ \n" +
-                "\\  ___/ >    <\\  \\___|  / /_/ | |  |  |  /  Y Y  \\\n" +
-                " \\___  >__/\\_ \\\\___  >__\\____ | |__|____/|__|_|  /\n" +
-                "     \\/      \\/    \\/        \\/                \\/ \n" +
-                "                                                  \n");
+        IO.println("""
+                                     .__    .___.__              \s
+                  ____ ___  ___ ____ |__| __| _/|__|__ __  _____ \s
+                _/ __ \\\\  \\/  // ___\\|  |/ __ | |  |  |  \\/     \\\s
+                \\  ___/ >    <\\  \\___|  / /_/ | |  |  |  /  Y Y  \\
+                 \\___  >__/\\_ \\\\___  >__\\____ | |__|____/|__|_|  /
+                     \\/      \\/    \\/        \\/                \\/\s
+                                                                 \s
+                """);
     }
 
     /**
@@ -78,8 +72,7 @@ public class UserInterfaceHelper
     public static String getPlayerStringInput(String inputPrompt)
     {
         printPlayerInputPrompt(inputPrompt);
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return IO.readln();
     }
 
     /**
@@ -135,9 +128,8 @@ public class UserInterfaceHelper
             try
             {
                 IO.print("> ");
-                Scanner scanner = new Scanner(System.in);
 
-                int value = Integer.parseInt(scanner.nextLine());
+                int value = Integer.parseInt(IO.readln());
 
                 if (value >= min && value <= max)
                 {
@@ -165,8 +157,7 @@ public class UserInterfaceHelper
         while (true)
         {
             IO.print(prompt + " (y/n): ");
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine().trim().toLowerCase();
+            String input = IO.readln().trim().toLowerCase();
 
             if (input.equals("y") || input.equals("yes"))
             {
@@ -186,9 +177,22 @@ public class UserInterfaceHelper
      */
     public static void waitForEnterKey()
     {
-        IO.println("Press Enter to continue...");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
+        IO.readln("Press Enter to continue...");
+    }
+
+    public static void delayShort()
+    {
+        delay(GameManager.DELAY_SHORT);
+    }
+
+    public static void delayMedium()
+    {
+        delay(GameManager.DELAY_MEDIUM);
+    }
+
+    public static void delayLong()
+    {
+        delay(GameManager.DELAY_LONG);
     }
 
     /**
@@ -196,7 +200,7 @@ public class UserInterfaceHelper
      * 
      * @param seconds The number of seconds to delay
      */
-    public static void delay(double seconds)
+    private static void delay(double seconds)
     {
         try
         {

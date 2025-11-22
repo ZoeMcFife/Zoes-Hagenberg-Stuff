@@ -1,15 +1,16 @@
-package main.ui.components;
+package main.ui.components.main_menu;
 
 import main.character.Player;
 import main.factory.baseFactories.ArmourFactory;
+import main.factory.baseFactories.HealingPotionFactory;
 import main.factory.baseFactories.ShieldFactory;
 import main.factory.baseFactories.WeaponFactory;
 import main.global.Difficulty;
 import main.global.GameManager;
 import main.item.ItemRarity;
-import main.item.Weapon;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
+import main.ui.components.battle.GameLoop;
 
 /**
  * Main menu UI screen for the game.
@@ -29,16 +30,17 @@ public class MainMenu extends UserInterface
         {
             Player player = new Player("Player", 10, 10, 10);
             GameManager.setPlayer(player);
-            Weapon weapon = WeaponFactory.createRandomWeaponByRarity(ItemRarity.LEGENDARY);
-            player.equipItem(weapon);
-            player.equipItem(ArmourFactory.createRandomArmourByRarity(ItemRarity.LEGENDARY));
-            player.equipItem(ShieldFactory.createRandomShieldByRarity(ItemRarity.LEGENDARY));
+            player.equipItem(WeaponFactory.createRandomWeaponByRarity(ItemRarity.LEGENDARY), false);
+            player.equipItem(ArmourFactory.createRandomArmourByRarity(ItemRarity.LEGENDARY), false);
+            player.equipItem(ShieldFactory.createRandomShieldByRarity(ItemRarity.LEGENDARY), false);
+            player.addItemsToInventory(HealingPotionFactory.createRandomPotion(), HealingPotionFactory.createRandomPotion(), HealingPotionFactory.createRandomPotion());
+
 
             GameManager.difficulty = Difficulty.HARD;
 
-            UserInterfaceHelper.displayLogo();
+            UIHelper.displayLogo();
             displayStartOptions();
-            int choice = UserInterfaceHelper.getIntInput(1, 4);
+            int choice = UIHelper.getIntInput(1, 4);
 
             switch (choice)
             {
@@ -58,12 +60,12 @@ public class MainMenu extends UserInterface
                     if (!canGameStart())
                     {
                         IO.println("You must create a character and choose a difficulty before starting the game.");
-                        UserInterfaceHelper.waitForEnterKey();
+                        UIHelper.waitForEnterKey();
                         break;
                     }
 
                     IO.println("Starting game...");
-                    UserInterfaceHelper.clearScreen();
+                    UIHelper.clearScreen();
 
                     GameLoop gameLoop = new GameLoop();
                     gameLoop.startUI();
@@ -79,7 +81,7 @@ public class MainMenu extends UserInterface
                     break;
             }
 
-            UserInterfaceHelper.clearScreen();
+            UIHelper.clearScreen();
         }
     }
 

@@ -1,16 +1,11 @@
-package main.ui.components;
+package main.ui.components.battle;
 
 import main.character.DangerLevel;
-import main.character.Enemy;
-import main.character.GameCharacter;
 import main.combat.Battle;
 import main.factory.generators.BattleGenerator;
 import main.global.GameManager;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
-
-import java.util.ArrayList;
-import java.util.List;
+import main.ui.UIHelper;
 
 /**
  * UI screen for managing a single battle encounter.
@@ -44,12 +39,18 @@ public class BattleUI extends UserInterface
 
         displayBattleStartMessage();
 
-        while (GameManager.getPlayer().isAlive())
+        while (GameManager.getPlayer().isAlive() && !battle.isBattleOver())
         {
             TurnUI turnUI = new TurnUI(battle);
             turnUI.startUI();
 
-            UserInterfaceHelper.waitForEnterKey();
+            UIHelper.delayLong();
+
+            UIHelper.clearScreen();
+
+            displayBattleEndMessage();
+
+            UIHelper.waitForEnterKey();
         }
 
     }
@@ -71,4 +72,8 @@ public class BattleUI extends UserInterface
         IO.println("Danger Level: " + dangerLevel);
     }
 
+    public void displayBattleEndMessage()
+    {
+        IO.println("Battle " + battleNumber + " has ended!");
+    }
 }

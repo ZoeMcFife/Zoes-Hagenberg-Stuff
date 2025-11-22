@@ -2,9 +2,6 @@ package test;
 
 import main.character.GameCharacter;
 import main.character.Player;
-import main.item.Weapon;
-import main.item.Shield;
-import main.item.Armour;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -70,11 +67,11 @@ class CharacterTest
     @Test
     void testDefendMechanism()
     {
-        assertFalse(testPlayer.isDefending);
+        assertFalse(testPlayer.isDefending());
         testPlayer.defend();
-        assertTrue(testPlayer.isDefending);
+        assertTrue(testPlayer.isDefending());
         testPlayer.stopDefending();
-        assertFalse(testPlayer.isDefending);
+        assertFalse(testPlayer.isDefending());
     }
 
     @Test
@@ -114,13 +111,13 @@ class CharacterTest
     void testHealthPercentage()
     {
         testPlayer.setHealth(testPlayer.getMaxHealth());
-        assertEquals(1.0, testPlayer.getHeatlthPercentage(), 0.01);
+        assertEquals(1.0, testPlayer.getHealthPercentage(), 0.01);
         
         testPlayer.setHealth(testPlayer.getMaxHealth() / 2);
-        assertEquals(0.5, testPlayer.getHeatlthPercentage(), 0.01);
+        assertEquals(0.5, testPlayer.getHealthPercentage(), 0.01);
         
         testPlayer.setHealth(0);
-        assertEquals(0.0, testPlayer.getHeatlthPercentage(), 0.01);
+        assertEquals(0.0, testPlayer.getHealthPercentage(), 0.01);
     }
 
     @Test

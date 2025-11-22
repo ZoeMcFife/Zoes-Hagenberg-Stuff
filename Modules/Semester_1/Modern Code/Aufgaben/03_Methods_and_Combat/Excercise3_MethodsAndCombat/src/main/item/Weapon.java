@@ -93,4 +93,10 @@ public class Weapon extends Item
         IO.println("Damage:\t" + damage);
         IO.println("Is Magic:\t" + isMagic);
     }
+
+    @Override
+    public String toString()
+    {
+        return getName() + " +" + damage + (isMagic ? " M" : " P" + " DMG" );
+    }
 }

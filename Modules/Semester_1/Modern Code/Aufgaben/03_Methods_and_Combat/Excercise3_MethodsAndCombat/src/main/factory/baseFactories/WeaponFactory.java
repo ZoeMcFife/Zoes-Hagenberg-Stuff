@@ -74,6 +74,16 @@ public class WeaponFactory
         registerWeapon(24, "Fists", 0.0, 0, 5, false, ItemRarity.LOW);
     }
 
+    /**
+     * Creates the base weapon (Fists).
+     *
+     * @return A new instance of the base weapon
+     */
+    public static Weapon createBaseWeapon()
+    {
+        return createWeaponByName("Fists");
+    }
+
     private static void registerWeapon(int id, String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity)
     {
         WeaponData data = new WeaponData(id, name, weight, value, damage, isMagic, rarity);

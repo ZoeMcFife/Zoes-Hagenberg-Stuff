@@ -63,6 +63,11 @@ public class ArmourFactory
         registerArmour(18, "Clothes", 1.0, 2, 0, ItemRarity.LOW);
     }
 
+    public static Armour createBaseArmour()
+    {
+        return createArmourByName("Clothes");
+    }
+
     private static void registerArmour(int id, String name, double weight, double value, double defense, ItemRarity rarity)
     {
         ArmourData data = new ArmourData(id, name, weight, value, defense, rarity);

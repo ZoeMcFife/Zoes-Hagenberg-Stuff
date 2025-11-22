@@ -1,4 +1,4 @@
-package main.ui.components;
+package main.ui.components.battle;
 
 import main.character.Enemy;
 import main.character.GameCharacter;
@@ -7,7 +7,9 @@ import main.combat.ActionType;
 import main.combat.Battle;
 import main.global.GameManager;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
+import main.ui.components.inventory.ItemActionSelectionUI;
+import main.ui.components.inventory.UseItemUI;
 
 
 /**
@@ -19,9 +21,7 @@ public class TurnUI extends UserInterface
     private final Battle battle;
     private int selectedEnemy;
     private int actionChoice;
-
-    /** Delay in seconds between turn actions */
-    private final int TURN_DELAY = 1;
+    private int turnCount = 1;
 
     /**
      * Creates a new turn UI for the specified battle.
@@ -40,10 +40,12 @@ public class TurnUI extends UserInterface
     @Override
     public void startUI()
     {
-        while (GameManager.getPlayer().isAlive())
+        while (GameManager.getPlayer().isAlive() && !battle.isBattleOver())
         {
-            UserInterfaceHelper.displayEnemies(battle);
-            UserInterfaceHelper.displayPlayer(GameManager.getPlayer());
+            displayTurnHeader();
+
+            UIHelper.displayEnemies(battle);
+            UIHelper.displayPlayer(GameManager.getPlayer());
 
             thinkingPass();
 
@@ -53,9 +55,16 @@ public class TurnUI extends UserInterface
 
             stopDefendingPass();
 
-            UserInterfaceHelper.waitForEnterKey();
+            UIHelper.waitForEnterKey();
+            UIHelper.clearScreen();
         }
 
+    }
+
+    private void displayTurnHeader()
+    {
+        UIHelper.printHeading("Turn " + turnCount);
+        turnCount++;
     }
 
     /**
@@ -68,24 +77,32 @@ public class TurnUI extends UserInterface
         {
             if (character.isAlive())
             {
-                if (character instanceof Enemy enemy)
+                if (character.nextAction == ActionType.SUICIDE)
+                {
+                    character.suicide();
+                }
+                else if (character instanceof Enemy enemy)
                 {
                     switch (enemy.nextAction)
                     {
                         case ATTACK -> enemy.attack(GameManager.getPlayer());
-                        case HEAL -> enemy.useHealingItem();
+                        case USE_ITEM -> enemy.useHealingItem();
                     }
 
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    UIHelper.delayMedium();
                 }
                 else if (character instanceof Player player)
                 {
                     switch (player.nextAction)
                     {
                         case ATTACK -> player.attack(battle.getEnemies().get(selectedEnemy - 1));
-                        case HEAL -> IO.println("Healing item used!");
+                        case USE_ITEM ->
+                        {
+                            ItemActionSelectionUI itemActionSelectionUI = new ItemActionSelectionUI();
+                            itemActionSelectionUI.startUI();
+                        }
                     }
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    UIHelper.delayMedium();
                 }
             }
         }
@@ -100,7 +117,7 @@ public class TurnUI extends UserInterface
         {
             if (character.isAlive())
             {
-                if (character.isDefending)
+                if (character.isDefending())
                 {
                     character.stopDefending();
                 }
@@ -119,7 +136,7 @@ public class TurnUI extends UserInterface
             if (character.nextAction == ActionType.DEFEND && character.isAlive())
             {
                 character.defend();
-                UserInterfaceHelper.delay(TURN_DELAY);
+                UIHelper.delayMedium();
             }
         }
     }
@@ -137,16 +154,18 @@ public class TurnUI extends UserInterface
                 if (character instanceof Enemy enemy)
                 {
                     enemy.think(GameManager.getPlayer());
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    UIHelper.delayMedium();
                 }
                 else if (character instanceof Player)
                 {
-                    UserInterfaceHelper.printSubHeading("Your Turn!");
+                    UIHelper.printHeading("Your Turn!");
 
                     enemySelection();
                     actionSelection();
 
-                    UserInterfaceHelper.delay(TURN_DELAY);
+                    IO.println();
+
+                    UIHelper.delayMedium();
                 }
             }
         }
@@ -163,7 +182,7 @@ public class TurnUI extends UserInterface
         while (selectedEnemy < 1)
         {
             displayEnemySelection();
-            selectedEnemy = UserInterfaceHelper.getIntInput(1, battle.getEnemies().size());
+            selectedEnemy = UIHelper.getIntInput(1, battle.getEnemies().size());
 
             if (selectedEnemy < 1 || selectedEnemy > battle.getEnemies().size())
             {
@@ -184,7 +203,7 @@ public class TurnUI extends UserInterface
         while (actionChoice < 1)
         {
             displayBattleOptions();
-            actionChoice = UserInterfaceHelper.getIntInput(1, 3);
+            actionChoice = UIHelper.getIntInput(1, 3);
 
             switch (actionChoice)
             {
@@ -197,7 +216,7 @@ public class TurnUI extends UserInterface
                     //GameManager.getPlayer().defend();
                     break;
                 case 3:
-                    GameManager.getPlayer().nextAction = ActionType.HEAL;
+                    GameManager.getPlayer().nextAction = ActionType.USE_ITEM;
                     IO.println("You chose to Use Item!");
                     break;
                 default:
@@ -213,7 +232,7 @@ public class TurnUI extends UserInterface
      */
     private void displayBattleOptions()
     {
-        UserInterfaceHelper.printSubHeading("Battle Options");
+        UIHelper.printSubHeading("Battle Options");
         IO.println("1. Attack");
         IO.println("2. Defend");
         IO.println("3. Use Item");
@@ -225,7 +244,7 @@ public class TurnUI extends UserInterface
      */
     private void displayEnemySelection()
     {
-        UserInterfaceHelper.printSubHeading("Select an Enemy to Target");
+        UIHelper.printSubHeading("Select an Enemy to Target");
 
         int i = 1;
 

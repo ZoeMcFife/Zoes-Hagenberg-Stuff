@@ -1,9 +1,9 @@
-package main.ui.components;
+package main.ui.components.main_menu;
 
 import main.character.GameCharacter;
 import main.character.Player;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 
 /**
  * UI screen for creating a new player character.
@@ -28,13 +28,13 @@ public class CharacterCreator extends UserInterface
 
         do
         {
-            UserInterfaceHelper.clearScreen();
+            UIHelper.clearScreen();
 
-            UserInterfaceHelper.printHeading("Character Creator");
+            UIHelper.printHeading("Character Creator");
 
-            String name = UserInterfaceHelper.getPlayerStringInput("Enter character name");
+            String name = UIHelper.getPlayerStringInput("Enter character name");
 
-            UserInterfaceHelper.delay(1);
+            UIHelper.delayMedium();
 
             int strength = GameCharacter.MIN_STAT_VALUE;
             int dexterity = GameCharacter.MIN_STAT_VALUE;
@@ -44,7 +44,7 @@ public class CharacterCreator extends UserInterface
             while (remainingPoints > 0)
             {
                 printStatAllocationMenu(strength, dexterity, intelligence, remainingPoints);
-                int choice = UserInterfaceHelper.getIntInput(1, 3);
+                int choice = UIHelper.getIntInput(1, 3);
 
                 switch (choice)
                 {
@@ -83,24 +83,24 @@ public class CharacterCreator extends UserInterface
                         break;
                 }
 
-                UserInterfaceHelper.clearScreen();
+                UIHelper.clearScreen();
 
             }
 
-            UserInterfaceHelper.delay(1);
+            UIHelper.delayMedium();
 
             playerCharacter = new Player(name, strength, dexterity, intelligence);
 
-            UserInterfaceHelper.printCharacterInformation(playerCharacter);
+            UIHelper.printCharacterInformation(playerCharacter);
 
-            isPlayerSatisfied = UserInterfaceHelper.getYesNoInput("\nAre you satisfied with your creation?");
+            isPlayerSatisfied = UIHelper.getYesNoInput("\nAre you satisfied with your creation?");
 
             if (!isPlayerSatisfied)
             {
-                UserInterfaceHelper.clearScreen();
+                UIHelper.clearScreen();
 
                 IO.println("Your creation has been discarded.");
-                UserInterfaceHelper.delay(4);
+                UIHelper.delayLong();
             }
         }
         while (!isPlayerSatisfied);

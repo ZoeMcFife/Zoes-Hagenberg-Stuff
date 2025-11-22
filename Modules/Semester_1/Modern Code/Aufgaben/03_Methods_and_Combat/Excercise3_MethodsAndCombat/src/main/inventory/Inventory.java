@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class Inventory
 {
-    private List<Item> items = new ArrayList<>();
-    private GameCharacter character;
+    private final List<Item> items = new ArrayList<>();
+    private final GameCharacter character;
 
     /**
      * Creates a new inventory for the specified character.
@@ -25,6 +25,37 @@ public class Inventory
     public Inventory(GameCharacter character)
     {
         this.character = character;
+    }
+
+    /**
+     * Gets the list of items in the inventory.
+     *
+     * @return List of items in the inventory
+     */
+    public List<Item> getItems()
+    {
+        return items;
+    }
+
+    /**
+     * Gets the item at the specified index.
+     *
+     * @param index The index of the item
+     * @return The item at the specified index
+     */
+    public Item getItemAt(int index)
+    {
+        return items.get(index);
+    }
+
+    /**
+     * Gets the number of items in the inventory.
+     *
+     * @return The item count
+     */
+    public int getItemCount()
+    {
+        return items.size();
     }
 
     /**
@@ -41,6 +72,9 @@ public class Inventory
         }
         return totalWeight;
     }
+
+    // TODO: doing the check here could be problematic!!!
+    // especially since i forgot i do the check here
 
     /**
      * Adds an item to the inventory if there is enough carrying capacity.
@@ -97,5 +131,23 @@ public class Inventory
             }
         }
         return false;
+    }
+
+    /**
+     * Gets a list of all healing items in the inventory.
+     *
+     * @return List of healing potions
+     */
+    public List<HealingPotion> getHealingItems()
+    {
+        List<HealingPotion> healingItems = new ArrayList<>();
+        for (Item item : items)
+        {
+            if (item instanceof HealingPotion healingPotion)
+            {
+                healingItems.add(healingPotion);
+            }
+        }
+        return healingItems;
     }
 }

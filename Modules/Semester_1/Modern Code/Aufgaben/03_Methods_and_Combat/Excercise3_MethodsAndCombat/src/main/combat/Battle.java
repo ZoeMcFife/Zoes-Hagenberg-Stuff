@@ -74,4 +74,14 @@ public class Battle
         return enemies;
     }
 
+    /**
+     * Checks if the battle is over (all enemies defeated).
+     *
+     * @return true if all enemies are defeated, false otherwise
+     */
+    public boolean isBattleOver()
+    {
+        return enemies.stream().noneMatch(GameCharacter::isAlive);
+    }
+
 }

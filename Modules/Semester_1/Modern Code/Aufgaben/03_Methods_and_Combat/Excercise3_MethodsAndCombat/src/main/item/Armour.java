@@ -68,4 +68,10 @@ public class Armour extends Item
         super.printItemStats();
         IO.println("Defense:\t" + defense);
     }
+
+    @Override
+    public String toString()
+    {
+        return getName() + " +" + defense + " DEF";
+    }
 }

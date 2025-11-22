@@ -52,6 +52,11 @@ public class ShieldFactory
         registerShield(7, "Fists", 0.0, 0, 1, ItemRarity.LOW);
     }
 
+    public static Shield createBaseShield()
+    {
+        return createShieldByName("Fists");
+    }
+
     private static void registerShield(int id, String name, double weight, double value, double defense, ItemRarity rarity)
     {
         ShieldData data = new ShieldData(id, name, weight, value, defense, rarity);

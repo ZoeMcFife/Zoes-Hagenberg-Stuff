@@ -1,8 +1,8 @@
-package main.ui.components;
+package main.ui.components.main_menu;
 
 import main.global.Difficulty;
 import main.ui.UserInterface;
-import main.ui.UserInterfaceHelper;
+import main.ui.UIHelper;
 
 /**
  * UI screen for selecting game difficulty.
@@ -19,16 +19,16 @@ public class DifficultySelection extends UserInterface
     @Override
     public void startUI()
     {
-        UserInterfaceHelper.clearScreen();
+        UIHelper.clearScreen();
 
         boolean difficultySelected = false;
 
         do
         {
-            UserInterfaceHelper.printHeading("Difficulty Selection");
+            UIHelper.printHeading("Difficulty Selection");
 
             displayDifficultyOptions();
-            int choice = UserInterfaceHelper.getIntInput(1, 3);
+            int choice = UIHelper.getIntInput(1, 3);
 
             switch(choice)
             {
@@ -52,7 +52,7 @@ public class DifficultySelection extends UserInterface
         while (!difficultySelected);
 
         IO.println("You have selected " + selectedDifficulty + " difficulty.");
-        UserInterfaceHelper.delay(5);
+        UIHelper.delayLong();
     }
 
     /**
