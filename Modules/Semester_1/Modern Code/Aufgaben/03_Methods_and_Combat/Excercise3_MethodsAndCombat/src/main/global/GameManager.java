@@ -22,9 +22,6 @@ public class GameManager
     /** Dodge chance percentage gained per point of dexterity */
     public static double DODGE_CHANCE_PER_DEXTERITY = 0.02;
 
-    /** Damage reduction percentage per point of defense */
-    public static double DAMAGE_REDUCTION_PER_DEFENSE = 0.04;
-
     /** Weight carrying capacity granted per point of strength */
     public static final int CARRY_CAPACITY_PER_STRENGTH = 5;
 
