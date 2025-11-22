@@ -68,4 +68,10 @@ public class HealingPotion extends Item
         super.printItemStats();
         IO.println("Healing Amount:\t" + healingAmount);
     }
+
+    @Override
+    public String toString()
+    {
+        return getName() + " +" + healingAmount + " HP";
+    }
 }

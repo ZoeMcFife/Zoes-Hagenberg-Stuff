@@ -27,7 +27,7 @@ public class DisplayInventoryUI extends UserInterface
 
         for (int i = 0; i < gameCharacter.getInventory().getItems().size(); i++)
         {
-            IO.println((i + 1) + ". " + gameCharacter.getInventory().getItems().get(i).getName());
+            IO.println((i + 1) + ". " + gameCharacter.getInventory().getItems().get(i));
         }
     }
 }
