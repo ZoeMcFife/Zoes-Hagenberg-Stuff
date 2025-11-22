@@ -53,6 +53,14 @@ public class BattleUI extends UserInterface
             UIHelper.waitForEnterKey();
         }
 
+        if (GameManager.getPlayer().isAlive())
+        {
+            UIHelper.clearScreen();
+            LootUI lootUI = new LootUI(battle.getAllLoot());
+            lootUI.startUI();
+            UIHelper.waitForEnterKey();
+        }
+
     }
 
     /**
