@@ -2,6 +2,7 @@ package main.character;
 
 
 import main.combat.ActionType;
+import main.global.GameManager;
 import main.item.Armour;
 import main.item.HealingPotion;
 import main.item.Shield;
@@ -51,6 +52,12 @@ public class Enemy extends GameCharacter
         equipItem(weapon, false, false);
         equipItem(armour, false, false);
         equipItem(shield, false, false);
+    }
+
+    @Override
+    protected void onDeath()
+    {
+        GameManager.getPlayer().addExperience(experienceReward);
     }
 
     /**

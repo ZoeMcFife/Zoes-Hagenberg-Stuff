@@ -1,5 +1,6 @@
 package test;
 
+import main.character.Enemy;
 import main.character.GameCharacter;
 import main.character.Player;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ class CharacterTest
     void setUp()
     {
         testPlayer = new Player("Test Hero", 5, 7, 6);
-        testEnemy = new GameCharacter("Test Enemy", 80, 4, 5, 3);
+        testEnemy = new Enemy("Test Enemy", 80, 4, 5, 3, 3);
     }
 
     @Test

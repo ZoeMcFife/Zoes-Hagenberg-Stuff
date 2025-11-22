@@ -6,9 +6,9 @@ package main.character;
  */
 public class Player extends GameCharacter
 {
-    private int level;
-    private int experience;
-    private int availableStatPoints;
+    private int level = 1;
+    private int experience = 0;
+    private int availableStatPoints = 0;
 
     /** Default maximum health for all player characters */
     public static double DEFAULT_PLAYER_MAX_HEALTH = 100.0;
@@ -25,6 +25,12 @@ public class Player extends GameCharacter
     public Player(String name, double maxHealth, int strength, int dexterity, int intelligence)
     {
         super(name, maxHealth, strength, dexterity, intelligence);
+    }
+
+    @Override
+    protected void onDeath()
+    {
+
     }
 
     /**
@@ -44,6 +50,8 @@ public class Player extends GameCharacter
     public void addExperience(int exp)
     {
         this.experience += exp;
+
+        IO.println(getName() + " gained " + exp + " experience points.");
 
         while (this.experience >= getExperienceNeededForNextLevel())
         {
@@ -71,5 +79,7 @@ public class Player extends GameCharacter
     {
         this.level += 1;
         this.availableStatPoints += 1;
+
+        IO.println(getName() + " leveled up to level " + this.level + "!");
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
  * Base class for all game characters (players and enemies).
  * Manages character stats, equipment, inventory, and combat actions.
  */
-public class GameCharacter
+public abstract class GameCharacter
 {
     //region Fields and Constants
 
@@ -425,8 +425,15 @@ public class GameCharacter
         {
             health = 0;
             IO.println(getName() + " died!");
+            onDeath();
         }
     }
+
+    /**
+     * Abstract method called when the character dies.
+     * Subclasses must implement specific death behavior.
+     */
+    protected abstract void onDeath();
 
     //endregion
 
@@ -784,6 +791,7 @@ public class GameCharacter
 
         return result;
     }
+
 
     //endregion
 }

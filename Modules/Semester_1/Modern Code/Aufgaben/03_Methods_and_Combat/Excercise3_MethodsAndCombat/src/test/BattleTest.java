@@ -27,9 +27,9 @@ class BattleTest
     void setUp()
     {
         testPlayer = new Player("Test Hero", 5, 5, 5);
-        testEnemy1 = new Enemy("Goblin", 50, 3, 4, 2);
-        testEnemy2 = new Enemy("Orc", 80, 6, 3, 2);
-        testEnemy3 = new Enemy("Troll", 100, 7, 8, 1);
+        testEnemy1 = new Enemy("Goblin", 50, 3, 4, 2, 10);
+        testEnemy2 = new Enemy("Orc", 80, 6, 3, 2, 20);
+        testEnemy3 = new Enemy("Troll", 100, 7, 8, 1 ,10);
         
         List<Enemy> enemies = new ArrayList<>();
         enemies.add(testEnemy1);
