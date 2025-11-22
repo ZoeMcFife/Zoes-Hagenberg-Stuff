@@ -18,7 +18,10 @@ public class StatAllocationUI extends UserInterface
     }
 
     /**
-     *
+     * Starts the stat allocation user interface, allowing the player to distribute available skill points
+     * among Strength, Dexterity, and Intelligence. The method prompts the user to select which stat to
+     * increase, ensures no stat exceeds its maximum value, and updates the player's stats and remaining
+     * points accordingly. The process continues until all points are allocated or all stats reach their maximum.
      */
     @Override
     public void startUI()
