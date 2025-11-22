@@ -6,6 +6,10 @@ package main.character;
  */
 public class Player extends GameCharacter
 {
+    private int level;
+    private int experience;
+    private int availableStatPoints;
+
     /** Default maximum health for all player characters */
     public static double DEFAULT_PLAYER_MAX_HEALTH = 100.0;
 
@@ -35,5 +39,37 @@ public class Player extends GameCharacter
     public Player(String name, int strength, int dexterity, int intelligence)
     {
         this(name, DEFAULT_PLAYER_MAX_HEALTH, strength, dexterity, intelligence);
+    }
+
+    public void addExperience(int exp)
+    {
+        this.experience += exp;
+
+        while (this.experience >= getExperienceNeededForNextLevel())
+        {
+            this.experience -= getExperienceNeededForNextLevel();
+            levelUp();
+        }
+    }
+
+    private int getExperienceNeededForNextLevel()
+    {
+        return (100 * this.level);
+    }
+
+    public int getAvailableStatPoints()
+    {
+        return this.availableStatPoints;
+    }
+
+    public void spendStatPoint()
+    {
+        this.availableStatPoints -= 1;
+    }
+
+    private void levelUp()
+    {
+        this.level += 1;
+        this.availableStatPoints += 1;
     }
 }
