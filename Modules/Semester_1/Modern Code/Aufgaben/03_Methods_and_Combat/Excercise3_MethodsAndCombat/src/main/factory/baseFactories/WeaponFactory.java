@@ -164,8 +164,6 @@ public class WeaponFactory
 
     }
 
-    }
-
     /**
      * Creates the base weapon (Fists).
      *

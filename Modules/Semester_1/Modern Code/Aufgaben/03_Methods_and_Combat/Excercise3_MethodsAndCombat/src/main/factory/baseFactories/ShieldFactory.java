@@ -161,7 +161,6 @@ public class ShieldFactory
 
     }
 
-    }
 
     public static Shield createBaseShield()
     {
