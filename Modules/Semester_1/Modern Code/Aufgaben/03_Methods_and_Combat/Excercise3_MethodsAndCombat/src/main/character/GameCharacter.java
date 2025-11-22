@@ -280,6 +280,12 @@ public class GameCharacter
         IO.println(getName() + " dropped " + item.getName() + "!");
     }
 
+    /**
+     * Uses an item from inventory.
+     * Currently only supports HealingPotions.
+     *
+     * @param item The item to use
+     */
     public void useItem(Item item)
     {
         if (item instanceof HealingPotion)
@@ -331,6 +337,11 @@ public class GameCharacter
         return equippedArmour.getDefense();
     }
 
+    /**
+     * Checks if the character is currently defending.
+     *
+     * @return true if defending, false otherwise
+     */
     public boolean isDefending()
     {
         return isDefending;
