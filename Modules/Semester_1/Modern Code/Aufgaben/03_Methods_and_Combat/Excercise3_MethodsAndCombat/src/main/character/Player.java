@@ -1,6 +1,8 @@
 package main.character;
 
 import main.global.GameManager;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents a player character in the game.
@@ -202,9 +204,9 @@ public class Player extends GameCharacter
     }
 
     @Override
-    public java.util.List<String> getDisplayBox()
+    public List<String> getDisplayBox()
     {
-        java.util.List<String> box = new java.util.ArrayList<>();
+        List<String> box = new ArrayList<>();
 
         String nameLine = String.format("| %-36s |", getName());
         

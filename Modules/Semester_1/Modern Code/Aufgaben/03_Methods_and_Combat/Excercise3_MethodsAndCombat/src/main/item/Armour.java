@@ -64,6 +64,8 @@ public class Armour extends Item
     {
         super(name, weight, value, rarity);
         setDefense(defense);
+        this.maxDurability = 100;
+        this.durability = maxDurability;
     }
 
     /**
