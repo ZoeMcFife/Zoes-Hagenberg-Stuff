@@ -236,11 +236,13 @@ public class Weapon extends Item
         super.printItemStats();
         IO.println("Damage:\t" + damage);
         IO.println("Is Magic:\t" + isMagic);
+        IO.println("Special: " + specialAttackName);
+        IO.println("Special Damage:\t" + specialDamage);
     }
 
     @Override
     public String toString()
     {
-        return getName() + " +" + damage + (isMagic ? " M" : " P" + " DMG" );
+        return getName() + " +" + damage + (isMagic ? " M" : " P" + " DMG +" + specialDamage);
     }
 }
