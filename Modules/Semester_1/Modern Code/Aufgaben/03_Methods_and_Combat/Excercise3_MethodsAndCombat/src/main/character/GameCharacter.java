@@ -748,6 +748,8 @@ public abstract class GameCharacter
     public void addStrength(int amount)
     {
         setStrength(this.strength + amount);
+        setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_STRENGTH);
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_STRENGTH);
     }
 
     /**
@@ -757,6 +759,8 @@ public abstract class GameCharacter
     public void addDexterity(int amount)
     {
         setDexterity(this.dexterity + amount);
+        setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_DEXTERITY);
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_DEXTERITY);
     }
 
     /**
@@ -766,6 +770,8 @@ public abstract class GameCharacter
     public void addIntelligence(int amount)
     {
         setIntelligence(this.intelligence + amount);
+        setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_INTELLIGENCE);
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_INTELLIGENCE);
     }
 
     //endregion

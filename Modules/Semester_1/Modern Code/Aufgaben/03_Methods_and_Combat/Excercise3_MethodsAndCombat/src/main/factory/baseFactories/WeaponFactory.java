@@ -84,7 +84,7 @@ public class WeaponFactory
         registerWeapon(21, "Fargoth Execution Blade", 10.0, 1580, 112, false, ItemRarity.LEGENDARY, 100, "Final Judgment", "Final Judgment strikes with overwhelming force!", 58, 15);
         registerWeapon(22, "Echo Reaver Staff", 4.5, 620, 66, true, ItemRarity.HIGH, 54, "Echo Destruction", "Echo Destruction strikes with overwhelming force!", 46, 10);
         registerWeapon(23, "Stormcall Crossbow", 7.5, 740, 72, false, ItemRarity.HIGH, 58, "Storm Call", "Storm Call strikes with overwhelming force!", 47, 10);
-        registerWeapon(24, "Fists", 0.0, 0, 5, false, ItemRarity.LOW, 4, "Desperate Flurry", "Desperate Flurry strikes with overwhelming force!", 27, 1);
+        registerWeapon(24, "Fists", 0.0, 0, 13, false, ItemRarity.LOW, 15, "Desperate Flurry", "Desperate Flurry strikes with overwhelming force!", 5, 5);
         registerWeapon(25, "Coalspike Cleaver", 4.0, 380, 54, false, ItemRarity.MEDIUM, 43, "Coal Dust Cloud", "Coal Dust Cloud strikes with overwhelming force!", 35, 3);
         registerWeapon(26, "Canyon Cleaver", 7.5, 1420, 96, false, ItemRarity.LEGENDARY, 85, "Rock Slide", "Rock Slide strikes with overwhelming force!", 59, 15);
         registerWeapon(27, "Runic Pickaxe", 5.5, 125, 22, false, ItemRarity.LOW, 19, "Rune Strike", "Rune Strike strikes with overwhelming force!", 25, 3);
