@@ -144,12 +144,15 @@ public class Player extends GameCharacter
     {
         if (getEquippedWeapon().getPpCost() > currentPP)
         {
-            IO.println(getName() + " doesn't have enough PP to use " + getEquippedWeapon().getName() + "'s special attack!");
+            String specialName = getEquippedWeapon().getSpecialAttackName().isEmpty() ? "special attack" : getEquippedWeapon().getSpecialAttackName();
+            IO.println(getName() + " doesn't have enough PP to use " + specialName + "!");
             IO.println("Need " + getEquippedWeapon().getPpCost() + " PP, but only have " + currentPP + " PP.");
             return;
         }
 
         currentPP -= getEquippedWeapon().getPpCost();
+        
+        String specialName = getEquippedWeapon().getSpecialAttackName().isEmpty() ? "special attack" : getEquippedWeapon().getSpecialAttackName();
         
         if (!getEquippedWeapon().getSpecialFlavorText().isEmpty())
         {
@@ -157,7 +160,7 @@ public class Player extends GameCharacter
         }
         
         double totalDamage = getDamage() + getEquippedWeapon().getSpecialDamage();
-        IO.println(getName() + " uses " + getEquippedWeapon().getName() + "'s special attack on " + target.getName() + " for " + Math.round(totalDamage) + " damage!");
+        IO.println(getName() + " uses " + specialName + " on " + target.getName() + " for " + Math.round(totalDamage) + " damage!");
         IO.println("PP remaining: " + currentPP);
         
         target.takeDamage(totalDamage);

@@ -9,6 +9,7 @@ public class Weapon extends Item
     private double damage;
     private boolean isMagic;
     private double specialDamage;
+    private String specialAttackName;
     private String specialFlavorText;
     private int ppCost;
 
@@ -27,6 +28,7 @@ public class Weapon extends Item
         setDamage(damage);
         setMagic(isMagic);
         this.specialDamage = 0;
+        this.specialAttackName = "";
         this.specialFlavorText = "";
         this.ppCost = 0;
     }
@@ -47,6 +49,7 @@ public class Weapon extends Item
         setDamage(damage);
         setMagic(isMagic);
         this.specialDamage = 0;
+        this.specialAttackName = "";
         this.specialFlavorText = "";
         this.ppCost = 0;
     }
@@ -61,16 +64,18 @@ public class Weapon extends Item
      * @param isMagic Whether the weapon is magical (scales with intelligence instead of strength)
      * @param rarity The weapon's rarity level
      * @param specialDamage Additional damage dealt by special attack
+     * @param specialAttackName Name of the special attack
      * @param specialFlavorText Flavor text displayed when special is used
      * @param ppCost Power Points required to use special attack
      */
     public Weapon(String name, double weight, double value, double damage, boolean isMagic, ItemRarity rarity,
-                  double specialDamage, String specialFlavorText, int ppCost)
+                  double specialDamage, String specialAttackName, String specialFlavorText, int ppCost)
     {
         super(name, weight, value, rarity);
         setDamage(damage);
         setMagic(isMagic);
         setSpecialDamage(specialDamage);
+        setSpecialAttackName(specialAttackName);
         setSpecialFlavorText(specialFlavorText);
         setPpCost(ppCost);
     }
@@ -155,6 +160,26 @@ public class Weapon extends Item
     public void setSpecialFlavorText(String specialFlavorText)
     {
         this.specialFlavorText = specialFlavorText != null ? specialFlavorText : "";
+    }
+
+    /**
+     * Gets the special attack name.
+     * 
+     * @return Name of the special attack
+     */
+    public String getSpecialAttackName()
+    {
+        return specialAttackName;
+    }
+
+    /**
+     * Sets the special attack name.
+     * 
+     * @param specialAttackName Name of the special attack
+     */
+    public void setSpecialAttackName(String specialAttackName)
+    {
+        this.specialAttackName = specialAttackName != null ? specialAttackName : "";
     }
 
     /**

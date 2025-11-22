@@ -239,10 +239,16 @@ public class TurnUI extends UserInterface
     {
         UIHelper.printSubHeading("Battle Options");
         IO.println("Current PP: " + GameManager.getPlayer().getCurrentPP());
+        
+        String specialName = GameManager.getPlayer().getEquippedWeapon().getSpecialAttackName();
+        if (specialName == null || specialName.isEmpty()) {
+            specialName = "Special";
+        }
+        
         IO.println("1. Attack");
         IO.println("2. Defend");
         IO.println("3. Use Item");
-        IO.println("4. Use Special (" + GameManager.getPlayer().getEquippedWeapon().getPpCost() + " PP)");
+        IO.println("4. " + specialName + " (" + GameManager.getPlayer().getEquippedWeapon().getPpCost() + " PP)");
         IO.println("Select an action by entering the corresponding number.");
     }
 
