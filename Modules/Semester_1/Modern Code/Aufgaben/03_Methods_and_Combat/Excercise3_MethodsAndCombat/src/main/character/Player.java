@@ -1,5 +1,7 @@
 package main.character;
 
+import main.global.GameManager;
+
 /**
  * Represents a player character in the game.
  * Extends GameCharacter with player-specific defaults and functionality.
@@ -31,6 +33,18 @@ public class Player extends GameCharacter
     protected void onDeath()
     {
 
+    }
+
+    /**
+     * Creates a new player with default stats and max health.
+     * Uses DEFAULT_PLAYER_MAX_HEALTH for the max health value and
+     * minimum values for strength, dexterity, and intelligence.
+     *
+     * @param name The player's name
+     */
+    public Player(String name)
+    {
+        this(name, DEFAULT_PLAYER_MAX_HEALTH, GameCharacter.MIN_STAT_VALUE, GameCharacter.MIN_STAT_VALUE, GameCharacter.MIN_STAT_VALUE);
     }
 
     /**

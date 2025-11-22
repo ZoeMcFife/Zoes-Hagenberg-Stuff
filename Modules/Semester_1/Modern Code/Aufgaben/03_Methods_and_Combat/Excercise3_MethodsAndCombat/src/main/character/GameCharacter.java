@@ -712,6 +712,34 @@ public abstract class GameCharacter
     {
         return intelligence;
     }
+
+    /**
+     * Increases the character's strength stat by a specified amount.
+     * @param amount The amount to increase strength by
+     */
+    public void addStrength(int amount)
+    {
+        setStrength(this.strength + amount);
+    }
+
+    /**
+     * Increases the character's dexterity stat by a specified amount.
+     * @param amount The amount to increase dexterity by
+     */
+    public void addDexterity(int amount)
+    {
+        setDexterity(this.dexterity + amount);
+    }
+
+    /**
+     * Increases the character's intelligence stat by a specified amount.
+     * @param amount The amount to increase intelligence by
+     */
+    public void addIntelligence(int amount)
+    {
+        setIntelligence(this.intelligence + amount);
+    }
+
     //endregion
 
     //region Display Box Methods
