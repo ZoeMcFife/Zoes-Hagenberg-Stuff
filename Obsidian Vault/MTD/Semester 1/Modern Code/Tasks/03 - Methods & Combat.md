@@ -1,6 +1,6 @@
-# 03 - Methods & Combat
 #modern_code #methods #combat #game_development
 
+![[MC_UE03_BUNEA 1.pdf]]
 ## 📚 Assignment Reference
 
 ![[combat_system_guide.pdf]]

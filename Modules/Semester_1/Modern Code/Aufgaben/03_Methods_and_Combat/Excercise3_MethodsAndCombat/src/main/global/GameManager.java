@@ -19,10 +19,10 @@ public class GameManager
     public static double DAMAGE_MULTIPLIER_PER_STRENGTH = 0.06;
 
     /** Damage multiplier applied per point of intelligence for magical weapons */
-    public static double DAMAGE_MULTIPLIER_PER_INTELLIGENCE = 0.1;
+    public static double DAMAGE_MULTIPLIER_PER_INTELLIGENCE = 0.2;
 
     /** Dodge chance percentage gained per point of dexterity */
-    public static double DODGE_CHANCE_PER_DEXTERITY = 0.021;
+    public static double DODGE_CHANCE_PER_DEXTERITY = 0.02;
 
     /** Weight carrying capacity granted per point of strength */
     public static final int CARRY_CAPACITY_PER_STRENGTH = 5;

@@ -48,9 +48,15 @@ public class TurnUI extends UserInterface
 
             thinkingPass();
 
+            IO.println();
+
             defensePass();
 
+            IO.println();
+
             actionPass();
+
+            IO.println();
 
             stopDefendingPass();
 
@@ -253,7 +259,7 @@ public class TurnUI extends UserInterface
         
         IO.println("1. Attack");
         IO.println("2. " + specialName + " (" + GameManager.getPlayer().getEquippedWeapon().getPpCost() + " PP)");
-        IO.println("3. Defend");
+        IO.println("3. Defend (+" + GameManager.getPlayer().getEquippedShield().getPpGain() + " PP)" + "(+" + GameManager.getPlayer().getEquippedShield().getDefense() + " DEF)");
         IO.println("4. Use Item");
         IO.println("Select an action by entering the corresponding number.");
     }

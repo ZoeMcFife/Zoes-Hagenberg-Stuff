@@ -1,6 +1,8 @@
 package main.character;
 
 import main.global.GameManager;
+import main.ui.UIHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -123,13 +125,13 @@ public class Player extends GameCharacter
 
     /**
      * Calculates the experience points needed to reach the next level.
-     * Formula: 50 * current level
+     * Formula: 40 * current level
      * 
      * @return Experience points required for next level
      */
     public int getExperienceNeededForNextLevel()
     {
-        return (50 * this.level);
+        return (40 * this.level);
     }
 
     /**
@@ -167,7 +169,7 @@ public class Player extends GameCharacter
         this.availableStatPoints += GameManager.STAT_POINTS_PER_LEVEL;
         setMaxPP(getMaxPP() + GameManager.MAX_PP_INCREASE_PER_LEVEL);
         setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_LEVEL);
-        setHealth(getMaxHealth());
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_LEVEL * 2);
 
         IO.println(getName() + " leveled up to level " + this.level + "!");
     }
@@ -223,6 +225,23 @@ public class Player extends GameCharacter
     }
 
     /**
+     * Calculates the character's total defense value.
+     * Includes shield defense only when actively defending.
+     *
+     * @return Total defense points
+     */
+    @Override
+    public double getCurrentDefense()
+    {
+        if (isDefending())
+        {
+            return (getEquippedArmour().getDefense() + getEquippedShield().getDefense()) + GameManager.PLAYER_BASE_DEFENCE;
+        }
+
+        return getEquippedArmour().getDefense() + GameManager.PLAYER_BASE_DEFENCE;
+    }
+
+    /**
      * Uses the equipped weapon's special attack on a target.
      * Checks if player has enough PP, deducts cost, deals damage, and displays flavor text.
      * 
@@ -230,6 +249,12 @@ public class Player extends GameCharacter
      */
     public void useSpecial(GameCharacter target)
     {
+        if (!target.isAlive())
+        {
+            IO.println(target.getName() + " is already defeated!");
+            return;
+        }
+
         if (getEquippedWeapon().getPpCost() > getCurrentPP())
         {
             String specialName = getEquippedWeapon().getSpecialAttackName().isEmpty() ? "special attack" : getEquippedWeapon().getSpecialAttackName();
@@ -250,6 +275,7 @@ public class Player extends GameCharacter
         double totalDamage = getDamage() + getEquippedWeapon().getSpecialDamage();
         IO.println(getName() + " uses " + specialName + " on " + target.getName() + " for " + Math.round(totalDamage) + " damage!");
         IO.println("PP remaining: " + currentPP);
+        UIHelper.delayMedium();
         
         target.takeDamage(totalDamage);
     }

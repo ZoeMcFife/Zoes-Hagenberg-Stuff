@@ -112,6 +112,6 @@ public class Shield extends Item
     @Override
     public String toString()
     {
-        return getName() + " +" + String.format("%.1f", defense) + " DEF";
+        return getName() + " +" + String.format("%.1f", defense) + " DEF " + ppGain + " PP";
     }
 }

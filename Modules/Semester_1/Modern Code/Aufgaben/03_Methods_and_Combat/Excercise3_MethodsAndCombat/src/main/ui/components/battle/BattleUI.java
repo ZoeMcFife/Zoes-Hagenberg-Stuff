@@ -60,7 +60,6 @@ public class BattleUI extends UserInterface
             lootUI.startUI();
             UIHelper.waitForEnterKey();
         }
-
     }
 
     /**

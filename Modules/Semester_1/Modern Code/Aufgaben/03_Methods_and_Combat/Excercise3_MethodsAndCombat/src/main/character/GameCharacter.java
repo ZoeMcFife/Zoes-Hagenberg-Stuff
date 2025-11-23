@@ -362,12 +362,12 @@ public abstract class GameCharacter
      */
     public double getCurrentDefense()
     {
-        if (isDefending)
+        if (isDefending())
         {
-            return (equippedArmour.getDefense() + equippedShield.getDefense()) + GameManager.PLAYER_BASE_DEFENCE;
+            return (getEquippedArmour().getDefense() + getEquippedShield().getDefense());
         }
 
-        return equippedArmour.getDefense() + GameManager.PLAYER_BASE_DEFENCE;
+        return getEquippedArmour().getDefense();
     }
 
     /**
@@ -502,7 +502,7 @@ public abstract class GameCharacter
         double damageTaken = Math.max(damage - getCurrentDefense(), 0);
         IO.println(getName() + " takes " + Math.round(damageTaken) + " damage!");
 
-        getEquippedArmour().reduceDurability(damageTaken);
+        getEquippedArmour().reduceDurability(damage - getEquippedArmour().getDefense());
 
         health -= damageTaken;
         if (health < 0)
@@ -619,7 +619,7 @@ public abstract class GameCharacter
      */
     public CharacterStatus getStatus()
     {
-        if (getHealthPercentage() == 1)
+        if (getHealthPercentage() > 0.95)
         {
             return CharacterStatus.ALIVE;
         }
