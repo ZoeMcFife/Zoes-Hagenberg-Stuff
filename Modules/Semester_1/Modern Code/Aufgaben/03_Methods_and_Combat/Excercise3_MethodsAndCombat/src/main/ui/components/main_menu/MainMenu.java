@@ -26,19 +26,6 @@ public class MainMenu extends UserInterface
     @Override
     public void startUI()
     {
-        Player player = new Player("Player");
-        GameManager.setPlayer(player);
-        player.equipItem(WeaponFactory.createRandomWeaponByRarity(ItemRarity.LEGENDARY), false);
-        player.equipItem(ArmourFactory.createRandomArmourByRarity(ItemRarity.LEGENDARY), false);
-        player.equipItem(ShieldFactory.createRandomShieldByRarity(ItemRarity.LEGENDARY), false);
-        player.addItemsToInventory(HealingPotionFactory.createRandomPotion(), HealingPotionFactory.createRandomPotion(), HealingPotionFactory.createRandomPotion());
-        GameManager.difficulty = Difficulty.HARD;
-
-        player.addExperience(10000);
-        player.addStrength(10);
-        player.addDexterity(10);
-        player.addIntelligence(10);
-
         while(true)
         {
             UIHelper.displayLogo();
