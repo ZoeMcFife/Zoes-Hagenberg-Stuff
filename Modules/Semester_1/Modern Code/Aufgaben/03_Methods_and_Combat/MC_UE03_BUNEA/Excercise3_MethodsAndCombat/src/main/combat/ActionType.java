@@ -1,0 +1,22 @@
+package main.combat;
+
+/**
+ * Enumeration of possible actions a character can take during combat.
+ */
+public enum ActionType
+{
+    /** Attack the opponent to deal damage */
+    ATTACK,
+    
+    /** Take a defensive stance to reduce incoming damage */
+    DEFEND,
+    
+    /** Use a healing item to restore health */
+    USE_ITEM,
+    
+    /** Use a special attack with the equipped weapon */
+    USE_SPECIAL,
+    
+    /** Character chooses to end their own life */
+    SUICIDE
+}
