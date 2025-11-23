@@ -48,6 +48,7 @@ public abstract class GameCharacter
     /** Indicates whether the character is currently in a defensive stance */
     private boolean isDefending = false;
 
+    /** The character's inventory for storing and managing items */
     private final Inventory inventory = new Inventory(this);
 
     //endregion
@@ -314,6 +315,12 @@ public abstract class GameCharacter
     //endregion
 
     //region Combat Methods
+    /**
+     * Performs a dodge roll to determine if the character evades an incoming attack.
+     * Dodge chance is based on the character's dexterity stat.
+     * 
+     * @return true if the dodge is successful, false otherwise
+     */
     public boolean dodgeRoll()
     {
         double dodgeChance = dexterity * GameManager.DODGE_CHANCE_PER_DEXTERITY;
@@ -395,6 +402,14 @@ public abstract class GameCharacter
         target.takeDamage(getDamage());
     }
 
+    /**
+     * Attacks another character with option to ignore defense.
+     * Does not attack if the target is already dead.
+     * If ignoring defense, damage bypasses armor and dodge rolls.
+     * 
+     * @param target The character to attack
+     * @param ignoreDefense If true, bypasses defense and dodge mechanics
+     */
     public void attack(GameCharacter target, boolean ignoreDefense)
     {
         if (!target.isAlive())

@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class Enemy extends GameCharacter
 {
+    /** Experience points rewarded to the player when this enemy is defeated */
     public int experienceReward;
 
     /**
@@ -54,6 +55,10 @@ public class Enemy extends GameCharacter
         equipItem(shield, false, false);
     }
 
+    /**
+     * Called when the enemy dies.
+     * Awards experience points to the player.
+     */
     @Override
     protected void onDeath()
     {
@@ -78,6 +83,7 @@ public class Enemy extends GameCharacter
 
     /**
      * Uses a random healing item from the enemy's inventory.
+     * Randomly selects one healing potion and uses it to restore health.
      */
     public void useHealingItem()
     {
@@ -181,9 +187,9 @@ public class Enemy extends GameCharacter
     }
 
     /**
-     * randomly determines if the enemy will commit suicide.
-     * why did I bother implementing this?
-     *
+     * Randomly determines if the enemy will commit suicide.
+     * This is a rare random event with 0.5% chance.
+     * 
      * @return true if the enemy will suicide, false otherwise
      */
     private boolean randomSuicideTrigger()

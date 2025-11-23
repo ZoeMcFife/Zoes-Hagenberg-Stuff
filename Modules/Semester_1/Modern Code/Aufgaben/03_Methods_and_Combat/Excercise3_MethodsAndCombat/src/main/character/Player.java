@@ -10,14 +10,25 @@ import java.util.List;
  */
 public class Player extends GameCharacter
 {
+    /** The player's current level, starts at 1 and increases through experience */
     private int level = 1;
+    
+    /** The player's current experience points toward the next level */
     private int experience = 0;
+    
+    /** Stat points available to spend on improving character attributes */
     private int availableStatPoints = 0;
+    
+    /** The player's current Power Points (PP) used for special attacks */
     private int currentPP = 0;
+    
+    /** The player's maximum Power Points capacity */
     private int maxPP = 100;
 
     /** Default maximum health for all player characters */
     public static double DEFAULT_PLAYER_MAX_HEALTH = 100.0;
+    
+    /** Default maximum Power Points for all player characters */
     public static int DEFAULT_PLAYER_MAX_PP = 100;
 
     /**
@@ -35,6 +46,10 @@ public class Player extends GameCharacter
         this.setMaxPP(DEFAULT_PLAYER_MAX_PP);
     }
 
+    /**
+     * Called when the player dies.
+     * Currently has no implementation (empty method).
+     */
     @Override
     protected void onDeath()
     {
@@ -67,16 +82,32 @@ public class Player extends GameCharacter
         this(name, DEFAULT_PLAYER_MAX_HEALTH, strength, dexterity, intelligence);
     }
 
+    /**
+     * Gets the player's current level.
+     * 
+     * @return The current level
+     */
     public int getLevel()
     {
         return this.level;
     }
 
+    /**
+     * Gets the player's current experience points.
+     * 
+     * @return The current experience points
+     */
     public int getExperience()
     {
         return this.experience;
     }
 
+    /**
+     * Adds experience points to the player and handles level-ups.
+     * Automatically levels up when enough experience is gained.
+     * 
+     * @param exp The amount of experience to add
+     */
     public void addExperience(int exp)
     {
         this.experience += exp;
@@ -90,16 +121,31 @@ public class Player extends GameCharacter
         }
     }
 
+    /**
+     * Calculates the experience points needed to reach the next level.
+     * Formula: 50 * current level
+     * 
+     * @return Experience points required for next level
+     */
     public int getExperienceNeededForNextLevel()
     {
         return (50 * this.level);
     }
 
+    /**
+     * Gets the number of stat points available to spend.
+     * 
+     * @return Available stat points
+     */
     public int getAvailableStatPoints()
     {
         return this.availableStatPoints;
     }
 
+    /**
+     * Spends one stat point.
+     * Decreases available stat points by 1, with a minimum of 0.
+     */
     public void spendStatPoint()
     {
         this.availableStatPoints -= 1;
@@ -110,6 +156,11 @@ public class Player extends GameCharacter
         }
     }
 
+    /**
+     * Levels up the player character.
+     * Increases level, grants stat points, increases max PP and health, and fully heals the player.
+     * Private method called automatically when enough experience is gained.
+     */
     private void levelUp()
     {
         this.level += 1;
@@ -203,6 +254,12 @@ public class Player extends GameCharacter
         target.takeDamage(totalDamage);
     }
 
+    /**
+     * Generates and returns the player's display box with additional information.
+     * Overrides the base implementation to include level and armour status.
+     * 
+     * @return List of strings representing the player's display box
+     */
     @Override
     public List<String> getDisplayBox()
     {

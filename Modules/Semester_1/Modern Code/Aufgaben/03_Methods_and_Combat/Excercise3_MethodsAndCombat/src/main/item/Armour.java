@@ -110,6 +110,12 @@ public class Armour extends Item
         this.defense = Math.max(0, defense);
     }
 
+    /**
+     * Gets the current state of the armour based on its durability percentage.
+     * States range from PRISTINE (>= 95%) to BROKEN (< 10%).
+     * 
+     * @return The current armour state
+     */
     public ArmourState getState()
     {
         double durabilityRatio = durability / maxDurability;
