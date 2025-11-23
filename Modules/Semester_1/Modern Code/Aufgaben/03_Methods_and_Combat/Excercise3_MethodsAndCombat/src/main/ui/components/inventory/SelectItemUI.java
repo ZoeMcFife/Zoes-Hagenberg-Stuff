@@ -5,10 +5,17 @@ import main.item.HealingPotion;
 import main.ui.UserInterface;
 import main.ui.UIHelper;
 
+/**
+ * UI screen for selecting items from a character's inventory.
+ * Provides static methods for item selection with various filters.
+ */
 public class SelectItemUI extends ItemUsageUI
 {
     /**
-     * This method is unsupported for this UI component. Use itemSelection(Inventory) instead.
+     * This method is unsupported for this UI component.
+     * Use static itemSelection methods instead.
+     * 
+     * @throws UnsupportedOperationException always
      */
     @Override
     public void startUI()

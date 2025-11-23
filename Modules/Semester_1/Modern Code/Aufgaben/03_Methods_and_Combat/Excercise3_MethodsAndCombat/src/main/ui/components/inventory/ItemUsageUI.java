@@ -3,8 +3,16 @@ package main.ui.components.inventory;
 import main.global.GameManager;
 import main.ui.UserInterface;
 
+/**
+ * Abstract base class for UI screens that perform actions on inventory items.
+ * Provides common utility methods for checking inventory state.
+ */
 public abstract class ItemUsageUI extends UserInterface
 {
+    /**
+     * Base implementation does nothing.
+     * Subclasses must override to provide specific functionality.
+     */
     @Override
     public void startUI()
     {

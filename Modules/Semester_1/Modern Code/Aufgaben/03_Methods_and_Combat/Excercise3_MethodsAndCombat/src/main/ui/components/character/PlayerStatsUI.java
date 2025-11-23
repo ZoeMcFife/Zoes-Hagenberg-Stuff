@@ -6,10 +6,19 @@ import main.ui.UserInterface;
 import main.ui.UIHelper;
 import main.ui.components.inventory.DisplayInventoryUI;
 
+/**
+ * UI screen for displaying comprehensive player character statistics.
+ * Shows information, stats, equipment, and inventory details.
+ */
 public class PlayerStatsUI extends UserInterface
 {
+    /** The player character whose stats are being displayed */
     Player player = GameManager.getPlayer();
 
+    /**
+     * Starts the player stats display interface.
+     * Shows all player information and waits for confirmation.
+     */
     @Override
     public void startUI()
     {
@@ -23,6 +32,9 @@ public class PlayerStatsUI extends UserInterface
         UIHelper.waitForEnterKey();
     }
 
+    /**
+     * Displays basic player information including name, level, and experience.
+     */
     private void displayPlayerInformation()
     {
         UIHelper.printHeading("Information");
@@ -31,6 +43,9 @@ public class PlayerStatsUI extends UserInterface
         IO.println("Experience: \t" + player.getExperience() + "/" + player.getExperienceNeededForNextLevel());
     }
 
+    /**
+     * Displays player combat and attribute statistics.
+     */
     private void displayPlayerStats()
     {
         UIHelper.printHeading("Stats");
@@ -42,6 +57,9 @@ public class PlayerStatsUI extends UserInterface
         IO.println("Intelligence: \t\t" + player.getIntelligence());
     }
 
+    /**
+     * Displays player's currently equipped items and their stats.
+     */
     private void displayPlayerEquipment()
     {
         UIHelper.printHeading("Equipment");
@@ -56,6 +74,9 @@ public class PlayerStatsUI extends UserInterface
         player.getEquippedShield().printItemStats();
     }
 
+    /**
+     * Displays player's inventory contents.
+     */
     private void displayPlayerInventory()
     {
         UIHelper.printHeading("Inventory");
