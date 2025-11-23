@@ -48,9 +48,15 @@ public class TurnUI extends UserInterface
 
             thinkingPass();
 
+            IO.println();
+
             defensePass();
 
+            IO.println();
+
             actionPass();
+
+            IO.println();
 
             stopDefendingPass();
 
