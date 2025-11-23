@@ -136,9 +136,9 @@ void allocateStatPoint(String stat)
 void gainPP(int amount)
 boolean hasEnoughPP(int cost)
 
-// Constants
-double DEFAULT_PLAYER_MAX_HEALTH = 100.0
-int DEFAULT_PLAYER_MAX_PP = 100
+// Default constants (class-level)
+static double DEFAULT_PLAYER_MAX_HEALTH = 100.0
+static int DEFAULT_PLAYER_MAX_PP = 100
 ```
 
 ### Enemy Class
@@ -507,9 +507,11 @@ public void useSpecial(GameCharacter target) {
 
 **Stat Allocation:**
 Players can spend points on:
-- **Strength** → +18 max HP, +damage, +carry capacity
+- **Strength** → +18 max HP, +physical damage, +carry capacity
 - **Intelligence** → +10 max HP, +magic damage
-- **Dexterity** → +10 max HP, +dodge chance, +turn order
+- **Dexterity** → +10 max HP, +dodge chance, faster turn order
+
+*Note: While Intelligence and Dexterity provide the same HP bonus (+10), they have different primary combat benefits.*
 
 ### Health Scaling
 ```java
@@ -743,7 +745,7 @@ public void setStrength(int strength) {
 - 17 armor pieces
 - 21 healing potions
 
-**Lines of Code:** ~5000+ (estimated)
+**Architecture:** Modular, object-oriented design with comprehensive test coverage
 
 ---
 
