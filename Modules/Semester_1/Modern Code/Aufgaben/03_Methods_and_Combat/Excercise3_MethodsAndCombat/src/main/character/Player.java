@@ -1,6 +1,8 @@
 package main.character;
 
 import main.global.GameManager;
+import main.ui.UIHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -230,6 +232,12 @@ public class Player extends GameCharacter
      */
     public void useSpecial(GameCharacter target)
     {
+        if (!target.isAlive())
+        {
+            IO.println(target.getName() + " is already defeated!");
+            return;
+        }
+
         if (getEquippedWeapon().getPpCost() > getCurrentPP())
         {
             String specialName = getEquippedWeapon().getSpecialAttackName().isEmpty() ? "special attack" : getEquippedWeapon().getSpecialAttackName();
@@ -250,6 +258,7 @@ public class Player extends GameCharacter
         double totalDamage = getDamage() + getEquippedWeapon().getSpecialDamage();
         IO.println(getName() + " uses " + specialName + " on " + target.getName() + " for " + Math.round(totalDamage) + " damage!");
         IO.println("PP remaining: " + currentPP);
+        UIHelper.delayMedium();
         
         target.takeDamage(totalDamage);
     }
