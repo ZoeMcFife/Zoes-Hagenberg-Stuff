@@ -162,7 +162,7 @@ public class WeaponFactory
         registerWeapon(99, "Lionheart Edge", 5.5, 820, 83, false, ItemRarity.HIGH, 67, "Lion's Roar", "Lion's Roar strikes with overwhelming force!", 49, 19);
         registerWeapon(100, "Dragonfang", 3.5, 1540, 118, false, ItemRarity.LEGENDARY, 105, "Dragon's Rage", "Dragon's Rage strikes with overwhelming force!", 59, 23);
         registerWeapon(101, "PP Blade", 5, 15400000, 130, false, ItemRarity.LEGENDARY, 160, "PP Special", "The PP surges through your veins.", 100, 27);
-        registerWeapon(102, "PP Knife", 3, 154000, 50, false, ItemRarity.MEDIUM, 69, "PP Special Lite", "PP is flowing your veins.", 50, 20);
+        registerWeapon(102, "PP Knife", 3, 154000, 50, false, ItemRarity.MEDIUM, 69, "PP Special Lite", "PP is flowing through your veins.", 50, 20);
         registerWeapon(103, "Hammer of Glory", 5, 999999999, 150, false, ItemRarity.LEGENDARY, 666, "Heavy Metal Darklord Crasher", "You channel your wrath to make your enemies head explode with fury! Hail Hoots!", 160, 35);
     }
 
