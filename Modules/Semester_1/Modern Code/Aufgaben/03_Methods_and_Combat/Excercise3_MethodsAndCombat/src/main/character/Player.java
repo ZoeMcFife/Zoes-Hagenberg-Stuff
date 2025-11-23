@@ -169,7 +169,7 @@ public class Player extends GameCharacter
         this.availableStatPoints += GameManager.STAT_POINTS_PER_LEVEL;
         setMaxPP(getMaxPP() + GameManager.MAX_PP_INCREASE_PER_LEVEL);
         setMaxHealth(getMaxHealth() + GameManager.HEALTH_INCREASE_PER_LEVEL);
-        setHealth(getMaxHealth());
+        setHealth(getHealth() + GameManager.HEALTH_INCREASE_PER_LEVEL * 2);
 
         IO.println(getName() + " leveled up to level " + this.level + "!");
     }
