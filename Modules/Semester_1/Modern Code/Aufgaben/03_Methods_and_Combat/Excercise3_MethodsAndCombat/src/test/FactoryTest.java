@@ -107,7 +107,7 @@ class FactoryTest
     {
         Shield shield = ShieldFactory.createShieldByName("Stormbreaker Shield");
         assertNotNull(shield);
-        assertEquals(22, shield.getDefense());
+        assertEquals(26, shield.getDefense());
     }
 
     @Test

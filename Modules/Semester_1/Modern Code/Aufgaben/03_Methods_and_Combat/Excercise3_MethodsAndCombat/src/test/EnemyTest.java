@@ -101,7 +101,7 @@ class EnemyTest
         int initialExp = testPlayer.getExperience();
         
         // Kill the enemy
-        testEnemy.setHealth(0);
+        testEnemy.takeDamage(1000000); // Overkill to ensure death
         
         // Experience should be granted
         assertEquals(initialExp + testEnemy.experienceReward, testPlayer.getExperience());

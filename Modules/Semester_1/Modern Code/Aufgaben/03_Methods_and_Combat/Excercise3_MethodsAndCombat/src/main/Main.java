@@ -2,7 +2,12 @@ package main;
 
 import main.ui.components.main_menu.MainMenu;
 
-
+/*
+ * Unit Tests were automatically generated with copilot so they're kinda useless.
+ * Factory Classes were also generated with copilot.
+ * the rest is pretty much just me. Did have copilot help out due to time constraints.
+ * not my finest work but it works.
+ */
 
 /**
  * Main entry point for the game application.
