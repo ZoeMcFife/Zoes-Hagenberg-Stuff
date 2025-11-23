@@ -11,8 +11,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates battle encounters with enemies based on danger level.
+ * Determines the number of enemies to spawn for each danger level.
+ */
 public class BattleGenerator
 {
+    /**
+     * Creates a new battle with enemies appropriate for the specified danger level.
+     * 
+     * @param dangerLevel The danger level determining enemy count and strength
+     * @return A new battle instance with generated enemies
+     */
     public static Battle generateBattle(DangerLevel dangerLevel)
     {
         int numberOfEnemies = getEnemyCountForDangerLevel(dangerLevel);
@@ -25,13 +35,16 @@ public class BattleGenerator
             enemies.add(enemy);
         }
 
-        Battle battle = new Battle();
-
-        battle.setEnemies(enemies);
-
-        return battle;
+        return new Battle(enemies, GameManager.getPlayer());
     }
 
+    /**
+     * Determines a random number of enemies based on danger level.
+     * Higher danger levels allow for more enemies.
+     * 
+     * @param dangerLevel The danger level
+     * @return Random number of enemies within the range for that danger level
+     */
     private static int getEnemyCountForDangerLevel(DangerLevel dangerLevel)
     {
         Random random = new Random();
@@ -46,6 +59,13 @@ public class BattleGenerator
         };
     }
 
+    /**
+     * Generates a random integer within the specified range (inclusive).
+     * 
+     * @param min Minimum value (inclusive)
+     * @param max Maximum value (inclusive)
+     * @return Random integer between min and max
+     */
     private static int getRandomIntInRange(int min, int max)
     {
         Random random = new Random();

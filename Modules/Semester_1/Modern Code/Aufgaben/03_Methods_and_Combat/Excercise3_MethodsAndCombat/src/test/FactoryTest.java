@@ -18,7 +18,7 @@ class FactoryTest
         assertEquals("Abyssal Marauder", enemy.getName());
         assertEquals(60, enemy.getMaxHealth());
         assertEquals(5, enemy.getStrength());
-        assertEquals(14, enemy.getDexterity());
+        assertEquals(6, enemy.getDexterity());
         assertEquals(6, enemy.getIntelligence());
     }
 
@@ -107,7 +107,7 @@ class FactoryTest
     {
         Shield shield = ShieldFactory.createShieldByName("Stormbreaker Shield");
         assertNotNull(shield);
-        assertEquals(22, shield.getDefense());
+        assertEquals(26, shield.getDefense());
     }
 
     @Test
@@ -151,7 +151,7 @@ class FactoryTest
         HealingPotion potion = HealingPotionFactory.createPotionById(1);
         assertNotNull(potion);
         assertEquals("Small Health Potion", potion.getName());
-        assertEquals(20, potion.getHealingAmount());
+        assertEquals(35, potion.getHealingAmount());
     }
 
     @Test
@@ -159,7 +159,7 @@ class FactoryTest
     {
         HealingPotion potion = HealingPotionFactory.createPotionByName("Emergency Tonic");
         assertNotNull(potion);
-        assertEquals(50, potion.getHealingAmount());
+        assertEquals(120, potion.getHealingAmount());
         assertEquals(ItemRarity.HIGH, potion.getRarity());
     }
 
@@ -175,9 +175,9 @@ class FactoryTest
     void testAllFactoryCounts()
     {
         assertEquals(50, EnemyFactory.getEnemyCount());
-        assertEquals(23, WeaponFactory.getWeaponCount());
-        assertEquals(6, ShieldFactory.getShieldCount());
-        assertEquals(17, ArmourFactory.getArmourCount());
-        assertEquals(21, HealingPotionFactory.getPotionCount());
+        assertEquals(24, WeaponFactory.getWeaponCount());
+        assertEquals(7, ShieldFactory.getShieldCount());
+        assertEquals(18, ArmourFactory.getArmourCount());
+        assertEquals(77, HealingPotionFactory.getPotionCount());
     }
 }
