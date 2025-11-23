@@ -237,7 +237,7 @@ public class Weapon extends Item
         IO.println("Damage:\t" + String.format("%.1f", damage));
         IO.println("Is Magic:\t" + isMagic);
         IO.println("Special: " + specialAttackName);
-        IO.println("Special Damage:\t" + String.format("%.1f", specialDamage));
+        IO.println("PP Damage:\t" + String.format("%.1f", specialDamage));
     }
 
     @Override
