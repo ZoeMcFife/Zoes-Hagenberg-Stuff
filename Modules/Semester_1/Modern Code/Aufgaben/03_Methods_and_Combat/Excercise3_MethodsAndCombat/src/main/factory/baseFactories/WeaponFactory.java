@@ -161,6 +161,7 @@ public class WeaponFactory
         registerWeapon(98, "Nightfang", 3.0, 350, 55, false, ItemRarity.MEDIUM, 44, "Night Fang", "Night Fang strikes with overwhelming force!", 36, 8);
         registerWeapon(99, "Lionheart Edge", 5.5, 820, 83, false, ItemRarity.HIGH, 67, "Lion's Roar", "Lion's Roar strikes with overwhelming force!", 49, 19);
         registerWeapon(100, "Dragonfang", 3.5, 1540, 118, false, ItemRarity.LEGENDARY, 105, "Dragon's Rage", "Dragon's Rage strikes with overwhelming force!", 59, 23);
+        registerWeapon(101, "PP Blade", 5, 15400000, 300, false, ItemRarity.LEGENDARY, 600, "PP Special", "The PP surges through your veins.", 100, 30);
 
     }
 
