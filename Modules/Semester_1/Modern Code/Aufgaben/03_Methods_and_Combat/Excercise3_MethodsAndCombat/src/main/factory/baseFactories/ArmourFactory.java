@@ -147,6 +147,7 @@ public class ArmourFactory
         registerArmour(98, "Shadowguard Vest", 8.5, 450, 34, 6015, ItemRarity.MEDIUM);
         registerArmour(99, "Lionheart Plate", 9.0, 460, 36, 6300, ItemRarity.MEDIUM);
         registerArmour(100, "Falconwing Armor", 7.5, 420, 32, 5700, ItemRarity.MEDIUM);
+        registerArmour(101, "Satanic Loincloth", 3.0, 500, 30, 3000, ItemRarity.MEDIUM);
 
     }
 
