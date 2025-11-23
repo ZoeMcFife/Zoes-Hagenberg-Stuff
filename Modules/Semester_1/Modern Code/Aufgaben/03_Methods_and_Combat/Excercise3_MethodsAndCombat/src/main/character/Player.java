@@ -125,13 +125,13 @@ public class Player extends GameCharacter
 
     /**
      * Calculates the experience points needed to reach the next level.
-     * Formula: 50 * current level
+     * Formula: 40 * current level
      * 
      * @return Experience points required for next level
      */
     public int getExperienceNeededForNextLevel()
     {
-        return (50 * this.level);
+        return (40 * this.level);
     }
 
     /**
