@@ -90,7 +90,7 @@ The abstract base class for all characters in the game.
 **Equipment Slots:**
 - Weapon (default: Fists)
 - Shield (default: Fists)
-- Armor (default: Torn Rags)
+- Armor (default: Clothes)
 
 **Key Methods:**
 ```java
@@ -172,7 +172,7 @@ Health status indicators:
 
 ```
 ┌─────────────────────────────────────┐
-│  1. Battle Initialization          │
+│  1. Battle Initialization           │
 │     - Generate enemies              │
 │     - Order by dexterity            │
 └──────────────┬──────────────────────┘
@@ -530,30 +530,14 @@ maxHealth = 100  // Base
 1. **Easy**
    - More turns before difficulty increase (12)
    - More loot items (8)
-   - Easier encounters
 
 2. **Medium** (Balanced)
    - Moderate turn threshold (6)
    - Standard loot (5)
-   - Balanced encounters
 
-3. **Hard**
+1. **Hard**
    - Quick difficulty scaling (3)
    - Limited loot (3)
-   - Challenging encounters
-
-### Dynamic Difficulty
-As battles progress, enemy danger levels increase:
-```
-HARMLESS → MOSTLY_HARMLESS → DANGEROUS → EXTREME → DEATH
-```
-
-Max enemies per battle scales with danger:
-- HARMLESS: 1 enemy
-- MOSTLY_HARMLESS: 1 enemy
-- DANGEROUS: 2 enemies
-- EXTREME: 3 enemies
-- DEATH: 4 enemies
 
 ---
 
