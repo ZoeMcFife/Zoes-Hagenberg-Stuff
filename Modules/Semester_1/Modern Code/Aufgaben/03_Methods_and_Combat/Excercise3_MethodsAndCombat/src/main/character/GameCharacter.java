@@ -362,7 +362,7 @@ public abstract class GameCharacter
      */
     public double getCurrentDefense()
     {
-        if (isDefending)
+        if (isDefending())
         {
             return (equippedArmour.getDefense() + equippedShield.getDefense()) + GameManager.PLAYER_BASE_DEFENCE;
         }
