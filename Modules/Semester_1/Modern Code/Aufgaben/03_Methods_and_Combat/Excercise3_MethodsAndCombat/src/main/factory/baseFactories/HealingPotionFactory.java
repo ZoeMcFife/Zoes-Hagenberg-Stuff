@@ -116,7 +116,7 @@ public class HealingPotionFactory
         registerPotion(74, "Divine Vitality Draught",    3.8, 90, 295, ItemRarity.LEGENDARY);
         registerPotion(75, "Arcane Health Tonic",       4.0, 95, 200, ItemRarity.LEGENDARY);
         registerPotion(76, "Cute cat bandaid",        0.1, 5, 25, ItemRarity.LOW);
-        registerPotion(77, "Pure PP Canister",       5.0, 1000, 250, ItemRarity.LEGENDARY);
+        registerPotion(77, "Pure PP Canister",       5.0, 1000, 320, ItemRarity.LEGENDARY);
     }
 
     private static void registerPotion(int id, String name, double weight, double value, double healingAmount, ItemRarity rarity)
