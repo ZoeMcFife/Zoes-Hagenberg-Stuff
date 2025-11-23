@@ -225,6 +225,23 @@ public class Player extends GameCharacter
     }
 
     /**
+     * Calculates the character's total defense value.
+     * Includes shield defense only when actively defending.
+     *
+     * @return Total defense points
+     */
+    @Override
+    public double getCurrentDefense()
+    {
+        if (isDefending())
+        {
+            return (getEquippedArmour().getDefense() + getEquippedShield().getDefense()) + GameManager.PLAYER_BASE_DEFENCE;
+        }
+
+        return getEquippedArmour().getDefense() + GameManager.PLAYER_BASE_DEFENCE;
+    }
+
+    /**
      * Uses the equipped weapon's special attack on a target.
      * Checks if player has enough PP, deducts cost, deals damage, and displays flavor text.
      * 

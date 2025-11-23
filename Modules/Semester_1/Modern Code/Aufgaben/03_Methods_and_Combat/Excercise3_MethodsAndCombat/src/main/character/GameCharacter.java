@@ -364,10 +364,10 @@ public abstract class GameCharacter
     {
         if (isDefending())
         {
-            return (equippedArmour.getDefense() + equippedShield.getDefense()) + GameManager.PLAYER_BASE_DEFENCE;
+            return (getEquippedArmour().getDefense() + getEquippedShield().getDefense());
         }
 
-        return equippedArmour.getDefense() + GameManager.PLAYER_BASE_DEFENCE;
+        return getEquippedArmour().getDefense();
     }
 
     /**
