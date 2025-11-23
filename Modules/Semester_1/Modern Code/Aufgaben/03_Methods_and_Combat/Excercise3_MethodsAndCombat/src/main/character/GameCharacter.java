@@ -619,7 +619,7 @@ public abstract class GameCharacter
      */
     public CharacterStatus getStatus()
     {
-        if (getHealthPercentage() == 1)
+        if (getHealthPercentage() > 0.95)
         {
             return CharacterStatus.ALIVE;
         }
