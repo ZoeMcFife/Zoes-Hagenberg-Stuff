@@ -2,6 +2,8 @@ package main;
 
 import main.ui.components.main_menu.MainMenu;
 
+
+
 /**
  * Main entry point for the game application.
  * Initializes and starts the game through the main menu.
