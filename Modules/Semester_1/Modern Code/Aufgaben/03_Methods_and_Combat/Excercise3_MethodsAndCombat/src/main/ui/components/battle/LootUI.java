@@ -10,12 +10,27 @@ import main.ui.UserInterface;
 
 import java.util.List;
 
+/**
+ * UI screen for managing post-battle looting.
+ * Allows players to select items from defeated enemies within a limited number of picks.
+ */
 public class LootUI extends UserInterface
 {
+    /** List of items available to loot */
     private final List<Item> loot;
+    
+    /** Number of items the player can still loot based on difficulty */
     private int lootableItemsLeft;
+    
+    /** Flag to exit looting early */
     private boolean stopLooting = false;
 
+    /**
+     * Creates a new loot UI with the specified items.
+     * The number of lootable items is limited by game difficulty.
+     * 
+     * @param loot List of items dropped by defeated enemies
+     */
     public LootUI(List<Item> loot)
     {
         this.loot = loot;
@@ -27,6 +42,10 @@ public class LootUI extends UserInterface
         }
     }
 
+    /**
+     * Starts the looting interface.
+     * Continues until all lootable items are claimed or player exits.
+     */
     @Override
     public void startUI()
     {
@@ -41,6 +60,10 @@ public class LootUI extends UserInterface
         }
     }
 
+    /**
+     * Prompts the player to select and loot a single item.
+     * Checks carry capacity before adding item to inventory.
+     */
     private void lootItem()
     {
         displayLootItems();
@@ -69,6 +92,10 @@ public class LootUI extends UserInterface
         }
     }
 
+    /**
+     * Displays the list of lootable items with comparison to equipped items.
+     * Shows weight and stat comparisons for weapons, armour, and shields.
+     */
     private void displayLootItems()
     {
         IO.println("Lootable Items:");
@@ -132,11 +159,17 @@ public class LootUI extends UserInterface
         
     }
 
+    /**
+     * Displays the prompt asking the player to select an item.
+     */
     private void displayLootPrompt()
     {
         IO.println("Select an item to loot!");
     }
 
+    /**
+     * Displays the loot screen header with ASCII art and remaining loot count.
+     */
     private void displayLootHeader()
     {
         IO.println(".____    ________   ___________________\n" +

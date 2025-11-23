@@ -10,10 +10,19 @@ import main.ui.components.inventory.DropItemUI;
 import main.ui.components.inventory.EquipItemUI;
 import main.ui.components.inventory.UseItemUI;
 
+/**
+ * UI screen for resting between battles.
+ * Allows players to manage inventory, use stat points, and prepare for the next encounter.
+ */
 public class RestUI extends UserInterface
 {
+    /** Flag controlling whether the player is still in rest mode */
     private boolean isResting = true;
 
+    /**
+     * Starts the rest interface.
+     * Continues until player chooses to continue journey or give up.
+     */
     @Override
     public void startUI()
     {
@@ -27,17 +36,26 @@ public class RestUI extends UserInterface
         }
     }
 
+    /**
+     * Displays the player's character box with current stats.
+     */
     private void displayPlayer()
     {
         UIHelper.displayPlayer(GameManager.getPlayer());
     }
 
+    /**
+     * Opens the player stats viewing screen.
+     */
     private void displayCurrentPlayerStats()
     {
         PlayerStatsUI playerStatsUI = new PlayerStatsUI();
         playerStatsUI.startUI();
     }
 
+    /**
+     * Processes the player's menu selection and executes the corresponding action.
+     */
     private void selectOption()
     {
         int choice = UIHelper.getIntInput(1, 7);
@@ -85,7 +103,9 @@ public class RestUI extends UserInterface
         }
     }
 
-    /** Displays the options available to the player after surviving a battle. */
+    /**
+     * Displays the options available to the player after surviving a battle.
+     */
     private void displayOptions()
     {
         UIHelper.printSubHeading("You have survived the battle!");
@@ -99,7 +119,9 @@ public class RestUI extends UserInterface
         IO.println("Select an action by entering the corresponding number.");
     }
 
-    /** Displays the "REST" title in ASCII art. */
+    /**
+     * Displays the "REST" title in ASCII art.
+     */
     private void displayRestTitle()
     {
         IO.println("  _____  ______  _____ _______ \n" +

@@ -181,16 +181,25 @@ public class UIHelper
         IO.readln("Press Enter to continue...");
     }
 
+    /**
+     * Pauses execution for a short duration based on GameManager.DELAY_SHORT.
+     */
     public static void delayShort()
     {
         delay(GameManager.DELAY_SHORT);
     }
 
+    /**
+     * Pauses execution for a medium duration based on GameManager.DELAY_MEDIUM.
+     */
     public static void delayMedium()
     {
         delay(GameManager.DELAY_MEDIUM);
     }
 
+    /**
+     * Pauses execution for a long duration based on GameManager.DELAY_LONG.
+     */
     public static void delayLong()
     {
         delay(GameManager.DELAY_LONG);

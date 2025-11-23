@@ -3,8 +3,16 @@ package main.ui.components.inventory;
 import main.ui.UIHelper;
 import main.ui.UserInterface;
 
+/**
+ * UI screen for selecting an action to perform on inventory items.
+ * Provides options to use, equip, or drop items.
+ */
 public class ItemActionSelectionUI extends UserInterface
 {
+    /**
+     * Starts the item action selection interface.
+     * Displays options and delegates to the appropriate item action UI.
+     */
     @Override
     public void startUI()
     {
@@ -25,6 +33,9 @@ public class ItemActionSelectionUI extends UserInterface
         }
     }
 
+    /**
+     * Displays the available inventory action options.
+     */
     private void displayOptions()
     {
         IO.println("1. Use Item");

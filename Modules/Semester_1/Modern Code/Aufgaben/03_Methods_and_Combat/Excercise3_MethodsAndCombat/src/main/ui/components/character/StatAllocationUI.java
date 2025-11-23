@@ -5,12 +5,24 @@ import main.character.Player;
 import main.ui.UIHelper;
 import main.ui.UserInterface;
 
+/**
+ * UI screen for allocating available stat points to character attributes.
+ * Allows players to distribute skill points among Strength, Dexterity, and Intelligence.
+ */
 public class StatAllocationUI extends UserInterface
 {
-
+    /** Number of stat points available to allocate */
     private int availableSkillPoints;
+    
+    /** The player character receiving the stat increases */
     private Player player;
 
+    /**
+     * Creates a new stat allocation UI.
+     * 
+     * @param availableSkillPoints Number of points the player can spend
+     * @param player The player character to modify
+     */
     public StatAllocationUI(int availableSkillPoints, Player player)
     {
         this.availableSkillPoints = availableSkillPoints;

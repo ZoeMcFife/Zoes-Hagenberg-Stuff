@@ -8,21 +8,41 @@ import main.item.Shield;
 import main.item.Weapon;
 import main.ui.UserInterface;
 
+/**
+ * UI screen for displaying a character's inventory contents.
+ * Shows items with weight information and stat comparisons to equipped items.
+ */
 public class DisplayInventoryUI extends UserInterface
 {
+    /** The character whose inventory is being displayed */
     private final GameCharacter gameCharacter;
 
+    /**
+     * Creates a new inventory display UI.
+     * 
+     * @param gameCharacter The character whose inventory to display
+     */
     public DisplayInventoryUI(GameCharacter gameCharacter)
     {
         this.gameCharacter = gameCharacter;
     }
 
+    /**
+     * Starts the inventory display interface.
+     * Shows all items with comparisons to equipped gear.
+     */
     @Override
     public void startUI()
     {
         displayInventory(gameCharacter);
     }
 
+    /**
+     * Displays the character's inventory with item details and comparisons.
+     * For weapons, armour, and shields, shows stat comparison to equipped items.
+     * 
+     * @param gameCharacter The character whose inventory to display
+     */
     private void displayInventory(GameCharacter gameCharacter)
     {
         IO.println("Inventory:");
