@@ -51,3 +51,16 @@ am i doing this right?
 
 ![[Pasted image 20251125130654.png]]
 
+![[Pasted image 20251125133609.png]]
+
+panel lines
+
+yippeeeee
+
+![[Pasted image 20251125134322.png]]
+
+![[Pasted image 20251125140452.png]]
+
+da holes
+
+![[Pasted image 20251125142516.png]]
