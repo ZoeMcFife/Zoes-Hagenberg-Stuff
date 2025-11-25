@@ -34,7 +34,6 @@ import java.util.Arrays;
 
 public class ArrayStatisticsExcercise extends Excercise
 {
-
     private double mean = 0.0;
     private double median = 0.0;
     private int minimum = 0;
