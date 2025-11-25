@@ -1,6 +1,6 @@
 #3d_design 
 
-# Reference Images
+# Raw Reference Images
 ![[photo_2_2025-11-25_12-39-23.jpg]]
 
 ![[photo_3_2025-11-25_12-39-23.jpg]]
@@ -25,4 +25,29 @@
 
 ![[photo_13_2025-11-25_12-39-23.jpg]]
 
+
+![[photo_1_2025-11-25_12-54-54.jpg]]
+
+![[photo_2_2025-11-25_12-54-54.jpg]]
+
+![[photo_3_2025-11-25_12-54-54.jpg]]
+
+![[photo_4_2025-11-25_12-54-54.jpg]]
+
 ![[photo_1_2025-11-25_12-39-23.jpg]]
+
+# Edited References
+getting rid of perspective is hard… 
+
+![[photo_4_2025-11-25_12-54-54 1.jpg]]
+
+
+# Making of the Coffee Maker
+coffeeee 
+
+![[Pasted image 20251125130607.png]]
+
+am i doing this right?
+
+![[Pasted image 20251125130654.png]]
+
