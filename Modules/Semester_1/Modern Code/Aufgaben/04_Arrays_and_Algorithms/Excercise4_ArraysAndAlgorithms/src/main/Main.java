@@ -33,5 +33,11 @@ public class Main
         UniqueValueAndFrequencyCountingExercise uniqueValueExcercise = new UniqueValueAndFrequencyCountingExercise(15, 1, 10);
         uniqueValueExcercise.runExercise();
         uniqueValueExcercise.displayOutput();
+
+        IO.println();
+
+        ArraySplittingExercise splittingExcercise = new ArraySplittingExercise(10, 1, 100);
+        splittingExcercise.runExercise();
+        splittingExcercise.displayOutput();
     }
 }
