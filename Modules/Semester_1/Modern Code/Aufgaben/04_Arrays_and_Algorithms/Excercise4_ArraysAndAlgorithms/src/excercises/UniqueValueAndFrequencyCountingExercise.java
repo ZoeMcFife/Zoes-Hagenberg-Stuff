@@ -24,7 +24,7 @@ import java.util.*;
  * 7 1 appears 1 time
  * ```
  */
-public class UniqueValueAndFrequencyCountingExcercise extends Exercise
+public class UniqueValueAndFrequencyCountingExercise extends Exercise
 {
     private HashMap<Integer,Integer> uniqueValuesFrequency = new HashMap<>();
 
@@ -35,7 +35,7 @@ public class UniqueValueAndFrequencyCountingExcercise extends Exercise
      * @param minValue    minimum value for random integers
      * @param maxValue    maximum value for random integers
      */
-    public UniqueValueAndFrequencyCountingExcercise(int arrayLength, int minValue, int maxValue)
+    public UniqueValueAndFrequencyCountingExercise(int arrayLength, int minValue, int maxValue)
     {
         super(arrayLength, minValue, maxValue);
     }
@@ -45,7 +45,7 @@ public class UniqueValueAndFrequencyCountingExcercise extends Exercise
      *
      * @param inputArray integer array
      */
-    public UniqueValueAndFrequencyCountingExcercise(int[] inputArray)
+    public UniqueValueAndFrequencyCountingExercise(int[] inputArray)
     {
         super(inputArray);
     }

@@ -30,7 +30,7 @@ public class Main
 
         IO.println();
 
-        UniqueValueAndFrequencyCountingExcercise uniqueValueExcercise = new UniqueValueAndFrequencyCountingExcercise(15, 1, 10);
+        UniqueValueAndFrequencyCountingExercise uniqueValueExcercise = new UniqueValueAndFrequencyCountingExercise(15, 1, 10);
         uniqueValueExcercise.runExercise();
         uniqueValueExcercise.displayOutput();
     }
