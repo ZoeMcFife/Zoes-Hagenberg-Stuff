@@ -9,3 +9,5 @@ UV Mapping an axe woah
 seams 
 
 seam deltarune
+
+dumbass forgot ctrl → pic ´k shortest path shortcut (me im the dumbass)
