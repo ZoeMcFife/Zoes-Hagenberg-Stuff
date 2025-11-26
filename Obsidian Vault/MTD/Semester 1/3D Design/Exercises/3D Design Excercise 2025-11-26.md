@@ -11,3 +11,9 @@ seams
 seam deltarune
 
 dumbass forgot ctrl → pic ´k shortest path shortcut (me im the dumbass)
+
+![[Pasted image 20251126155023.png]]
+
+axe
+
+wooo….
