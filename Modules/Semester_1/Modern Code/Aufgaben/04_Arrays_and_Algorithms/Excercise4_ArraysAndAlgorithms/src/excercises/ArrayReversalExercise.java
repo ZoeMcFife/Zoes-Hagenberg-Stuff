@@ -4,6 +4,29 @@ import tools.IoTools;
 
 import java.util.Arrays;
 
+/**
+ * Exercise 2 (4 points) Array Reversal: In-Place Algorithm
+ * Create a method that reverses an array in-place (without using a second array) and returns the reversed array.
+ *
+ * 1. Create an array of integers
+ *
+ * 2. Create a method that reverses the array in-place by swapping elements and returns the reversed array
+ *
+ * 3. Display the array before and after reversal
+ *
+ * 4. **Important:** You must NOT create a second array. All operations must be done on the original array.
+ *
+ * **Expected Output:**
+ *
+ *
+ * **Expected Output:**
+ * ```java
+ * 1 === Array Reversal ===
+ * 2 Original array: [10, 20, 30, 40, 50]
+ * 3 Reversed array: [50, 40, 30, 20, 10]
+ * ```
+ */
+
 public class ArrayReversalExercise extends Exercise
 {
 
