@@ -1,0 +1,29 @@
+:root
+{
+    --bg-color: rgb(226, 214, 191);
+
+    --header-bg-color: rgb(255, 145, 0);
+    --footer-bg-color: rgb(85, 55, 0);
+}
+
+body
+{
+    font-family: Inter, sans-serif;
+    background-color: var(--bg-color);
+}
+
+header
+{
+    background-color: var(--header-bg-color);
+}
+
+footer
+{
+    background-color: var(--footer-bg-color);
+}
+
+#container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
