@@ -4,3 +4,8 @@
 
 UV Mapping an axe woah
 
+![[Pasted image 20251126152655.png]]
+
+seams 
+
+seam deltarune
