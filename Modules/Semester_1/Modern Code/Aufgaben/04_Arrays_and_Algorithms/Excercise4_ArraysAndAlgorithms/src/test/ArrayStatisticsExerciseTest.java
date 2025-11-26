@@ -250,4 +250,22 @@ public class ArrayStatisticsExerciseTest
             assertTrue(value >= 1 && value <= 100);
         }
     }
+
+    @Test
+    void testArrayFromExercise()
+    {
+        excercise = new ArrayStatisticsExercise(new int[]{15, 8, 23, 4, 42, 11, 19});
+
+        excercise.runExcercise();
+
+        double expectedMean = 17.43;
+        double expectedMedian = 15.0;
+        int expectedMin = 4;
+        int expectedMax = 42;
+
+        assertEquals(expectedMean, excercise.getMean(), 0.01);
+        assertEquals(expectedMedian, excercise.getMedian(), 0.001);
+        assertEquals(expectedMin, excercise.getMinimum());
+        assertEquals(expectedMax, excercise.getMaximum());
+    }
 }
