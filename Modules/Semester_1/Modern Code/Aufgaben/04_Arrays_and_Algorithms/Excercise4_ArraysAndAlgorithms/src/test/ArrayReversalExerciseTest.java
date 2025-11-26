@@ -13,7 +13,7 @@ public class ArrayReversalExerciseTest
 
         ArrayReversalExercise excercise = new ArrayReversalExercise(inputArray);
 
-        excercise.runExcercise();
+        excercise.runExercise();
 
         int[] reversedArray = excercise.getReversedArray();
 
@@ -32,7 +32,7 @@ public class ArrayReversalExerciseTest
 
         ArrayReversalExercise excercise = new ArrayReversalExercise(inputArray);
 
-        excercise.runExcercise();
+        excercise.runExercise();
 
         int[] reversedArray = excercise.getReversedArray();
 

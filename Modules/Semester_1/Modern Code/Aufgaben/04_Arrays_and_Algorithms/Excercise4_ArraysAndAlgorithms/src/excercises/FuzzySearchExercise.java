@@ -60,7 +60,7 @@ public class FuzzySearchExercise extends Exercise
     }
 
     @Override
-    public void runExcercise()
+    public void runExercise()
     {
         setFuzzySearchResult(fuzzySearch(getTargetValue(), getInputArray()));
     }

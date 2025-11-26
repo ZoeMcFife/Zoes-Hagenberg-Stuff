@@ -206,12 +206,12 @@ public class ArrayStatisticsExerciseTest
     // Test runExcercise method (integration test)
 
     @Test
-    void testRunExcerciseCalculatesAllStatistics()
+    void testRunExerciseCalculatesAllStatistics()
     {
         // Array from the expected output: [15, 8, 23, 4, 42, 11, 19]
         int[] testArray = {15, 8, 23, 4, 42, 11, 19};
         excercise = new ArrayStatisticsExercise(testArray);
-        excercise.runExcercise();
+        excercise.runExercise();
 
         // Verify all statistics are calculated correctly
         assertEquals(17.43, excercise.getMean(), 0.01);
@@ -256,7 +256,7 @@ public class ArrayStatisticsExerciseTest
     {
         excercise = new ArrayStatisticsExercise(new int[]{15, 8, 23, 4, 42, 11, 19});
 
-        excercise.runExcercise();
+        excercise.runExercise();
 
         double expectedMean = 17.43;
         double expectedMedian = 15.0;

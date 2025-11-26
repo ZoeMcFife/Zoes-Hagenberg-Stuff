@@ -46,7 +46,7 @@ public abstract class Exercise
     /**
      * Starts the excercise logic
      */
-    public abstract void runExcercise();
+    public abstract void runExercise();
 
     /**
      * Displays the output of the excercise

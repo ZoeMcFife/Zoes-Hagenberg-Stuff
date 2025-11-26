@@ -15,7 +15,7 @@ public class FuzzySearchExerciseTest
         int expectedClosestIndex = 6;
 
         FuzzySearchExercise fuzzySearchExercise = new FuzzySearchExercise(testArray, targetValue);
-        fuzzySearchExercise.runExcercise();
+        fuzzySearchExercise.runExercise();
 
         assertEquals(expectedClosestValue, fuzzySearchExercise.getFuzzySearchResult().bestMatchValue());
         assertFalse(fuzzySearchExercise.getFuzzySearchResult().foundExactMatch());
@@ -30,7 +30,7 @@ public class FuzzySearchExerciseTest
         int expectedIndex = 1;
 
         FuzzySearchExercise fuzzySearchExercise = new FuzzySearchExercise(testArray, targetValue);
-        fuzzySearchExercise.runExcercise();
+        fuzzySearchExercise.runExercise();
 
         assertTrue(fuzzySearchExercise.getFuzzySearchResult().foundExactMatch());
         assertEquals(expectedIndex, fuzzySearchExercise.getFuzzySearchResult().bestMatchIndex());
