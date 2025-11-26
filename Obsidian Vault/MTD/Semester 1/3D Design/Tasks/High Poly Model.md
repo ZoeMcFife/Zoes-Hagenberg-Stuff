@@ -70,3 +70,8 @@ da holes
 thea sss
 
 
+![[Pasted image 20251126142425.png]]
+
+the holes took longer than expected
+
+no bools → just cut out some faces and slapped a circle mesh, then connected manually phew
