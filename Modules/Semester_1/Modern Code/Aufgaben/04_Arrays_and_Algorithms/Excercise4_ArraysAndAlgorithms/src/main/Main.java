@@ -1,9 +1,6 @@
 package main;
 
-import excercises.ArrayMergingExercise;
-import excercises.ArrayReversalExercise;
-import excercises.ArrayStatisticsExercise;
-import excercises.FuzzySearchExercise;
+import excercises.*;
 
 public class Main
 {
@@ -30,5 +27,11 @@ public class Main
         ArrayMergingExercise mergingExcercise = new ArrayMergingExercise(5, 1, 100, 5, 1, 100);
         mergingExcercise.runExercise();
         mergingExcercise.displayOutput();
+
+        IO.println();
+
+        UniqueValueAndFrequencyCountingExcercise uniqueValueExcercise = new UniqueValueAndFrequencyCountingExcercise(15, 1, 10);
+        uniqueValueExcercise.runExercise();
+        uniqueValueExcercise.displayOutput();
     }
 }
