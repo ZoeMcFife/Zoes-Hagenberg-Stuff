@@ -15,7 +15,7 @@ public class ArrayMergingExcerciseTest
 
         ArrayMergingExercise excercise = new ArrayMergingExercise(array1, array2);
         excercise.runExercise();
-        
+
         int[] mergedArray = excercise.getMergedArray();
 
         assertArrayEquals(expectedMergedArray, mergedArray);
