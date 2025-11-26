@@ -1,17 +1,17 @@
 package main;
 
-import excercises.ArrayReversalExcercise;
-import excercises.ArrayStatisticsExcercise;
+import excercises.ArrayReversalExercise;
+import excercises.ArrayStatisticsExercise;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        ArrayStatisticsExcercise statisticsExcercise = new ArrayStatisticsExcercise(10, 1, 100);
+        ArrayStatisticsExercise statisticsExcercise = new ArrayStatisticsExercise(10, 1, 100);
         statisticsExcercise.runExcercise();
         statisticsExcercise.displayOutput();
 
-        ArrayReversalExcercise reversalExcercise = new ArrayReversalExcercise(10, 1, 100);
+        ArrayReversalExercise reversalExcercise = new ArrayReversalExercise(10, 1, 100);
         reversalExcercise.runExcercise();
         reversalExcercise.displayOutput();
     }

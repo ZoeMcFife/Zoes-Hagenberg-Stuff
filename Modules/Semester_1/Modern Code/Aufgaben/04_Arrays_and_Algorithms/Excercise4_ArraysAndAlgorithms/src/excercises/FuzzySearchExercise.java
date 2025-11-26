@@ -26,7 +26,7 @@ package excercises;
  * ```
  */
 
-public class FuzzySearchExcercise extends Excercise
+public class FuzzySearchExercise extends Exercise
 {
     private int[] array;
 
@@ -36,7 +36,7 @@ public class FuzzySearchExcercise extends Excercise
      * @param minValue minimum value for random integers
      * @param maxValue maximum value for random integers
      */
-    public FuzzySearchExcercise(int arrayLength, int minValue, int maxValue)
+    public FuzzySearchExercise(int arrayLength, int minValue, int maxValue)
     {
         super(arrayLength, minValue, maxValue);
     }
@@ -45,7 +45,7 @@ public class FuzzySearchExcercise extends Excercise
      * Creates an FuzzySearchExcercise with the provided array.
      * @param array integer array
      */
-    public FuzzySearchExcercise(int[] array)
+    public FuzzySearchExercise(int[] array)
     {
         super(array);
     }

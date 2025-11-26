@@ -4,7 +4,7 @@ import tools.IoTools;
 
 import java.util.Arrays;
 
-public class ArrayReversalExcercise extends Excercise
+public class ArrayReversalExercise extends Exercise
 {
 
     int[] reversedArray = new int[0];
@@ -16,7 +16,7 @@ public class ArrayReversalExcercise extends Excercise
      * @param minValue    minimum value for random integers
      * @param maxValue    maximum value for random integers
      */
-    public ArrayReversalExcercise(int arrayLength, int minValue, int maxValue)
+    public ArrayReversalExercise(int arrayLength, int minValue, int maxValue)
     {
         super(arrayLength, minValue, maxValue);
     }
@@ -26,7 +26,7 @@ public class ArrayReversalExcercise extends Excercise
      *
      * @param inputArray integer array
      */
-    public ArrayReversalExcercise(int[] inputArray)
+    public ArrayReversalExercise(int[] inputArray)
     {
         super(inputArray);
     }

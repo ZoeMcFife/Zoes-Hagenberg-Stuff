@@ -2,7 +2,7 @@ package excercises;
 
 import tools.ArrayTools;
 
-public abstract class Excercise
+public abstract class Exercise
 {
     /** Input array for the excercise */
     private int[] inputArray;
@@ -13,7 +13,7 @@ public abstract class Excercise
      * @param minValue minimum value for random integers
      * @param maxValue maximum value for random integers
      */
-    public Excercise(int arrayLength, int minValue, int maxValue)
+    public Exercise(int arrayLength, int minValue, int maxValue)
     {
         setInputArray(ArrayTools.generateRandomIntArray(arrayLength, minValue, maxValue));
     }
@@ -22,7 +22,7 @@ public abstract class Excercise
      * Creates an Excercise with the provided array.
      * @param inputArray integer array
      */
-    public Excercise(int[] inputArray)
+    public Exercise(int[] inputArray)
     {
         setInputArray(inputArray);
     }

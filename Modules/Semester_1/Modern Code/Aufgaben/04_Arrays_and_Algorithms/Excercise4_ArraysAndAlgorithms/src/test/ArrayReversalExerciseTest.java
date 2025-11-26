@@ -1,10 +1,9 @@
 package test;
 
-import excercises.ArrayReversalExcercise;
-import excercises.ArrayStatisticsExcercise;
+import excercises.ArrayReversalExercise;
 import org.junit.jupiter.api.Test;
 
-public class ArrayReversalExcerciseTest
+public class ArrayReversalExerciseTest
 {
 
     @Test
@@ -12,7 +11,7 @@ public class ArrayReversalExcerciseTest
     {
         int[] inputArray = {10, 20, 30, 40, 50};
 
-        ArrayReversalExcercise excercise = new ArrayReversalExcercise(inputArray);
+        ArrayReversalExercise excercise = new ArrayReversalExercise(inputArray);
 
         excercise.runExcercise();
 

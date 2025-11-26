@@ -1,6 +1,5 @@
 package excercises;
 
-import tools.ArrayTools;
 import tools.IoTools;
 
 import java.util.Arrays;
@@ -32,7 +31,7 @@ import java.util.Arrays;
  * ```
  */
 
-public class ArrayStatisticsExcercise extends Excercise
+public class ArrayStatisticsExercise extends Exercise
 {
     private double mean = 0.0;
     private double median = 0.0;
@@ -45,7 +44,7 @@ public class ArrayStatisticsExcercise extends Excercise
      * @param minValue minimum value for random integers
      * @param maxValue maximum value for random integers
      */
-    public ArrayStatisticsExcercise(int arrayLength, int minValue, int maxValue)
+    public ArrayStatisticsExercise(int arrayLength, int minValue, int maxValue)
     {
         super(arrayLength, minValue, maxValue);
     }
@@ -54,7 +53,7 @@ public class ArrayStatisticsExcercise extends Excercise
      * Creates an ArrayStatisticsExcercise with the provided array.
      * @param inputArray integer array
      */
-    public ArrayStatisticsExcercise(int[] inputArray)
+    public ArrayStatisticsExercise(int[] inputArray)
     {
         super(inputArray);
     }

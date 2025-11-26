@@ -1,14 +1,13 @@
 package test;
 
-import excercises.ArrayStatisticsExcercise;
+import excercises.ArrayStatisticsExercise;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ArrayStatisticsExcerciseTest
+public class ArrayStatisticsExerciseTest
 {
-    private ArrayStatisticsExcercise excercise;
+    private ArrayStatisticsExercise excercise;
 
     // Tests for Mean calculation
 
@@ -16,7 +15,7 @@ public class ArrayStatisticsExcerciseTest
     void testMeanWithOddLengthArray()
     {
         int[] testArray = {10, 20, 30, 40, 50};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMean();
 
         // Mean = (10 + 20 + 30 + 40 + 50) / 5 = 150 / 5 = 30.0
@@ -27,7 +26,7 @@ public class ArrayStatisticsExcerciseTest
     void testMeanWithEvenLengthArray()
     {
         int[] testArray = {10, 20, 30, 40};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMean();
 
         // Mean = (10 + 20 + 30 + 40) / 4 = 100 / 4 = 25.0
@@ -39,7 +38,7 @@ public class ArrayStatisticsExcerciseTest
     {
         // Array from the expected output: [15, 8, 23, 4, 42, 11, 19]
         int[] testArray = {15, 8, 23, 4, 42, 11, 19};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMean();
 
         // Mean = (15 + 8 + 23 + 4 + 42 + 11 + 19) / 7 = 122 / 7 = 17.428...
@@ -50,7 +49,7 @@ public class ArrayStatisticsExcerciseTest
     void testMeanWithSingleElement()
     {
         int[] testArray = {42};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMean();
 
         assertEquals(42.0, excercise.getMean(), 0.001);
@@ -62,7 +61,7 @@ public class ArrayStatisticsExcerciseTest
     void testMedianWithOddLengthArray()
     {
         int[] testArray = {10, 20, 30, 40, 50};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         // Sorted: [10, 20, 30, 40, 50], Median = 30
@@ -73,7 +72,7 @@ public class ArrayStatisticsExcerciseTest
     void testMedianWithEvenLengthArray()
     {
         int[] testArray = {10, 20, 30, 40};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         // Sorted: [10, 20, 30, 40], Median = (20 + 30) / 2 = 25.0
@@ -84,7 +83,7 @@ public class ArrayStatisticsExcerciseTest
     void testMedianWithUnsortedOddLengthArray()
     {
         int[] testArray = {50, 10, 30, 20, 40};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         // Sorted: [10, 20, 30, 40, 50], Median = 30
@@ -95,7 +94,7 @@ public class ArrayStatisticsExcerciseTest
     void testMedianWithUnsortedEvenLengthArray()
     {
         int[] testArray = {40, 10, 30, 20};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         // Sorted: [10, 20, 30, 40], Median = (20 + 30) / 2 = 25.0
@@ -107,7 +106,7 @@ public class ArrayStatisticsExcerciseTest
     {
         // Array from the expected output: [15, 8, 23, 4, 42, 11, 19]
         int[] testArray = {15, 8, 23, 4, 42, 11, 19};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         // Sorted: [4, 8, 11, 15, 19, 23, 42], Median = 15
@@ -118,7 +117,7 @@ public class ArrayStatisticsExcerciseTest
     void testMedianWithSingleElement()
     {
         int[] testArray = {42};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         assertEquals(42.0, excercise.getMedian(), 0.001);
@@ -128,7 +127,7 @@ public class ArrayStatisticsExcerciseTest
     void testMedianWithTwoElements()
     {
         int[] testArray = {10, 20};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         // Median = (10 + 20) / 2 = 15.0
@@ -141,7 +140,7 @@ public class ArrayStatisticsExcerciseTest
     void testMinAndMaxWithSortedArray()
     {
         int[] testArray = {10, 20, 30, 40, 50};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMinAndMax();
 
         assertEquals(10, excercise.getMinimum());
@@ -152,7 +151,7 @@ public class ArrayStatisticsExcerciseTest
     void testMinAndMaxWithUnsortedArray()
     {
         int[] testArray = {30, 10, 50, 20, 40};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMinAndMax();
 
         assertEquals(10, excercise.getMinimum());
@@ -164,7 +163,7 @@ public class ArrayStatisticsExcerciseTest
     {
         // Array from the expected output: [15, 8, 23, 4, 42, 11, 19]
         int[] testArray = {15, 8, 23, 4, 42, 11, 19};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMinAndMax();
 
         assertEquals(4, excercise.getMinimum());
@@ -175,7 +174,7 @@ public class ArrayStatisticsExcerciseTest
     void testMinAndMaxWithSingleElement()
     {
         int[] testArray = {42};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMinAndMax();
 
         assertEquals(42, excercise.getMinimum());
@@ -186,7 +185,7 @@ public class ArrayStatisticsExcerciseTest
     void testMinAndMaxWithNegativeNumbers()
     {
         int[] testArray = {-10, -5, 0, 5, 10};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMinAndMax();
 
         assertEquals(-10, excercise.getMinimum());
@@ -197,7 +196,7 @@ public class ArrayStatisticsExcerciseTest
     void testMinAndMaxWithAllSameValues()
     {
         int[] testArray = {5, 5, 5, 5, 5};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMinAndMax();
 
         assertEquals(5, excercise.getMinimum());
@@ -211,7 +210,7 @@ public class ArrayStatisticsExcerciseTest
     {
         // Array from the expected output: [15, 8, 23, 4, 42, 11, 19]
         int[] testArray = {15, 8, 23, 4, 42, 11, 19};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.runExcercise();
 
         // Verify all statistics are calculated correctly
@@ -227,7 +226,7 @@ public class ArrayStatisticsExcerciseTest
     void testMedianDoesNotModifyOriginalArray()
     {
         int[] testArray = {50, 10, 30, 20, 40};
-        excercise = new ArrayStatisticsExcercise(testArray);
+        excercise = new ArrayStatisticsExercise(testArray);
         excercise.calculateMedian();
 
         // Original array should remain unchanged
@@ -240,7 +239,7 @@ public class ArrayStatisticsExcerciseTest
     @Test
     void testRandomArrayConstructor()
     {
-        excercise = new ArrayStatisticsExcercise(5, 1, 100);
+        excercise = new ArrayStatisticsExercise(5, 1, 100);
 
         // Verify array has correct length
         assertEquals(5, excercise.getInputArray().length);
