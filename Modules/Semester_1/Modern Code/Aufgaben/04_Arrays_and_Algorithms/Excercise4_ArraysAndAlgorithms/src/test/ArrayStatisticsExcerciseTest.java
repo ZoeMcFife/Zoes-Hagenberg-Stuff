@@ -10,12 +10,6 @@ public class ArrayStatisticsExcerciseTest
 {
     private ArrayStatisticsExcercise excercise;
 
-    @BeforeEach
-    void setUp()
-    {
-        // Setup will be done in individual tests with specific arrays
-    }
-
     // Tests for Mean calculation
 
     @Test
