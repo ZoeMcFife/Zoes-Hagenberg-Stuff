@@ -41,6 +41,7 @@ getting rid of perspective is hard…
 
 ![[photo_4_2025-11-25_12-54-54 1.jpg]]
 
+![[Pasted image 20251126124950.png]]
 
 # Making of the Coffee Maker
 coffeeee 
@@ -64,3 +65,8 @@ yippeeeee
 da holes
 
 ![[Pasted image 20251125142516.png]]
+![[Pasted image 20251126124256.png]]
+
+thea sss
+
+
