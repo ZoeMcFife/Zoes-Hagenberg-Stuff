@@ -58,7 +58,7 @@ public class ArrayReversalExercise extends Exercise
      * Starts the excercise logic
      */
     @Override
-    public void runExcercise()
+    public void runExercise()
     {
         reversedArray = reverseArray(getInputArray());
     }

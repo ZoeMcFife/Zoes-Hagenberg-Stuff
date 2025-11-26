@@ -59,7 +59,7 @@ public class ArrayStatisticsExercise extends Exercise
     }
 
     @Override
-    public void runExcercise()
+    public void runExercise()
     {
         calculateMean();
         calculateMedian();
