@@ -238,7 +238,7 @@ public class ArrayStatisticsExcerciseTest
 
         // Original array should remain unchanged
         int[] expectedArray = {50, 10, 30, 20, 40};
-        assertArrayEquals(expectedArray, excercise.getArray());
+        assertArrayEquals(expectedArray, excercise.getInputArray());
     }
 
     // Test constructor with random array
@@ -249,10 +249,10 @@ public class ArrayStatisticsExcerciseTest
         excercise = new ArrayStatisticsExcercise(5, 1, 100);
 
         // Verify array has correct length
-        assertEquals(5, excercise.getArray().length);
+        assertEquals(5, excercise.getInputArray().length);
 
         // Verify all values are within range
-        for (int value : excercise.getArray())
+        for (int value : excercise.getInputArray())
         {
             assertTrue(value >= 1 && value <= 100);
         }

@@ -39,8 +39,6 @@ public class ArrayStatisticsExcercise extends Excercise
     private int minimum = 0;
     private int maximum = 0;
 
-    private int[] array;
-
     /**
      * Creates an ArrayStatisticsExcercise with a randomly generated array.
      * @param arrayLength Length of the array
@@ -49,16 +47,16 @@ public class ArrayStatisticsExcercise extends Excercise
      */
     public ArrayStatisticsExcercise(int arrayLength, int minValue, int maxValue)
     {
-        setArray(ArrayTools.generateRandomIntArray(arrayLength, minValue, maxValue));
+        super(arrayLength, minValue, maxValue);
     }
 
     /**
      * Creates an ArrayStatisticsExcercise with the provided array.
-     * @param array integer array
+     * @param inputArray integer array
      */
-    public ArrayStatisticsExcercise(int[] array)
+    public ArrayStatisticsExcercise(int[] inputArray)
     {
-        setArray(array);
+        super(inputArray);
     }
 
     @Override
@@ -69,34 +67,16 @@ public class ArrayStatisticsExcercise extends Excercise
         calculateMinAndMax();
     }
 
- /*    * 1 === Array Statistics ===
-        * 2 Array: [15, 8, 23, 4, 42, 11, 19]
-        * 3 Mean: 17.43
-        * 4 Median: 15.0
-        * 5 Minimum: 4
-        * 6 Maximum: 42
-        * ```*/
-
     @Override
     public void displayOutput()
     {
         IoTools.printHeading("Array Statistics");
 
-        IO.println("Arrays: " + Arrays.toString(getArray()));
+        IO.println("Arrays: " + Arrays.toString(getInputArray()));
         IO.println("Mean: " + String.format("%.2f", getMean()));
         IO.println("Median: " + String.format("%.2f", getMedian()));
         IO.println("Minimum: " + getMinimum());
         IO.println("Maximum: " + getMaximum());
-    }
-
-    private void setArray(int[] array)
-    {
-        this.array = array;
-    }
-
-    public int[] getArray()
-    {
-        return array;
     }
 
     /**
@@ -106,12 +86,12 @@ public class ArrayStatisticsExcercise extends Excercise
     {
         int sum = 0;
 
-        for (int num : array)
+        for (int num : getInputArray())
         {
             sum += num;
         }
 
-        setMean((double) sum / array.length);
+        setMean((double) sum / getInputArray().length);
     }
 
     public double getMean()
@@ -130,7 +110,7 @@ public class ArrayStatisticsExcercise extends Excercise
      */
     public void calculateMedian()
     {
-        int[] sortedArray = Arrays.copyOf(array, array.length);
+        int[] sortedArray = Arrays.copyOf(getInputArray(), getInputArray().length);
         Arrays.sort(sortedArray);
 
         if (sortedArray.length % 2 == 0)
@@ -161,10 +141,10 @@ public class ArrayStatisticsExcercise extends Excercise
      */
     public void calculateMinAndMax()
     {
-        int min = array[0];
-        int max = array[0];
+        int min = getInputArray()[0];
+        int max = getInputArray()[0];
 
-        for (int num : array)
+        for (int num : getInputArray())
         {
             if (num < min)
             {
@@ -180,11 +160,19 @@ public class ArrayStatisticsExcercise extends Excercise
         maximum = max;
     }
 
+    /**
+     * Gets the minimum value of the array.
+     * @return minimum value
+     */
     public int getMinimum()
     {
         return minimum;
     }
 
+    /**
+     * Gets the maximum value of the array.
+     * @return maximum value
+     */
     public int getMaximum()
     {
         return maximum;
