@@ -1,7 +1,6 @@
 package excercises;
 
 import tools.ArrayTools;
-import tools.IO;
 import tools.IoTools;
 
 import java.util.Arrays;
