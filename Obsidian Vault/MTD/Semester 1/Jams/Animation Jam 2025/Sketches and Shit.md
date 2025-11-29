@@ -6,9 +6,9 @@
 # Color Pallete
 ![[Pasted image 20251129200327.png]]
 
-- 2C1807
-- FFECCD
-- F6511D
+- \#2C1807
+- \#FFECCD
+- \#F6511D
 
 
 
