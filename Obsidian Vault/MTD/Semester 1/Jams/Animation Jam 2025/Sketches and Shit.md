@@ -3,9 +3,20 @@
 ![[Animation Jam 2025 Sketches]]
 
 
+# Color Pallete
+![[Pasted image 20251129200327.png]]
+
+- \#2C1807
+- \#FFECCD
+- \#F6511D
+
+
 
 # Storyboard
 
+![[Pasted image 20251129200453.png]]
+![[Pasted image 20251129200500.png]]
+![[Pasted image 20251129200510.png]]
 ## Scene 1
 
 Dog wanders through the void and bumps into somethings
