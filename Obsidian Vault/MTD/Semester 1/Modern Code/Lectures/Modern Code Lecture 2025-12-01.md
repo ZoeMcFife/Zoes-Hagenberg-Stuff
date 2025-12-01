@@ -3,3 +3,5 @@
 ![[08_Strings_file_access.pdf]]
 
 continuening strings
+
+![[09_Input_output_validation.pdf]]
