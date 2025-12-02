@@ -21,3 +21,7 @@ speed
 adjusts speed in units per second 
 
 wao
+
+![[Pasted image 20251202153233.png]]
+
+track matte → mask
