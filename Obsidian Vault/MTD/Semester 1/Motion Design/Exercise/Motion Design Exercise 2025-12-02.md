@@ -25,3 +25,7 @@ wao
 ![[Pasted image 20251202153233.png]]
 
 track matte → mask
+
+![[Pasted image 20251202160956.png]]
+
+animating indivudual letters using range selector thingy
