@@ -111,3 +111,12 @@ my to do list isn’t that long anymore tbh.
 
 everything else is very optional to model…. i should focus on getting just the coffee maker done…..
 
+
+![[Pasted image 20251208182845.png]]
+
+![[Pasted image 20251208182851.png]]
+
+![[Pasted image 20251208182902.png]]
+
+i wanna kiss her….
+
