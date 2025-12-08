@@ -41,6 +41,8 @@ getting rid of perspective is hard…
 
 ![[photo_4_2025-11-25_12-54-54 1.jpg]]
 
+![[Pasted image 20251126124950.png]]
+![[Pasted image 20251202220518.png]]
 
 # Making of the Coffee Maker
 coffeeee 
@@ -64,3 +66,57 @@ yippeeeee
 da holes
 
 ![[Pasted image 20251125142516.png]]
+![[Pasted image 20251126124256.png]]
+
+thea sss
+
+
+![[Pasted image 20251126142425.png]]
+
+the holes took longer than expected
+
+no bools → just cut out some faces and slapped a circle mesh, then connected manually phew
+
+![[Pasted image 20251202220011.png]]
+
+this hole
+
+the hole
+
+of holes
+
+…
+
+honestly…. why is it so hard for me to… just… sigh…. being in love is the worst thing to happen…
+
+
+I shouldn’t be feeling this, but it’s too hard to resist 💔
+
+![[Pasted image 20251202221608.png]]
+
+the nipple is done
+
+![[Pasted image 20251202223511.png]]
+
+this topo is ugly, i should start over…
+
+
+my to do list isn’t that long anymore tbh.
+
+→ top cap thing
+→ left side holes
+→ front thingy
+→ bottom thing holes
+→ water tank
+
+everything else is very optional to model…. i should focus on getting just the coffee maker done…..
+
+
+![[Pasted image 20251208182845.png]]
+
+![[Pasted image 20251208182851.png]]
+
+![[Pasted image 20251208182902.png]]
+
+i wanna kiss her….
+
