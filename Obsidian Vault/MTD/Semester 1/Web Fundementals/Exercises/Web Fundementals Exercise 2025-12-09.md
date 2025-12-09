@@ -61,6 +61,32 @@ Verbose as FUCK
     </xs:element>  
 </xs:schema>
 ```
+why odes the formatting break what
+
+ok idc stay ugly xml stay ugly
+```XML
+<?xml version="1.0" encoding="utf-8" ?>  
+  
+<university xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="university.xsd">  
+    <lecturers>        <lecturer id="s">  
+            <name>Bingus Dingus</name>  
+            <email>bingus.dingus@fungus.com</email>  
+        </lecturer>        <lecturer id="d">  
+            <name>Oingo Boingo</name>  
+            <email>oingo.boingo@fungus.com</email>  
+        </lecturer>    </lecturers>    <courses>        <course code="HD">  
+            <subject>House Dorito</subject>  
+            <ects>125</ects>  
+            <contents>404</contents>  
+            <instructors>                <instructor ref="s"/>  
+            </instructors>        </course>        <course code="SW">  
+            <subject>Cat goes meow</subject>  
+            <ects>1</ects>  
+            <contents>404</contents>  
+            <instructors>                <instructor ref="d"/>  
+                <instructor ref="s"/>  
+            </instructors>        </course>    </courses></university>
+```
 
 ```JSON
 {  
