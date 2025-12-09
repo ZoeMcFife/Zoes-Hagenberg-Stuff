@@ -60,6 +60,38 @@ Verbose as FUCK
 </xs:schema>
 ```
 
+```JSON
+{  
+  "lecturers":  
+  [  
+    {  
+      "id": "1",  
+      "name": "Baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",  
+      "email": "booooooooooooooooooooooooooooooo"  
+    },  
+    {  
+      "id": "2",  
+      "name": "2",  
+      "email": "43"  
+    }  
+  ],  
+  "courses":  
+  [  
+    {  
+      "code": "dgdgdgdgdg",  
+      "subject": "dgdfgf",  
+      "ects": 243425,  
+      "contents": "dggdgdgdgdgdgdgdgdgdgdgdgdgd",  
+      "instructor_ids":  
+      [  
+        "1",  
+        "2"  
+      ]  
+    }  
+  ]  
+}
+```
+
 ```YAML
 lecturers:  
   - email: test  
@@ -79,3 +111,7 @@ courses:
 ```
 
 Yaml is so cute! i should use it more often 
+
+
+like json is sooooooooooooooooo ugly
+
