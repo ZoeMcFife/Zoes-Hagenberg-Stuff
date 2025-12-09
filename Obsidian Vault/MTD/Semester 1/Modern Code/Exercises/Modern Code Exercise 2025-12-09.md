@@ -12,3 +12,8 @@ you have to guess → if number and color is correct → black peg
 if just color → white peg
 
 but what if just number correct? what? 
+
+# Clanker Wars
+
+![[Pasted image 20251209160240.png]]
+
