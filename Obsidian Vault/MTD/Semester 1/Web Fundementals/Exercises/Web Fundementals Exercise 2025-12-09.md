@@ -143,3 +143,13 @@ Yaml is so cute! i should use it more often
 
 like json is sooooooooooooooooo ugly
 
+
+
+![[Pasted image 20251209141030.png]]
+
+also YAML stands for:  *YAML Ain’t Markup Language*?
+
+i thought it was *Yet Another Markup Language* but i think that was just a programmer joke that went over my head lol
+
+tbh it is kinda funny 
+
