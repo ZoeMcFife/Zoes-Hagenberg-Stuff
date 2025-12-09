@@ -1,5 +1,7 @@
 #web_fundementals 
 
+**[Github Repo](https://github.com/Web-Fundamentals-WS-2025-26/ue07-ZoeMcFife)**
+
 i just realised i misspelled fundamentals …lol 
 
 
