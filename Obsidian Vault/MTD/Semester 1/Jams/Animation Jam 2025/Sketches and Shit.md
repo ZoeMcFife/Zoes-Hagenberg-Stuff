@@ -1,4 +1,4 @@
-#animation_jam_2025
+#animation_jam
 
 ![[Animation Jam 2025 Sketches]]
 
