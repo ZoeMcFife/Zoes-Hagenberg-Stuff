@@ -39,5 +39,10 @@ public class Main
         ArraySplittingExercise splittingExcercise = new ArraySplittingExercise(10, 1, 100);
         splittingExcercise.runExercise();
         splittingExcercise.displayOutput();
+
+        IO.println();
+
+        ExamExercise examExcercise = new ExamExercise(new String[]{"3 dogs", "5 cats", "8 dogs", "1 chicken", "2 chicken"});
+        examExcercise.runExercise();
     }
 }

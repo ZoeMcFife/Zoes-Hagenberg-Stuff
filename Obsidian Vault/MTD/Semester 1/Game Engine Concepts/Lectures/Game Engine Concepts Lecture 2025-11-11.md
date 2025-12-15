@@ -2,6 +2,7 @@
 
 ![[dog-rainy-dog.mp4]]
 
+![[MTD_GEC_05_Graphics_Rendering.pdf]]
 
 **Solution 1**  → Experiment
 
