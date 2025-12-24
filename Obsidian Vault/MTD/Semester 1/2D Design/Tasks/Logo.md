@@ -37,3 +37,11 @@ YEAH LOOKS COOL. mwah
 ![[Red Accent.png]]
 
 ![[Black Accent.png]]
+
+# Business Card
+
+mmmm very business
+
+![[Visiten Karte_Back.png]]
+
+![[Visiten Karte_Front.png]]
