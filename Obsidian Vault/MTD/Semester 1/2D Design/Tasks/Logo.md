@@ -2,9 +2,24 @@
 
 # Sketches
 
-TODO: Add image of sketches
-
+![[Pasted image 20251224133108.png]]
 # Skull Logo 
+
 ![[Pasted image 20251024142055.png]]
 
-# Boring Logo 
+time to make it better
+
+![[Pasted image 20251224133824.png]]
+
+i mean, it looks a bit better? i lik eit i guess…
+
+im just cool !!
+
+hmm not yet
+the skull is kinda lopsided rn 
+
+vibes are off
+
+![[LogoExportTest.png]]
+
+YEAH LOOKS COOL. mwah 
