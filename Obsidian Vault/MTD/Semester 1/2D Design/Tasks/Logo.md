@@ -23,3 +23,9 @@ vibes are off
 ![[LogoExportTest.png]]
 
 YEAH LOOKS COOL. mwah 
+
+# black n white versions:
+
+![[Artboard 4.png]]
+
+![[Artboard 3.png]]
