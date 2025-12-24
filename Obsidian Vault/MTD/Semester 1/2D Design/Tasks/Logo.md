@@ -24,8 +24,11 @@ vibes are off
 
 YEAH LOOKS COOL. mwah 
 
-# black n white versions:
+# black n white versions with color too becuz im too stupid too read:
 
 ![[Artboard 4.png]]
 
 ![[Artboard 3.png]]
+![[Red Background.png]]
+
+![[Blue BG.png]]
