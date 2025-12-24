@@ -32,3 +32,8 @@ YEAH LOOKS COOL. mwah
 ![[Red Background.png]]
 
 ![[Blue BG.png]]
+# Logos with accent colors
+
+![[Red Accent.png]]
+
+![[Black Accent.png]]
