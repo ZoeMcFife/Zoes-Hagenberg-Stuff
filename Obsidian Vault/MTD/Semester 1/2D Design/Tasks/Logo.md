@@ -49,3 +49,7 @@ mmmm very business
 # Briefpapier
 
 ![[Briefpapier.png]]
+
+![[Briefpapier 1.png]]
+
+slight update beuz im gay
