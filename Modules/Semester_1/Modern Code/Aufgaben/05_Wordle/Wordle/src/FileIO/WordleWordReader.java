@@ -63,8 +63,10 @@ public class WordleWordReader
         }
         catch (IOException e)
         {
-            System.err.println("Error reading file: " + validGuessesFile);
+            System.err.println("Error reading file: " + file);
             System.err.println(e.getMessage());
+            System.err.println("Make sure the file exists and is accessible. Program will exit.");
+            System.exit(1);
         }
 
         return words;
