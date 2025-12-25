@@ -53,3 +53,7 @@ mmmm very business
 ![[Briefpapier 1.png]]
 
 slight update beuz im gay
+
+# CICD Manual
+
+![[CICD.pdf]]
