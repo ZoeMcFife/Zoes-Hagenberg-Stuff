@@ -82,6 +82,41 @@ public final class UI
         }
     }
 
+    /**
+     * Gets a string input from the player with a maximum length.
+     * Continues to prompt until valid input is provided.
+     *
+     * @param prompt    The prompt message to display
+     * @param maxLength The maximum allowed length of the input
+     * @return The validated string input
+     */
+    public static String getStringInput(String prompt, int maxLength)
+    {
+        while (true)
+        {
+            IO.println(prompt + ": ");
+            String input = IO.readln().trim();;
+
+            if (!input.isEmpty() && input.length() <= maxLength)
+            {
+                return input;
+            }
+
+            IO.println("Input cannot be empty. Please try again.");
+        }
+    }
+
+    /**
+     * Gets a string input from the player without length restriction.
+     *
+     * @param prompt The prompt message to display
+     * @return The validated string input
+     */
+    public static String getStringInput(String prompt)
+    {
+        return getStringInput(prompt, Integer.MAX_VALUE);
+    }
+
     // Thanks you autocomplete for like suggesting so many of these... i surely will need them....
 
     public static void printSeparatorLine()
