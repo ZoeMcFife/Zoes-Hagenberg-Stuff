@@ -37,3 +37,10 @@ left it pretty much stock
 it looks good as is tbh….
 
 
+# Picture 2 - Depression
+
+![[PC260020 (2).jpg]]
+
+## The Edits
+
+![[hh-260020.jpg]]
