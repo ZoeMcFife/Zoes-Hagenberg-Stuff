@@ -1,4 +1,5 @@
 import FileIO.WordleWordReader;
+import UserInterface.Screens.MainScreen;
 
 public class Main
 {
@@ -6,7 +7,7 @@ public class Main
     {
         WordleWordReader.readWordleWords();
 
-        IO.println(Global.Words.validGuesses);
-        IO.println(Global.Words.validSolutions);
+        MainScreen mainScreen = new MainScreen();
+        mainScreen.startScreen();
     }
 }
