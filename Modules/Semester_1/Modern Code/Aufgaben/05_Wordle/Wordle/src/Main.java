@@ -1,5 +1,6 @@
 import FileIO.WordleWordReader;
 import UserInterface.Screens.MainScreen;
+import UserInterface.UI;
 
 public class Main
 {
