@@ -117,7 +117,7 @@ public final class UI
         return getStringInput(prompt, Integer.MAX_VALUE);
     }
 
-    // Thanks you autocomplete for like suggesting so many of these... i surely will need them....
+    // Thank you autocomplete for like suggesting so many of these... i surely will need them....
 
     public static void printSeparatorLine()
     {
