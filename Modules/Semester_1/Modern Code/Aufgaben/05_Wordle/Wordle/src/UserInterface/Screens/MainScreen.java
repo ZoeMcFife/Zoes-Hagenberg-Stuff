@@ -3,6 +3,7 @@ package UserInterface.Screens;
 import UserInterface.Menu.Menu;
 import UserInterface.Menu.MenuItem;
 import UserInterface.Screen;
+import UserInterface.Screens.Wordle.Wordle;
 import UserInterface.UI;
 
 public class MainScreen extends Screen
@@ -16,10 +17,10 @@ public class MainScreen extends Screen
 
             MenuItem startGame = new MenuItem("Start Game", this::startGame);
             MenuItem quitGame = new MenuItem("Quit Game", this::quitGame);
+            Menu mainMenu = new Menu("Main Menu", startGame, quitGame);
 
             UI.printBlankSeparatorLine();
 
-            Menu mainMenu = new Menu("Main Menu", startGame, quitGame);
             mainMenu.startScreen();
 
             UI.clearScreen();
@@ -28,7 +29,8 @@ public class MainScreen extends Screen
 
     private void startGame()
     {
-
+        Wordle wordleGame = new Wordle();
+        wordleGame.startScreen();
     }
 
     private void quitGame()
