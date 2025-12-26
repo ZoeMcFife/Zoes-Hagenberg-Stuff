@@ -12,10 +12,21 @@ public final class UI
     public static final String BLUE   = "\u001B[34m";
     public static final String PURPLE = "\u001B[35m";
     public static final String CYAN   = "\u001B[36m";
+    public static final String GRAY  = "\u001B[37m";
 
     private UI()
     {
 
+    }
+
+    public static void printGray(String message)
+    {
+        IO.print(GRAY + message + RESET);
+    }
+
+    public static void printlnGray(String message)
+    {
+        IO.println(GRAY + message + RESET);
     }
 
     public static void printRed(String message)
@@ -83,13 +94,13 @@ public final class UI
      */
     public static void displayWordleTitle()
     {
-        IO.println(" __      __                .___.__          \n" +
+        printlnGreen(" __      __                .___.__          \n" +
                 "/  \\    /  \\___________  __| _/|  |   ____  \n" +
                 "\\   \\/\\/   /  _ \\_  __ \\/ __ | |  | _/ __ \\ \n" +
                 " \\        (  <_> )  | \\/ /_/ | |  |_\\  ___/ \n" +
                 "  \\__/\\  / \\____/|__|  \\____ | |____/\\___  >\n" +
                 "       \\/                   \\/           \\/ ");
-        IO.println("Zoe Edition");
+        printlnYellow("Zoe Edition");
     }
 
     /**
@@ -106,7 +117,7 @@ public final class UI
         {
             try
             {
-                IO.print("> ");
+                printCyan("> ");
 
                 int value = Integer.parseInt(IO.readln());
 
@@ -120,7 +131,7 @@ public final class UI
 
             }
 
-            IO.println("Invalid input. Enter a number between " + min + " and " + max + ".");
+            printlnRed("Invalid input. Enter a number between " + min + " and " + max + ".");
         }
     }
 
@@ -147,7 +158,7 @@ public final class UI
                 return false;
             }
 
-            IO.println("Invalid input. Please enter 'y' or 'n'.");
+            printlnRed("Invalid input. Please enter 'y' or 'n'.");
         }
     }
 
@@ -171,7 +182,7 @@ public final class UI
                 return input;
             }
 
-            IO.println("Input cannot be empty. Please try again.");
+            printlnRed("Input cannot be empty. Please try again.");
         }
     }
 
