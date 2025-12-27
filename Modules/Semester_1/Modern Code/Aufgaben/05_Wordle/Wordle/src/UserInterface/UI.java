@@ -182,7 +182,15 @@ public final class UI
                 return input;
             }
 
-            printlnRed("Input cannot be empty. Please try again.");
+            if (input.length() > maxLength)
+            {
+                printlnRed("Input exceeds maximum length of " + maxLength + " characters. Please try again.");
+            }
+            else
+            {
+                printlnRed("Input cannot be empty. Please try again.");
+            }
+
         }
     }
 
@@ -289,7 +297,8 @@ public final class UI
      */
     public static void exitGame()
     {
-        IO.println("Your computer will blow up in 3 seconds...");
+        clearScreen();
+        printlnRed("Your computer will blow up in 3 seconds...");
         System.exit(0);
     }
 }

@@ -3,6 +3,7 @@ package UserInterface.Screens.Wordle;
 import Global.Config;
 import Global.Words;
 import UserInterface.Screen;
+import UserInterface.UI;
 
 import java.util.List;
 
@@ -10,22 +11,96 @@ public class Wordle extends Screen
 {
     private final String pickedWord;
 
-    private final String[] guesses = new String[Config.MAX_ATTEMPTS];
+    private final Guess[] guesses = new Guess[Config.MAX_ATTEMPTS];
 
     @Override
     public void startScreen()
     {
-        // Implementation for Wordle screen goes here
+        UI.clearScreen();
+
+        for (int attempt = 0; attempt < Config.MAX_ATTEMPTS; attempt++)
+        {
+            printGuesses();
+
+            Guess currentGuess = enterGuess();
+            guesses[attempt] = currentGuess;
+
+            if (isCorrectGuess(currentGuess.getWord()))
+            {
+                UI.clearScreen();
+                UI.printlnGreen("Congratulations! You've guessed the word in " + (attempt + 1) + " attempts!");
+                printGuesses();
+                UI.waitForEnterKey();
+                return;
+            }
+
+            UI.clearScreen();
+        }
+
+        // failure
+
+        UI.clearScreen();
+        printGuesses();
+
+        UI.printAsteriskSeparatorLine();
+        UI.printlnRed("You failed... ");
+        UI.printlnRed("The correct word was: " + pickedWord);
+        UI.printAsteriskSeparatorLine();
+        UI.waitForEnterKey();
     }
 
     public Wordle()
     {
-        pickedWord = "APPLE";
+        pickedWord = Words.getRandomSolutionWord();
 
-        Guess g = computeGuess("ALLEY");
-        g.printGuess();
+        if (Config.EASY_MODE)
+        {
+            UI.printlnGray("Picked Word (for testing purposes): " + pickedWord);
+            UI.waitForEnterKey();
+        }
+    }
 
-        //pickedWord = Words.getRandomSolutionWord();
+    private void printGuesses()
+    {
+        for (Guess guess : guesses)
+        {
+            if (guess != null)
+            {
+                guess.printGuess();
+            }
+            else
+            {
+                UI.printlnGray("_____");
+            }
+        }
+    }
+
+    private Guess enterGuess()
+    {
+        do
+        {
+            String currentGuess = UI.getStringInput("Enter your Guess", 5).toUpperCase();
+
+            if (validateGuess(currentGuess))
+            {
+                return computeGuess(currentGuess);
+            }
+            else
+            {
+                UI.printlnRed("Invalid Guess. Please try again.");
+            }
+        }
+        while (true);
+    }
+
+    private boolean validateGuess(String guess)
+    {
+        return Words.validGuesses.contains(guess);
+    }
+
+    private boolean isCorrectGuess(String guess)
+    {
+        return guess.equals(pickedWord);
     }
 
     private Guess computeGuess(String guessedWord)

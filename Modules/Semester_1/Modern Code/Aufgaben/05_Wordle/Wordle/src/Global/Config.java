@@ -14,4 +14,6 @@ public class Config
 
     public static final int MAX_ATTEMPTS = 6;
     public static final int MAX_WORD_LENGTH = 5;
+
+    public static final boolean EASY_MODE = true;
 }
