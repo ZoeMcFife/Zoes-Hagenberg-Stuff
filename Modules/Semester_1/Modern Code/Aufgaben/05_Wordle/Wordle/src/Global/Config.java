@@ -15,6 +15,12 @@ public class Config
     public static final int MAX_ATTEMPTS = 6;
     public static final int MAX_WORD_LENGTH = 5;
 
+    /** Number of letters revealed in a hint **/
+    public static final int HINT_ACCURACY = 1;
+
+    /** Placeholder letter for unguessed letters used for the auto solve feature **/
+    public static final char PLACEHOLDER_LETTER = '_';
+
     /** Enable easy mode; this just shows the picked word before the game starts **/
     public static final boolean EASY_MODE = true;
 
