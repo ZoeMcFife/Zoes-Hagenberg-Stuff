@@ -4,23 +4,103 @@ import Global.Config;
 
 public final class UI
 {
+    public static final String RESET  = "\u001B[0m";
+
+    public static final String RED    = "\u001B[31m";
+    public static final String GREEN  = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE   = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN   = "\u001B[36m";
+    public static final String GRAY  = "\u001B[37m";
+
     private UI()
     {
 
     }
+
+    public static void printGray(String message)
+    {
+        IO.print(GRAY + message + RESET);
+    }
+
+    public static void printlnGray(String message)
+    {
+        IO.println(GRAY + message + RESET);
+    }
+
+    public static void printRed(String message)
+    {
+        IO.print(RED + message + RESET);
+    }
+
+    public static void printlnRed(String message)
+    {
+        IO.println(RED + message + RESET);
+    }
+
+    public static void printGreen(String message)
+    {
+        IO.print(GREEN + message + RESET);
+    }
+
+    public static void printlnGreen(String message)
+    {
+        IO.println(GREEN + message + RESET);
+    }
+
+    public static void printYellow(String message)
+    {
+        IO.print(YELLOW + message + RESET);
+    }
+    public static void printlnYellow(String message)
+    {
+        IO.println(YELLOW + message + RESET);
+    }
+
+    public static void printBlue(String message)
+    {
+        IO.print(BLUE + message + RESET);
+    }
+
+    public static void printlnBlue(String message)
+    {
+        IO.println(BLUE + message + RESET);
+    }
+
+    public static void printCyan(String message)
+    {
+        IO.print(CYAN + message + RESET);
+    }
+
+    public static void printlnCyan(String message)
+    {
+        IO.println(CYAN + message + RESET);
+    }
+
+    public static void printPurple(String message)
+    {
+        IO.print(PURPLE + message + RESET);
+    }
+
+    public static void printlnPurple(String message)
+    {
+        IO.println(PURPLE + message + RESET);
+    }
+
 
     /**
      * Displays the Wordle title in ASCII art.
      */
     public static void displayWordleTitle()
     {
-        IO.println(" __      __                .___.__          \n" +
+        printlnGreen(" __      __                .___.__          \n" +
                 "/  \\    /  \\___________  __| _/|  |   ____  \n" +
                 "\\   \\/\\/   /  _ \\_  __ \\/ __ | |  | _/ __ \\ \n" +
                 " \\        (  <_> )  | \\/ /_/ | |  |_\\  ___/ \n" +
                 "  \\__/\\  / \\____/|__|  \\____ | |____/\\___  >\n" +
                 "       \\/                   \\/           \\/ ");
-        IO.println("Zoe Edition");
+        printlnYellow("Zoe Edition");
     }
 
     /**
@@ -37,7 +117,7 @@ public final class UI
         {
             try
             {
-                IO.print("> ");
+                printCyan("> ");
 
                 int value = Integer.parseInt(IO.readln());
 
@@ -51,7 +131,7 @@ public final class UI
 
             }
 
-            IO.println("Invalid input. Enter a number between " + min + " and " + max + ".");
+            printlnRed("Invalid input. Enter a number between " + min + " and " + max + ".");
         }
     }
 
@@ -78,7 +158,7 @@ public final class UI
                 return false;
             }
 
-            IO.println("Invalid input. Please enter 'y' or 'n'.");
+            printlnRed("Invalid input. Please enter 'y' or 'n'.");
         }
     }
 
@@ -92,17 +172,42 @@ public final class UI
      */
     public static String getStringInput(String prompt, int maxLength)
     {
+        return getStringInput(prompt, 0, maxLength);
+    }
+
+    /**
+     * Gets a string input from the player with minimum and maximum length restrictions.
+     * Continues to prompt until valid input is provided.
+     *
+     * @param prompt    The prompt message to display
+     * @param minLength The minimum allowed length of the input
+     * @param maxLength The maximum allowed length of the input
+     * @return The validated string input
+     */
+    public static String getStringInput(String prompt, int minLength, int maxLength)
+    {
         while (true)
         {
             IO.println(prompt + ": ");
             String input = IO.readln().trim();;
 
-            if (!input.isEmpty() && input.length() <= maxLength)
+            if (!input.isEmpty() && input.length() <= maxLength && input.length() >= minLength)
             {
                 return input;
             }
 
-            IO.println("Input cannot be empty. Please try again.");
+            if (input.length() > maxLength)
+            {
+                printlnRed("Input exceeds maximum length of " + maxLength + " characters. Please try again.");
+            }
+            else if (input.length() < minLength)
+            {
+                printlnRed("Input must be at least " + minLength + " characters long. Please try again.");
+            }
+            else
+            {
+                printlnRed("Input cannot be empty. Please try again.");
+            }
         }
     }
 
@@ -209,7 +314,8 @@ public final class UI
      */
     public static void exitGame()
     {
-        IO.println("Your computer will blow up in 3 seconds...");
+        clearScreen();
+        printlnRed("Your computer will blow up in 3 seconds...");
         System.exit(0);
     }
 }

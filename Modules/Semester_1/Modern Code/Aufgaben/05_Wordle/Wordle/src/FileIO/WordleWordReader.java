@@ -53,7 +53,7 @@ public class WordleWordReader
 
             while ((line = reader.readLine()) != null)
             {
-                line = line.trim().toLowerCase();
+                line = line.trim().toUpperCase();
 
                 if (!line.isEmpty())
                 {

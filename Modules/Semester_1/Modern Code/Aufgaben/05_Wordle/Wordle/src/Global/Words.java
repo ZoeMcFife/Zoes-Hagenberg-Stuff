@@ -19,4 +19,10 @@ public class Words
      * Set of valid Wordle guess words. Using a set for O(1) lookup time.
      */
     public static Set<String> validGuesses = new HashSet<>();
+
+    public static String getRandomSolutionWord()
+    {
+        int randomIndex = (int) (Math.random() * validSolutions.size());
+        return validSolutions.get(randomIndex);
+    }
 }
