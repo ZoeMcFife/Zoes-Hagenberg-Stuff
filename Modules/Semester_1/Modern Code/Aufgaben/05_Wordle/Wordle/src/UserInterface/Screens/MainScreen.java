@@ -16,8 +16,9 @@ public class MainScreen extends Screen
             UI.displayWordleTitle();
 
             MenuItem startGame = new MenuItem("Start Game", this::startGame);
+            MenuItem help = new MenuItem("Help", this::showHelp);
             MenuItem quitGame = new MenuItem("Quit Game", this::quitGame);
-            Menu mainMenu = new Menu("Main Menu", startGame, quitGame);
+            Menu mainMenu = new Menu("Main Menu", startGame, help, quitGame);
 
             UI.printBlankSeparatorLine();
 
@@ -31,6 +32,12 @@ public class MainScreen extends Screen
     {
         Wordle wordleGame = new Wordle();
         wordleGame.startScreen();
+    }
+
+    private void showHelp()
+    {
+        HelpScreen helpScreen = new HelpScreen();
+        helpScreen.startScreen();
     }
 
     private void quitGame()
