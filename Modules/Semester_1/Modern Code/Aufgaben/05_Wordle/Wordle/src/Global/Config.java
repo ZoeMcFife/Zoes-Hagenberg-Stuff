@@ -15,5 +15,12 @@ public class Config
     public static final int MAX_ATTEMPTS = 6;
     public static final int MAX_WORD_LENGTH = 5;
 
+    /** Enable easy mode; this just shows the picked word before the game starts **/
     public static final boolean EASY_MODE = true;
+
+    /** Command to exit the current game **/
+    public static final String EXIT_COMMAND = "EXIT!";
+
+    /** Command to get help/hint for the current word **/
+    public static final String HELP_COMMAND = "HELP!";
 }

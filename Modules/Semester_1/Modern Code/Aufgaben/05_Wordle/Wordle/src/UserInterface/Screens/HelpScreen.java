@@ -1,5 +1,6 @@
 package UserInterface.Screens;
 
+import Global.Config;
 import UserInterface.Screen;
 import UserInterface.UI;
 
@@ -12,12 +13,12 @@ public class HelpScreen extends Screen
         UI.printlnGreen("===== Help =====");
 
         UI.printYellow("Type ");
-        UI.printGreen("HELP! ");
-        UI.printYellow("to receive a hint for the current word." + System.lineSeparator());
+        UI.printGreen(Config.HELP_COMMAND);
+        UI.printYellow(" to receive a hint for the current word." + System.lineSeparator());
 
         UI.printYellow("Type ");
-        UI.printGreen("QUIT! ");
-        UI.printYellow("to exit the current game." + System.lineSeparator());
+        UI.printGreen(Config.EXIT_COMMAND);
+        UI.printYellow(" to exit the current game." + System.lineSeparator());
 
         UI.waitForEnterKey();
     }

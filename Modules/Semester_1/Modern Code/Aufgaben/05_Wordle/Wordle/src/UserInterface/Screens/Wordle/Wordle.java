@@ -23,6 +23,15 @@ public class Wordle extends Screen
             printGuesses();
 
             Guess currentGuess = enterGuess();
+
+            if (currentGuess.getWord().equals("EXIT!"))
+            {
+                UI.clearScreen();
+                UI.printlnYellow("You have exited the game.");
+                UI.waitForEnterKey();
+                return;
+            }
+
             guesses[attempt] = currentGuess;
 
             if (isCorrectGuess(currentGuess.getWord()))
@@ -80,6 +89,15 @@ public class Wordle extends Screen
         do
         {
             String currentGuess = UI.getStringInput("Enter your Guess", 5).toUpperCase();
+
+            if (currentGuess.equals(Config.EXIT_COMMAND))
+            {
+                return new Guess("EXIT!", new GuessAccuracy[0]);
+            }
+            else if (currentGuess.equals(Config.HELP_COMMAND))
+            {
+               UI.printlnRed("Not implemented yet.");
+            }
 
             if (validateGuess(currentGuess))
             {
