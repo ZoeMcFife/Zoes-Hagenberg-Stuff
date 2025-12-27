@@ -172,12 +172,26 @@ public final class UI
      */
     public static String getStringInput(String prompt, int maxLength)
     {
+        return getStringInput(prompt, 0, maxLength);
+    }
+
+    /**
+     * Gets a string input from the player with minimum and maximum length restrictions.
+     * Continues to prompt until valid input is provided.
+     *
+     * @param prompt    The prompt message to display
+     * @param minLength The minimum allowed length of the input
+     * @param maxLength The maximum allowed length of the input
+     * @return The validated string input
+     */
+    public static String getStringInput(String prompt, int minLength, int maxLength)
+    {
         while (true)
         {
             IO.println(prompt + ": ");
             String input = IO.readln().trim();;
 
-            if (!input.isEmpty() && input.length() <= maxLength)
+            if (!input.isEmpty() && input.length() <= maxLength && input.length() >= minLength)
             {
                 return input;
             }
@@ -186,11 +200,14 @@ public final class UI
             {
                 printlnRed("Input exceeds maximum length of " + maxLength + " characters. Please try again.");
             }
+            else if (input.length() < minLength)
+            {
+                printlnRed("Input must be at least " + minLength + " characters long. Please try again.");
+            }
             else
             {
                 printlnRed("Input cannot be empty. Please try again.");
             }
-
         }
     }
 

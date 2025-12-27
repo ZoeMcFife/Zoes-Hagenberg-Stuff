@@ -60,7 +60,8 @@ public class Wordle extends Screen
 
     public Wordle()
     {
-        pickedWord = Words.getRandomSolutionWord();
+        //pickedWord = Words.getRandomSolutionWord();
+        pickedWord = "APPLE";
 
         if (Config.EASY_MODE)
         {
@@ -88,7 +89,7 @@ public class Wordle extends Screen
     {
         do
         {
-            String currentGuess = UI.getStringInput("Enter your Guess", 5).toUpperCase();
+            String currentGuess = UI.getStringInput("Enter your Guess", Config.MAX_WORD_LENGTH, Config.MAX_WORD_LENGTH).toUpperCase();
 
             if (currentGuess.equals(Config.EXIT_COMMAND))
             {
@@ -156,9 +157,5 @@ public class Wordle extends Screen
         }
 
         return new Guess(guessedWord, accuracies);
-
     }
-
-
-
 }
