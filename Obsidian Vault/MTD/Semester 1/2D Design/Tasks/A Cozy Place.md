@@ -60,3 +60,20 @@ let’s make some simple CICD for Nebula Interstellar shall we :3c
 indesign document lookin good
 
 ![[Pasted image 20260101142100.png]]
+
+![[Pasted image 20260101163213.png]]
+
+
+
+okay so my ideas of what to draw for the sketches
+
+- floorplan
+- view of the bed area
+- view of the kitchenette
+
+- main thingy: the bridge and its beautiful panoramic glass
+
+ill have to draw all these in krita 
+
+then i can start with mina :D 
+
