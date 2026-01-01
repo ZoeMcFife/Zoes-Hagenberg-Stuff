@@ -35,3 +35,27 @@ i should make nebula interstellar branding now :D :D :D
 ? idk yet 
 
 white and purple i guess? 
+
+let’s make some simple CICD for Nebula Interstellar shall we :3c 
+
+![[Pasted image 20260101122529.png]]
+
+**\#323031** — Graphite
+**\#4D1ABB** — Ultrasonic
+**\#8C5CF0** — Slate
+**\#F4F4F4** — Smoke
+**\#ED254E** — Watermelon
+
+<div style="display:flex; gap:12px; flex-wrap:wrap;">
+  <div style="width:120px; height:120px; background:#323031; color:#F4F4F4; display:flex; align-items:center; justify-content:center;">#323031<br>Graphite</div>
+  <div style="width:120px; height:120px; background:#4D1ABB; color:#F4F4F4; display:flex; align-items:center; justify-content:center;">#4D1ABB<br>Ultrasonic</div>
+  <div style="width:120px; height:120px; background:#8C5CF0; color:#F4F4F4; display:flex; align-items:center; justify-content:center;">#8C5CF0<br>Slate</div>
+  <div style="width:120px; height:120px; background:#F4F4F4; color:#323031; display:flex; align-items:center; justify-content:center; border:1px solid #ccc;">#F4F4F4<br> Smoke</div>
+  <div style="width:120px; height:120px; background:#ED254E; color:#F4F4F4; display:flex; align-items:center; justify-content:center;">#ED254E<br>Watermelon</div>
+</div>
+
+
+![[Pasted image 20260101133119.png]]
+
+indesign document lookin good
+
