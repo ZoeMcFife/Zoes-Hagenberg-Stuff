@@ -59,3 +59,4 @@ let’s make some simple CICD for Nebula Interstellar shall we :3c
 
 indesign document lookin good
 
+![[Pasted image 20260101142100.png]]
