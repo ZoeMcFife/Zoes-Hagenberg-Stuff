@@ -77,3 +77,22 @@ ill have to draw all these in krita
 
 then i can start with mina :D 
 
+# Sketches
+![[Pasted image 20260103102502.png]]
+
+time to actually draw this (has no idea how to draw)
+
+![[floorplan.png]]
+
+So, I added an escape pod and suit locker / weapon rack to the interior
+
+but i had to move the dining area and kitchen down, because the exit elevator has to be near bridge, otherwise it makes no sense
+
+the escape pod could be placed higher and closer to the bridge? but idk i’ll leave it how it is right now
+
+it’s basically a long corridor now, with some open areas and some seperate rooms 
+
+dining area window is angled upwards, because the thruster blocks the sideways view
+
+![[Bed.png]]
+
