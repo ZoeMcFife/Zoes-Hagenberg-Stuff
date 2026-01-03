@@ -97,3 +97,5 @@ dining area window is angled upwards, because the thruster blocks the sideways v
 ![[Bed.png]]
 
 ![[Kitchen-Dining-Area.png]]![[Bridge.png]]
+
+![[Cozy Place.pdf]]
