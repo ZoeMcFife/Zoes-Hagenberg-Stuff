@@ -36,6 +36,11 @@ we need a last name for her !! D:
 
 this is mina wearing her iconic outfit
 
+![[Pasted image 20260104102323.png]]
+
+omg i love her <3 <3 <3<
+
+![[Mina1.png]]
 # Mina 2
 
 mina epic spacesuit time
