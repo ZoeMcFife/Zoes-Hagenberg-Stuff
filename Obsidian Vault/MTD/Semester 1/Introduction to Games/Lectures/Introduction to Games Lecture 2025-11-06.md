@@ -1,5 +1,6 @@
 #introduction_to_games #game_art #braid 
 
+![[VL + UE IGA1 Game Art 1.pdf]]
 # Game Art
 
 Is Game Art “Art” → YES DUH
