@@ -56,3 +56,9 @@ mina world walker ???? no way???
 hm. it would be cute if mina and alyx would fly a trifid !! :LiAxis3d:
 
 
+![[Mina3.png]]
+
+# Mina Lore
+
+Mina is a trans-lesbian cat woman. She was born in 2996, on 109 Piscium 3, a large icy planet, in a small settlement. She currently lives in the Ising Interstellar Spaceport, a large industrial mining facility. 
+
