@@ -31,6 +31,7 @@ we need a last name for her !! D:
     <div style="width:120px; height:120px; background:#111010; color:#fff; display:flex; align-items:center; justify-content:center;">#111010<br>Gay Cat jacket!</div>
     <div style="width:120px; height:120px; background:#8AA0AC; color:#000; display:flex; align-items:center; justify-content:center;">#8AA0AC<br>Gay Cat pants!</div>
 </div>
+
 # Mina 1
 
 this is mina wearing her iconic outfit
