@@ -40,10 +40,14 @@ this is mina wearing her iconic outfit
 
 omg i love her <3 <3 <3<
 
-![[Mina1.png]]
+![[Mina1 1.png]]
 # Mina 2
 
 mina epic spacesuit time
+
+![[Mina2.png]]
+
+why is she so sad 
 
 # Mina 3
 
