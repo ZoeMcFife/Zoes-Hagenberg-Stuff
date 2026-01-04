@@ -60,5 +60,33 @@ hm. it would be cute if mina and alyx would fly a trifid !! :LiAxis3d:
 
 # Mina Lore
 
-Mina is a trans-lesbian cat woman. She was born in 2996, on 109 Piscium 3, a large icy planet, in a small settlement. She currently lives in the Ising Interstellar Spaceport, a large industrial mining facility. 
+Mina is a trans-lesbian cat woman. She was born in 2996, on 109 Piscium 3, a large icy planet, in a small settlement. She lives in the Ising Interstellar Spaceport, a large industrial mining facility. There she works as a mechanic, usually repairing mining ships or old satellites in the star system. 
 
+
+
+
+mina → smart, lonely, low self-esteem, dreamer → wants to be an adventurer out in space but never had the opportinuty or motivation to do so → feels stuck on that stupid station
+
+mina has no friends besides one online friend who lives on 109 Piscium 5 e
+
+mina owns a small, very old ship → the tortellini 
+
+→ when mina was around 12 → her brother died in a mining accident due to unsafe conditions → parents sued the mining company and won → money → but still very traumatized to this day → dad got very depressed 
+
+→ they bought mina a spaceship when she was 15 → so she can use it to live her life out to the fullest → the tortellini → a small multipurpose spaceship first used in 2750, 
+
+→ Mina has a rough relationship with her parents, never really wanting to visit them (they live on the same station) → her dad keeps deadnaming and misgendering her → mother never does anything about it, etc
+
+→ mina has social anxiety 
+
+→ one day mina goes out to fix some satellites like usual, but gets attacked by weird, small, unmarked ships → fights them off (she cool like that) → tries to report it or something because she’s like → she has never seen those kind of ships before, there are not cat-made ships, she’d recognize them. 
+
+→ though nobody really cares or prioritizes it, her case basically got put on the backburner 
+
+→ the company she works for → she gets a new coworker, because she’s supposed to have someone helping out with the repairs, even though mina doesn’t really need it → Alyx Maria Spirit, though she doesn’t seem that interested either
+
+→ Mina is like “fuck it” and sets out to investigate the issue herself, taking alyx with her,
+
+→ mina gets involved in really big things → people die → rough and long journey
+
+→ mina becomes a world walker 
