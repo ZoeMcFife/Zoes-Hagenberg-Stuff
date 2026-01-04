@@ -118,6 +118,13 @@ Mina is like “fuck it”. She sets out to investigate the mysterious ships her
 
 → mina becomes a world walker 
 
+# Last Name Ideas
+
+Mina Gay
+**Mina Gaia**
+Mina Airfryer 
+Mina Elevator
+
 
 
 
