@@ -2,6 +2,7 @@
 
 SPINNING CUBER
 
+![[MTD_GEC_06_Scripting.pdf]]
 # Klausur stuff
 whats important
 
