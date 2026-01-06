@@ -46,3 +46,4 @@ Principiled bsdf
 
 Light types
 
+![[3DD VL 2_.pdf]]
