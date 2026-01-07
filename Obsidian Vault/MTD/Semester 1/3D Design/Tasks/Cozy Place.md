@@ -12,3 +12,5 @@ these UVs are good
 lol
 
 ![[Pasted image 20260106154457.png]]
+
+![[Pasted image 20260107113715.png]]
