@@ -15,4 +15,4 @@ lol
 
 ![[Pasted image 20260107113715.png]]
 
-![[Pasted image 20260108175451.png]]
+![[Pasted image 20260108175451.png]]![[Pasted image 20260108180744.png]]
