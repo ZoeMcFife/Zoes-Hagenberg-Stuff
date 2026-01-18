@@ -69,3 +69,19 @@ worked on them while hangin out with hator and marsher ! woohoo uwu
 ![[Screenshot 2026-01-16 154807.png]]
 
 ![[Screenshot 2026-01-16 220210.png]]![[Screenshot 2026-01-16 123733.png]]
+
+# whats left
+
+not much actually 
+
+i just need to create a cool background with planets and a star
+
+for ligghting!
+
+i need to place in some more thingy majics 
+
+and RENDER RENDER RENDER 
+
+5080 gonna sweat 
+
+also animation?!
