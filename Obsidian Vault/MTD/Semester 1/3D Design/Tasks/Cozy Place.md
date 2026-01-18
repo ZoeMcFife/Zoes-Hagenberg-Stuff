@@ -85,3 +85,6 @@ and RENDER RENDER RENDER
 5080 gonna sweat 
 
 also animation?!
+
+
+![[Pasted image 20260118110942.png]]
