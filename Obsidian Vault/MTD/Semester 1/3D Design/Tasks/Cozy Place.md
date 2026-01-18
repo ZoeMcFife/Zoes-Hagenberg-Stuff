@@ -88,3 +88,15 @@ also animation?!
 
 
 ![[Pasted image 20260118110942.png]]
+# Renders 
+## Sol
+
+![[Corridor.png]]
+
+![[Semester 1/3D Design/Tasks/attachments/Bed.png]]
+
+## Saturn
+
+![[Bed 1.png]]
+
+![[Corridor 1.png]]
