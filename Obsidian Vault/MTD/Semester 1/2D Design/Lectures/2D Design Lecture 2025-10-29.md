@@ -1,4 +1,4 @@
-#2d_design #briefing #color #photoshop #pantone
+ #2d_design #briefing #color #photoshop #pantone
 
 
 farbmodi → dokument aufsetzung, working color space, etc 

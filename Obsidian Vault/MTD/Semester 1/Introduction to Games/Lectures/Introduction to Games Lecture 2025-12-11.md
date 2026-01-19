@@ -11,3 +11,5 @@ ludology is such a silly word omg lmao
 
 homo ludens → old book
 
+**UPDATE-2026-01-04:** pdf is still missing :O oh no
+![[IGA_11_GameResearch_VL.pdf]]
