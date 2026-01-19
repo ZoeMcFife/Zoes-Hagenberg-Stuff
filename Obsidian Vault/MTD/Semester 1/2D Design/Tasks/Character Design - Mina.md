@@ -124,7 +124,7 @@ Mina Gay
 **Mina Gaia**
 Mina Airfryer 
 Mina Elevator
-
+Mina Gairfryer
 
 
 
