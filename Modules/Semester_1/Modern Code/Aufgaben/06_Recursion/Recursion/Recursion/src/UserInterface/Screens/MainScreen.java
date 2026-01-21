@@ -43,12 +43,14 @@ public class MainScreen extends Screen
 
     public void decimalToBinary()
     {
-
+        DecimalToBinaryScreen decimalToBinaryScreen = new DecimalToBinaryScreen();
+        decimalToBinaryScreen.startScreen();
     }
 
     public void NumberToWords()
     {
-
+        NumberToWordsScreen numberToWordsScreen = new NumberToWordsScreen();
+        numberToWordsScreen.startScreen();
     }
 
     public void tribonacci()
