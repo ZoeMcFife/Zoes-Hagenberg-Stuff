@@ -298,7 +298,7 @@ public final class UI
     /**
      * Exits the game with a humorous message.
      */
-    public static void exitGame()
+    public static void exit()
     {
         clearScreen();
         printlnRed("Your computer will blow up in 3 seconds...");
