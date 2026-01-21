@@ -37,7 +37,8 @@ public class MainScreen extends Screen
 
     public void towerOfHanoi()
     {
-
+        TowerOfHanoiScreen towerOfHanoiScreen = new TowerOfHanoiScreen();
+        towerOfHanoiScreen.startScreen();
     }
 
     public void decimalToBinary()

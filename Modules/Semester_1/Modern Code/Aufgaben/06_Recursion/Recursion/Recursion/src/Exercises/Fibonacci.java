@@ -6,46 +6,82 @@ public class Fibonacci
 {
     public void compareFibonacciMethodTimes(int n)
     {
-        long startTime = System.nanoTime();
-        int resultIterative = fibonacciIterative(n);
-        long endTime = System.nanoTime();
-        long durationIterative = endTime - startTime;
-
-        startTime = System.nanoTime();
-        int resultRecursive = fibonacciRecursive(n);
-        endTime = System.nanoTime();
-        long durationRecursive = endTime - startTime;
-
-        startTime = System.nanoTime();
-        int resultMemoized = fibonacciMemoized(n);
-        endTime = System.nanoTime();
-        long durationMemoized = endTime - startTime;
-
-        startTime = System.nanoTime();
-        int resultMemoizedSmall = fibonacciMemoized(n, 5);
-        endTime = System.nanoTime();
-        long durationMemoizedSmall = endTime - startTime;
-
-        startTime = System.nanoTime();
-        int resultMemoizedMedium = fibonacciMemoized(n, 15);
-        endTime = System.nanoTime();
-        long durationMemoizedMedium = endTime - startTime;
-
-        startTime = System.nanoTime();
-        int resultMemoizedLarge = fibonacciMemoized(n, 30);
-        endTime = System.nanoTime();
-        long durationMemoizedLarge = endTime - startTime;
-
         UI.printlnBlue("Fibonacci method times for n = " + n + ":");
         UI.printAsteriskSeparatorLine();
-        IO.println("Iterative result: " + resultIterative + ", Time: " + durationIterative + " ns");
-        IO.println("Recursive result: " + resultRecursive + ", Time: " + durationRecursive + " ns");
-        IO.println("Memoized result (n + 1 memo): " + resultMemoized + ", Time: " + durationMemoized + " ns");
-        IO.println("Memoized (small memo : 5) result: " + resultMemoizedSmall + ", Time: " + durationMemoizedSmall + " ns");
-        IO.println("Memoized (medium memo : 15) result: " + resultMemoizedMedium + ", Time: " + durationMemoizedMedium + " ns");
-        IO.println("Memoized (large memo : 30) result: " + resultMemoizedLarge + ", Time: " + durationMemoizedLarge + " ns");
+
+        Runnable iterativeTask = () -> {
+            long start = System.nanoTime();
+            int result = fibonacciIterative(n);
+            long duration = System.nanoTime() - start;
+            IO.println("Iterative result: " + result + ", Time: " + duration + " ns");
+        };
+
+        Runnable recursiveTask = () -> {
+            long start = System.nanoTime();
+            int result = fibonacciRecursive(n);
+            long duration = System.nanoTime() - start;
+            IO.println("Recursive result: " + result + ", Time: " + duration + " ns");
+        };
+
+        Runnable memoizedTask = () -> {
+            long start = System.nanoTime();
+            int result = fibonacciMemoized(n);
+            long duration = System.nanoTime() - start;
+            IO.println("Memoized result (n + 1 memo): " + result + ", Time: " + duration + " ns");
+        };
+
+        Runnable memoSmallTask = () -> {
+            long start = System.nanoTime();
+            int result = fibonacciMemoized(n, 5);
+            long duration = System.nanoTime() - start;
+            IO.println("Memoized (small memo : 5) result: " + result + ", Time: " + duration + " ns");
+        };
+
+        Runnable memoMediumTask = () -> {
+            long start = System.nanoTime();
+            int result = fibonacciMemoized(n, 15);
+            long duration = System.nanoTime() - start;
+            IO.println("Memoized (medium memo : 15) result: " + result + ", Time: " + duration + " ns");
+        };
+
+        Runnable memoLargeTask = () -> {
+            long start = System.nanoTime();
+            int result = fibonacciMemoized(n, 30);
+            long duration = System.nanoTime() - start;
+            IO.println("Memoized (large memo : 30) result: " + result + ", Time: " + duration + " ns");
+        };
+
+        Thread t1 = new Thread(iterativeTask);
+        Thread t2 = new Thread(recursiveTask);
+        Thread t3 = new Thread(memoizedTask);
+        Thread t4 = new Thread(memoSmallTask);
+        Thread t5 = new Thread(memoMediumTask);
+        Thread t6 = new Thread(memoLargeTask);
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
+
+        try
+        {
+            t1.join();
+            t2.join();
+            t3.join();
+            t4.join();
+            t5.join();
+            t6.join();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
         UI.printAsteriskSeparatorLine();
     }
+
 
     public int fibonacciIterative(int n)
     {

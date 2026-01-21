@@ -60,7 +60,7 @@ public class FibonacciScreen extends Screen
         UI.printBlankSeparatorLine();
 
         UI.printlnBlue("Time Comparison:");
-        fibonacci.compareFibonacciMethodTimes(60);
+        fibonacci.compareFibonacciMethodTimes(40);
 
         UI.waitForEnterKey();
     }
