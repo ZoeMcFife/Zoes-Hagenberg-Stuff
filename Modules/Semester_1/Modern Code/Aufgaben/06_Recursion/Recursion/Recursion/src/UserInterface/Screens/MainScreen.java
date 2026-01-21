@@ -55,7 +55,8 @@ public class MainScreen extends Screen
 
     public void tribonacci()
     {
-
+        TribonacciScreen tribonacciScreen = new TribonacciScreen();
+        tribonacciScreen.startScreen();
     }
 
     public void quit()
