@@ -16,42 +16,50 @@ public class NumberToWords
             throw new IllegalArgumentException("Number must be between 0 and " + MAX_NUMBER);
         }
 
-        // only if number is 0
-        if (number == 0)
-        {
-            if (str.isEmpty())
-            {
-                return "Zero";
-            }
+        // thousands
 
+        if (number >= 1000)
+        {
+            str.append(convertNumberToWord(getFirstDigit(number))).append(" Thousand ");
+
+            return numberToWords(removeFirstDigit(number), str);
+        }
+
+        // hundreds
+        if (number >= 100)
+        {
+            str.append(convertNumberToWord(getFirstDigit(number))).append(" Hundred ");
+            return numberToWords(removeFirstDigit(number), str);
+        }
+
+        // tens
+        if (number >= 20)
+        {
+            str.append(convertTensToWord(number)).append(" ");
+            return numberToWords(removeFirstDigit(number), str);
+        }
+
+        // teens
+        if (number >= 10)
+        {
+            str.append(convertTeensToWord(number)).append(" ");
             return str.toString().trim();
         }
 
-        if (number > 999)
-        {
-            int firstDigit = getFirstDigit(number);
-            str.append(convertNumberToWord(firstDigit)).append(" Thousand ");
-        }
-
-        if (number > 99)
-        {
-            int firstDigit = getFirstDigit(number);
-            str.append(convertNumberToWord(firstDigit)).append(" Hundred ");
-        }
-
-        if (number > 9)
-        {
-            str.append(convertTensToWord((number / 10) * 10)).append(" ");
-
-            str.append(convertNumberToWord(getLastDigit(number))).append(" ");
-        }
-
-        if (number <= 9)
+        // units
+        if (number > 0)
         {
             str.append(convertNumberToWord(number)).append(" ");
+            return str.toString().trim();
         }
 
-        return numberToWords(removeFirstDigit(number));
+        if (str.isEmpty())
+        {
+            str.append(convertNumberToWord(0)).append(" ");
+            return str.toString().trim();
+        }
+
+        return str.toString().trim();
     }
 
     private static String convertNumberToWord(int number)
@@ -69,29 +77,34 @@ public class NumberToWords
         return words[number];
     }
 
+    private static String convertTeensToWord(int number)
+    {
+        if (number < 10 || number > 19)
+        {
+            throw new IllegalArgumentException("Number must be between 10 and 19");
+        }
+
+        String[] words = {
+            "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen",
+            "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+        };
+
+        return words[number - 10];
+    }
+
     private static String convertTensToWord(int number)
     {
-        if (number < 10 || number > 99)
+        if (number < 20 || number > 99)
         {
             throw new IllegalArgumentException("Number must be between 10 and 99");
         }
 
         String[] words = {
-            "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen",
-            "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen",
             "Twenty", "Thirty", "Forty", "Fifty", "Sixty",
             "Seventy", "Eighty", "Ninety"
         };
 
-        if (number < 20)
-        {
-            return words[number - 10];
-        }
-        else
-        {
-            int firstDigit = getFirstDigit(number);
-            return words[8 + firstDigit];
-        }
+        return words[(number / 10) - 2];
     }
 
     private static int getFirstDigit(int number)
