@@ -1,7 +1,7 @@
 ---
 tags: [modern_code, java, introduction]
 ---
-
+This is skipped lol
 # 📚 Introduction - Java Basics
 
 > A comprehensive introduction to Java programming fundamentals

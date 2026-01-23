@@ -19,3 +19,8 @@ tags: [modern_code, variables, types, expressions]
 ![[Excalidraw/Semester 1/Modern Code/02 Variables, Types and Expressions]]
 
 ---
+
+this is basically nothing lol 
+
+lmao 
+

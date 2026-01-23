@@ -2,7 +2,18 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main()
 {
-    // compare the execution times of both methods
+    Factorial[] array = {new Factorial(1), new Factorial(2), new Factorial(3), new Factorial(4), new Factorial(5)};
+
+    Factorial a = array[0];
+
+    IO.println(a);
+
+    array[0] = new Factorial(10);
+
+    IO.println(a);
+
+
+   /*// compare the execution times of both methods
     long n = 5;
 
     long startTime = System.nanoTime();
@@ -14,5 +25,5 @@ void main()
     long iterativeTime = System.nanoTime() - startTime;
 
     System.out.println("Recursive result: " + recursiveResult + ", Time: " + recursiveTime + " ns");
-    System.out.println("Iterative result: " + iterativeResult + ", Time: " + iterativeTime + " ns");
+    System.out.println("Iterative result: " + iterativeResult + ", Time: " + iterativeTime + " ns");*/
 }

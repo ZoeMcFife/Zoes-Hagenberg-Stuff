@@ -1,5 +1,17 @@
 public class Factorial
 {
+    public int a;
+
+    public Factorial(int a)
+    {
+        this.a = a;
+    }
+
+    @Override
+    public String toString() {
+        return " " + a;
+    }
+
     public static long factorial(long n)
     {
         if (n <= 1)
