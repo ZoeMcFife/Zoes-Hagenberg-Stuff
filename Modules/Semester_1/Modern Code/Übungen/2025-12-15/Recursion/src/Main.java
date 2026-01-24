@@ -13,8 +13,8 @@ void main()
     IO.println(a);
 
 
-   /*// compare the execution times of both methods
-    long n = 5;
+   //compare the execution times of both methods
+    long n = 4;
 
     long startTime = System.nanoTime();
     long recursiveResult = Factorial.factorial(n);
@@ -25,5 +25,5 @@ void main()
     long iterativeTime = System.nanoTime() - startTime;
 
     System.out.println("Recursive result: " + recursiveResult + ", Time: " + recursiveTime + " ns");
-    System.out.println("Iterative result: " + iterativeResult + ", Time: " + iterativeTime + " ns");*/
+    System.out.println("Iterative result: " + iterativeResult + ", Time: " + iterativeTime + " ns");
 }

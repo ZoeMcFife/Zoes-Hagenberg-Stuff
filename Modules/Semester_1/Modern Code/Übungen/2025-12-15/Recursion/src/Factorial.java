@@ -19,8 +19,6 @@ public class Factorial
             return 1;
         }
 
-        int[] array = new int[(int)n];
-
         return n * factorial(n - 1);
     }
 
