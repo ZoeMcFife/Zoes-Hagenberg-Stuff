@@ -1,5 +1,86 @@
 #web_fundementals  #javascript 
 
+#sussy
+
+gulping some sussy pipes
+
+sussus among us
+
+```javascript
+import {dest, src, watch, series, parallel} from "gulp";  
+import * as dartSass from "sass";  
+import terser from "gulp-terser";  
+import sourcemaps from "gulp-sourcemaps";  
+import gulpSass from "gulp-sass";  
+import cleanCSS from "gulp-clean-css";  
+import eslint from "gulp-eslint";  
+import rename from "gulp-rename";  
+import browserSync from "browser-sync";  
+  
+const sass = gulpSass(dartSass);  
+  
+export function lint()  
+{  
+    return src("_js/*.js")  
+        .pipe(eslint())  
+        .pipe(eslint.format())  
+        .pipe(eslint.failAfterError());  
+}  
+  
+export function styles()  
+{  
+    return src("_scss/main.scss")  
+        .pipe(sourcemaps.init())  
+        .pipe(sass(undefined, undefined))  
+        .pipe(cleanCSS())  
+        .pipe(rename(  
+            function (path)  
+            {  
+                path.basename = "main.min";  
+            }  
+        ))  
+        .pipe(sourcemaps.write())  
+        .pipe(dest("css"));  
+}  
+  
+export function scripts()  
+{  
+    return src("_js/**/*.js")  
+        .pipe(sourcemaps.init())  
+        .pipe(terser())  
+        .pipe(sourcemaps.write())  
+        .pipe(rename(  
+            function (path)  
+            {  
+                path.basename += ".min";  
+            }  
+        ))  
+        .pipe(dest("js"));  
+}  
+  
+const bs = browserSync.create();  
+  
+export function server(done)  
+{  
+    bs.init({  
+        server: {  
+            baseDir: "./"  
+        }  
+    });  
+    done();  
+}  
+  
+function reload(done) { bs.reload(); done(); }  
+  
+export function watcher()  
+{  
+    watch("_scss/*.scss", series(styles, reload));  
+    watch("_js/*.js", series(lint, scripts, reload));  
+    watch(["*.html", "css/*.css", "js/*.js"], reload);  
+}  
+  
+export default series(parallel(styles, scripts), server, watcher);
+```
 # Übung 11 – JavaScript Teil 4: Workflow mit Gulp
 
 WEF1UE Web Fundamentals | 26.01.2026 | Wolfgang Hochleitner | Code-along
