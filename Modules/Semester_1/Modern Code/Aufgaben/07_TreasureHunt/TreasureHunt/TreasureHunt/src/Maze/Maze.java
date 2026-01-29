@@ -157,7 +157,7 @@ public class Maze
 
         if (getTileType(position) == Tile.PATH)
         {
-            if (getDistance(position, playerPosition) < (double) size / 2)
+            if (getEuclideanDistance(position, playerPosition) < (double) size / 2)
             {
                 spawnAI();
                 return;
@@ -173,9 +173,14 @@ public class Maze
     }
 
 
-    public double getDistance(TilePosition to, TilePosition from)
+    public double getManhattanDistance(TilePosition to, TilePosition from)
     {
         return Math.abs(to.row() - from.row()) + Math.abs(to.col() - from.col());
+    }
+
+    public double getEuclideanDistance(TilePosition to, TilePosition from)
+    {
+        return Math.sqrt(Math.pow(to.row() - from.row(), 2) + Math.pow(to.col() - from.col(), 2));
     }
 
     private Tile[][] carveMaze(Tile[][] grid)
