@@ -37,6 +37,45 @@ public class Maze
         spawnAI();
     }
 
+    public boolean canMovePlayer(Direction direction)
+    {
+        TilePosition newPosition = switch (direction)
+        {
+            case UP -> new TilePosition(playerPosition.row() - 1, playerPosition.col());
+            case DOWN -> new TilePosition(playerPosition.row() + 1, playerPosition.col());
+            case LEFT -> new TilePosition(playerPosition.row(), playerPosition.col() - 1);
+            case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
+        };
+
+        return isTraversableTile(newPosition);
+    }
+
+    public void MovePlayer(Direction direction)
+    {
+        TilePosition newPosition = switch (direction)
+        {
+            case UP -> new TilePosition(playerPosition.row() - 1, playerPosition.col());
+            case DOWN -> new TilePosition(playerPosition.row() + 1, playerPosition.col());
+            case LEFT -> new TilePosition(playerPosition.row(), playerPosition.col() - 1);
+            case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
+        };
+
+        MovePlayer(newPosition);
+    }
+
+    private void MovePlayer(TilePosition newPosition)
+    {
+        if (isTraversableTile(newPosition))
+        {
+            // Clear old position
+            grid[playerPosition.row()][playerPosition.col()] = Tile.PATH;
+
+            // Update to new position
+            playerPosition = newPosition;
+            grid[playerPosition.row()][playerPosition.col()] = Tile.PLAYER;
+        }
+    }
+
     private Tile[][] initializeMaze(int size)
     {
         grid = new Tile[size][size];
@@ -243,6 +282,17 @@ public class Maze
         }
 
         return tile.row() < size && tile.col() < size;
+    }
+
+    private boolean isTraversableTile(TilePosition tile)
+    {
+        if (!isValidTile(tile))
+        {
+            return false;
+        }
+
+        Tile tileType = getTileType(tile);
+        return tileType != Tile.WALL;
     }
 
     public void printMaze()
