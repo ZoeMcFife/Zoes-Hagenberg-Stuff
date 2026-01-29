@@ -1,5 +1,4 @@
-import UserInterface.Screens.MainScreen;
-import javax.sound.sampled.AudioInputStream;
+import Screens.MainScreen;
 
 public class Main
 {

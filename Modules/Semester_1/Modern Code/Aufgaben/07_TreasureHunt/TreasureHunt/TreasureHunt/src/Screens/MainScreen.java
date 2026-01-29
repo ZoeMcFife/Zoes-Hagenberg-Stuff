@@ -1,7 +1,6 @@
-package UserInterface.Screens;
+package Screens;
 
 import UserInterface.Menu.Menu;
-import UserInterface.Menu.MenuItem;
 import UserInterface.Screen;
 import UserInterface.UI;
 

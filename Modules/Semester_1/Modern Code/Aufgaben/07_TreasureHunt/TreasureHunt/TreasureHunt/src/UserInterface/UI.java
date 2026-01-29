@@ -88,6 +88,53 @@ public final class UI
         IO.println(PURPLE + message + RESET);
     }
 
+    /**
+     * Gets a single character input from the player.
+     * Continues to prompt until valid input is provided.
+     *
+     * @return The validated character input
+     */
+    public static char getCharInput()
+    {
+        while (true)
+        {
+            printCyan("> ");
+
+            String input = IO.readln();
+
+            if (input.length() == 1)
+            {
+                return input.charAt(0);
+            }
+
+            printlnRed("Invalid input. Please enter a single character.");
+        }
+    }
+
+    /**
+     * Gets a single character input from the player, filtered by valid characters.
+     * Continues to prompt until valid input is provided.
+     *
+     * @param validChars The array of valid characters
+     * @return The validated character input
+     */
+    public static char getFilteredCharInput(char... validChars)
+    {
+        while (true)
+        {
+            char input = getCharInput();
+
+            for (char validChar : validChars)
+            {
+                if (input == validChar)
+                {
+                    return input;
+                }
+            }
+
+            printlnRed("Invalid input. Please enter one of the following characters: " + String.valueOf(validChars));
+        }
+    }
 
     /**
      * Gets an integer input from the player within a specified range.
