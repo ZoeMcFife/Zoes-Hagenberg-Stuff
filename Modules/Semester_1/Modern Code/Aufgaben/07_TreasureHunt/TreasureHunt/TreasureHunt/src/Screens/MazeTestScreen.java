@@ -9,7 +9,7 @@ public class MazeTestScreen extends Screen
     @Override
     public void startScreen()
     {
-        Maze maze = new Maze(20);
+        Maze maze = new Maze(20, 10);
 
         maze.printMaze();
 

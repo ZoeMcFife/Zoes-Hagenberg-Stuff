@@ -11,17 +11,37 @@ public class Maze
     private Tile[][] grid;
     private int size = 0;
 
+    private TilePosition playerPosition;
+    private TilePosition aiPosition;
+
+    private static final int DEFAULT_TREASURE_COUNT = 5;
+    public static final int DEFAULT_MAZE_SIZE = 15;
+
+    public Maze()
+    {
+        this(DEFAULT_MAZE_SIZE, DEFAULT_TREASURE_COUNT);
+    }
+
     public Maze(int size)
+    {
+        this(size, DEFAULT_TREASURE_COUNT);
+    }
+
+    public Maze(int size, int treasureCount)
     {
         this.size = size;
         grid = initializeMaze(size);
+
+        spawnTreasures(treasureCount);
+        spawnPlayer();
+        spawnAI();
     }
 
     private Tile[][] initializeMaze(int size)
     {
         grid = new Tile[size][size];
 
-        // initizalize all tiles as WALL
+        // initialize all tiles as WALL
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
@@ -33,6 +53,77 @@ public class Maze
         // carve maze
 
         return carveMaze(grid);
+    }
+
+    private void spawnTreasures(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            TilePosition position = new TilePosition(-1, -1);
+
+            while (!isValidTile(position))
+            {
+                int row = (int) (Math.random() * size);
+                int col = (int) (Math.random() * size);
+
+                position = new TilePosition(row, col);
+            }
+
+
+            if (getTileType(position) == Tile.PATH)
+            {
+                grid[position.row()][position.col()] = Tile.TREASURE;
+            }
+
+        }
+    }
+
+    private void spawnPlayer()
+    {
+        int row = (int) (Math.random() * size);
+        int col = (int) (Math.random() * size);
+
+        TilePosition position = new TilePosition(row, col);
+
+        if (getTileType(position) == Tile.PATH)
+        {
+            grid[row][col] = Tile.PLAYER;
+            playerPosition = position;
+        }
+        else
+        {
+            spawnPlayer();
+        }
+    }
+
+    private void spawnAI()
+    {
+        int row = (int) (Math.random() * size);
+        int col = (int) (Math.random() * size);
+
+        TilePosition position = new TilePosition(row, col);
+
+        if (getTileType(position) == Tile.PATH)
+        {
+            if (getDistance(position, playerPosition) < (double) size / 2)
+            {
+                spawnAI();
+                return;
+            }
+
+            grid[row][col] = Tile.AI;
+            aiPosition = position;
+        }
+        else
+        {
+            spawnAI();
+        }
+    }
+
+
+    public double getDistance(TilePosition to, TilePosition from)
+    {
+        return Math.abs(to.row() - from.row()) + Math.abs(to.col() - from.col());
     }
 
     private Tile[][] carveMaze(Tile[][] grid)
@@ -136,14 +227,30 @@ public class Maze
 
     private boolean isValidTile(TilePosition tile)
     {
-        return tile.row() >= 0 && tile.row() < size && tile.col() >= 0 && tile.col() < size;
+        if (tile == null)
+        {
+            return false;
+        }
+
+        if (size <= 0)
+        {
+            return false;
+        }
+
+        if (tile.row() < 0 || tile.col() < 0)
+        {
+            return false;
+        }
+
+        return tile.row() < size && tile.col() < size;
     }
 
     public void printMaze()
     {
+        // print top wall
         for (int x = 0; x < size + 2; x++)
         {
-            UI.printGray("▓ ");
+            printWall();
         }
 
         IO.println();
@@ -152,9 +259,10 @@ public class Maze
         {
             for (int x = 0; x < size; x++)
             {
+                // print left wall
                 if (x == 0)
                 {
-                    UI.printGray("▓ ");
+                    printWall();
                 }
 
                 Tile tile = grid[y][x];
@@ -162,31 +270,59 @@ public class Maze
                 switch (tile)
                 {
                     case WALL ->
-                            UI.printGray("▓ ");
+                            printWall();
 
                     case PATH ->
-                            UI.printGray("· ");
+                            printPath();
 
                     case PLAYER ->
-                            UI.printGreen("@ ");
+                            printPlayer();
 
                     case AI ->
-                            UI.printRed("A ");
+                            printAI();
 
                     case TREASURE ->
-                            UI.printYellow("$ ");
+                            printTreasure();
                 }
             }
-            UI.printGray("▓ ");
+
+            // print right wall
+            printWall();
+
             IO.println(); // next row
         }
 
+        // print bottom wall
         for (int x = 0; x < size + 2; x++)
         {
-            UI.printGray("▓ ");
+            printWall();
         }
 
         IO.println();
     }
 
+    private void printWall()
+    {
+        UI.printGray("▓ ");
+    }
+
+    private void printPath()
+    {
+        UI.printGray("· ");
+    }
+
+    private  void printPlayer()
+    {
+        UI.printGreen("@ ");
+    }
+
+    private void printAI()
+    {
+        UI.printRed("A ");
+    }
+
+    private void printTreasure()
+    {
+        UI.printYellow("$ ");
+    }
 }
