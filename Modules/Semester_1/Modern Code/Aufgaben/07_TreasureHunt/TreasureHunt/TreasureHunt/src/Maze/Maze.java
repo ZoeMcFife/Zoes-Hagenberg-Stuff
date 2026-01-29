@@ -76,6 +76,19 @@ public class Maze
         }
     }
 
+    private void MoveAI(TilePosition newPosition)
+    {
+        if (isTraversableTile(newPosition))
+        {
+            // Clear old position
+            grid[aiPosition.row()][aiPosition.col()] = Tile.PATH;
+
+            // Update to new position
+            aiPosition = newPosition;
+            grid[aiPosition.row()][aiPosition.col()] = Tile.AI;
+        }
+    }
+
     private Tile[][] initializeMaze(int size)
     {
         grid = new Tile[size][size];
