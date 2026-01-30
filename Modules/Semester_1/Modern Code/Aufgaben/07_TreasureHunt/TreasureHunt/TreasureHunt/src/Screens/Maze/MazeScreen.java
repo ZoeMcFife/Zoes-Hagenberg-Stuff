@@ -1,0 +1,79 @@
+package Screens.Maze;
+
+import Maze.Maze;
+import Maze.Direction;
+import UserInterface.Screen;
+import UserInterface.UI;
+
+public class MazeScreen extends Screen
+{
+    private final Maze maze;
+
+    private boolean mazeCompleted = false;
+
+    public MazeScreen()
+    {
+        super();
+        maze = new Maze();
+    }
+
+    public MazeScreen(int mazeSize)
+    {
+        super();
+        this.maze = new Maze(mazeSize);
+    }
+
+    public MazeScreen(int mazeSize, int treasureCount)
+    {
+        super();
+        this.maze = new Maze(mazeSize, treasureCount);
+    }
+
+    /**
+     * Starts and displays this screen.
+     * Each implementation should handle its own display logic and user interaction.
+     */
+    @Override
+    public void startScreen()
+    {
+        while (!mazeCompleted)
+        {
+            UI.clearScreen();
+
+            maze.displayMaze();
+
+            char playerInput;
+            Direction moveDirection;
+
+            do
+            {
+                playerInput = UI.getFilteredCharInput('w', 'a', 's', 'd');
+
+                moveDirection = getDirectionFromInput(playerInput);
+
+                if (maze.canMovePlayer(moveDirection))
+                {
+                    maze.movePlayer(moveDirection);
+                }
+            }
+            while (!maze.canMovePlayer(moveDirection));
+
+
+
+
+        }
+
+    }
+
+    private Direction getDirectionFromInput(char input)
+    {
+        return switch (input)
+        {
+            case 'w' -> Direction.UP;
+            case 'a' -> Direction.LEFT;
+            case 's' -> Direction.DOWN;
+            case 'd' -> Direction.RIGHT;
+            default -> throw new IllegalArgumentException("Invalid input character: " + input);
+        };
+    }
+}

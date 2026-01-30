@@ -104,7 +104,7 @@ public final class UI
 
             if (input.length() == 1)
             {
-                return input.charAt(0);
+                return input.toLowerCase().charAt(0);
             }
 
             printlnRed("Invalid input. Please enter a single character.");

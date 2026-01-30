@@ -1,5 +1,6 @@
 package Screens;
 
+import Screens.Maze.MazeScreen;
 import UserInterface.Menu.Menu;
 import UserInterface.Menu.MenuItem;
 import UserInterface.Screen;
@@ -15,8 +16,9 @@ public class MainScreen extends Screen
             UI.printBlankSeparatorLine();
 
             MenuItem mazeTestMenuItem = new MenuItem("Maze Test Screen", this::mazeTestScreen);
+            MenuItem mazeMenuItem = new MenuItem("Maze Screen", this::mazeScreen);
 
-            Menu mainMenu = new Menu("Main Menu", mazeTestMenuItem);
+            Menu mainMenu = new Menu("Main Menu", mazeTestMenuItem, mazeMenuItem);
 
             mainMenu.startScreen();
 
@@ -28,5 +30,11 @@ public class MainScreen extends Screen
     {
         MazeTestScreen mazeTestScreen = new MazeTestScreen();
         mazeTestScreen.startScreen();
+    }
+
+    public void mazeScreen()
+    {
+        MazeScreen mazeScreen = new MazeScreen();
+        mazeScreen.startScreen();
     }
 }

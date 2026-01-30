@@ -14,6 +14,9 @@ public class Maze
     private TilePosition playerPosition;
     private TilePosition aiPosition;
 
+    private int playerTreasuresCollected = 0;
+    private int aiTreasuresCollected = 0;
+
     private static final int DEFAULT_TREASURE_COUNT = 5;
     public static final int DEFAULT_MAZE_SIZE = 15;
 
@@ -50,7 +53,7 @@ public class Maze
         return isTraversableTile(newPosition);
     }
 
-    public void MovePlayer(Direction direction)
+    public void movePlayer(Direction direction)
     {
         TilePosition newPosition = switch (direction)
         {
@@ -60,13 +63,18 @@ public class Maze
             case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
         };
 
-        MovePlayer(newPosition);
+        movePlayer(newPosition);
     }
 
-    private void MovePlayer(TilePosition newPosition)
+    private void movePlayer(TilePosition newPosition)
     {
         if (isTraversableTile(newPosition))
         {
+            if (getTileType(newPosition) == Tile.TREASURE)
+            {
+                playerTreasuresCollected++;
+            }
+
             // Clear old position
             grid[playerPosition.row()][playerPosition.col()] = Tile.PATH;
 
@@ -76,10 +84,15 @@ public class Maze
         }
     }
 
-    private void MoveAI(TilePosition newPosition)
+    private void moveAI(TilePosition newPosition)
     {
         if (isTraversableTile(newPosition))
         {
+            if (getTileType(newPosition) == Tile.TREASURE)
+            {
+                aiTreasuresCollected++;
+            }
+
             // Clear old position
             grid[aiPosition.row()][aiPosition.col()] = Tile.PATH;
 
@@ -310,10 +323,17 @@ public class Maze
         }
 
         Tile tileType = getTileType(tile);
-        return tileType != Tile.WALL;
+        return tileType != Tile.WALL && tileType != Tile.AI && tileType != Tile.PLAYER;
     }
 
-    public void printMaze()
+    public void displayMaze()
+    {
+        UI.clearScreen();
+        printMaze();
+        printScore();
+    }
+
+    private void printMaze()
     {
         // print top wall
         for (int x = 0; x < size + 2; x++)
@@ -392,5 +412,34 @@ public class Maze
     private void printTreasure()
     {
         UI.printYellow("$ ");
+    }
+
+    private void printScore()
+    {
+        UI.printlnYellow("Score - You: " + playerTreasuresCollected + " | AI: " + aiTreasuresCollected);
+    }
+
+    public TilePosition getAiPosition() {
+        return aiPosition;
+    }
+
+    public TilePosition getPlayerPosition() {
+        return playerPosition;
+    }
+
+    public int getPlayerTreasuresCollected() {
+        return playerTreasuresCollected;
+    }
+
+    public void setPlayerTreasuresCollected(int playerTreasuresCollected) {
+        this.playerTreasuresCollected = playerTreasuresCollected;
+    }
+
+    public int getAiTreasuresCollected() {
+        return aiTreasuresCollected;
+    }
+
+    public void setAiTreasuresCollected(int aiTreasuresCollected) {
+        this.aiTreasuresCollected = aiTreasuresCollected;
     }
 }

@@ -11,7 +11,7 @@ public class MazeTestScreen extends Screen
     {
         Maze maze = new Maze(20, 10);
 
-        maze.printMaze();
+        maze.displayMaze();
 
         UI.waitForEnterKey();
     }
