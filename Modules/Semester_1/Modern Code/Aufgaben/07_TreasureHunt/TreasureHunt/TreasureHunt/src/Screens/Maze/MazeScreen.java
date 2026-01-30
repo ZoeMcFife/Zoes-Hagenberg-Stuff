@@ -1,9 +1,13 @@
 package Screens.Maze;
 
+import AStarPathfinding.MazePathfinding.MazePathfinder;
+import AStarPathfinding.MazePathfinding.TileNode;
 import Maze.Maze;
 import Maze.Direction;
 import UserInterface.Screen;
 import UserInterface.UI;
+
+import java.util.List;
 
 public class MazeScreen extends Screen
 {
@@ -41,6 +45,12 @@ public class MazeScreen extends Screen
             UI.clearScreen();
 
             maze.displayMaze();
+
+            MazePathfinder pathfinder = new MazePathfinder(maze);
+
+            List<TileNode> path = pathfinder.findPath(maze.getPlayerPosition(), maze.getPlayerPosition());
+
+            IO.println(path);
 
             char playerInput;
             Direction moveDirection;

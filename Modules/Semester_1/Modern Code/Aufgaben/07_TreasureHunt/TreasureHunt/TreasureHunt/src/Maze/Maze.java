@@ -9,6 +9,7 @@ import java.util.List;
 public class Maze
 {
     private Tile[][] grid;
+
     private int size = 0;
 
     private TilePosition playerPosition;
@@ -186,12 +187,12 @@ public class Maze
     }
 
 
-    public double getManhattanDistance(TilePosition to, TilePosition from)
+    public static double getManhattanDistance(TilePosition to, TilePosition from)
     {
         return Math.abs(to.row() - from.row()) + Math.abs(to.col() - from.col());
     }
 
-    public double getEuclideanDistance(TilePosition to, TilePosition from)
+    public static double getEuclideanDistance(TilePosition to, TilePosition from)
     {
         return Math.sqrt(Math.pow(to.row() - from.row(), 2) + Math.pow(to.col() - from.col(), 2));
     }
@@ -228,9 +229,24 @@ public class Maze
         }
     }
 
-    private Tile getTileType(TilePosition tile)
+    public Tile getTileType(TilePosition tile)
     {
         return grid[tile.row()][tile.col()];
+    }
+
+    public List<TilePosition> getTraversableNeighbourTiles(TilePosition tile)
+    {
+        List<TilePosition> neighbours = new ArrayList<>();
+
+        for (TilePosition n : getDirectNeighbourTiles(tile))
+        {
+            if (isTraversableTile(n))
+            {
+                neighbours.add(n);
+            }
+        }
+
+        return neighbours;
     }
 
     private List<TilePosition> getDirectNeighbourTiles(TilePosition tile)
@@ -441,5 +457,10 @@ public class Maze
 
     public void setAiTreasuresCollected(int aiTreasuresCollected) {
         this.aiTreasuresCollected = aiTreasuresCollected;
+    }
+
+
+    public int getSize() {
+        return size;
     }
 }
