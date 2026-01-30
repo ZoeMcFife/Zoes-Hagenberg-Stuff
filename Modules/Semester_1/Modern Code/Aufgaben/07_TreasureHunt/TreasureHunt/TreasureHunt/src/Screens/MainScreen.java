@@ -1,5 +1,6 @@
 package Screens;
 
+import Maze.AiMode;
 import Screens.Maze.MazeScreen;
 import UserInterface.Menu.Menu;
 import UserInterface.Menu.MenuItem;
@@ -34,7 +35,7 @@ public class MainScreen extends Screen
 
     public void mazeScreen()
     {
-        MazeScreen mazeScreen = new MazeScreen();
+        MazeScreen mazeScreen = new MazeScreen(30, 6, AiMode.GREEDY);
         mazeScreen.startScreen();
     }
 }

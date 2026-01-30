@@ -12,28 +12,39 @@ public class Maze
 
     private int size = 0;
 
+    private boolean mazeCompleted = false;
+
     private TilePosition playerPosition;
     private TilePosition aiPosition;
 
     private int playerTreasuresCollected = 0;
     private int aiTreasuresCollected = 0;
 
+    private AiMode aiMode;
+
     private static final int DEFAULT_TREASURE_COUNT = 5;
-    public static final int DEFAULT_MAZE_SIZE = 15;
+    private static final int DEFAULT_MAZE_SIZE = 15;
+    private static final AiMode DEFAULT_AI_MODE = AiMode.MINIMAX;
 
     public Maze()
     {
-        this(DEFAULT_MAZE_SIZE, DEFAULT_TREASURE_COUNT);
+        this(DEFAULT_MAZE_SIZE, DEFAULT_TREASURE_COUNT, DEFAULT_AI_MODE);
     }
 
     public Maze(int size)
     {
-        this(size, DEFAULT_TREASURE_COUNT);
+        this(size, DEFAULT_TREASURE_COUNT, DEFAULT_AI_MODE);
     }
 
     public Maze(int size, int treasureCount)
     {
+        this(size, treasureCount, DEFAULT_AI_MODE);
+    }
+
+    public Maze(int size, int treasureCount, AiMode aiMode)
+    {
         this.size = size;
+        this.aiMode = aiMode;
         grid = initializeMaze(size);
 
         spawnTreasures(treasureCount);
@@ -69,6 +80,19 @@ public class Maze
         movePlayer(newPosition);
     }
 
+    private void checkTreasureStatus()
+    {
+        int treasureCount = getAllTreasurePositions().size();
+
+        IO.println("Treasure Status: " + treasureCount);
+
+        if (treasureCount == 0)
+        {
+            mazeCompleted = true;
+        }
+
+    }
+
     private void movePlayer(TilePosition newPosition)
     {
         if (isTraversableTile(newPosition))
@@ -84,6 +108,8 @@ public class Maze
             // Update to new position
             playerPosition = newPosition;
             grid[playerPosition.row()][playerPosition.col()] = Tile.PLAYER;
+
+            checkTreasureStatus();
         }
     }
 
@@ -102,7 +128,145 @@ public class Maze
             // Update to new position
             aiPosition = newPosition;
             grid[aiPosition.row()][aiPosition.col()] = Tile.AI;
+
+            checkTreasureStatus();
         }
+    }
+
+    public void aiTurn()
+    {
+        switch (aiMode)
+        {
+            case GREEDY -> aiMoveGreedy();
+            case MINIMAX -> aiMoveMinimax();
+        }
+    }
+
+    public List<TilePosition> aiGetGreedyMove()
+    {
+        List<TilePosition> treasurePositions = getAllTreasurePositions();
+        List<List<TilePosition>> pathsToTreasures = new ArrayList<>();
+
+        for (TilePosition treasurePosition : treasurePositions)
+        {
+            List<TilePosition> path = findPath(aiPosition, treasurePosition);
+            if (!path.isEmpty())
+            {
+                pathsToTreasures.add(path);
+            }
+        }
+
+        if (!pathsToTreasures.isEmpty())
+        {
+            // Find the shortest path
+            List<TilePosition> shortestPath = pathsToTreasures.getFirst();
+
+            for (List<TilePosition> path : pathsToTreasures)
+            {
+                if (path.size() < shortestPath.size())
+                {
+                    shortestPath = path;
+                }
+            }
+
+            UI.printlnRed("AI Path: " + shortestPath);
+            return shortestPath;
+        }
+
+        return new ArrayList<>();
+    }
+
+    public List<TilePosition> aiGetMinimaxMove()
+    {
+        List<TilePosition> treasurePositions = getAllTreasurePositions();
+
+        for (TilePosition treasurePosition : treasurePositions)
+        {
+            int score = minimax(aiPosition, playerPosition, treasurePosition, 0, true);
+            IO.println("Minimax score for treasure at " + treasurePosition + ": " + score);
+        }
+
+        return new ArrayList<>();
+    }
+
+    private int minimax(TilePosition aiPos, TilePosition playerPos, TilePosition treasurePos, int depth, boolean isMaximizing)
+    {
+        // Base case: check if treasure is collected
+        if (aiPos.equals(treasurePos))
+        {
+            return 10 - depth; // AI wins
+        }
+        if (playerPos.equals(treasurePos))
+        {
+            return depth - 10; // Player wins
+        }
+
+        if (depth >= 5) // Limit search depth
+        {
+            return 0;
+        }
+
+        if (isMaximizing)
+        {
+            int bestScore = Integer.MIN_VALUE;
+
+            for (TilePosition move : getTraversableNeighbourTiles(aiPos))
+            {
+                int score = minimax(move, playerPos, treasurePos, depth + 1, false);
+                bestScore = Math.max(bestScore, score);
+            }
+
+            return bestScore;
+        }
+        else
+        {
+            int bestScore = Integer.MAX_VALUE;
+
+            for (TilePosition move : getTraversableNeighbourTiles(playerPos))
+            {
+                int score = minimax(aiPos, move, treasurePos, depth + 1, true);
+                bestScore = Math.min(bestScore, score);
+            }
+
+            return bestScore;
+        }
+    }
+
+    public void aiMoveGreedy()
+    {
+        List<TilePosition> path = aiGetGreedyMove();
+
+        UI.printlnRed("AI Path: " + path);
+
+        if (path != null && !path.isEmpty())
+        {
+            TilePosition nextMove = path.getFirst();
+            moveAI(nextMove);
+        }
+    }
+
+    public void aiMoveMinimax()
+    {
+
+    }
+
+    public List<TilePosition> getAllTreasurePositions()
+    {
+        List<TilePosition> treasurePositions = new ArrayList<>();
+
+        for (int row = 0; row < size; row++)
+        {
+            for (int col = 0; col < size; col++)
+            {
+                TilePosition position = new TilePosition(row, col);
+                if (getTileType(position) == Tile.TREASURE)
+                {
+                    treasurePositions.add(position);
+                }
+            }
+        }
+
+        return treasurePositions;
     }
 
     private Tile[][] initializeMaze(int size)
@@ -237,7 +401,7 @@ public class Maze
 
         simpleSearch(start, goal, path, new ArrayList<>());
 
-        return path;
+        return path.reversed();
     }
 
     private boolean simpleSearch(TilePosition current, TilePosition goal, List<TilePosition> path, List<TilePosition> visited)
@@ -412,6 +576,20 @@ public class Maze
         printScore();
     }
 
+    public void displayMazeWithAIPath()
+    {
+        List<TilePosition> path = new ArrayList<>();
+
+        switch (aiMode)
+        {
+            case GREEDY -> path = aiGetGreedyMove();
+            case MINIMAX -> path = new ArrayList<>(); // TODO: implement minimax path retrieval
+        }
+
+        printMazeWithPath(path);
+        printScore();
+    }
+
     private void printMaze()
     {
         // print top wall
@@ -577,5 +755,9 @@ public class Maze
 
     public int getSize() {
         return size;
+    }
+
+    public boolean isMazeCompleted() {
+        return mazeCompleted;
     }
 }

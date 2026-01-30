@@ -30,6 +30,12 @@ public class MazeScreen extends Screen
         this.maze = new Maze(mazeSize, treasureCount);
     }
 
+    public MazeScreen(int mazeSize, int treasureCount, AiMode aiMode)
+    {
+        super();
+        this.maze = new Maze(mazeSize, treasureCount, aiMode);
+    }
+
     /**
      * Starts and displays this screen.
      * Each implementation should handle its own display logic and user interaction.
@@ -37,16 +43,13 @@ public class MazeScreen extends Screen
     @Override
     public void startScreen()
     {
-        while (!mazeCompleted)
+        while (!maze.isMazeCompleted())
         {
             UI.clearScreen();
 
-            //maze.displayMaze();
+            maze.displayMazeWithAIPath();
 
-            List<TilePosition> path = maze.findPath(maze.getPlayerPosition(), maze.getAiPosition());
-            IO.println("Path: " + path.toString());
-
-            maze.displayMazeWithPath(path);
+            maze.aiGetMinimaxMove();
 
             char playerInput;
             Direction moveDirection;
@@ -66,11 +69,14 @@ public class MazeScreen extends Screen
             }
             while (!hasPlayerMoved);
 
-
-
-
+            maze.aiTurn();
         }
 
+        UI.clearScreen();
+        UI.printlnRed("someone won idk yet");
+
+        UI.waitForEnterKey();
+        UI.clearScreen();
     }
 
     private Direction getDirectionFromInput(char input)
