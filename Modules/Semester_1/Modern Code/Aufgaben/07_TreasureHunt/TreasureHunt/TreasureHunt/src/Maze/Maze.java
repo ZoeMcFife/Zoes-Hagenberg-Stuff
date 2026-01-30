@@ -51,6 +51,8 @@ public class Maze
             case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
         };
 
+        UI.printlnRed(" " + isTraversableTile(newPosition));
+
         return isTraversableTile(newPosition);
     }
 
@@ -229,6 +231,44 @@ public class Maze
         }
     }
 
+    public List<TilePosition> findPath(TilePosition start, TilePosition goal)
+    {
+        List<TilePosition> path = new ArrayList<>();
+
+        simpleSearch(start, goal, path, new ArrayList<>());
+
+        return path;
+    }
+
+    private boolean simpleSearch(TilePosition current, TilePosition goal, List<TilePosition> path, List<TilePosition> visited)
+    {
+        if (current.equals(goal))
+        {
+            return true;
+        }
+
+        if (!isTraversableTile(current, true) || visited.contains(current))
+        {
+            return false;
+        }
+
+        visited.add(current);
+
+        for (TilePosition neighbour : getTraversableNeighbourTiles(current, true))
+        {
+            if (simpleSearch(neighbour, goal, path, visited))
+            {
+                path.add(neighbour);
+                //IO.println("path: " + path.toString());
+                return true;
+            }
+
+            path.remove(neighbour);
+        }
+
+        return false;
+    }
+
     public Tile getTileType(TilePosition tile)
     {
         return grid[tile.row()][tile.col()];
@@ -236,11 +276,16 @@ public class Maze
 
     public List<TilePosition> getTraversableNeighbourTiles(TilePosition tile)
     {
+        return getTraversableNeighbourTiles(tile, false);
+    }
+
+    public List<TilePosition> getTraversableNeighbourTiles(TilePosition tile, boolean ignoreGameCharacters)
+    {
         List<TilePosition> neighbours = new ArrayList<>();
 
         for (TilePosition n : getDirectNeighbourTiles(tile))
         {
-            if (isTraversableTile(n))
+            if (isTraversableTile(n, ignoreGameCharacters))
             {
                 neighbours.add(n);
             }
@@ -333,19 +378,37 @@ public class Maze
 
     private boolean isTraversableTile(TilePosition tile)
     {
+        return isTraversableTile(tile, false);
+    }
+
+    private boolean isTraversableTile(TilePosition tile, boolean ignoreGameCharacters)
+    {
         if (!isValidTile(tile))
         {
             return false;
         }
 
         Tile tileType = getTileType(tile);
-        return tileType != Tile.WALL && tileType != Tile.AI && tileType != Tile.PLAYER;
+
+        if (ignoreGameCharacters)
+        {
+            return tileType != Tile.WALL;
+        }
+
+        return tileType != Tile.WALL && tileType != Tile.PLAYER && tileType != Tile.AI;
     }
 
     public void displayMaze()
     {
         UI.clearScreen();
         printMaze();
+        printScore();
+    }
+
+    public void displayMazeWithPath(List<TilePosition> path)
+    {
+        UI.clearScreen();
+        printMazeWithPath(path);
         printScore();
     }
 
@@ -402,6 +465,58 @@ public class Maze
             printWall();
         }
 
+        IO.println();
+    }
+
+    public void printMazeWithPath(List<TilePosition> path)
+    {
+        // print top wall
+        for (int x = 0; x < size + 2; x++)
+        {
+            printWall();
+        }
+        IO.println();
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                // print left wall
+                if (x == 0)
+                {
+                    printWall();
+                }
+
+                Tile tile = grid[y][x];
+                TilePosition pos = new TilePosition(y, x);
+
+                // cyan path overlay ONLY for PATH tiles
+                if (tile == Tile.PATH && path.contains(pos))
+                {
+                    UI.printCyan("· ");
+                    continue;
+                }
+
+                switch (tile)
+                {
+                    case WALL -> printWall();
+                    case PATH -> printPath();
+                    case PLAYER -> printPlayer();
+                    case AI -> printAI();
+                    case TREASURE -> printTreasure();
+                }
+            }
+
+            // print right wall
+            printWall();
+            IO.println();
+        }
+
+        // print bottom wall
+        for (int x = 0; x < size + 2; x++)
+        {
+            printWall();
+        }
         IO.println();
     }
 

@@ -1,7 +1,6 @@
 package Screens.Maze;
 
-import Maze.Maze;
-import Maze.Direction;
+import Maze.*;
 import UserInterface.Screen;
 import UserInterface.UI;
 
@@ -42,10 +41,16 @@ public class MazeScreen extends Screen
         {
             UI.clearScreen();
 
-            maze.displayMaze();
+            //maze.displayMaze();
+
+            List<TilePosition> path = maze.findPath(maze.getPlayerPosition(), maze.getAiPosition());
+            IO.println("Path: " + path.toString());
+
+            maze.displayMazeWithPath(path);
 
             char playerInput;
             Direction moveDirection;
+            boolean hasPlayerMoved = false;
 
             do
             {
@@ -56,9 +61,10 @@ public class MazeScreen extends Screen
                 if (maze.canMovePlayer(moveDirection))
                 {
                     maze.movePlayer(moveDirection);
+                    hasPlayerMoved = true;
                 }
             }
-            while (!maze.canMovePlayer(moveDirection));
+            while (!hasPlayerMoved);
 
 
 
