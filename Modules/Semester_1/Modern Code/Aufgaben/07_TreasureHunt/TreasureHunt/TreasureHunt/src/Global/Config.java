@@ -14,7 +14,7 @@ public class Config
     /** Long delay **/
     public static final int DELAY_LONG = 2000;
 
-    public static int mazeSize = 10;
-    public static int treasureCount = 5;
-    public static AiMode aiMode = AiMode.MINIMAX;
+    public static int mazeSize = 20;
+    public static int treasureCount = 6;
+    public static AiMode aiMode = AiMode.DEBUG;
 }
