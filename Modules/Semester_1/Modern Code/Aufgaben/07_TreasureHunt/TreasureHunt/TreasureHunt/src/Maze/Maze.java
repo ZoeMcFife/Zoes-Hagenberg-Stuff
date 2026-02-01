@@ -158,7 +158,6 @@ public class Maze
 
         if (!pathsToTreasures.isEmpty())
         {
-            // Find the shortest path
             List<TilePosition> shortestPath = pathsToTreasures.getFirst();
 
             for (List<TilePosition> path : pathsToTreasures)
@@ -188,17 +187,19 @@ public class Maze
             List<TilePosition> playerPath = findPath(playerPosition, treasure);
 
             if (aiPath == null || aiPath.isEmpty())
-            {
                 continue;
-            }
 
-            int score = minimax(aiPath, playerPath);
+            int score = minimax(
+                    aiPosition,
+                    playerPosition,
+                    treasure,
+                    5,
+                    true
+            );
 
             if (AiMode.DEBUG == aiMode)
             {
-                UI.printlnRed("Evaluating Treasure at " + treasure + ": AI Path Length = " + aiPath.size() +
-                    ", Player Path Length = " + (playerPath != null ? playerPath.size() : "N/A") +
-                    ", Score = " + score);
+                UI.printlnRed("Evaluating Treasure at " + treasure + ": AI Path Length = " + aiPath.size() + ", Player Path Length = " + (playerPath != null ? playerPath.size() : "N/A") + ", Score = " + score);
             }
 
             if (score > bestScore)
@@ -211,18 +212,77 @@ public class Maze
         return bestPath;
     }
 
-    private int minimax(List<TilePosition> aiPath, List<TilePosition> playerPath)
-    {
-        int aiDist = aiPath.size();
 
-        if (playerPath == null || playerPath.isEmpty())
+    private int minimax(TilePosition aiPos, TilePosition playerPos, TilePosition treasure, int depth, boolean maximizingAi)
+    {
+        List<TilePosition> aiPath = findPath(aiPos, treasure);
+        List<TilePosition> playerPath = findPath(playerPos, treasure);
+
+        if (depth == 0 || aiPath == null || playerPath == null)
         {
-            return 100;
+            return minimaxEval(aiPath.size(), playerPath.size());
         }
 
-        int playerDist = playerPath.size();
+        int bestScore;
+        if (maximizingAi)
+        {
+            bestScore = Integer.MIN_VALUE;
 
-        return playerDist * playerDist - aiDist * aiDist;
+            for (TilePosition nextAi : getTraversableNeighbourTiles(aiPos, true))
+            {
+                int score = minimax(
+                        nextAi,
+                        playerPos,
+                        treasure,
+                        depth - 1,
+                        false
+                );
+
+                bestScore = Math.max(bestScore, score);
+            }
+
+        }
+        else
+        {
+            bestScore = Integer.MAX_VALUE;
+
+            // Player makes ONE step
+            for (TilePosition nextPlayer : getTraversableNeighbourTiles(playerPos, true))
+            {
+                int score = minimax(
+                        aiPos,
+                        nextPlayer,
+                        treasure,
+                        depth - 1,
+                        true
+                );
+
+                bestScore = Math.min(bestScore, score);
+            }
+
+        }
+
+        return bestScore;
+    }
+
+
+    private int minimaxEval(int aiDistance, int playerDistance)
+    {
+        if (aiDistance <= 1)
+        {
+            return 1000;
+        }
+
+        if (playerDistance <= 1)
+        {
+            return -1000;
+        }
+
+        int diff = playerDistance - aiDistance;
+
+        int urgency = Math.max(1, 15 - Math.min(aiDistance, playerDistance));
+
+        return diff * urgency;
     }
 
 
