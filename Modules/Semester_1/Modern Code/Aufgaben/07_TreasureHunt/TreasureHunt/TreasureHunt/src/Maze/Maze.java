@@ -47,9 +47,10 @@ public class Maze
         this.aiMode = aiMode;
         grid = initializeMaze(size);
 
-        spawnTreasures(treasureCount);
         spawnPlayer();
         spawnAI();
+        spawnTreasures(treasureCount);
+
     }
 
     public boolean canMovePlayer(Direction direction)
@@ -193,6 +194,13 @@ public class Maze
 
             int score = minimax(aiPath, playerPath);
 
+            if (AiMode.DEBUG == aiMode)
+            {
+                UI.printlnRed("Evaluating Treasure at " + treasure + ": AI Path Length = " + aiPath.size() +
+                    ", Player Path Length = " + (playerPath != null ? playerPath.size() : "N/A") +
+                    ", Score = " + score);
+            }
+
             if (score > bestScore)
             {
                 bestScore = score;
@@ -214,7 +222,7 @@ public class Maze
 
         int playerDist = playerPath.size();
 
-        return playerDist - aiDist;
+        return playerDist * playerDist - aiDist * aiDist;
     }
 
 
@@ -285,7 +293,7 @@ public class Maze
         {
             TilePosition position = new TilePosition(-1, -1);
 
-            while (!isValidTile(position))
+            while (!isValidPathTile(position))
             {
                 int row = (int) (Math.random() * size);
                 int col = (int) (Math.random() * size);
@@ -509,6 +517,18 @@ public class Maze
             return pickRandomDirectNeighbourTile(tile);
         }
 
+    }
+
+    private boolean isValidPathTile(TilePosition tile)
+    {
+        if (!isValidTile(tile))
+        {
+            return false;
+        }
+
+        Tile tileType = getTileType(tile);
+
+        return tileType == Tile.PATH || tileType == Tile.TREASURE || tileType == Tile.PLAYER || tileType == Tile.AI;
     }
 
     private boolean isValidTile(TilePosition tile)
