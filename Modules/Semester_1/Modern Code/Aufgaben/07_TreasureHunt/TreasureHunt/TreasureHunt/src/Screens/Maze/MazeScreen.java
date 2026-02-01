@@ -73,7 +73,19 @@ public class MazeScreen extends Screen
         }
 
         UI.clearScreen();
-        UI.printlnRed("someone won idk yet");
+
+        if (maze.playerTreasuresCollected > maze.aiTreasuresCollected)
+        {
+            UI.printlnGreen("Congratulations! You have completed the maze and collected more treasures than the AI!");
+        }
+        else if (maze.playerTreasuresCollected < maze.aiTreasuresCollected)
+        {
+            UI.printlnRed("The AI has collected more treasures than you. Better luck next time!");
+        }
+        else
+        {
+            UI.printlnYellow("It's a tie! Both you and the AI collected the same number of treasures.");
+        }
 
         UI.waitForEnterKey();
         UI.clearScreen();

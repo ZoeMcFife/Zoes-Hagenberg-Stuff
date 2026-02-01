@@ -17,8 +17,8 @@ public class Maze
     private TilePosition playerPosition;
     private TilePosition aiPosition;
 
-    private int playerTreasuresCollected = 0;
-    private int aiTreasuresCollected = 0;
+    public int playerTreasuresCollected = 0;
+    public int aiTreasuresCollected = 0;
 
     private AiMode aiMode;
 
@@ -61,8 +61,6 @@ public class Maze
             case LEFT -> new TilePosition(playerPosition.row(), playerPosition.col() - 1);
             case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
         };
-
-        UI.printlnRed(" " + isTraversableTile(newPosition));
 
         return isTraversableTile(newPosition);
     }
@@ -139,6 +137,7 @@ public class Maze
         {
             case GREEDY -> aiMoveGreedy();
             case MINIMAX -> aiMoveMinimax();
+            case DEBUG -> aiMoveMinimax();
         }
     }
 
@@ -169,7 +168,6 @@ public class Maze
                 }
             }
 
-            UI.printlnRed("AI Path: " + shortestPath);
             return shortestPath;
         }
 
@@ -180,57 +178,45 @@ public class Maze
     {
         List<TilePosition> treasurePositions = getAllTreasurePositions();
 
-        for (TilePosition treasurePosition : treasurePositions)
+        List<TilePosition> bestPath = new ArrayList<>();
+        int bestScore = Integer.MIN_VALUE;
+
+        for (TilePosition treasure : treasurePositions)
         {
-            int score = minimax(aiPosition, playerPosition, treasurePosition, 0, true);
-            IO.println("Minimax score for treasure at " + treasurePosition + ": " + score);
+            List<TilePosition> aiPath = findPath(aiPosition, treasure);
+            List<TilePosition> playerPath = findPath(playerPosition, treasure);
+
+            if (aiPath == null || aiPath.isEmpty())
+            {
+                continue;
+            }
+
+            int score = minimax(aiPath, playerPath);
+
+            if (score > bestScore)
+            {
+                bestScore = score;
+                bestPath = aiPath;
+            }
         }
 
-        return new ArrayList<>();
+        return bestPath;
     }
 
-    private int minimax(TilePosition aiPos, TilePosition playerPos, TilePosition treasurePos, int depth, boolean isMaximizing)
+    private int minimax(List<TilePosition> aiPath, List<TilePosition> playerPath)
     {
-        // Base case: check if treasure is collected
-        if (aiPos.equals(treasurePos))
+        int aiDist = aiPath.size();
+
+        if (playerPath == null || playerPath.isEmpty())
         {
-            return 10 - depth; // AI wins
-        }
-        if (playerPos.equals(treasurePos))
-        {
-            return depth - 10; // Player wins
+            return 100;
         }
 
-        if (depth >= 5) // Limit search depth
-        {
-            return 0;
-        }
+        int playerDist = playerPath.size();
 
-        if (isMaximizing)
-        {
-            int bestScore = Integer.MIN_VALUE;
-
-            for (TilePosition move : getTraversableNeighbourTiles(aiPos))
-            {
-                int score = minimax(move, playerPos, treasurePos, depth + 1, false);
-                bestScore = Math.max(bestScore, score);
-            }
-
-            return bestScore;
-        }
-        else
-        {
-            int bestScore = Integer.MAX_VALUE;
-
-            for (TilePosition move : getTraversableNeighbourTiles(playerPos))
-            {
-                int score = minimax(aiPos, move, treasurePos, depth + 1, true);
-                bestScore = Math.min(bestScore, score);
-            }
-
-            return bestScore;
-        }
+        return playerDist - aiDist;
     }
+
 
     public void aiMoveGreedy()
     {
@@ -247,7 +233,13 @@ public class Maze
 
     public void aiMoveMinimax()
     {
+        List<TilePosition> path = aiGetMinimaxMove();
 
+        if (path != null && !path.isEmpty())
+        {
+            TilePosition nextMove = path.getFirst();
+            moveAI(nextMove);
+        }
     }
 
     public List<TilePosition> getAllTreasurePositions()
@@ -423,7 +415,6 @@ public class Maze
             if (simpleSearch(neighbour, goal, path, visited))
             {
                 path.add(neighbour);
-                //IO.println("path: " + path.toString());
                 return true;
             }
 
@@ -583,7 +574,25 @@ public class Maze
         switch (aiMode)
         {
             case GREEDY -> path = aiGetGreedyMove();
-            case MINIMAX -> path = new ArrayList<>(); // TODO: implement minimax path retrieval
+            case MINIMAX -> path = aiGetMinimaxMove();
+            default -> path = null;
+        }
+
+        if (aiMode == AiMode.DEBUG)
+        {
+            List<TilePosition> greedyPath = aiGetGreedyMove();
+            List<TilePosition> minimaxPath = aiGetMinimaxMove();
+
+            UI.clearScreen();
+            printMazeWithTwoPaths(greedyPath, minimaxPath);
+            printScore();
+
+            IO.println("AI Greedy Path: " + greedyPath);
+            IO.println("AI Minimax Path: " + minimaxPath);
+            IO.println("Greedy Treasure Positions: " + greedyPath.getLast());
+            IO.println("Minimax Treasure Positions: " + minimaxPath.getLast());
+
+            return;
         }
 
         printMazeWithPath(path);
@@ -672,6 +681,64 @@ public class Maze
                 if (tile == Tile.PATH && path.contains(pos))
                 {
                     UI.printCyan("· ");
+                    continue;
+                }
+
+                switch (tile)
+                {
+                    case WALL -> printWall();
+                    case PATH -> printPath();
+                    case PLAYER -> printPlayer();
+                    case AI -> printAI();
+                    case TREASURE -> printTreasure();
+                }
+            }
+
+            // print right wall
+            printWall();
+            IO.println();
+        }
+
+        // print bottom wall
+        for (int x = 0; x < size + 2; x++)
+        {
+            printWall();
+        }
+        IO.println();
+    }
+
+    public void printMazeWithTwoPaths(List<TilePosition> path1, List<TilePosition> path2)
+    {
+        // print top wall
+        for (int x = 0; x < size + 2; x++)
+        {
+            printWall();
+        }
+        IO.println();
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                // print left wall
+                if (x == 0)
+                {
+                    printWall();
+                }
+
+                Tile tile = grid[y][x];
+                TilePosition pos = new TilePosition(y, x);
+
+                // cyan path overlay ONLY for PATH tiles
+                if (tile == Tile.PATH && path1.contains(pos))
+                {
+                    UI.printCyan("· ");
+                    continue;
+                }
+
+                if (tile == Tile.PATH && path2.contains(pos))
+                {
+                    UI.printPurple("· ");
                     continue;
                 }
 

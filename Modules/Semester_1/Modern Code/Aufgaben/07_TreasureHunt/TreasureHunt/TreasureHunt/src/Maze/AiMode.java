@@ -3,5 +3,6 @@ package Maze;
 public enum AiMode
 {
     GREEDY,
-    MINIMAX
+    MINIMAX,
+    DEBUG // uses minimax but displays both paths
 }
