@@ -181,13 +181,7 @@ public class Maze
             if (aiPath == null || aiPath.isEmpty())
                 continue;
 
-            int score = minimax(
-                    aiPosition,
-                    playerPosition,
-                    treasure,
-                    5,
-                    true
-            );
+            int score = minimax(aiPosition, playerPosition, treasure, 5, true);
 
             if (AiMode.DEBUG == aiMode)
             {
@@ -212,6 +206,8 @@ public class Maze
 
         if (depth == 0 || aiPath == null || playerPath == null)
         {
+            assert aiPath != null;
+            assert playerPath != null;
             return minimaxEval(aiPath.size(), playerPath.size());
         }
 
@@ -222,13 +218,7 @@ public class Maze
 
             for (TilePosition nextAi : getTraversableNeighbourTiles(aiPos, true))
             {
-                int score = minimax(
-                        nextAi,
-                        playerPos,
-                        treasure,
-                        depth - 1,
-                        false
-                );
+                int score = minimax(nextAi, playerPos, treasure, depth - 1, false);
 
                 bestScore = Math.max(bestScore, score);
             }
@@ -238,20 +228,12 @@ public class Maze
         {
             bestScore = Integer.MAX_VALUE;
 
-            // Player makes ONE step
             for (TilePosition nextPlayer : getTraversableNeighbourTiles(playerPos, true))
             {
-                int score = minimax(
-                        aiPos,
-                        nextPlayer,
-                        treasure,
-                        depth - 1,
-                        true
-                );
+                int score = minimax(aiPos, nextPlayer, treasure, depth - 1, true);
 
                 bestScore = Math.min(bestScore, score);
             }
-
         }
 
         return bestScore;
@@ -281,8 +263,6 @@ public class Maze
     public void aiMoveGreedy()
     {
         List<TilePosition> path = aiGetGreedyMove();
-
-        UI.printlnRed("AI Path: " + path);
 
         if (path != null && !path.isEmpty())
         {
