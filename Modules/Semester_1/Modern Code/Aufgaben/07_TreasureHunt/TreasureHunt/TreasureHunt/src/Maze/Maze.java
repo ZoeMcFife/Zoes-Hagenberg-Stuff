@@ -50,44 +50,39 @@ public class Maze
         spawnPlayer();
         spawnAI();
         spawnTreasures(treasureCount);
+    }
 
+    private TilePosition getPositionFromDirection(Direction direction)
+    {
+        TilePosition newPosition = switch (direction)
+        {
+            case UP -> new TilePosition(playerPosition.row() - 1, playerPosition.col());
+            case DOWN -> new TilePosition(playerPosition.row() + 1, playerPosition.col());
+            case LEFT -> new TilePosition(playerPosition.row(), playerPosition.col() - 1);
+            case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
+        };
+
+        return newPosition;
     }
 
     public boolean canMovePlayer(Direction direction)
     {
-        TilePosition newPosition = switch (direction)
-        {
-            case UP -> new TilePosition(playerPosition.row() - 1, playerPosition.col());
-            case DOWN -> new TilePosition(playerPosition.row() + 1, playerPosition.col());
-            case LEFT -> new TilePosition(playerPosition.row(), playerPosition.col() - 1);
-            case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
-        };
-
-        return isTraversableTile(newPosition);
+        return isTraversableTile(getPositionFromDirection(direction));
     }
 
     public void movePlayer(Direction direction)
     {
-        TilePosition newPosition = switch (direction)
-        {
-            case UP -> new TilePosition(playerPosition.row() - 1, playerPosition.col());
-            case DOWN -> new TilePosition(playerPosition.row() + 1, playerPosition.col());
-            case LEFT -> new TilePosition(playerPosition.row(), playerPosition.col() - 1);
-            case RIGHT -> new TilePosition(playerPosition.row(), playerPosition.col() + 1);
-        };
-
-        movePlayer(newPosition);
+        movePlayer(getPositionFromDirection(direction));
     }
 
     private void checkTreasureStatus()
     {
         int treasureCount = getAllTreasurePositions().size();
-        
+
         if (treasureCount == 0)
         {
             mazeCompleted = true;
         }
-
     }
 
     private void movePlayer(TilePosition newPosition)
@@ -135,8 +130,7 @@ public class Maze
         switch (aiMode)
         {
             case GREEDY -> aiMoveGreedy();
-            case MINIMAX -> aiMoveMinimax();
-            case DEBUG -> aiMoveMinimax();
+            case MINIMAX, DEBUG -> aiMoveMinimax();
         }
     }
 
