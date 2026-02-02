@@ -82,9 +82,7 @@ public class Maze
     private void checkTreasureStatus()
     {
         int treasureCount = getAllTreasurePositions().size();
-
-        IO.println("Treasure Status: " + treasureCount);
-
+        
         if (treasureCount == 0)
         {
             mazeCompleted = true;
@@ -678,6 +676,8 @@ public class Maze
         printMazeWithPath(path);
         printScore();
     }
+
+    /* this can be dome so much better sobbing -> lazy develop0r */
 
     private void printMaze()
     {
