@@ -1,1 +1,0 @@
-![[DA.ba-MTD.ba Einfuerungsveranstaltung 2025.pdf]]
